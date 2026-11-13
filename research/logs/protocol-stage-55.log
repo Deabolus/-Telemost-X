@@ -1,3 +1,4 @@
+]633;E;echo "========== p10.java ==========";5fbee356-0123-495e-b37b-dc4eda18f69b]633;C========== p10.java ==========
 package defpackage;
 
 import android.os.Looper;
@@ -138,5 +139,324 @@ public final /* synthetic */ class p10 implements kib {
         this.c = obj;
         this.d = obj2;
         this.e = obj3;
+    }
+}
+========== mgn.java ==========
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public interface mgn {
+    void b(String str);
+
+    boolean c();
+
+    void close();
+
+    cw3 f(sgn sgnVar, taa taaVar);
+
+    boolean j();
+
+    String k();
+
+    void l(c8q c8qVar, ClientMessage clientMessage);
+
+    void p(tgn tgnVar);
+}
+========== qhg.java ==========
+package defpackage;
+
+import android.content.SharedPreferences;
+import android.os.Looper;
+import android.os.SystemClock;
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+import com.yandex.messaging.internal.entities.SeenMarkerEntity;
+import java.io.Closeable;
+import java.io.IOException;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.TimeUnit;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class qhg implements mgn, z4k, qgn, t91 {
+    public final aco a;
+    public final bmc b;
+    public boolean c;
+    public nb1 d;
+    public wc1 e;
+    public boolean f;
+    public f18 g;
+    public final /* synthetic */ rhg h;
+
+    public qhg(rhg rhgVar, aco acoVar) {
+        this.h = rhgVar;
+        this.a = acoVar;
+        cmc cmcVar = rhgVar.b;
+        cmcVar.getClass();
+        this.b = new bmc(cmcVar, this, cmcVar.a, ((wck) cmcVar.d.get()).c);
+        rhgVar.c.a(this);
+    }
+
+    @Override // defpackage.qgn
+    public final cw3 a(lib libVar) {
+        String strValueOf;
+        String string;
+        rhg rhgVar = this.h;
+        Looper looper = rhgVar.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Build request on wrong thread");
+        }
+        atl.o(null, this.c);
+        wc1 wc1Var = this.e;
+        if (wc1Var == null) {
+            cw3.T.getClass();
+            return hlk.b;
+        }
+        nb1 nb1Var = this.d;
+        if (nb1Var == null || (strValueOf = String.valueOf(nb1Var.b)) == null) {
+            strValueOf = rhgVar.h.a;
+        }
+        if (wc1Var.h() && !this.f) {
+            String strG = wc1Var.g();
+            mqd.y(strG, "getRawValue(...)");
+            libVar.invoke(new v4s(strValueOf, strG));
+            return null;
+        }
+        c4s c4sVar = rhgVar.i;
+        isd isdVar = new isd(12, libVar);
+        c4sVar.getClass();
+        mqd.z(strValueOf, "user");
+        atl.s(c4sVar.d, Looper.myLooper(), null);
+        SharedPreferences sharedPreferences = c4sVar.a;
+        String string2 = sharedPreferences.getString("xiva_secret_user", null);
+        w4s w4sVar = (string2 == null || (string = sharedPreferences.getString("xiva_secret_sign", null)) == null) ? null : new w4s(string2, string, sharedPreferences.getLong("xiva_secret_ts", 0L));
+        if (w4sVar != null && w4sVar.a.equals(strValueOf)) {
+            long j = w4sVar.c;
+            c4sVar.b.getClass();
+            if (j > TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis())) {
+                isdVar.invoke(w4sVar);
+                return null;
+            }
+        }
+        c4sVar.e.b(isdVar);
+        if (c4sVar.f == null) {
+            y8q y8qVar = c4sVar.c;
+            wzr wzrVar = new wzr(7, c4sVar, strValueOf);
+            y8qVar.getClass();
+            c4sVar.f = ((bf1) y8qVar.b).a(wq1.g("toString(...)"), new idl(y8qVar, strValueOf, wzrVar, 3), saa.c);
+        }
+        return new ew3(new udr(5, c4sVar, isdVar), 0);
+    }
+
+    @Override // defpackage.mgn
+    public final void b(String str) {
+        mqd.z(str, "reason");
+        this.b.b(str);
+    }
+
+    @Override // defpackage.mgn
+    public final boolean c() {
+        return this.b.c();
+    }
+
+    @Override // defpackage.mgn
+    public final void close() throws IOException {
+        f18 f18Var = this.g;
+        if (f18Var != null) {
+            f18Var.close();
+        }
+        this.b.close();
+    }
+
+    @Override // defpackage.qgn
+    public final boolean d() {
+        aco acoVar = this.a;
+        atl.s(acoVar.C, Looper.myLooper(), null);
+        return !acoVar.D.isEmpty();
+    }
+
+    @Override // defpackage.z4k
+    public final void e() throws IOException {
+        Looper looper = this.h.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Profile removed on wrong thread");
+        }
+        this.c = true;
+        f18 f18Var = this.g;
+        if (f18Var != null) {
+            f18Var.close();
+        }
+        this.b.close();
+    }
+
+    @Override // defpackage.mgn
+    public final cw3 f(sgn sgnVar, taa taaVar) {
+        Looper looper = this.h.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Call made on wrong thread");
+        }
+        if (!this.c) {
+            return this.b.f(sgnVar, taaVar);
+        }
+        cw3.T.getClass();
+        return hlk.b;
+    }
+
+    @Override // defpackage.t91
+    public final void g(xc1 xc1Var, boolean z) {
+        mqd.z(xc1Var, "header");
+        rhg rhgVar = this.h;
+        Looper looper = rhgVar.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Authorization header on wrong thread");
+        }
+        atl.o(null, this.c);
+        wc1 wc1VarB = xc1Var.d() ? xc1Var.b() : null;
+        this.e = wc1VarB;
+        this.d = rhgVar.a;
+        if (wc1VarB != null) {
+            bmc bmcVar = this.b;
+            bmcVar.b("Authorization restart");
+            if (d()) {
+                bmcVar.p(tgn.Restart);
+            }
+        }
+    }
+
+    @Override // defpackage.qgn
+    public final Long h() {
+        aco acoVar = this.a;
+        atl.s(acoVar.C, Looper.myLooper(), null);
+        if (acoVar.D.isEmpty()) {
+            return Long.valueOf(acoVar.G);
+        }
+        return null;
+    }
+
+    @Override // defpackage.qgn
+    public final void i() {
+        rhg rhgVar = this.h;
+        Looper looper = rhgVar.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Connected on wrong thread");
+        }
+        bmc bmcVar = this.b;
+        mqd.z(bmcVar, "connection");
+        g2e g2eVar = new g2e();
+        g2eVar.a = bmcVar;
+        aco acoVar = this.a;
+        acoVar.y.reportEvent("tech_sync_socket_connected");
+        atl.s(acoVar.C, Looper.myLooper(), null);
+        qt5 qt5Var = acoVar.m;
+        atl.s(qt5Var.a, Looper.myLooper(), null);
+        if (qt5Var.f == 0) {
+            qt5Var.b.getClass();
+            qt5Var.f = SystemClock.elapsedRealtime();
+        }
+        acoVar.g.b(g2eVar);
+        acoVar.g();
+        b7j b7jVar = (b7j) rhgVar.e.get();
+        atl.s(b7jVar.d, Looper.myLooper(), null);
+        if (b7jVar.g) {
+            return;
+        }
+        b7jVar.g = true;
+        for (zaj zajVar : b7jVar.f.A()) {
+            b7jVar.a(zajVar.a, (SeenMarkerEntity) zajVar.b);
+        }
+    }
+
+    @Override // defpackage.mgn
+    public final boolean j() {
+        return false;
+    }
+
+    @Override // defpackage.mgn
+    public final String k() {
+        return this.b.k();
+    }
+
+    @Override // defpackage.mgn
+    public final void l(c8q c8qVar, ClientMessage clientMessage) {
+        Looper looper = this.h.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Message posted on wrong thread");
+        }
+        if (!atl.u() && c8qVar != null) {
+            atl.y("Unexpected uid in single-user connection");
+        }
+        if (this.c) {
+            return;
+        }
+        this.b.l(null, clientMessage);
+    }
+
+    @Override // defpackage.qgn
+    public final void m(String str) {
+        rhg rhgVar = this.h;
+        Looper looper = rhgVar.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Auth failed on wrong thread");
+        }
+        atl.o(null, this.c);
+        wc1 wc1Var = this.e;
+        if (wc1Var == null) {
+            return;
+        }
+        if (!wc1Var.h() || this.f) {
+            c4s c4sVar = rhgVar.i;
+            atl.s(c4sVar.d, Looper.myLooper(), null);
+            c4sVar.a.edit().remove("xiva_secret_user").remove("xiva_secret_sign").remove("xiva_secret_ts").apply();
+        } else {
+            this.f = true;
+        }
+        if (d()) {
+            this.b.p(tgn.Restart);
+        }
+    }
+
+    @Override // defpackage.qgn
+    public final void n(long j, ServerMessage serverMessage) {
+========== cmc.java ==========
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class cmc {
+    public final String a;
+    public final nb1 b;
+    public final d4s c;
+    public final ike d;
+    public final amc e;
+    public final s5i f;
+    public final ur0 g;
+    public final ike h;
+    public final y8q i;
+
+    public cmc(String str, nb1 nb1Var, d4s d4sVar, ike ikeVar, amc amcVar, s5i s5iVar, ur0 ur0Var, ike ikeVar2, y8q y8qVar) {
+        mqd.z(str, "profileId");
+        mqd.z(d4sVar, "serviceNameProvider");
+        mqd.z(ikeVar, "pushWebSocketFeatureToggle");
+        mqd.z(amcVar, "heartbeatChecker");
+        mqd.z(s5iVar, "onlineReporter");
+        mqd.z(ur0Var, "applicationSocketProvider");
+        mqd.z(ikeVar2, "xivaSocketFactory");
+        mqd.z(y8qVar, "xivaUrlProvider");
+        this.a = str;
+        this.b = nb1Var;
+        this.c = d4sVar;
+        this.d = ikeVar;
+        this.e = amcVar;
+        this.f = s5iVar;
+        this.g = ur0Var;
+        this.h = ikeVar2;
+        this.i = y8qVar;
     }
 }
