@@ -1,0 +1,1544 @@
+
+===== idl.java =====
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.RequestUserParams;
+import com.yandex.messaging.core.net.entities.UserData;
+import com.yandex.messaging.core.net.entities.chatcreate.CreateChannelParam;
+import com.yandex.messaging.core.net.entities.chatcreate.CreateFamilyChatParam;
+import com.yandex.messaging.core.net.entities.chatcreate.CreateGroupChatParam;
+import com.yandex.messaging.core.net.entities.chatcreate.GroupChatData;
+import com.yandex.messaging.core.net.entities.xiva.XivaSecretContainer;
+import com.yandex.messaging.core.net.entities.xiva.XivaUser;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class idl extends bff {
+    public final /* synthetic */ int i;
+    public final /* synthetic */ Object j;
+    public final /* synthetic */ Object k;
+    public final /* synthetic */ Object l;
+
+    public /* synthetic */ idl(jdl jdlVar, wpm wpmVar, wf wfVar, Object obj, int i) {
+        this.i = i;
+        this.k = jdlVar;
+        this.j = wpmVar;
+        this.l = obj;
+    }
+
+    public boolean C(f7f f7fVar) {
+        switch (this.i) {
+            case 0:
+                wpm wpmVar = (wpm) this.j;
+                ((y94) wpmVar.c).j(new rh9(f7fVar));
+                return true;
+            case 1:
+                wpm wpmVar2 = (wpm) this.j;
+                ((y94) wpmVar2.c).j(new rh9(f7fVar));
+                return true;
+            case 2:
+                wpm wpmVar3 = (wpm) this.j;
+                ((y94) wpmVar3.c).j(new rh9(f7fVar));
+                return true;
+            case 3:
+            default:
+                return super.C(f7fVar);
+            case 4:
+                mqd.z(f7fVar, "error");
+                ((ycp) this.k).invoke(Integer.valueOf(f7fVar.a));
+                return true;
+        }
+    }
+
+    public final void E(Object obj) {
+        switch (this.i) {
+            case 0:
+                GroupChatData groupChatData = (GroupChatData) obj;
+                ((jdl) this.k).a.a(groupChatData.getErrors());
+                ((wpm) this.j).s(groupChatData.getChatData(), (UserData) null);
+                break;
+            case 1:
+                GroupChatData groupChatData2 = (GroupChatData) obj;
+                ((jdl) this.k).a.a(groupChatData2.getErrors());
+                ((wpm) this.j).s(groupChatData2.getChatData(), (UserData) null);
+                break;
+            case 2:
+                GroupChatData groupChatData3 = (GroupChatData) obj;
+                ((jdl) this.k).a.a(groupChatData3.getErrors());
+                ((wpm) this.j).s(groupChatData3.getChatData(), (UserData) null);
+                break;
+            case 3:
+                XivaSecretContainer xivaSecretContainer = (XivaSecretContainer) obj;
+                mqd.z(xivaSecretContainer, "response");
+                wzr wzrVar = (wzr) this.k;
+                XivaUser xivaUser = xivaSecretContainer.user;
+                long j = xivaUser.uid;
+                String strValueOf = j != 0 ? String.valueOf(j) : xivaUser.guid;
+                mqd.y(strValueOf, "getTokenUser(...)");
+                String str = xivaSecretContainer.secret.sign;
+                mqd.y(str, "sign");
+                wzrVar.invoke(new w4s(strValueOf, str, xivaSecretContainer.secret.ts));
+                break;
+            default:
+                ((iy2) this.l).invoke(Long.valueOf(((Number) obj).longValue()));
+                break;
+        }
+    }
+
+    public void F() {
+        switch (this.i) {
+            case 4:
+                ((ycp) this.k).invoke(-1);
+                break;
+        }
+    }
+
+    public final g5l I() {
+        switch (this.i) {
+            case 0:
+                return ((jdl) this.k).c.a((CreateGroupChatParam) this.l, "create_chat");
+            case 1:
+                return ((jdl) this.k).c.a((CreateFamilyChatParam) this.l, "create_chat");
+            case 2:
+                return ((jdl) this.k).c.a((CreateChannelParam) this.l, "create_chat");
+            case 3:
+                RequestUserParams requestUserParams = new RequestUserParams();
+                requestUserParams.needXivaSecret = true;
+                y8q y8qVar = (y8q) this.j;
+                hu7 hu7Var = (hu7) y8qVar.d;
+                g5l g5lVarA = ((quc) y8qVar.c).a(requestUserParams, "request_user");
+                hu7Var.b(g5lVarA);
+                return g5lVarA;
+            default:
+                g5l g5lVar = new g5l();
+                g5lVar.i((String) this.j);
+                g5lVar.g(nxp.class, nxp.FileUpload);
+                g5lVar.e("HEAD", (f6l) null);
+                return g5lVar;
+        }
+    }
+
+    public boolean i() {
+        switch (this.i) {
+            case 4:
+                return false;
+            default:
+                return super.i();
+        }
+    }
+
+    public final znc s(ocl oclVar) {
+        switch (this.i) {
+            case 0:
+                return fde.j(((jdl) this.k).c, "create_chat", GroupChatData.class, oclVar);
+            case 1:
+                return fde.j(((jdl) this.k).c, "create_chat", GroupChatData.class, oclVar);
+            case 2:
+                return fde.j(((jdl) this.k).c, "create_chat", GroupChatData.class, oclVar);
+            case 3:
+                znc zncVarJ = fde.j((quc) ((y8q) this.j).c, "request_user", XivaSecretContainer.class, oclVar);
+                if (!(zncVarJ instanceof ldi)) {
+                    return zncVarJ;
+                }
+                XivaUser xivaUser = ((XivaSecretContainer) ((ldi) zncVarJ).i).user;
+                long j = xivaUser.uid;
+                return !mqd.s((j > 0L ? 1 : (j == 0L ? 0 : -1)) != 0 ? String.valueOf(j) : xivaUser.guid, (String) this.l) ? new znc(17) : zncVarJ;
+            default:
+                tcl tclVar = oclVar.g;
+                if (tclVar != null) {
+                    tclVar.close();
+                }
+                if (oclVar.i()) {
+                    String strC = ocl.c(oclVar, "Content-Length");
+                    return new ldi(Long.valueOf(strC != null ? Long.parseLong(strC) : 0L));
+                }
+                int i = oclVar.d;
+                return i == 404 ? new ldi(0L) : znc.p(i, oclVar.c);
+        }
+    }
+
+    public wf z() {
+        switch (this.i) {
+            case 0:
+                return ((y94) ((wpm) this.j).c).a();
+            case 1:
+                return ((y94) ((wpm) this.j).c).a();
+            case 2:
+                return ((y94) ((wpm) this.j).c).a();
+            case 3:
+            default:
+                return super.z();
+            case 4:
+                return new wf(true);
+        }
+    }
+
+    public /* synthetic */ idl(Object obj, Object obj2, lib libVar, int i) {
+        this.i = i;
+        this.j = obj;
+        this.l = obj2;
+        this.k = libVar;
+    }
+}
+
+===== hpq.java =====
+package defpackage;
+
+import android.content.SharedPreferences;
+import android.os.Handler;
+import android.os.Looper;
+import java.util.Objects;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class hpq {
+    public final gjd a;
+    public final Handler b;
+    public final ne6 c;
+    public final b5k d;
+    public final uyh e;
+    public po1 f;
+    public rs6 g;
+
+    public hpq(gjd gjdVar, Handler handler, ne6 ne6Var, b5k b5kVar, mwk mwkVar) {
+        po1 po1Var;
+        mqd.z(gjdVar, "userComponentBuilder");
+        mqd.z(handler, "logicHandler");
+        mqd.z(ne6Var, "dispatchers");
+        mqd.z(b5kVar, "profileRemovedDispatcher");
+        mqd.z(mwkVar, "registrationController");
+        this.a = gjdVar;
+        this.b = handler;
+        this.c = ne6Var;
+        this.d = b5kVar;
+        this.e = new uyh();
+        synchronized (mwkVar) {
+            try {
+                hpq hpqVar = mwkVar.m;
+                if (!atl.u() && hpqVar != null) {
+                    atl.y("Credentials listener is already registered");
+                }
+                mwkVar.m = this;
+                po1Var = mwkVar.n.b;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        this.f = po1Var;
+    }
+
+    public static void a(rs6 rs6Var, po1 po1Var) {
+        s91 s91Var = (s91) rs6Var.g.get();
+        nb1 nb1Var = rs6Var.c.a;
+        hqq hqqVar = rs6Var.a;
+        nb1 nb1Var2 = (nb1) po1Var.c;
+        boolean z = nb1Var2 == null;
+        xc1 xc1Var = (xc1) po1Var.d;
+        hqqVar.b = z;
+        if (nb1Var2 == null) {
+            if (!atl.u() && nb1Var != null) {
+                atl.y("Credentials sent to wrong user");
+            }
+            wc1 wc1VarB = xc1Var.b();
+            ryh ryhVar = s91Var.b;
+            atl.s(s91Var.c, Looper.myLooper(), null);
+            if (s91Var.i != null) {
+                throw new IllegalArgumentException();
+            }
+            atl.r(s91Var.k, null);
+            atl.o(null, s91Var.e.contains("oauth_token"));
+            s91Var.j = wc1VarB;
+            ryhVar.b();
+            while (ryhVar.hasNext()) {
+                ((t91) ryhVar.next()).g(wc1VarB, false);
+            }
+            return;
+        }
+        Objects.requireNonNull(nb1Var2);
+        if (!atl.u()) {
+            atl.n(nb1Var, nb1Var2, "Credentials sent to wrong user");
+        }
+        ryh ryhVar2 = s91Var.b;
+        atl.s(s91Var.c, Looper.myLooper(), null);
+        nb1 nb1Var3 = s91Var.i;
+        if (nb1Var3 == null) {
+            throw new IllegalArgumentException();
+        }
+        if (s91Var.j.d()) {
+            return;
+        }
+        s91Var.j = xc1Var;
+        if (!xc1Var.d()) {
+            s91Var.k = ((g1j) s91Var.f.get()).c(s91Var, nb1Var3, s91Var.g);
+            return;
+        }
+        SharedPreferences.Editor editorEdit = s91Var.e.edit();
+        editorEdit.putString("oauth_token", xc1Var.b().g());
+        editorEdit.apply();
+        ryhVar2.b();
+        while (ryhVar2.hasNext()) {
+            ((t91) ryhVar2.next()).g(xc1Var, false);
+        }
+    }
+
+    public final rs6 b(po1 po1Var) {
+        ne6.b(this.c);
+        hqq hqqVar = new hqq((String) po1Var.b);
+        gjd gjdVar = this.a;
+        gjdVar.getClass();
+        rs6 rs6Var = new rs6((ks6) gjdVar.b, (bs6) gjdVar.c, hqqVar);
+        a(rs6Var, po1Var);
+        return rs6Var;
+    }
+
+    public final String c() {
+        ne6.b(this.c);
+        po1 po1Var = this.f;
+        if (!atl.u() && po1Var == null) {
+            atl.y("Illegal state");
+        }
+        po1 po1Var2 = this.f;
+        mqd.u(po1Var2);
+        return (String) po1Var2.b;
+    }
+
+    public final r91 d(gpq gpqVar) {
+        mqd.z(gpqVar, "listener");
+        ne6 ne6Var = this.c;
+        ne6.b(ne6Var);
+        if (this.d.d.get()) {
+            return null;
+        }
+        ne6.b(ne6Var);
+        rs6 rs6Var = this.g;
+        if (rs6Var == null) {
+            po1 po1Var = this.f;
+            if (po1Var != null) {
+                this.g = b(po1Var);
+            }
+            rs6Var = this.g;
+        }
+        if (rs6Var != null) {
+            gpqVar.i(rs6Var);
+            return null;
+        }
+        this.e.b(gpqVar);
+        return new r91(14, this, gpqVar);
+    }
+}
+
+===== axd.java =====
+package defpackage;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.pm.ServiceInfo;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.text.TextUtils;
+import android.util.Log;
+import android.util.Pair;
+import android.util.Size;
+import android.view.SurfaceView;
+import android.webkit.WebView;
+import com.google.protobuf.DescriptorProtos;
+import com.yandex.io.JniDirectiveObservable;
+import com.yandex.messenger.MainApplication;
+import com.yandex.passport.R;
+import com.yandex.passport.api.v;
+import com.yandex.passport.internal.analytics.d0;
+import com.yandex.passport.internal.analytics.x;
+import com.yandex.passport.internal.core.accounts.b;
+import com.yandex.passport.internal.core.accounts.c;
+import com.yandex.passport.internal.core.announcing.AccountsChangedReceiver;
+import com.yandex.passport.internal.credentials.e;
+import com.yandex.passport.internal.d;
+import com.yandex.passport.internal.di.component.PassportProcessGlobalComponent;
+import com.yandex.passport.internal.flags.experiments.o;
+import com.yandex.passport.internal.flags.experiments.p;
+import com.yandex.passport.internal.k;
+import com.yandex.passport.internal.l;
+import com.yandex.passport.internal.properties.y;
+import com.yandex.passport.internal.provider.InternalProvider;
+import com.yandex.passport.internal.t;
+import com.yandex.passport.internal.w;
+import com.yandex.passport.legacy.a;
+import io.appmetrica.analytics.AppMetricaConfig;
+import io.appmetrica.analytics.IReporterYandex;
+import io.appmetrica.analytics.impl.K1;
+import io.appmetrica.analytics.impl.L6;
+import io.appmetrica.analytics.impl.Y8;
+import io.appmetrica.analytics.impl.c1;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import io.sentry.util.g;
+import java.lang.ref.WeakReference;
+import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicBoolean;
+import ru.yandex.quasar.protobuf.Directive;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final /* synthetic */ class axd implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ axd(AccountsChangedReceiver accountsChangedReceiver, Context context, Intent intent, BroadcastReceiver.PendingResult pendingResult) {
+        this.a = 29;
+        this.b = context;
+        this.c = intent;
+        this.d = pendingResult;
+    }
+
+    private final void a() {
+        Y8.a((Y8) this.b, (Bundle) this.c, (L6) this.d);
+    }
+
+    private final void b() {
+        c1.a((c1) this.b, (PluginErrorDetails) this.c, (String) this.d);
+    }
+
+    private final void c() {
+        x analyticsTrackerWrapper;
+        y yVar = (y) this.b;
+        MainApplication mainApplication = (MainApplication) this.c;
+        IReporterYandex iReporterYandex = (IReporterYandex) this.d;
+        l6c l6cVar = l6c.a;
+        w wVar = new w(mainApplication, iReporterYandex, (e) yVar.a.get(v.a));
+        PackageManager packageManager = wVar.b;
+        Context context = wVar.a;
+        String str = wVar.c;
+        a.a("validateAndThrow: start");
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        try {
+            wVar.i(arrayList);
+            if (!(context.getString(R.string.passport_sync_adapter_prefix) + str).equals(context.getString(R.string.passport_sync_adapter_content_authority))) {
+                w.a("Invalid value in passport_sync_adapter_content_authority", arrayList);
+            }
+            wVar.l(arrayList);
+            if ((packageManager.getApplicationInfo(str, 0).flags & 32768) == 32768) {
+                w.a("allowBackup='true' is not allowed", arrayList);
+            }
+            wVar.b(arrayList2, "com.yandex.passport.internal.core.announcing.AccountsChangedReceiver", "reaction to system events", 3, true);
+            wVar.c(arrayList2, "com.yandex.passport.internal.core.announcing.AccountsChangedReceiver", wVar.g("android.accounts.LOGIN_ACCOUNTS_CHANGED", (String) null, (String) null), 3);
+            wVar.c(arrayList2, "com.yandex.passport.internal.core.announcing.AccountsChangedReceiver", wVar.g("com.yandex.accounts.LOGIN_ACCOUNTS_CHANGED", (String) null, (String) null), 3);
+            wVar.m(arrayList2);
+            wVar.k(arrayList2);
+            try {
+                ServiceInfo serviceInfo = packageManager.getServiceInfo(wVar.b(arrayList2, "com.yandex.passport.internal.core.sync.SyncService", "accounts backup", 2, false), 128);
+                wVar.e(arrayList2, serviceInfo);
+                Bundle bundle = serviceInfo.metaData;
+                if (bundle == null || bundle.get("android.provider.CONTACTS_STRUCTURE") == null) {
+                    w.a("Passport library verification error: There is no contacts metadata in BackupAccountsService declaration please copy \n<meta-data\nandroid:name=\"android.provider.CONTACTS_STRUCTURE\"\nandroid:resource=\"@xml/contacts\" />\nto declaration of com.yandex.auth.sync.BackupAccountsService in AndroidManifest.xml", arrayList2);
+                }
+            } catch (PackageManager.NameNotFoundException unused) {
+            }
+            wVar.j(arrayList2);
+            wVar.d(arrayList2);
+            if (!w.i.contains(str) && w.h.equals(wVar.e)) {
+                arrayList2.add(new IllegalStateException("Don't use credentials from the sample in your application"));
+            }
+        } catch (Exception e) {
+            arrayList2.add(new IllegalStateException("Passport library verification error", e));
+        }
+        wVar.h(arrayList2);
+        wVar.h(arrayList);
+        if ((context.getApplicationInfo().flags & 2) != 0) {
+            arrayList.addAll(arrayList2);
+        }
+        a.a("validateAndThrow: end: errorList.size()=" + arrayList2.size() + " fatalErrorList.size()=" + arrayList.size());
+        if (arrayList.size() > 0) {
+            Log.e("PassportRuntime", ((IllegalStateException) arrayList.get(0)).getMessage().toString());
+            System.exit(0);
+        }
+        try {
+            PassportProcessGlobalComponent passportProcessGlobalComponentA = com.yandex.passport.internal.di.a.a();
+            mqd.y(passportProcessGlobalComponentA, "getPassportProcessGlobalComponent(...)");
+            c accountsRetriever = passportProcessGlobalComponentA.getAccountsRetriever();
+            d0 currentAccountAnalyticsHelper = passportProcessGlobalComponentA.getCurrentAccountAnalyticsHelper();
+            d dVarA = accountsRetriever.a();
+            p experimentsUpdater = passportProcessGlobalComponentA.getExperimentsUpdater();
+            o oVar = o.a;
+            int i = p.h;
+            g gVar = com.yandex.passport.common.core.d.b;
+            experimentsUpdater.a(oVar);
+            passportProcessGlobalComponentA.getFlagRepository().a();
+            currentAccountAnalyticsHelper.a(dVarA);
+            if (!((Boolean) passportProcessGlobalComponentA.getFlagRepository().b(com.yandex.passport.internal.flags.p.A)).booleanValue()) {
+                t.f(passportProcessGlobalComponentA, dVarA);
+                t.b(mainApplication, passportProcessGlobalComponentA);
+                t.c(passportProcessGlobalComponentA);
+                passportProcessGlobalComponentA.getCoroutineScopes().getClass();
+                lo7.z(l6cVar, (ie6) null, (ze6) null, new l(passportProcessGlobalComponentA, (ic6) null, 1), 3);
+                passportProcessGlobalComponentA.getCoroutineScopes().getClass();
+                lo7.z(l6cVar, (ie6) null, (ze6) null, new l(passportProcessGlobalComponentA, (ic6) null, 2), 3);
+                passportProcessGlobalComponentA.getCoroutineScopes().getClass();
+                lo7.z(l6cVar, (ie6) null, (ze6) null, new l(passportProcessGlobalComponentA, (ic6) null, 0), 3);
+                passportProcessGlobalComponentA.getCoroutineScopes().getClass();
+                lo7.z(l6cVar, (ie6) null, (ze6) null, new b0o(passportProcessGlobalComponentA, mainApplication, yVar, (ic6) null, 17), 3);
+            }
+            passportProcessGlobalComponentA.getCoroutineScopes().getClass();
+            lo7.z(l6cVar, (ie6) null, (ze6) null, new kuq(mainApplication, passportProcessGlobalComponentA, (ic6) null, 17), 3);
+            passportProcessGlobalComponentA.getCoroutineScopes().getClass();
+            lo7.z(l6cVar, passportProcessGlobalComponentA.getCoroutineDispatchers().c, (ze6) null, new k(passportProcessGlobalComponentA, (ic6) null, 2), 2);
+        } catch (Exception e2) {
+            boolean z = InternalProvider.d;
+            Log.e("throwIfDebug", "throwIfDebug: isInPassportProcess=" + InternalProvider.d, e2);
+            if (InternalProvider.d) {
+                try {
+                    PassportProcessGlobalComponent passportProcessGlobalComponent = com.yandex.passport.internal.di.a.a;
+                    if (passportProcessGlobalComponent == null || (analyticsTrackerWrapper = passportProcessGlobalComponent.getAnalyticsTrackerWrapper()) == null) {
+                        Log.e("throwIfDebug", "throwIfDebug: something very wrong just happened");
+                    } else {
+                        analyticsTrackerWrapper.d(com.yandex.passport.internal.analytics.w.a, e2);
+                    }
+                } catch (Exception e3) {
+                    Log.e("throwIfDebug", "throwIfDebug: something very wrong just happened", e3);
+                }
+            }
+        }
+    }
+
+    /* JADX INFO: Thrown type has an unknown type hierarchy: mnh */
+    /* JADX WARN: Code duplicated, block: B:73:0x017c  */
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() throws Throwable {
+        Boolean boolE;
+        jc9 jc9Var;
+        xni xniVar;
+        boolean zBooleanValue;
+        d1s d1sVarD;
+        ArrayList arrayList;
+        Object b1jVar;
+        p7q p7qVar;
+        Object obj;
+        Object[] objArr;
+        char c = 2;
+        boolean z = true;
+        int i = 0;
+        boolean zB = false;
+        switch (this.a) {
+            case 0:
+                ((JniDirectiveObservable) this.b).lambda$notifyDecoded$0((bxd) this.c, (Directive) this.d);
+                return;
+            case 1:
+                ((K1) this.b).b((Context) this.c, (AppMetricaConfig) this.d);
+                return;
+            case 2:
+                nqe nqeVar = (nqe) this.b;
+                X509Certificate x509Certificate = (X509Certificate) this.c;
+                String str = (String) this.d;
+                try {
+                    mqd.u(str);
+                    boolE = nqeVar.a(str, x509Certificate);
+                    break;
+                } catch (Throwable th) {
+                    boolE = nzn.E(th);
+                }
+                Boolean bool = boolE instanceof jel ? null : boolE;
+                if (mqd.s(bool, Boolean.TRUE)) {
+                    nqe.e.add(x509Certificate);
+                } else if (mqd.s(bool, Boolean.FALSE)) {
+                    nqe.f.add(x509Certificate);
+                } else if (bool != null) {
+                    throw new mnh();
+                }
+                HashMap map = nqe.g;
+                synchronized (map) {
+                    jc9Var = (List) map.remove(x509Certificate);
+                }
+                if (jc9Var == null) {
+                    jc9Var = jc9.a;
+                }
+                nqe.d.post(new c8a(24, jc9Var, bool));
+                return;
+            case 3:
+                sse sseVar = (sse) this.b;
+                String str2 = (String) this.c;
+                String str3 = (String) this.d;
+                if (sseVar.e) {
+                    return;
+                }
+                wa1 wa1Var = sseVar.b;
+                mqd.z(str2, "guid");
+                mqd.z(str3, "yambToken");
+                mwk mwkVar = wa1Var.a;
+                ne6.c(mwkVar.k);
+                SharedPreferences.Editor editorRemove = ((SharedPreferences) mwkVar.b.get()).edit().remove("guid").remove("yambtoken");
+                mqd.y(editorRemove, "remove(...)");
+                editorRemove.putString("guid", str2).putString("yambtoken", str3).apply();
+                mwkVar.a(wa1Var, new va1(mwkVar, new po1(str2, new uc1(str3, 0))));
+                return;
+            case 4:
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
+                fo3 fo3Var = (fo3) this.c;
+                fp fpVar = (fp) this.d;
+                if (atomicBoolean.get()) {
+
+===== fuk.java =====
+package defpackage;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
+import android.text.Editable;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.app.r0;
+import com.google.protobuf.DescriptorProtos;
+import com.yandex.messaging.core.net.entities.BackendConfig;
+import com.yandex.messaging.core.net.entities.Metadata;
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+import com.yandex.messaging.internal.entities.ChatId;
+import com.yandex.messaging.internal.entities.ReducedMessage;
+import com.yandex.messaging.views.KeyboardAwareEmojiEditText;
+import com.yandex.passport.api.j2;
+import com.yandex.telemost.newarch.screensharing.ScreenSharingService;
+import io.appmetrica.analytics.IReporterYandex;
+import io.appmetrica.analytics.RtmConfig;
+import io.appmetrica.analytics.UserInfo;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.CancellationException;
+import ru.yandex.video.m3.data.StartFromCacheInfo;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class fuk extends lao implements pib {
+    public final /* synthetic */ int e;
+    public /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fuk(pib pibVar, ic6 ic6Var) {
+        super(2, ic6Var);
+        this.e = 8;
+        this.g = (lao) pibVar;
+    }
+
+    /* JADX INFO: Thrown type has an unknown type hierarchy: mnh */
+    public final Object invoke(Object obj, Object obj2) throws mnh {
+        switch (this.e) {
+            case 0:
+                fuk fukVarQ = q((ic6) obj2, (ue6) obj);
+                fcq fcqVar = fcq.a;
+                fukVarQ.t(fcqVar);
+                return fcqVar;
+            case 1:
+                fuk fukVarQ2 = q((ic6) obj2, (ue6) obj);
+                fcq fcqVar2 = fcq.a;
+                fukVarQ2.t(fcqVar2);
+                return fcqVar2;
+            case 2:
+                fuk fukVarQ3 = q((ic6) obj2, (List) obj);
+                fcq fcqVar3 = fcq.a;
+                fukVarQ3.t(fcqVar3);
+                return fcqVar3;
+            case 3:
+                fuk fukVarQ4 = q((ic6) obj2, (List) obj);
+                fcq fcqVar4 = fcq.a;
+                fukVarQ4.t(fcqVar4);
+                return fcqVar4;
+            case 4:
+                fuk fukVarQ5 = q((ic6) obj2, (ue6) obj);
+                fcq fcqVar5 = fcq.a;
+                fukVarQ5.t(fcqVar5);
+                return fcqVar5;
+            case 5:
+                fuk fukVarQ6 = q((ic6) obj2, (afo) obj);
+                fcq fcqVar6 = fcq.a;
+                fukVarQ6.t(fcqVar6);
+                return fcqVar6;
+            case 6:
+                fuk fukVarQ7 = q((ic6) obj2, (vhl) obj);
+                fcq fcqVar7 = fcq.a;
+                fukVarQ7.t(fcqVar7);
+                return fcqVar7;
+            case 7:
+                fuk fukVarQ8 = q((ic6) obj2, (hil) obj);
+                fcq fcqVar8 = fcq.a;
+                fukVarQ8.t(fcqVar8);
+                return fcqVar8;
+            case 8:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 9:
+                fuk fukVarQ9 = q((ic6) obj2, (ue6) obj);
+                fcq fcqVar9 = fcq.a;
+                fukVarQ9.t(fcqVar9);
+                return fcqVar9;
+            case 10:
+                fuk fukVarQ10 = q((ic6) obj2, (j2) obj);
+                fcq fcqVar10 = fcq.a;
+                fukVarQ10.t(fcqVar10);
+                return fcqVar10;
+            case 11:
+                fuk fukVarQ11 = q((ic6) obj2, (pr5) obj);
+                fcq fcqVar11 = fcq.a;
+                fukVarQ11.t(fcqVar11);
+                return fcqVar11;
+            case 12:
+                fuk fukVarQ12 = q((ic6) obj2, (kac) obj);
+                fcq fcqVar12 = fcq.a;
+                fukVarQ12.t(fcqVar12);
+                return fcqVar12;
+            case 13:
+                fuk fukVarQ13 = q((ic6) obj2, (yh) obj);
+                fcq fcqVar13 = fcq.a;
+                fukVarQ13.t(fcqVar13);
+                return fcqVar13;
+            case 14:
+                fuk fukVarQ14 = q((ic6) obj2, (ue6) obj);
+                fcq fcqVar14 = fcq.a;
+                fukVarQ14.t(fcqVar14);
+                return fcqVar14;
+            case 15:
+                fuk fukVarQ15 = q((ic6) obj2, obj);
+                fcq fcqVar15 = fcq.a;
+                fukVarQ15.t(fcqVar15);
+                return fcqVar15;
+            case 16:
+                fuk fukVarQ16 = q((ic6) obj2, (ue6) obj);
+                fcq fcqVar16 = fcq.a;
+                fukVarQ16.t(fcqVar16);
+                return fcqVar16;
+            case 17:
+                fuk fukVarQ17 = q((ic6) obj2, (ue6) obj);
+                fcq fcqVar17 = fcq.a;
+                fukVarQ17.t(fcqVar17);
+                return fcqVar17;
+            case 18:
+                fuk fukVarQ18 = q((ic6) obj2, (ypi) obj);
+                fcq fcqVar18 = fcq.a;
+                fukVarQ18.t(fcqVar18);
+                return fcqVar18;
+            case DescriptorProtos.FieldOptions.TARGETS_FIELD_NUMBER /* 19 */:
+                fuk fukVarQ19 = q((ic6) obj2, (afo) obj);
+                fcq fcqVar19 = fcq.a;
+                fukVarQ19.t(fcqVar19);
+                return fcqVar19;
+            case 20:
+                fuk fukVarQ20 = q((ic6) obj2, (kac) obj);
+                fcq fcqVar20 = fcq.a;
+                fukVarQ20.t(fcqVar20);
+                return fcqVar20;
+            case DescriptorProtos.FieldOptions.FEATURES_FIELD_NUMBER /* 21 */:
+                fuk fukVarQ21 = q((ic6) obj2, (ue6) obj);
+                fcq fcqVar21 = fcq.a;
+                fukVarQ21.t(fcqVar21);
+                return fcqVar21;
+            case DescriptorProtos.FieldOptions.FEATURE_SUPPORT_FIELD_NUMBER /* 22 */:
+                return q((ic6) obj2, (fcq) obj).t(fcq.a);
+            case DescriptorProtos.FileOptions.DEPRECATED_FIELD_NUMBER /* 23 */:
+                fuk fukVarQ22 = q((ic6) obj2, (d35) obj);
+                fcq fcqVar22 = fcq.a;
+                fukVarQ22.t(fcqVar22);
+                return fcqVar22;
+            case 24:
+                fuk fukVarQ23 = q((ic6) obj2, (omm) obj);
+                fcq fcqVar23 = fcq.a;
+                fukVarQ23.t(fcqVar23);
+                return fcqVar23;
+            case 25:
+                fuk fukVarQ24 = q((ic6) obj2, (Metadata) obj);
+                fcq fcqVar24 = fcq.a;
+                fukVarQ24.t(fcqVar24);
+                return fcqVar24;
+            case 26:
+                fuk fukVarQ25 = q((ic6) obj2, (omm) obj);
+                fcq fcqVar25 = fcq.a;
+                fukVarQ25.t(fcqVar25);
+                return fcqVar25;
+            case DescriptorProtos.FileOptions.JAVA_STRING_CHECK_UTF8_FIELD_NUMBER /* 27 */:
+                fuk fukVarQ26 = q((ic6) obj2, (Metadata) obj);
+                fcq fcqVar26 = fcq.a;
+                fukVarQ26.t(fcqVar26);
+                return fcqVar26;
+            case 28:
+                fuk fukVarQ27 = q((ic6) obj2, (ue6) obj);
+                fcq fcqVar27 = fcq.a;
+                fukVarQ27.t(fcqVar27);
+                return fcqVar27;
+            default:
+                fuk fukVarQ28 = q((ic6) obj2, (cvn) obj);
+                fcq fcqVar28 = fcq.a;
+                fukVarQ28.t(fcqVar28);
+                return fcqVar28;
+        }
+    }
+
+    public final ic6 q(ic6 ic6Var, Object obj) {
+        switch (this.e) {
+            case 0:
+                return new fuk((guk) this.f, (ReducedMessage) this.g, ic6Var, 0);
+            case 1:
+                return new fuk((mwk) this.f, (zfa) this.g, ic6Var, 1);
+            case 2:
+                fuk fukVar = new fuk((g1l) this.g, ic6Var, 2);
+                fukVar.f = obj;
+                return fukVar;
+            case 3:
+                fuk fukVar2 = new fuk((r7l) this.g, ic6Var, 3);
+                fukVar2.f = obj;
+                return fukVar2;
+            case 4:
+                return new fuk((CharSequence) this.f, ic6Var, (g8l) this.g);
+            case 5:
+                fuk fukVar3 = new fuk((kbl) this.g, ic6Var, 5);
+                fukVar3.f = obj;
+                return fukVar3;
+            case 6:
+                fuk fukVar4 = new fuk((bhl) this.g, ic6Var, 6);
+                fukVar4.f = obj;
+                return fukVar4;
+            case 7:
+                fuk fukVar5 = new fuk((mil) this.g, ic6Var, 7);
+                fukVar5.f = obj;
+                return fukVar5;
+            case 8:
+                fuk fukVar6 = new fuk((lao) this.g, ic6Var);
+                fukVar6.f = obj;
+                return fukVar6;
+            case 9:
+                return new fuk((iz8) this.f, (kib) this.g, ic6Var, 9);
+            case 10:
+                fuk fukVar7 = new fuk((zzl) this.g, ic6Var, 10);
+                fukVar7.f = obj;
+                return fukVar7;
+            case 11:
+                fuk fukVar8 = new fuk((c1m) this.g, ic6Var, 11);
+                fukVar8.f = obj;
+                return fukVar8;
+            case 12:
+                fuk fukVar9 = new fuk((o1m) this.g, ic6Var, 12);
+                fukVar9.f = obj;
+                return fukVar9;
+            case 13:
+                fuk fukVar10 = new fuk((ScreenSharingService) this.g, ic6Var, 13);
+                fukVar10.f = obj;
+                return fukVar10;
+            case 14:
+                return new fuk((zym) this.f, (iz8) this.g, ic6Var, 14);
+            case 15:
+                fuk fukVar11 = new fuk((fbm) this.g, ic6Var, 15);
+                fukVar11.f = obj;
+                return fukVar11;
+            case 16:
+                return new fuk((kib) this.f, (lrn) this.g, ic6Var, 16);
+            case 17:
+                return new fuk((kpm) this.f, (ClientMessage) this.g, ic6Var, 17);
+            case 18:
+
+===== ise.java =====
+package defpackage;
+
+import android.content.SharedPreferences;
+import java.util.UUID;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class ise implements qck {
+    public final ool a;
+    public final quc b;
+    public final ike c;
+
+    public ise(ool oolVar, quc qucVar, ike ikeVar) {
+        mqd.z(oolVar, "httpRetrierFactory");
+        mqd.z(qucVar, "apiCallFactory");
+        mqd.z(ikeVar, "logicPrefs");
+        this.a = oolVar;
+        this.b = qucVar;
+        this.c = ikeVar;
+    }
+
+    @Override // defpackage.qck
+    public final cw3 a(tco tcoVar, String str, String str2, pck pckVar, String str3, boolean z, String str4, String str5, String str6) {
+        mqd.z(str2, "deviceModel");
+        mqd.z(pckVar, "pushToken");
+        mqd.z(str3, "deviceId");
+        String string = ((SharedPreferences) this.c.get()).getString("oauth_token", null);
+        vc1 vc1Var = string != null ? new vc1(string) : null;
+        if (vc1Var == null) {
+            cw3.T.getClass();
+            return hlk.b;
+        }
+        le1 le1Var = new le1(this, str, str2, pckVar, str3, z, str4, str5, str6, vc1Var, tcoVar);
+        ool oolVar = this.a;
+        oolVar.getClass();
+        return oolVar.q(UUID.randomUUID().toString(), le1Var, saa.c);
+    }
+
+    @Override // defpackage.qck
+    public final cw3 b(pe9 pe9Var, String str, boolean z) {
+        String string = ((SharedPreferences) this.c.get()).getString("oauth_token", null);
+        vc1 vc1Var = string != null ? new vc1(string) : null;
+        if (vc1Var == null) {
+            cw3.T.getClass();
+            return hlk.b;
+        }
+        be1 be1Var = new be1(this, str, z, vc1Var, pe9Var);
+        ool oolVar = this.a;
+        oolVar.getClass();
+        return oolVar.q(UUID.randomUUID().toString(), be1Var, saa.c);
+    }
+}
+
+===== tkm.java =====
+package defpackage;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Build;
+import android.os.Looper;
+import com.yandex.messaging.internal.calls.feedback.CallFeedbackSupportEntity;
+import com.yandex.messaging.internal.calls.feedback.CallFeedbackTelemostEntity;
+import com.yandex.messaging.internal.calls.feedback.CallFeedbackTelemostRequest;
+import com.yandex.messaging.internal.calls.feedback.CallFeedbackToolsEntity;
+import com.yandex.messaging.internal.entities.feedback.CallFeedbackReason;
+import io.appmetrica.analytics.AppMetricaYandex;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Objects;
+import java.util.Set;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class tkm extends dv1 {
+    public final ye3 g;
+
+    public tkm(bn4 bn4Var, ye3 ye3Var) {
+        super(bn4Var);
+        this.g = ye3Var;
+    }
+
+    @Override // defpackage.jf
+    public final boolean e(jf jfVar) {
+        if (jfVar instanceof tkm) {
+            return Objects.equals(this.g.a, ((tkm) jfVar).g.a);
+        }
+        return false;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:34:0x0207  */
+    /* JADX WARN: Code duplicated, block: B:42:0x025b  */
+    /* JADX WARN: Code duplicated, block: B:91:0x038e  */
+    /* JADX WARN: Code duplicated, block: B:92:0x0393  */
+    /* JADX WARN: Code duplicated, block: B:95:0x03b7  */
+    /* JADX WARN: Code duplicated, block: B:96:0x03c2  */
+    /* JADX WARN: Code duplicated, block: B:99:0x0431  */
+    @Override // defpackage.tn4
+    public final void w(sc4 sc4Var, xr6 xr6Var) {
+        String str;
+        Context context;
+        String str2;
+        ArrayList arrayList;
+        String str3;
+        String strQ;
+        g5l g5lVar;
+        String string;
+        String str4;
+        ArrayList arrayList2;
+        fp3 fp3Var = (fp3) xr6Var.m0.get();
+        q9j q9jVar = fp3Var.a;
+        eqq eqqVar = fp3Var.j;
+        ueg uegVar = fp3Var.f;
+        hu7 hu7Var = fp3Var.d;
+        n2d n2dVar = fp3Var.e;
+        hqq hqqVar = fp3Var.c;
+        ye3 ye3Var = this.g;
+        mqd.z(ye3Var, "feedback");
+        String str5 = ye3Var.f;
+        String str6 = ye3Var.e;
+        int i = ye3Var.b;
+        String str7 = ye3Var.a;
+        Integer num = ye3Var.g;
+        Looper looper = fp3Var.h;
+        atl.s(looper, Looper.myLooper(), null);
+        ze3 ze3Var = fp3Var.i;
+        atl.s(looper, Looper.myLooper(), null);
+        Set set = ye3Var.c;
+        Set set2 = ye3Var.d;
+        HashSet hashSet = new HashSet(set.size());
+        for (Iterator it = set.iterator(); it.hasNext(); it = it) {
+            hashSet.add(((CallFeedbackReason) it.next()).name);
+        }
+        HashSet hashSet2 = new HashSet(set2.size());
+        for (Iterator it2 = set2.iterator(); it2.hasNext(); it2 = it2) {
+            hashSet2.add(((CallFeedbackReason) it2.next()).name);
+        }
+        CallFeedbackToolsEntity callFeedbackToolsEntity = new CallFeedbackToolsEntity();
+        callFeedbackToolsEntity.userGuid = hqqVar.a;
+        callFeedbackToolsEntity.callGuid = str7;
+        callFeedbackToolsEntity.score = i;
+        callFeedbackToolsEntity.details = str6;
+        callFeedbackToolsEntity.audioReasons = (String[]) hashSet.toArray(new String[0]);
+        callFeedbackToolsEntity.videoReasons = (String[]) hashSet2.toArray(new String[0]);
+        callFeedbackToolsEntity.environment = (String) fp3Var.b.d(new j43(12));
+        callFeedbackToolsEntity.meetingId = str5;
+        callFeedbackToolsEntity.callEndedReason = num != null ? xo7.q(num.intValue()) : null;
+        ze3Var.getClass();
+        zd3 zd3Var = (zd3) ze3Var.b;
+        String str8 = (String) ze3Var.f;
+        k4e k4eVar = (k4e) ze3Var.g;
+        k4eVar.getClass();
+        g4e g4eVarD = rcd.d(k4eVar.a(CallFeedbackToolsEntity.class), callFeedbackToolsEntity);
+        g5l g5lVarG = ze3Var.g();
+        g5lVarG.f(g4eVarD);
+        zd3Var.a(g5lVarG.b()).d(new wlc(8));
+        wpm wpmVar = fp3Var.g;
+        wpmVar.getClass();
+        Set set3 = set;
+        ArrayList arrayList3 = new ArrayList(ac5.Y(set3, 10));
+        Iterator it3 = set3.iterator();
+        while (it3.hasNext()) {
+            arrayList3.add(((CallFeedbackReason) it3.next()).name);
+        }
+        Set set4 = set2;
+        ArrayList arrayList4 = new ArrayList(ac5.Y(set4, 10));
+        Iterator it4 = set4.iterator();
+        while (it4.hasNext()) {
+            arrayList4.add(((CallFeedbackReason) it4.next()).name);
+        }
+        LinkedHashMap linkedHashMapN0 = xgf.n0(new ypi[]{new ypi("datetime", ((SimpleDateFormat) wpmVar.e).format(new Date())), new ypi("call_guid", str7), new ypi("user_guid", ((hqq) wpmVar.d).a), new ypi("session_id", (String) wpmVar.b), new ypi("meeting_id", str5), new ypi("meeting_end_reason", num), new ypi("score", Integer.valueOf(i)), new ypi("reasons", zb5.l1(zb5.S0(arrayList4, arrayList3)))});
+        if (str6 != null) {
+            linkedHashMapN0.put("text", str6);
+        }
+        ((x20) wpmVar.c).reportEvent("RTC_USER_CALL_QUALITY_SCORE", linkedHashMapN0);
+        CallFeedbackSupportEntity callFeedbackSupportEntity = new CallFeedbackSupportEntity();
+        zcj zcjVarO = uegVar.O();
+        String str9 = "-";
+        if (zcjVarO == null || (str = zcjVarO.d) == null) {
+            str = "-";
+        } else {
+            if (str.length() <= 0) {
+                str = null;
+            }
+            if (str == null) {
+                str = "-";
+            }
+        }
+        callFeedbackSupportEntity.login = str;
+        hu7Var.getClass();
+        Context context2 = hu7Var.a;
+        callFeedbackSupportEntity.os = wq1.h("android ", String.valueOf(Build.VERSION.SDK_INT));
+        callFeedbackSupportEntity.appVersion = n9.b(context2);
+        callFeedbackSupportEntity.device = k87.k(Build.MANUFACTURER, " ", Build.MODEL);
+        callFeedbackSupportEntity.client = CallFeedbackTelemostEntity.CLIENT_ANDROID;
+        callFeedbackSupportEntity.score = i;
+        callFeedbackSupportEntity.guid = hqqVar.a;
+        callFeedbackSupportEntity.callGuid = str7;
+        a7s a7sVar = (a7s) n2dVar;
+        Context context3 = a7sVar.a;
+        Context context4 = a7sVar.a;
+        callFeedbackSupportEntity.uuid = AppMetricaYandex.getUuid(context3);
+        callFeedbackSupportEntity.deviceId = AppMetricaYandex.getDeviceId(context4);
+        if (str6 == null) {
+            str6 = "-";
+        } else {
+            if (str6.length() <= 0) {
+                str6 = null;
+            }
+            if (str6 == null) {
+                str6 = "-";
+            }
+        }
+        callFeedbackSupportEntity.details = str6;
+        String strB = eqqVar.b();
+        if (strB != null) {
+            if (strB.length() <= 0) {
+                strB = null;
+            }
+            if (strB != null) {
+                str9 = strB;
+            }
+        }
+        callFeedbackSupportEntity.email = str9;
+        callFeedbackSupportEntity.meetingId = str5;
+        callFeedbackSupportEntity.callEndReason = num != null ? xo7.q(num.intValue()) : null;
+        callFeedbackSupportEntity.service = f3r.I("10294459");
+        callFeedbackSupportEntity.messageSubject = f3r.I("10294469");
+        Boolean bool = ye3Var.h;
+        callFeedbackSupportEntity.isInitiator = bool != null ? String.valueOf(bool.booleanValue()) : null;
+        Long l = ye3Var.i;
+        callFeedbackSupportEntity.timestamp = l != null ? String.valueOf(l.longValue()) : null;
+        callFeedbackSupportEntity.chatId = q9jVar.b;
+        g4e g4eVarD2 = rcd.d(k4eVar.a(CallFeedbackSupportEntity.class), callFeedbackSupportEntity);
+        g5l g5lVar2 = new g5l();
+        g5lVar2.i("https://forms-ext-api.yandex.ru/v3/surveys/9481/form/");
+        g5lVar2.a("User-Agent", str8);
+        g5lVar2.a("Content-Type", "application/json");
+        g5lVar2.f(g4eVarD2);
+        zd3Var.a(g5lVar2.b()).d(new wlc(8));
+        zcj zcjVarO2 = uegVar.O();
+        LinkedHashSet linkedHashSetK = hum.k(set, set4);
+        ArrayList arrayList5 = new ArrayList(ac5.Y(linkedHashSetK, 10));
+        Iterator it5 = linkedHashSetK.iterator();
+        while (it5.hasNext()) {
+            arrayList5.add(((CallFeedbackReason) it5.next()).name);
+        }
+        String str10 = ye3Var.f;
+        String str11 = hqqVar.a;
+        String strB2 = n9.b(context2);
+        boolean z = zcjVarO2 != null ? zcjVarO2.h : false;
+        if (zcjVarO2 != null) {
+            ycj[] ycjVarArr = zcjVarO2.k;
+            ArrayList arrayList6 = new ArrayList();
+            int length = ycjVarArr.length;
+            int i2 = 0;
+            while (i2 < length) {
+                int i3 = i2;
+                ycj ycjVar = ycjVarArr[i3];
+                Context context5 = context4;
+                if (ycjVar.d || ycjVar.e) {
+                    str4 = str10;
+                    arrayList2 = arrayList5;
+                } else {
+                    str4 = str10;
+                    arrayList2 = arrayList5;
+                    if (ycjVar.a != 0) {
+                        arrayList6.add(ycjVar);
+                    }
+                }
+                i2 = i3 + 1;
+                context4 = context5;
+                str10 = str4;
+                arrayList5 = arrayList2;
+            }
+            context = context4;
+            str2 = str10;
+            arrayList = arrayList5;
+            ycj ycjVar2 = (ycj) zb5.B0(arrayList6);
+            String strValueOf = ycjVar2 != null ? String.valueOf(ycjVar2.a) : null;
+            int i4 = ye3Var.b;
+            String str12 = ye3Var.e;
+            if (zcjVarO2 != null) {
+                str3 = zcjVarO2.d;
+            } else {
+                str3 = null;
+            }
+            String strH = wq1.h("android ", String.valueOf(Build.VERSION.SDK_INT));
+            String strK = k87.k(Build.MANUFACTURER, " ", Build.MODEL);
+            String str13 = ye3Var.a;
+            String uuid = AppMetricaYandex.getUuid(context);
+            String deviceId = AppMetricaYandex.getDeviceId(context);
+            String strB3 = eqqVar.b();
+            if (num != null) {
+                strQ = xo7.q(num.intValue());
+            } else {
+                strQ = null;
+            }
+            g4e g4eVarD3 = rcd.d(k4eVar.a(CallFeedbackTelemostRequest.class), new CallFeedbackTelemostRequest(new CallFeedbackTelemostEntity(null, str2, str11, null, strB2, z, strValueOf, i4, arrayList, str12, str3, strH, strK, null, str13, uuid, deviceId, strB3, strQ, ye3Var.h, ye3Var.i, q9jVar.b, 8201, null)));
+            g5lVar = new g5l();
+            fsc fscVar = (fsc) ze3Var.h;
+            g5lVar.i("https://" + ((String) fscVar.a.d(fscVar.f)) + "/v1/telemost/stat/log");
+            g5lVar.a("User-Agent", str8);
+            string = ((SharedPreferences) ze3Var.i).getString("oauth_token", null);
+            if (string != null) {
+                g5lVar.a("Authorization", "OAuth ".concat(string));
+            }
+            g5lVar.f(g4eVarD3);
+            zd3Var.a(g5lVar.b()).d(new wlc(8));
+            g();
+        }
+
+===== po1.java =====
+package defpackage;
+
+import android.content.Context;
+import android.net.Uri;
+import android.os.SystemClock;
+import android.telephony.TelephonyManager;
+import android.util.Log;
+import com.yandex.messaging.core.net.entities.ChatData;
+import java.io.EOFException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class po1 implements rja, ui3, o {
+    public final /* synthetic */ int a;
+    public Object b;
+    public Object c;
+    public Object d;
+
+    public static final h1g e(po1 po1Var, p84 p84Var, ub9 ub9Var) {
+        ueg uegVar = (ueg) po1Var.d;
+        uegVar.getClass();
+        i1g i1gVarU = uegVar.b.u();
+        long j = p84Var.a;
+        String str = p84Var.b;
+        i1gVarU.getClass();
+        mqd.z(str, "userId");
+        Integer num = (Integer) h6i.M(i1gVarU.a, true, false, new mh2(j, str, 8));
+        int iIntValue = num != null ? num.intValue() : -1;
+        if (iIntValue != -1) {
+            h1g.e.getClass();
+            return new h1g(iIntValue);
+        }
+        if (ub9Var == null || !ub9Var.k) {
+            h1g.e.getClass();
+            return new h1g(fbi.i());
+        }
+        h1g.e.getClass();
+        return (h1g) vvd.p(new h1g(fbi.i()), (wu1[]) null, new wu1[]{k1g.CanPromoteAdmin}, 1);
+    }
+
+    public static void o(po1 po1Var, pib pibVar) {
+        po1Var.getClass();
+        ue6 ue6Var = (ue6) po1Var.b;
+        le6 le6Var = (le6) po1Var.c;
+        mqd.z(le6Var, "context");
+        lo7.z(ue6Var, le6Var, (ze6) null, new ih(po1Var, pibVar, null), 2);
+    }
+
+    public static void p(po1 po1Var, pib pibVar) {
+        kn2 kn2Var = (kn2) po1Var.b;
+        le6 le6Var = (le6) po1Var.c;
+        mqd.z(le6Var, "context");
+        lo7.z(kn2Var, le6Var, (ze6) null, new rz0(po1Var, pibVar, null), 2);
+    }
+
+    public void A() {
+        synchronized (this) {
+            ((AtomicInteger) this.c).decrementAndGet();
+            if (((AtomicInteger) this.c).get() < 0) {
+                throw new IllegalStateException("Unbalanced call to unblock() detected.");
+            }
+        }
+    }
+
+    public void B(ChatData chatData) {
+        mqd.z(chatData, "data");
+        atl.n(((q9j) this.b).b, chatData.getChatId(), null);
+        veg vegVarV = ((ueg) this.c).V();
+        try {
+            vegVarV.h0(chatData);
+            vegVarV.O();
+            vegVarV.close();
+        } catch (Throwable th) {
+            try {
+                throw th;
+            } catch (Throwable th2) {
+                vd1.v(vegVarV, th);
+                throw th2;
+            }
+        }
+    }
+
+    public void C(ky5 ky5Var) {
+        ArrayList arrayList = (ArrayList) this.b;
+        arrayList.clear();
+        int size = ky5Var.v0.size();
+        for (int i = 0; i < size; i++) {
+            jy5 jy5Var = (jy5) ky5Var.v0.get(i);
+            iy5[] iy5VarArr = jy5Var.V;
+            iy5 iy5Var = iy5VarArr[0];
+            iy5 iy5Var2 = iy5.c;
+            if (iy5Var == iy5Var2 || iy5VarArr[1] == iy5Var2) {
+                arrayList.add(jy5Var);
+            }
+        }
+        ky5Var.x0.b = true;
+    }
+
+    public Object D(lib libVar) {
+        switch (this.a) {
+            case 17:
+                f90 f90Var = h6i.c;
+                try {
+                    return libVar.invoke((x35) this.c);
+                } catch (NullPointerException e) {
+                    if (f90Var.a()) {
+                        h6i.s("ClipboardLinkHandler", "NullPointerException in clipboardManager: " + e);
+                    }
+                    return null;
+                } catch (SecurityException e2) {
+                    if (f90Var.a()) {
+                        h6i.s("ClipboardLinkHandler", "SecurityException in clipboardManager: " + e2);
+                    }
+                    return null;
+                }
+            default:
+                f90 f90Var2 = h6i.c;
+                try {
+                    return libVar.invoke((y35) this.c);
+                } catch (NullPointerException e3) {
+                    if (f90Var2.a()) {
+                        h6i.s("ClipboardLinkHandler", "NullPointerException in clipboardManager: " + e3);
+                    }
+                    return null;
+                } catch (SecurityException e4) {
+                    if (f90Var2.a()) {
+                        h6i.s("ClipboardLinkHandler", "SecurityException in clipboardManager: " + e4);
+                    }
+                    return null;
+                }
+        }
+    }
+
+    public na9 b() {
+        return (na9) this.d;
+    }
+
+    public String c() {
+        return "https://cloud-api.yandex.net";
+    }
+
+    /* JADX WARN: Code duplicated, block: B:30:0x0087  */
+    /* JADX WARN: Code duplicated, block: B:33:0x008e  */
+    /* JADX WARN: Code duplicated, block: B:35:0x0091  */
+    /* JADX WARN: Code duplicated, block: B:40:0x00be A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:7:0x0017  */
+    @Override // defpackage.rja
+    public Object d(ic6 ic6Var) {
+        no1 no1Var;
+        evc evcVar;
+        jyc jycVar;
+        jyc jycVar2;
+        jyc jycVar3;
+        Object objB;
+        String str;
+        jlq jlqVar = (jlq) this.b;
+        if (ic6Var instanceof no1) {
+            no1Var = (no1) ic6Var;
+            int i = no1Var.i;
+            if ((i & Integer.MIN_VALUE) != 0) {
+                no1Var.i = i - Integer.MIN_VALUE;
+            } else {
+                no1Var = new no1(this, (kc6) ic6Var);
+            }
+        } else {
+            no1Var = new no1(this, (kc6) ic6Var);
+        }
+        Object objInvoke = no1Var.g;
+        xe6 xe6Var = xe6.a;
+        int i2 = no1Var.i;
+        int i3 = 2;
+        ic6 ic6Var2 = null;
+        if (i2 == 0) {
+            nzn.U(objInvoke);
+            r2 r2Var = (r2) this.c;
+            no1Var.i = 1;
+            objInvoke = r2Var.invoke(no1Var);
+            if (objInvoke != xe6Var) {
+            }
+            return xe6Var;
+        }
+        if (i2 == 1) {
+            nzn.U(objInvoke);
+        } else {
+            if (i2 != 2) {
+                if (i2 != 3) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                nzn.U(objInvoke);
+                return objInvoke;
+            }
+            jycVar3 = no1Var.f;
+            jycVar2 = no1Var.e;
+            evcVar = no1Var.d;
+            nzn.U(objInvoke);
+        }
+        str = (String) objInvoke;
+        if (str != null) {
+            if (p0o.b0(str)) {
+                str = null;
+            }
+            if (str != null) {
+                List list = ixc.a;
+                clm.c(jycVar3, "Authorization", "OAuth ".concat(str));
+            }
+        }
+        jycVar = jycVar2;
+        jycVar.d(sxc.b);
+        b0d b0dVar = new b0d(jycVar, evcVar);
+        oo1 oo1Var = new oo1(i3, 0, ic6Var2);
+        no1Var.d = null;
+        no1Var.e = null;
+        no1Var.f = null;
+        no1Var.i = 3;
+        objB = b0dVar.b(oo1Var, no1Var);
+        if (objB == xe6Var) {
+            return xe6Var;
+        }
+        return objB;
+        evcVar = (evc) objInvoke;
+        jycVar = new jyc();
+        tum.s(jycVar.a, jlqVar);
+        if (t5c.z(jlqVar)) {
+            lib libVar = (lib) this.d;
+            no1Var.d = evcVar;
+            no1Var.e = jycVar;
+            no1Var.f = jycVar;
+            no1Var.i = 2;
+            Object objInvoke2 = libVar.invoke(no1Var);
+            if (objInvoke2 != xe6Var) {
+                jycVar2 = jycVar;
+                objInvoke = objInvoke2;
+                jycVar3 = jycVar2;
+                str = (String) objInvoke;
+                if (str != null) {
+                    if (p0o.b0(str)) {
+                        str = null;
+                    }
+                    if (str != null) {
+                        List list2 = ixc.a;
+                        clm.c(jycVar3, "Authorization", "OAuth ".concat(str));
+                    }
+                }
+                jycVar = jycVar2;
+                jycVar.d(sxc.b);
+                b0d b0dVar2 = new b0d(jycVar, evcVar);
+                oo1 oo1Var2 = new oo1(i3, 0, ic6Var2);
+                no1Var.d = null;
+                no1Var.e = null;
+                no1Var.f = null;
+                no1Var.i = 3;
+
+===== va1.java =====
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class va1 extends ab1 {
+}
+
+===== xa1.java =====
+package defpackage;
+
+import android.content.Context;
+import android.os.Looper;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class xa1 extends ab1 {
+    public static final /* synthetic */ y5e[] e = {new o8h(0, xa1.class, "job", "getJob()Lcom/yandex/messaging/Cancelable;")};
+    public final nb1 c;
+    public final rym d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xa1(mwk mwkVar, nb1 nb1Var) {
+        super(mwkVar, null);
+        mqd.z(nb1Var, "existingAuthUid");
+        this.c = nb1Var;
+        rym rymVar = new rym(7);
+        this.d = rymVar;
+        wpm wpmVar = mwkVar.l;
+        ks6 ks6Var = (ks6) wpmVar.b;
+        Looper looper = (Looper) ks6Var.i.get();
+        g1j g1jVarJ = ks6Var.j();
+        bs6 bs6Var = (bs6) wpmVar.c;
+        ike ikeVarA = n68.a(bs6Var.F0);
+        ike ikeVarA2 = n68.a((tn3) wpmVar.d);
+        ike ikeVarA3 = n68.a((tr1) wpmVar.e);
+        Context context = ks6Var.a.a;
+        rld.q(context);
+        hu7 hu7Var = new hu7(context);
+        zmq zmqVar = (zmq) bs6Var.r0.get();
+        n2d n2dVar = (n2d) ks6Var.L0.get();
+        ne6 ne6Var = (ne6) ks6Var.k.get();
+        x71 x71Var = new x71(looper, g1jVarJ, ikeVarA, ikeVarA2, ikeVarA3, hu7Var, zmqVar, n2dVar, ne6Var);
+        tc1 tc1Var = new tc1();
+        ne6.c(ne6Var);
+        rymVar.B(this, e[0], new d1j(x71Var, nb1Var, tc1Var, this));
+    }
+
+    @Override // defpackage.ab1, defpackage.cw3
+    public final void cancel() {
+        this.d.B(this, e[0], (cw3) null);
+    }
+}
+
+===== ya1.java =====
+package defpackage;
+
+import android.os.Handler;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class ya1 extends ab1 {
+    public static final /* synthetic */ y5e[] e = {new o8h(0, ya1.class, "masterTokenCheckJob", "getMasterTokenCheckJob()Lcom/yandex/messaging/Cancelable;")};
+    public final nb1 c;
+    public final rym d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ya1(mwk mwkVar, nb1 nb1Var, po1 po1Var) {
+        super(mwkVar, po1Var);
+        mqd.z(mwkVar, "controller");
+        mqd.z(nb1Var, "existingAuthUid");
+        this.c = nb1Var;
+        this.d = new rym(7);
+    }
+
+    @Override // defpackage.ab1
+    public final void a() {
+        mwk mwkVar = this.a;
+        ne6.c(mwkVar.k);
+        nb1 nb1Var = this.c;
+        mqd.z(nb1Var, "authUid");
+        Handler handler = new Handler(mwkVar.d.getLooper());
+        gaa gaaVar = new gaa(new hwj(26));
+        handler.post(new axd(mwkVar, nb1Var, gaaVar, 14));
+        ew3 ew3Var = new ew3(new lne(handler, mwkVar, gaaVar, 13), 0);
+        this.d.B(this, e[0], ew3Var);
+    }
+
+    @Override // defpackage.ab1, defpackage.cw3
+    public final void cancel() {
+        ne6.c(this.a.k);
+        this.d.B(this, e[0], (cw3) null);
+    }
+}
+
+===== XIVA SECRET REFERENCES =====
+research/artifacts/decompiled-dex2/sources/defpackage/uc1.java:17:                return "YAMBAUTH " + this.b;
+research/artifacts/decompiled-dex2/sources/defpackage/uc1.java:45:                return "YAMBAUTH token";
+research/artifacts/decompiled-dex2/sources/defpackage/toa.java:9:        mqd.z(str, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/toa.java:31:        return wq1.j("FileTransferUserChat(personalGuid=", this.a, ", chatId=", this.b, ")");
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:9:import com.yandex.messaging.core.net.entities.xiva.XivaSecretContainer;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:10:import com.yandex.messaging.core.net.entities.xiva.XivaUser;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:68:                XivaSecretContainer xivaSecretContainer = (XivaSecretContainer) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:69:                mqd.z(xivaSecretContainer, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:71:                XivaUser xivaUser = xivaSecretContainer.user;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:75:                String str = xivaSecretContainer.secret.sign;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:77:                wzrVar.invoke(new w4s(strValueOf, str, xivaSecretContainer.secret.ts));
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:136:                znc zncVarJ = fde.j((quc) ((y8q) this.j).c, "request_user", XivaSecretContainer.class, oclVar);
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:140:                XivaUser xivaUser = ((XivaSecretContainer) ((ldi) zncVarJ).i).user;
+research/artifacts/decompiled-dex2/sources/defpackage/s78.java:9:        mqd.z(str, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/s78.java:31:        return wq1.j("DownloadKey(personalGuid=", this.a, ", fileId=", this.b, ")");
+research/artifacts/decompiled-dex2/sources/defpackage/po1.java:624:        mqd.z(str, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/po1.java:679:        mqd.z(str, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/rhg.java:23:        mqd.z(c4sVar, "xivaSecretHolder");
+research/artifacts/decompiled-dex2/sources/defpackage/hqq.java:9:        mqd.z(str, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/hqq.java:26:        return una.c("UserCredentials(personalGuid=", this.a, ")");
+research/artifacts/decompiled-dex2/sources/defpackage/pc4.java:8:        mqd.z(str, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/aco.java:509:        mqd.z(str2, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/roa.java:32:        return wq1.j("FileTransferNotificationTarget(personalGuid=", this.a, ", chatId=", this.b, ")");
