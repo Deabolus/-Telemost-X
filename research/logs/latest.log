@@ -1,33 +1,45 @@
-===== WORKSPACE =====
-/workspaces/-Telemost-X
-===== ARTIFACT DIRECTORIES =====
-research/artifacts
-research/artifacts/auth-stage-4
-research/artifacts/auth-stage-4/o
-research/artifacts/auth-stage-4/zum
-research/artifacts/pwh-simple
-research/artifacts/pwh-simple/sources
-research/artifacts/pwh-simple/sources/defpackage
-research/artifacts/dex
-research/artifacts/unpacked
-research/artifacts/decompiled-dex2
-research/artifacts/decompiled-dex2/sources
-research/artifacts/decompiled-dex2/sources/com
-research/artifacts/decompiled-dex2/sources/com/seiko
-research/artifacts/decompiled-dex2/sources/com/lightside
-research/artifacts/decompiled-dex2/sources/com/google
-research/artifacts/decompiled-dex2/sources/com/squareup
-research/artifacts/decompiled-dex2/sources/com/yandex
-research/artifacts/decompiled-dex2/sources/defpackage
-research/artifacts/decompiled-dex2/resources
-===== IMPORTANT SOURCE FILES =====
-research/notes/auth-stage-2/k0j.java
-research/notes/auth-stage-2/pwh.java
-research/artifacts/pwh-simple/sources/defpackage/pwh.java
-research/artifacts/decompiled-dex2/sources/defpackage/k0j.java
-research/artifacts/decompiled-dex2/sources/defpackage/pwh.java
-===== DEX FILES =====
-research/artifacts/dex/classes4.dex
-research/artifacts/dex/classes.dex
-research/artifacts/dex/classes2.dex
-research/artifacts/dex/classes3.dex
+
+========== classes ==========
+----- com.yandex.passport.internal.impl.o -----
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: com.yandex.passport.internal.impl.o
+----- defpackage.zum -----
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: defpackage.zum
+
+========== classes2 ==========
+----- com.yandex.passport.internal.impl.o -----
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: com.yandex.passport.internal.impl.o
+----- defpackage.zum -----
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: defpackage.zum
+
+========== classes3 ==========
+----- com.yandex.passport.internal.impl.o -----
+INFO  - loading ...
+INFO  - Saving class 'com.yandex.passport.internal.impl.o' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-5/classes3_com_yandex_passport_internal_impl_o/sources/com/yandex/passport/internal/impl/o.java'
+INFO  - done
+research/artifacts/auth-stage-5/classes3_com_yandex_passport_internal_impl_o/sources/com/yandex/passport/internal/impl/o.java
+----- defpackage.zum -----
+INFO  - loading ...
+INFO  - Saving class 'defpackage.zum' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-5/classes3_defpackage_zum/sources/defpackage/zum.java'
+ERROR - finished with errors, count: 1
+research/artifacts/auth-stage-5/classes3_defpackage_zum/sources/defpackage/zum.java
+
+========== classes4 ==========
+----- com.yandex.passport.internal.impl.o -----
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: com.yandex.passport.internal.impl.o
+----- defpackage.zum -----
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: defpackage.zum
+
+========== COPY FOUND SOURCES ==========
+'research/artifacts/auth-stage-5/classes3_com_yandex_passport_internal_impl_o/sources/com/yandex/passport/internal/impl/o.java' -> 'research/notes/auth-stage-5/o.java'
+'research/artifacts/auth-stage-5/classes3_defpackage_zum/sources/defpackage/zum.java' -> 'research/notes/auth-stage-5/zum.java'
+
+========== RESULT ==========
+total 40K
+-rw-rw-rw- 1 codespace codespace  25K Nov 13 10:05 o.java
+-rw-rw-rw- 1 codespace codespace 9.7K Nov 13 10:05 zum.java
