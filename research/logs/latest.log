@@ -1,32 +1,11 @@
+===== com.yandex.passport.internal.methods.x5 =====
+Extracted: research/notes/auth-stage-10/x5.java
+10 research/notes/auth-stage-10/x5.java
+===== com.yandex.passport.internal.methods.d3 =====
+Extracted: research/notes/auth-stage-10/d3.java
+18 research/notes/auth-stage-10/d3.java
 
-========== com.yandex.passport.internal.provider.InternalProvider ==========
-INFO  - loading ...
-INFO  - Saving class 'com.yandex.passport.internal.provider.InternalProvider' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-9/com_yandex_passport_internal_provider_InternalProvider/sources/com/yandex/passport/internal/provider/InternalProvider.java'
-INFO  - done
-
-========== com.yandex.passport.internal.util.k ==========
-INFO  - loading ...
-INFO  - Saving class 'com.yandex.passport.internal.util.k' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-9/com_yandex_passport_internal_util_k/sources/com/yandex/passport/internal/util/k.java'
-INFO  - done
-
-========== com.yandex.passport.internal.methods.n4 ==========
-INFO  - loading ...
-INFO  - Saving class 'com.yandex.passport.internal.methods.n4' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-9/com_yandex_passport_internal_methods_n4/sources/com/yandex/passport/internal/methods/n4.java'
-INFO  - done
-
-========== com.yandex.passport.internal.entities.b ==========
-INFO  - loading ...
-INFO  - Saving class 'com.yandex.passport.internal.entities.b' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-9/com_yandex_passport_internal_entities_b/sources/com/yandex/passport/internal/entities/b.java'
-INFO  - done
-
-========== FILES ==========
-total 32K
--rw-rw-rw- 1 codespace codespace  19K Nov 13 10:10 InternalProvider.java
--rw-rw-rw- 1 codespace codespace 1.8K Nov 13 10:11 b.java
--rw-rw-rw- 1 codespace codespace 1.7K Nov 13 10:10 k.java
--rw-rw-rw- 1 codespace codespace 1.1K Nov 13 10:11 n4.java
-  635 research/notes/auth-stage-9/InternalProvider.java
-   64 research/notes/auth-stage-9/b.java
-   60 research/notes/auth-stage-9/k.java
-   37 research/notes/auth-stage-9/n4.java
-  796 total
+===== RESULT =====
+total 8.0K
+-rw-rw-rw- 1 codespace codespace 504 Nov 13 10:12 d3.java
+-rw-rw-rw- 1 codespace codespace 284 Nov 13 10:12 x5.java
