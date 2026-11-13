@@ -1,0 +1,101 @@
+                    Long l = funVar.f;
+                    gqkVar2.d = l != null ? l.longValue() : 0L;
+                    arrayList.add(gqkVar2);
+                }
+                hqkVar.e = arrayList;
+            }
+            if (hqkVar == null) {
+                hqkVar = new hqk(j3fVar.a);
+            }
+            hvn hvnVarB = ovnVar.b();
+            String str = stickerMessageData.id;
+            mqd.y(str, "id");
+            String str2 = stickerMessageData.setId;
+            mqd.y(str2, "setId");
+            hvnVarB.getClass();
+            sjl sjlVar = hvnVarB.a;
+            be beVar = new be(str, str2, 17);
+            String str3 = (String) h6i.M(sjlVar, true, false, beVar);
+            String str4 = stickerMessageData.id;
+            mqd.y(str4, "id");
+            String str5 = stickerMessageData.setId;
+            mqd.y(str5, "setId");
+            gqk gqkVar3 = new gqk(str4, str5, str3);
+            j3fVar.c.getClass();
+            gqkVar3.d = System.currentTimeMillis();
+            ?? r0 = hqkVar.e;
+            mqd.z((Object) r0, "currents");
+            int i = 1;
+            int iMin = Math.min(20, r0.size() + (!r0.contains(gqkVar3) ? 1 : 0));
+            ArrayList arrayList2 = new ArrayList(iMin);
+            for (int i2 = 0; i2 < iMin; i2++) {
+                if (i2 == 0) {
+                    gqkVar = gqkVar3;
+                } else {
+                    if (mqd.s(r0.get(i2 - i), gqkVar3)) {
+                        i--;
+                    }
+                    if (i < 0) {
+                        throw new IllegalStateException("array contains not unique elements");
+                    }
+                    gqkVar = (gqk) r0.get(i2 - i);
+                }
+                arrayList2.add(gqkVar);
+            }
+            hqkVar.e = arrayList2;
+            ovnVar.a.w0(new ajm(18, ovnVar, hqkVar));
+            wunVar.a(wunVar.b.c());
+            fvnVar.d.a(fvnVar.a());
+        }
+        hl4 hl4Var = new hl4(this, j, ygiVar, q6jVar);
+        String str6 = ygiVar.a;
+        slh slhVar = this.h;
+        PlainMessage plainMessageA = slhVar.i.a(slhVar.a.a.b, ygiVar);
+        qlh qlhVar = new qlh(slhVar);
+        vx6 rlhVar = new rlh(hl4Var, slhVar, plainMessageA, ygiVar, str6, qlhVar, wfVar);
+        qhg qhgVar = slhVar.b.J;
+        qhgVar.getClass();
+        qlhVar.c = qhgVar.f(rlhVar, saa.c);
+        return qlhVar;
+    }
+
+    public final ReplyData f(String str, ForwardMessageRef[] forwardMessageRefArr) {
+        ReplyData replyDataA;
+        q9j q9jVar = this.b;
+        long j = q9jVar.a;
+        String str2 = q9jVar.b;
+        if (forwardMessageRefArr != null) {
+            ForwardMessageRef forwardMessageRef = (ForwardMessageRef) tt0.z0(forwardMessageRefArr);
+            if (mqd.s(str2, forwardMessageRef.chatId)) {
+                jkp jkpVar = new jkp(forwardMessageRef.timestamp);
+                ueg uegVar = this.c;
+                rt4 rt4VarK = uegVar.K(j, jkpVar);
+                try {
+                    boolean zMoveToFirst = rt4VarK.moveToFirst();
+                    t4l t4lVar = this.w;
+                    Resources resources = this.z;
+                    if (zMoveToFirst) {
+                        if (t4lVar.c && rt4VarK.z1()) {
+                            ReplyData.Companion companion = ReplyData.INSTANCE;
+                            mqd.y(resources, "resources");
+                            long j2 = forwardMessageRef.timestamp;
+                            companion.getClass();
+                            replyDataA = ReplyData.Companion.c(resources, rt4VarK, j2, str);
+                        } else {
+                            ReplyData.Companion companion2 = ReplyData.INSTANCE;
+                            mqd.y(resources, "resources");
+                            long j3 = forwardMessageRef.timestamp;
+                            companion2.getClass();
+                            replyDataA = ReplyData.Companion.a(resources, rt4VarK.i0(), rt4VarK.a(), j3, str, null);
+                        }
+                        rt4VarK.close();
+                        return replyDataA;
+                    }
+                    rt4VarK.close();
+                    if (t4lVar.c) {
+                        rt4 rt4VarM = uegVar.M(j, new ServerMessageRef(str2, forwardMessageRef.timestamp));
+                        while (rt4VarM.moveToNext()) {
+                            try {
+                                if (rt4VarM.z1()) {
+                                    Long lJ = rt4VarM.J();
+                                    long j4 = forwardMessageRef.timestamp;
