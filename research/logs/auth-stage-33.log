@@ -1,0 +1,431 @@
+===== FSC REFERENCES =====
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:51:                fsc fscVar = (fsc) this.h.get();
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:58:                mqd.z(fscVar, "hostEnvironmentProvider");
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:59:                return new s5i(fh9Var, zd3Var, c8kVar, k4eVar, str, ocgVar.b, new gse(fscVar, 1));
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:73:                fsc fscVar2 = (fsc) this.d.get();
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:80:                mqd.z(fscVar2, "hostEnvironmentProvider");
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:92:                    arrayList.add(new r7f(fscVar2, new cze()));
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:95:                        arrayList.add(new r7f(fscVar2, new cze()));
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:98:                    arrayList.add(new r7f(fscVar2, new cze()));
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:104:                        arrayList.add(new r7f(fscVar2, new cze()));
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:126:                fsc fscVar3 = (fsc) this.h.get();
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:133:                mqd.z(fscVar3, "hostEnvironmentProvider");
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:134:                return new s5i(fh9Var2, zd3Var2, c8kVar2, k4eVar2, str2, ocgVar3.b, new gse(fscVar3, 3));
+research/artifacts/decompiled-dex2/sources/defpackage/exc.java:14:    public final fsc d;
+research/artifacts/decompiled-dex2/sources/defpackage/exc.java:16:    public exc(n2d n2dVar, String str, String str2, fsc fscVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/exc.java:20:        this.d = fscVar;
+research/artifacts/decompiled-dex2/sources/defpackage/exc.java:26:        fsc fscVar = this.d;
+research/artifacts/decompiled-dex2/sources/defpackage/exc.java:27:        l0dVar.g((String) fscVar.a.d(fscVar.c));
+research/artifacts/decompiled-dex2/sources/defpackage/exc.java:57:        fsc fscVar = this.d;
+research/artifacts/decompiled-dex2/sources/defpackage/exc.java:58:        l0dVar.g((String) fscVar.a.d(fscVar.c));
+research/artifacts/decompiled-dex2/sources/defpackage/fsc.java:4:public final class fsc {
+research/artifacts/decompiled-dex2/sources/defpackage/fsc.java:13:    public fsc(lfg lfgVar, poq poqVar, t8n t8nVar, ro6 ro6Var, g2e g2eVar, tin tinVar, qsa qsaVar, pze pzeVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/fsc.java:15:        mqd.z(poqVar, "apiHostHandler");
+research/artifacts/decompiled-dex2/sources/defpackage/x4c.java:64:                        throw new CancellationException("View got offscreen");
+research/artifacts/decompiled-dex2/sources/defpackage/zfg.java:32:            fsc fscVar = excVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/zfg.java:33:            l0dVarF.g((String) fscVar.a.d(fscVar.c));
+research/artifacts/decompiled-dex2/sources/defpackage/wmk.java:17:    public final fsc e;
+research/artifacts/decompiled-dex2/sources/defpackage/wmk.java:23:    public wmk(n5d n5dVar, fsc fscVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/wmk.java:25:        mqd.z(fscVar, "hostEnvironmentProvider");
+research/artifacts/decompiled-dex2/sources/defpackage/wmk.java:27:        this.e = fscVar;
+research/artifacts/decompiled-dex2/sources/defpackage/wmk.java:112:            fsc fscVar = this.e;
+research/artifacts/decompiled-dex2/sources/defpackage/wmk.java:113:            String str = (String) fscVar.a.d(fscVar.d);
+research/artifacts/decompiled-dex2/sources/defpackage/vtb.java:53:                return new exc((n2d) this.b.get(), (String) this.c.get(), (String) this.d.get(), (fsc) this.e.get());
+research/artifacts/decompiled-dex2/sources/defpackage/rr1.java:27:    public final fsc k;
+research/artifacts/decompiled-dex2/sources/defpackage/rr1.java:36:    public rr1(ike ikeVar, Context context, x20 x20Var, ike ikeVar2, Looper looper, Executor executor, SharedPreferences sharedPreferences, k45 k45Var, pr1 pr1Var, ocg ocgVar, fsc fscVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/rr1.java:47:        mqd.z(fscVar, "hostEnvironmentProvider");
+research/artifacts/decompiled-dex2/sources/defpackage/rr1.java:58:        this.k = fscVar;
+research/artifacts/decompiled-dex2/sources/defpackage/rr1.java:129:            fsc fscVar = this.k;
+research/artifacts/decompiled-dex2/sources/defpackage/rr1.java:130:            l0dVar.g(fscVar.a());
+research/artifacts/decompiled-dex2/sources/defpackage/rr1.java:131:            l0dVar.b((String) fscVar.a.d(fscVar.g));
+research/artifacts/decompiled-dex2/sources/defpackage/g0k.java:70:                return new t4k((fsc) this.b.get(), (jpo) this.c.get());
+research/artifacts/decompiled-dex2/sources/defpackage/g0k.java:78:                return new wmk((n5d) this.b.get(), (fsc) this.c.get());
+research/artifacts/decompiled-dex2/sources/defpackage/r7f.java:7:    public final fsc a;
+research/artifacts/decompiled-dex2/sources/defpackage/r7f.java:11:    public r7f(fsc fscVar, cze czeVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/r7f.java:12:        this.a = fscVar;
+research/artifacts/decompiled-dex2/sources/defpackage/r7f.java:27:        fsc fscVar = this.a;
+research/artifacts/decompiled-dex2/sources/defpackage/r7f.java:28:        lfg lfgVar = fscVar.a;
+research/artifacts/decompiled-dex2/sources/defpackage/r7f.java:29:        boolean zS = mqd.s(str, (String) lfgVar.d(fscVar.c));
+research/artifacts/decompiled-dex2/sources/defpackage/r7f.java:34:        if (mqd.s(str, (String) lfgVar.d(fscVar.b)) && !arrayList.isEmpty() && "media_upload".equals(arrayList.get(0))) {
+research/artifacts/decompiled-dex2/sources/defpackage/tkm.java:250:            fsc fscVar = (fsc) ze3Var.h;
+research/artifacts/decompiled-dex2/sources/defpackage/tkm.java:251:            g5lVar.i("https://" + ((String) fscVar.a.d(fscVar.f)) + "/v1/telemost/stat/log");
+research/artifacts/decompiled-dex2/sources/defpackage/tkm.java:284:        fsc fscVar2 = (fsc) ze3Var.h;
+research/artifacts/decompiled-dex2/sources/defpackage/tkm.java:285:        g5lVar.i("https://" + ((String) fscVar2.a.d(fscVar2.f)) + "/v1/telemost/stat/log");
+research/artifacts/decompiled-dex2/sources/defpackage/wdj.java:55:                return new j7d((pr1) this.b.get(), new z39(), (lfg) this.c.get(), (nk7) this.d.get(), (fsc) this.e.get());
+research/artifacts/decompiled-dex2/sources/defpackage/ze3.java:212:        g5lVar.i("https://" + ((fsc) this.h).a() + "/rtc/call_feedback");
+research/artifacts/decompiled-dex2/sources/defpackage/ze3.java:1764:    public ze3(zd3 zd3Var, ool oolVar, n2d n2dVar, String str, String str2, k4e k4eVar, fsc fscVar, SharedPreferences sharedPreferences) {
+research/artifacts/decompiled-dex2/sources/defpackage/ze3.java:1772:        mqd.z(fscVar, "hostEnvironmentProvider");
+research/artifacts/decompiled-dex2/sources/defpackage/ze3.java:1780:        this.h = fscVar;
+research/artifacts/decompiled-dex2/sources/defpackage/t4k.java:5:    public final fsc a;
+research/artifacts/decompiled-dex2/sources/defpackage/t4k.java:8:    public t4k(fsc fscVar, jpo jpoVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/t4k.java:9:        this.a = fscVar;
+research/artifacts/decompiled-dex2/sources/defpackage/t4k.java:14:        fsc fscVar = this.a;
+research/artifacts/decompiled-dex2/sources/defpackage/t4k.java:15:        String str2 = (String) fscVar.a.d(fscVar.b);
+research/artifacts/decompiled-dex2/sources/defpackage/quc.java:23:    public quc(n2d n2dVar, x20 x20Var, String str, String str2, k4e k4eVar, c8k c8kVar, r7j r7jVar, btm btmVar, fsc fscVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/quc.java:32:        mqd.z(fscVar, "hostEnvironmentProvider");
+research/artifacts/decompiled-dex2/sources/defpackage/quc.java:42:        l0dVar.g((String) fscVar.a.d(fscVar.b));
+research/artifacts/decompiled-dex2/sources/defpackage/cf1.java:48:                return new ze3((zd3) this.b.get(), (ool) this.i.get(), (n2d) this.c.get(), (String) this.d.get(), (String) this.e.get(), (k4e) this.f.get(), (fsc) this.g.get(), (SharedPreferences) this.h.get());
+research/artifacts/decompiled-dex2/sources/defpackage/gf.java:128:                fsc fscVar = (fsc) this.h.get();
+research/artifacts/decompiled-dex2/sources/defpackage/gf.java:135:                mqd.z(fscVar, "hostEnvironmentProvider");
+research/artifacts/decompiled-dex2/sources/defpackage/gf.java:136:                return new s5i(fh9Var, zd3Var, c8kVar, k4eVar, str, ocgVar.b, new gse(fscVar, 0));
+research/artifacts/decompiled-dex2/sources/defpackage/rlk.java:10:    public final fsc c;
+research/artifacts/decompiled-dex2/sources/defpackage/rlk.java:17:    public rlk(Context context, n5d n5dVar, fsc fscVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/rlk.java:20:        mqd.z(fscVar, "hostEnvironmentProvider");
+research/artifacts/decompiled-dex2/sources/defpackage/rlk.java:23:        this.c = fscVar;
+research/artifacts/decompiled-dex2/sources/defpackage/rlk.java:41:        fsc fscVar = rlkVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/rlk.java:42:        sw1 sw1VarJ = rlkVar.b.j("https://" + ((String) fscVar.a.d(fscVar.c)) + "/reactions/" + i + "/small-48");
+research/artifacts/decompiled-dex2/sources/defpackage/tr1.java:75:                return new rr1(ikeVarA, context, x20Var, ikeVarA2, looper, AsyncTask.THREAD_POOL_EXECUTOR, (SharedPreferences) this.g.get(), new k45(), (pr1) this.h.get(), (ocg) this.i.get(), (fsc) this.j.get());
+research/artifacts/decompiled-dex2/sources/defpackage/tr1.java:85:                fsc fscVar = (fsc) this.j.get();
+research/artifacts/decompiled-dex2/sources/defpackage/tr1.java:94:                mqd.z(fscVar, "hostEnvironmentProvider");
+research/artifacts/decompiled-dex2/sources/defpackage/tr1.java:115:                return new quc((n2d) this.b.get(), (x20) this.c.get(), (String) this.d.get(), (String) this.e.get(), (k4e) this.f.get(), (c8k) this.g.get(), (r7j) this.h.get(), (btm) this.i.get(), (fsc) this.j.get());
+
+===== ENVIRONMENT CLASSES =====
+===== g91 =====
+package defpackage;
+
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v1 g91[], still in use, count: 1, list:
+  (r0v1 g91[]) from 0x0039: INVOKE (r0v1 g91[]) STATIC call: oyg.B(java.lang.Enum[]):lg9
+	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:164)
+	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:129)
+	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:101)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at jadx.core.utils.InsnRemover.unbindInsns(InsnRemover.java:100)
+	at jadx.core.utils.InsnRemover.removeAllAndUnbind(InsnRemover.java:257)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:187)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:102)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class g91 {
+    d("Production", false),
+    e("TeamProduction", true),
+    f("Testing", false),
+    g("TeamTesting", true),
+    h("Rc", false);
+
+    public static final z39 c;
+    public final int a;
+    public final boolean b;
+
+    static {
+        oyg.B(g91VarArr);
+        c = new z39();
+    }
+
+    public g91(String str, boolean z) {
+        super(str, i);
+        this.a = i;
+        this.b = z;
+    }
+
+    public static g91 valueOf(String str) {
+        return (g91) Enum.valueOf(g91.class, str);
+    }
+
+    public static g91[] values() {
+        return (g91[]) i.clone();
+    }
+}
+===== gfg =====
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public interface gfg {
+    Object C();
+
+    Object I();
+
+    Object K();
+
+    Object L();
+
+    Object V();
+
+    Object q();
+}
+===== jfg =====
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class jfg extends lfg {
+    public jfg() {
+        super("TESTING", 0);
+    }
+
+    @Override // defpackage.lfg
+    public final g91 b() {
+        return g91.f;
+    }
+
+    @Override // defpackage.lfg
+    public final String c() {
+        return "https://passport-test.yandex.ru";
+    }
+
+    @Override // defpackage.lfg
+    public final Object d(gfg gfgVar) {
+        mqd.z(gfgVar, "handler");
+        return gfgVar.q();
+    }
+
+    @Override // defpackage.lfg
+    public final boolean e() {
+        return true;
+    }
+
+    @Override // defpackage.lfg
+    public final String h() {
+        return "https://pay-test.mail.yandex.ru/transaction/%s";
+    }
+}
+===== efg =====
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class efg extends lfg {
+    public efg() {
+        super("ALPHA", 1);
+    }
+
+    @Override // defpackage.lfg
+    public final g91 b() {
+        return g91.d;
+    }
+
+    @Override // defpackage.lfg
+    public final Object d(gfg gfgVar) {
+        mqd.z(gfgVar, "handler");
+        return gfgVar.V();
+    }
+
+    @Override // defpackage.lfg
+    public final boolean e() {
+        return true;
+    }
+
+    @Override // defpackage.lfg
+    public final String h() {
+        return "https://pay-test.mail.yandex.ru/transaction/%s";
+    }
+}
+===== hfg =====
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class hfg extends lfg {
+    public hfg() {
+        super("PRODUCTION", 2);
+    }
+
+    @Override // defpackage.lfg
+    public final g91 b() {
+        return g91.d;
+    }
+
+    @Override // defpackage.lfg
+    public final Object d(gfg gfgVar) {
+        mqd.z(gfgVar, "handler");
+        return gfgVar.I();
+    }
+
+    @Override // defpackage.lfg
+    public final boolean e() {
+        return true;
+    }
+
+    @Override // defpackage.lfg
+    public final String h() {
+        return "https://pay.yandex.ru/transaction/%s";
+    }
+}
+===== kfg =====
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class kfg extends lfg {
+    public kfg() {
+        super("TESTING_TEAM", 3);
+    }
+
+    @Override // defpackage.lfg
+    public final g91 b() {
+        return g91.e;
+    }
+
+    @Override // defpackage.lfg
+    public final String c() {
+        return "https://passport-test.yandex-team.ru";
+    }
+
+    @Override // defpackage.lfg
+    public final Object d(gfg gfgVar) {
+        mqd.z(gfgVar, "handler");
+        return gfgVar.L();
+    }
+
+    @Override // defpackage.lfg
+    public final boolean e() {
+        return false;
+    }
+
+    @Override // defpackage.lfg
+    public final String h() {
+        return "https://pay-test.mail.yandex.ru/transaction/%s";
+    }
+}
+===== ffg =====
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class ffg extends lfg {
+    public ffg() {
+        super("ALPHA_TEAM", 4);
+    }
+
+    @Override // defpackage.lfg
+    public final g91 b() {
+        return g91.e;
+    }
+
+    @Override // defpackage.lfg
+    public final String c() {
+        return "https://passport.yandex-team.ru";
+    }
+
+    @Override // defpackage.lfg
+    public final Object d(gfg gfgVar) {
+        mqd.z(gfgVar, "handler");
+        return gfgVar.C();
+    }
+
+    @Override // defpackage.lfg
+    public final boolean e() {
+        return false;
+    }
+
+    @Override // defpackage.lfg
+    public final String h() {
+        return "https://pay-test.mail.yandex.ru/transaction/%s";
+    }
+}
+===== ifg =====
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class ifg extends lfg {
+    public ifg() {
+        super("PRODUCTION_TEAM", 5);
+    }
+
+    @Override // defpackage.lfg
+    public final g91 b() {
+        return g91.e;
+    }
+
+    @Override // defpackage.lfg
+    public final String c() {
+        return "https://passport.yandex-team.ru";
+    }
+
+    @Override // defpackage.lfg
+    public final Object d(gfg gfgVar) {
+        mqd.z(gfgVar, "handler");
+        return gfgVar.K();
+    }
+
+    @Override // defpackage.lfg
+    public final boolean e() {
+        return false;
+    }
+
+    @Override // defpackage.lfg
+    public final String h() {
+        return "https://pay.yandex.ru/transaction/%s";
+    }
+}
+===== m38 =====
+package defpackage;
+
+import android.app.Activity;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public interface m38 {
+    Activity getActivity();
+
+    x20 getAnalytics();
+
+    mpb getGetChatInfoUseCase();
+
+    lfg q();
+
+    kb1 r();
+
+    n5d s();
+
+    gl0 t();
+
+    yjl u();
+
+    ay7 v();
+
+    k4e w();
+}
+
+===== HOST HANDLER CONSTRUCTORS =====
+research/artifacts/decompiled-dex2/sources/com/yandex/attachments/common/ui/EditorBrick.java:724:        ((g79) i()).i.setCanvasListener(new t8n(this, 24));
+research/artifacts/decompiled-dex2/sources/com/yandex/div/legacy/dagger/Yatagan$DivComponent.java:203:        i48 i48Var2 = new i48(lk2Var, r86VarF, lk2Var2, pkbVar, a38Var, tmmVar, r86Var, pkbVar2, a38Var2, tmmVar2, new mcq(this.h, contextI4, fgrVarJ4, xa4Var2, es6VarG3, q78Var3), new poq(new CachingProviderImpl(this), 21));
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/audio/AudioPlayerPlugin.java:36:        this.component = new poq(dependencies, 14);
+research/artifacts/decompiled-dex2/sources/defpackage/vd3.java:32:                return new xdk(ktrVar, neVar, new OkHttpClient(w0iVar), new t8n(applicationContext), 48);
+research/artifacts/decompiled-dex2/sources/defpackage/wa.java:23:    public static final qsa b = new qsa(6);
+research/artifacts/decompiled-dex2/sources/defpackage/gx6.java:113:                return new qsa(0);
+research/artifacts/decompiled-dex2/sources/defpackage/j38.java:71:        poq poqVar = new poq(new j30[]{ch2Var, vkiVar}, 8);
+research/artifacts/decompiled-dex2/sources/defpackage/fsc.java:15:        mqd.z(poqVar, "apiHostHandler");
+research/artifacts/decompiled-dex2/sources/defpackage/lcp.java:17:        this.c = new poq(view.getContext(), new as(this, 8), (Handler) null);
+research/artifacts/decompiled-dex2/sources/defpackage/eb4.java:38:        ((dvn) this.s.get()).k = new t8n(this, 12);
+research/artifacts/decompiled-dex2/sources/defpackage/rx1.java:120:            poq poqVar = new poq(new j30[]{ch2Var, vkiVar}, 8);
+research/artifacts/decompiled-dex2/sources/defpackage/eu6.java:128:        poq poqVar = new poq((Activity) this.j.get());
+research/artifacts/decompiled-dex2/sources/defpackage/su0.java:32:                    return new poq((Bitmap) obj, 7);
+research/artifacts/decompiled-dex2/sources/defpackage/su0.java:55:                    return new poq((Drawable) obj, 22);
+research/artifacts/decompiled-dex2/sources/defpackage/ski.java:201:        poq poqVar = new poq(stickersView.getContext(), new rki(1, stickersView, this), (Handler) null);
+research/artifacts/decompiled-dex2/sources/defpackage/iu6.java:32:        poq poqVar = new poq(this.a);
+research/artifacts/decompiled-dex2/sources/defpackage/mv2.java:58:        new qsa(10);
+research/artifacts/decompiled-dex2/sources/defpackage/mv2.java:59:        poq poqVar = new poq(17);
+research/artifacts/decompiled-dex2/sources/defpackage/gh9.java:17:        this.c = new poq(view.getContext(), new as(this, 6), (Handler) null);
+research/artifacts/decompiled-dex2/sources/defpackage/qsa.java:11:    public static final qsa b = new qsa(1);
+research/artifacts/decompiled-dex2/sources/defpackage/qsa.java:12:    public static final qsa c = new qsa(2);
+research/artifacts/decompiled-dex2/sources/defpackage/qsa.java:13:    public static final qsa d = new qsa(3);
+research/artifacts/decompiled-dex2/sources/defpackage/qsa.java:14:    public static final qsa e = new qsa(4);
+research/artifacts/decompiled-dex2/sources/defpackage/qsa.java:15:    public static final qsa f = new qsa(5);
+research/artifacts/decompiled-dex2/sources/defpackage/dd1.java:31:        this.h = new t8n(this, 7);
+research/artifacts/decompiled-dex2/sources/defpackage/ez1.java:71:        this.j1 = new poq(view.getContext(), new as(this, 1), (Handler) null);
+research/artifacts/decompiled-dex2/sources/defpackage/otb.java:32:        this.h = new t8n(29);
+research/artifacts/decompiled-dex2/sources/defpackage/bhg.java:110:        zggVarA.b.put("authState", this.e.a(new qsa(7)));
+research/artifacts/decompiled-dex2/sources/defpackage/pl0.java:16:                return new poq((ihg) this.b.get());
+research/artifacts/decompiled-dex2/sources/defpackage/pl0.java:20:                return new t8n((ihg) this.b.get());
+research/artifacts/decompiled-dex2/sources/defpackage/uu4.java:150:        this.H = new poq(context, new as(this, 2), (Handler) null);
+research/artifacts/decompiled-dex2/sources/defpackage/xfg.java:46:                    xgf.s0(map, tt0.g0(new ypi[]{new ypi("fpsLite", Integer.valueOf(adbVarC.b)), new ypi("fps", Integer.valueOf(adbVarC.a)), new ypi("framesCount", Integer.valueOf(adbVarC.c)), new ypi("longFramesCount", Integer.valueOf(adbVarC.d)), new ypi("criticalFramesCount", Integer.valueOf(adbVarC.e)), new ypi("longestFrameTime", Long.valueOf(adbVarC.f)), new ypi("refreshRate", Integer.valueOf(adbVarC.g)), new ypi("hostName", bhgVar.g), new ypi("authState", bhgVar.e.a(new qsa(7)))}));
+research/artifacts/decompiled-dex2/sources/defpackage/qx0.java:46:        jx0 jx0Var = new jx0(activity, n5dVar, z ? new ro6(this) : new eih(new ro6(this), 7), new t8n(this, 5), new yjl(this, 8), new d6c(this), wz4Var, oz4Var.f, v9qVar, oz4Var);
+research/artifacts/decompiled-dex2/sources/defpackage/peg.java:284:                    ypi ypiVar = new ypi("user status", ((dd1) ikeVar.get()).a(new qsa(7)));
+research/artifacts/decompiled-dex2/sources/defpackage/bon.java:17:        this.c = new poq(view.getContext(), new as(this, 7), (Handler) null);
+research/artifacts/decompiled-dex2/sources/defpackage/nrq.java:38:    public static final qsa e = new qsa(21);
+research/artifacts/decompiled-dex2/sources/defpackage/x3a.java:26:        b = new qsa(12);
+
+===== API DOMAIN STRINGS =====
+--- research/artifacts/dex/classes.dex ---
+ files.messenger.alpha.yandex.net
+ images.messenger.test.yandex.net
+!images.messenger.alpha.yandex.net
+%backend.messenger.test.yandex-team.ru
+&backend.messenger.alpha.yandex-team.ru
+files.messenger.test.yandex.net
+--- research/artifacts/dex/classes2.dex ---
+apiHostHandler
+messenger.alpha.yandex.ru
+messenger.testing.yandex.ru
+telemostCloudApiHostHandler
+--- research/artifacts/dex/classes3.dex ---
+api.messenger.alpha.yandex.net
+api.messenger.test.yandex.net
+api.messenger.yandex.net
+--- research/artifacts/dex/classes4.dex ---
