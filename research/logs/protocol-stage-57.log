@@ -1,0 +1,852 @@
+]633;E;echo "========== fmg.java ==========";5fbee356-0123-495e-b37b-dc4eda18f69b]633;C========== fmg.java ==========
+package defpackage;
+
+import android.os.Handler;
+import android.os.Looper;
+import android.os.SystemClock;
+import com.yandex.messaging.core.net.entities.proto.PostMessage;
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+import com.yandex.messaging.json.JsonAdapter;
+import java.util.concurrent.TimeUnit;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class fmg implements mgn {
+    public final qgn a;
+    public final String b;
+    public final long c;
+    public final Object d;
+    public final Handler e;
+    public final JsonAdapter f;
+    public final JsonAdapter g;
+    public String h;
+    public final bq3 i;
+    public final h4s j;
+    public boolean k;
+    public boolean l;
+    public final String m;
+    public final /* synthetic */ gmg n;
+
+    public fmg(gmg gmgVar, qgn qgnVar, String str, String str2, boolean z, l0d l0dVar, w3s w3sVar, String str3) {
+        fmg fmgVar;
+        h4s t4sVar;
+        mqd.z(str, "serviceName");
+        mqd.z(str2, "sessionId");
+        mqd.z(l0dVar, "xivaUrl");
+        mqd.z(w3sVar, "xivaDomain");
+        mqd.z(str3, "serviceTags");
+        this.n = gmgVar;
+        this.a = qgnVar;
+        this.b = str;
+        this.c = TimeUnit.MINUTES.toMillis(10L);
+        this.d = new Object();
+        this.e = new Handler();
+        k4e k4eVar = gmgVar.d;
+        k4eVar.getClass();
+        this.f = k4eVar.a(ServerMessage.class).e();
+        k4eVar.getClass();
+        this.g = k4eVar.a(PostMessage.class).e();
+        this.i = new bq3(qgnVar, gmgVar.f, gmgVar.g);
+        ze3 ze3Var = gmgVar.a;
+        String strK = k87.k(str, ":", str3);
+        gmgVar.e.getClass();
+        ze3Var.getClass();
+        mqd.z(strK, "serviceName");
+        if (z) {
+            fmgVar = this;
+            t4sVar = new r4s(ze3Var, fmgVar, strK, "android", str2, w3sVar);
+        } else {
+            fmgVar = this;
+            l0dVar.b("v2/subscribe/websocket");
+            l0dVar.d("service", strK);
+            l0dVar.d("client", "android");
+            l0dVar.d("session", str2);
+            t4sVar = new t4s(ze3Var, this, l0dVar.e());
+        }
+        fmgVar.j = t4sVar;
+        fmgVar.m = "xiva";
+    }
+
+    public static final void a(fmg fmgVar) {
+        if (!fmgVar.a.d()) {
+            bq3 bq3Var = fmgVar.i;
+            if (((g4s) bq3Var.f) instanceof e4s) {
+                bq3Var.d();
+            }
+            if (!((g4s) bq3Var.f).equals(vzk.h)) {
+                bq3Var.f = xzk.j;
+            }
+            fmgVar.j.stop();
+            return;
+        }
+        Handler handler = fmgVar.e;
+        long j = fmgVar.c;
+        Object obj = fmgVar.d;
+        emg emgVar = new emg(fmgVar, 0);
+        if (obj == null) {
+            handler.postDelayed(emgVar, j);
+        } else {
+            o8f.t0(handler, emgVar, obj, j);
+        }
+    }
+
+    @Override // defpackage.mgn
+    public final void b(String str) {
+        mqd.z(str, "reason");
+        atl.s(this.e.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.k);
+        if (h6i.c.a()) {
+            h6i.s("Xiva", "Restart request: ".concat(str));
+        }
+        bq3 bq3Var = this.i;
+        bq3Var.getClass();
+        bq3Var.b = true;
+        try {
+            this.j.b(str);
+            bq3Var.b = false;
+            if (((g4s) bq3Var.f) instanceof e4s) {
+                bq3Var.d();
+                bq3Var.e(tgn.Restart);
+            }
+        } catch (Throwable th) {
+            bq3Var.b = false;
+            throw th;
+        }
+    }
+
+    @Override // defpackage.mgn
+    public final boolean c() {
+        return this.l && !this.k;
+    }
+
+    @Override // defpackage.mgn
+    public final void close() {
+        Handler handler = this.e;
+        atl.s(handler.getLooper(), Looper.myLooper(), null);
+        handler.removeCallbacksAndMessages(this.d);
+        this.k = true;
+        bq3 bq3Var = this.i;
+        if (((g4s) bq3Var.f) instanceof e4s) {
+            bq3Var.d();
+        }
+        bq3Var.f = vzk.h;
+        this.j.close();
+        this.h = null;
+    }
+
+    public final cw3 d(lib libVar) {
+        atl.s(this.e.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.k);
+        return this.a.a(libVar);
+    }
+
+    public final boolean e() {
+        return c() && this.j.a();
+    }
+
+    @Override // defpackage.mgn
+    public final cw3 f(sgn sgnVar, taa taaVar) {
+        atl.s(this.e.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.k);
+        return this.j.d(new oks(sgnVar, this.n, this), taaVar);
+    }
+
+    public final boolean g() {
+        atl.s(this.e.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.k);
+        return this.a.d();
+    }
+
+    public final void h(String str) {
+        atl.s(this.e.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.k);
+        bq3 bq3Var = this.i;
+        if (((g4s) bq3Var.f) instanceof e4s) {
+            bq3Var.d();
+        }
+        this.a.m(str);
+    }
+
+    public final void i() {
+        Handler handler = this.e;
+        atl.s(handler.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.k);
+        bq3 bq3Var = this.i;
+        ((k45) bq3Var.e).getClass();
+        long jElapsedRealtime = SystemClock.elapsedRealtime();
+        g4s g4sVar = (g4s) bq3Var.f;
+        if (!g4sVar.equals(vzk.h)) {
+            if (g4sVar instanceof f4s) {
+                tfg tfgVar = tfg.a;
+                tfg.f(jElapsedRealtime - ((f4s) g4sVar).a, "Connection.ConnectMs");
+            } else if (g4sVar instanceof e4s) {
+                bq3Var.d();
+            } else {
+                if (!g4sVar.equals(xzk.j)) {
+                    throw new mnh();
+                }
+                bq3Var.f(tgn.Reconnect);
+            }
+            bq3Var.f = new e4s(jElapsedRealtime, ((q8b) bq3Var.c).a(jElapsedRealtime));
+        }
+        this.a.i();
+        Object obj = this.d;
+        handler.removeCallbacksAndMessages(obj);
+        emg emgVar = new emg(this, 1);
+        long j = this.c;
+        if (obj == null) {
+            handler.postDelayed(emgVar, j);
+        } else {
+            o8f.t0(handler, emgVar, obj, j);
+        }
+    }
+
+    @Override // defpackage.mgn
+    public final boolean j() {
+        return true;
+    }
+
+    @Override // defpackage.mgn
+    public final String k() {
+        return this.m;
+    }
+
+    @Override // defpackage.mgn
+    public final void l(c8q c8qVar, ClientMessage clientMessage) {
+        atl.s(this.e.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.k);
+        gmg gmgVar = this.n;
+        PostMessage postMessage = new PostMessage(clientMessage, gmgVar.e.b);
+        if (h6i.c.a()) {
+            h6i.s("Xiva", "push: ".concat(this.g.c(postMessage)));
+        }
+        this.j.e(c8qVar, gmgVar.c.h(postMessage, this.h));
+    }
+
+    /* JADX INFO: Thrown type has an unknown type hierarchy: mnh */
+    public final void m(boolean z) throws mnh {
+        bq3 bq3Var = this.i;
+        g4s g4sVar = (g4s) bq3Var.f;
+        if (!mqd.s(g4sVar, vzk.h)) {
+            if (g4sVar instanceof f4s) {
+                if (!z && bq3Var.a) {
+                    bq3Var.e((tgn) bq3Var.g);
+                }
+            } else if (mqd.s(g4sVar, xzk.j)) {
+                bq3Var.e(z ? tgn.Restart : (tgn) bq3Var.g);
+            } else {
+                if (!(g4sVar instanceof e4s)) {
+                    throw new mnh();
+                }
+                bq3Var.d();
+                bq3Var.e(z ? tgn.Restart : (tgn) bq3Var.g);
+            }
+        }
+        this.a.q(z);
+    }
+
+    public final void n() {
+        Handler handler = this.e;
+        atl.s(handler.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.k);
+        handler.removeCallbacksAndMessages(this.d);
+        bq3 bq3Var = this.i;
+        qgn qgnVar = (qgn) bq3Var.d;
+        g4s g4sVar = (g4s) bq3Var.f;
+        if (g4sVar instanceof e4s) {
+            bq3Var.d();
+            if (qgnVar.d()) {
+                bq3Var.e(bq3Var.b ? tgn.Restart : tgn.Reconnect);
+            }
+        } else if (g4sVar.equals(xzk.j)) {
+            if (qgnVar.d()) {
+                bq3Var.e(bq3Var.b ? tgn.Restart : (tgn) bq3Var.g);
+            }
+        } else if (!g4sVar.equals(vzk.h) && !(g4sVar instanceof f4s)) {
+            throw new mnh();
+        }
+        this.a.o();
+        this.h = null;
+    }
+
+    public final void o(String str, String str2, long j, ServerMessage serverMessage) {
+        atl.s(this.e.getLooper(), Looper.myLooper(), null);
+        if (h6i.c.a()) {
+            h6i.s("Xiva", "onPush: ".concat(this.f.c(serverMessage)));
+        }
+        this.a.n(j, serverMessage);
+    }
+
+    @Override // defpackage.mgn
+    public final void p(tgn tgnVar) {
+        atl.s(this.e.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.k);
+        bq3 bq3Var = this.i;
+        bq3Var.getClass();
+        bq3Var.g = tgnVar;
+        bq3Var.a = !((qgn) bq3Var.d).d();
+        this.j.c();
+        this.l = true;
+    }
+
+    public final ServerMessage q(String str, String str2, rh2 rh2Var) {
+        if (str.equals(this.b) && str2.equals("delivery")) {
+            return (ServerMessage) this.n.c.i(rh2Var, ServerMessage.class, "push");
+        }
+        return null;
+    }
+}
+========== pj.java ==========
+package defpackage;
+
+import com.yandex.messaging.techprofile.accounts.AuthUid;
+import java.util.LinkedHashMap;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class pj {
+    public final ne6 a;
+    public final k45 b;
+    public final LinkedHashMap c;
+    public final LinkedHashMap d;
+    public final LinkedHashMap e;
+
+    public pj(ne6 ne6Var, k45 k45Var) {
+        mqd.z(ne6Var, "dispatchers");
+        mqd.z(k45Var, "clock");
+        this.a = ne6Var;
+        this.b = k45Var;
+        this.c = new LinkedHashMap();
+        this.d = new LinkedHashMap();
+        this.e = new LinkedHashMap();
+    }
+
+    public final mgn a(AuthUid authUid) {
+        qg5 qg5Var = (pg5) this.c.get(authUid);
+        if (qg5Var == null || !((xxd) qg5Var).h0()) {
+            return null;
+        }
+        return ((oj) qg5Var.F()).b;
+    }
+}
+========== trh.java ==========
+package defpackage;
+
+import com.google.protobuf.DescriptorProtos;
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.concurrent.CancellationException;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final /* synthetic */ class trh implements pib {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ trh(Object obj, int i) {
+        this.a = i;
+        this.b = obj;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:103:0x0308 A[DONT_INVERT] */
+    /* JADX WARN: Code duplicated, block: B:104:0x030a A[Catch: all -> 0x02fd, LOOP:1: B:87:0x02c5->B:104:0x030a, LOOP_END, TryCatch #0 {all -> 0x02fd, blocks: (B:80:0x02a0, B:82:0x02b0, B:84:0x02b7, B:87:0x02c5, B:89:0x02d5, B:91:0x02e1, B:93:0x02ea, B:95:0x02f3, B:100:0x02ff, B:101:0x0302, B:104:0x030a, B:114:0x032f, B:105:0x030d, B:106:0x0313, B:108:0x0319, B:110:0x0321, B:113:0x032b), top: B:189:0x02a0 }] */
+    /* JADX WARN: Code duplicated, block: B:200:0x032f A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:57:0x0223  */
+    public final Object invoke(Object obj, Object obj2) {
+        fw3 fw3VarW;
+        switch (this.a) {
+            case 0:
+                final psh pshVar = (psh) this.b;
+                om5 om5Var = (fm5) obj;
+                int iIntValue = ((Integer) obj2).intValue();
+                om5 om5Var2 = om5Var;
+                if (om5Var2.S(iIntValue & 1, (iIntValue & 3) != 2)) {
+                    yz8 yz8Var = yz8.a;
+                    boolean zH = om5Var2.h(pshVar);
+                    Object objP = om5Var2.P();
+                    if (zH || objP == em5.a) {
+                        final int i = 1;
+                        objP = new kib() { // from class: qrh
+                            public final Object invoke() {
+                                switch (i) {
+                                    case 0:
+                                        pshVar.I(grh.a);
+                                        break;
+                                    default:
+                                        pshVar.I(zqh.a);
+                                        break;
+                                }
+                                return fcq.a;
+                            }
+                        };
+                        om5Var2.m0(objP);
+                    }
+                    nr0.h(yz8Var, null, null, 0L, (kib) objP, null, null, null, null, om5Var2, 54, 492);
+                } else {
+                    om5Var2.V();
+                }
+                return fcq.a;
+            case 1:
+                ((Integer) obj2).getClass();
+                as1.b((pui) this.b, (fm5) obj, hk3.P(1));
+                return fcq.a;
+            case 2:
+                ((Integer) obj2).getClass();
+                ((ffj) this.b).y(hk3.P(7), (fm5) obj);
+                return fcq.a;
+            case 3:
+                cqj cqjVar = (cqj) this.b;
+                Integer num = (Integer) obj;
+                int iIntValue2 = num.intValue();
+                boolean zBooleanValue = ((Boolean) obj2).booleanValue();
+                boolean z = cqjVar.i;
+                ArrayList arrayList = cqjVar.g;
+                if (!z && !cqjVar.j) {
+                    if (cqjVar.h) {
+                        ((xpj) arrayList.get(iIntValue2)).d = true;
+                        cqjVar.d.invoke(num);
+                    } else {
+                        ((xpj) arrayList.get(iIntValue2)).d = zBooleanValue;
+                        cqjVar.e.invoke();
+                    }
+                }
+                return fcq.a;
+            case 4:
+                azj azjVar = (azj) this.b;
+                om5 om5Var3 = (fm5) obj;
+                int iIntValue3 = ((Integer) obj2).intValue();
+                om5 om5Var4 = om5Var3;
+                if (!om5Var4.S(iIntValue3 & 1, (iIntValue3 & 3) != 2)) {
+                    om5Var4.V();
+                } else if (azjVar.d) {
+                    om5Var4.b0(40669737);
+                    f3r.g(0.0f, 0, 7, 0L, om5Var4, (fug) null);
+                    om5Var4.p(false);
+                } else {
+                    om5Var4.b0(40711060);
+                    om5Var4.p(false);
+                }
+                return fcq.a;
+            case 5:
+                czg czgVar = (czg) this.b;
+                om5 om5Var5 = (fm5) obj;
+                int iIntValue4 = ((Integer) obj2).intValue();
+                om5 om5Var6 = om5Var5;
+                if (om5Var6.S(iIntValue4 & 1, (iIntValue4 & 3) != 2)) {
+                    z39.d.d(48, om5Var6, i2r.d(czgVar.b, om5Var6));
+                } else {
+                    om5Var6.V();
+                }
+                return fcq.a;
+            case 6:
+                ifl iflVar = (ifl) this.b;
+                ((Integer) obj2).intValue();
+                om5 om5Var7 = (fm5) obj;
+                om5Var7.b0(-890630579);
+                xpi xpiVar = iflVar.a;
+                om5Var7.p(false);
+                return xpiVar;
+            case 7:
+                ClientMessage clientMessage = (ClientMessage) this.b;
+                mgn mgnVar = (mgn) obj;
+                mqd.z(mgnVar, "$this$withRealConnection");
+                mgnVar.l((c8q) obj2, clientMessage);
+                return fcq.a;
+            case 8:
+                tgn tgnVar = (tgn) this.b;
+                mgn mgnVar2 = (mgn) obj;
+                mqd.z(mgnVar2, "$this$withRealConnection");
+                mgnVar2.p(tgnVar);
+                return fcq.a;
+            case 9:
+                dbk dbkVar = (dbk) this.b;
+                float fFloatValue = ((Float) obj).floatValue();
+                ((Float) obj2).getClass();
+                dbkVar.e.l(fFloatValue);
+                return fcq.a;
+            case 10:
+                ((Integer) obj2).getClass();
+                ((bfk) this.b).y(hk3.P(7), (fm5) obj);
+                return fcq.a;
+            case 11:
+                vnk vnkVar = (vnk) this.b;
+                ra9 ra9Var = (ra9) obj;
+                mqd.z(ra9Var, "reaction");
+                lo7.z(ter.a(vnkVar), (ie6) null, ze6.d, new dqi(vnkVar, ra9Var, (f3f) obj2, null, 25), 1);
+                return fcq.a;
+            case 12:
+                qqk qqkVar = (qqk) this.b;
+                usl uslVar = (Set) obj;
+                synchronized (qqkVar.b) {
+                    try {
+                        if (((nqk) qqkVar.t.getValue()).compareTo(nqk.e) >= 0) {
+                            t8h t8hVar = qqkVar.g;
+                            if (uslVar instanceof usl) {
+                                t8h t8hVar2 = uslVar.a;
+                                Object[] objArr = t8hVar2.b;
+                                long[] jArr = t8hVar2.a;
+                                int length = jArr.length - 2;
+                                if (length >= 0) {
+                                    int i2 = 0;
+                                    while (true) {
+                                        long j = jArr[i2];
+                                        if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                                            int i3 = 8 - ((~(i2 - length)) >>> 31);
+                                            for (int i4 = 0; i4 < i3; i4++) {
+                                                if ((255 & j) < 128) {
+                                                    Object obj3 = objArr[(i2 << 3) + i4];
+                                                    if (!(obj3 instanceof hsn) || ((hsn) obj3).i(1)) {
+                                                        t8hVar.a(obj3);
+                                                    }
+                                                }
+                                                j >>= 8;
+                                            }
+                                            if (i3 == 8) {
+                                                if (i2 != length) {
+                                                    i2++;
+                                                }
+                                            }
+                                        } else if (i2 != length) {
+                                            i2++;
+                                        }
+                                    }
+                                }
+                            } else {
+                                for (Object obj4 : (Iterable) uslVar) {
+                                    if (!(obj4 instanceof hsn) || ((hsn) obj4).i(1)) {
+                                        t8hVar.a(obj4);
+                                    }
+                                }
+                            }
+                            fw3VarW = qqkVar.w();
+                        } else {
+                            fw3VarW = null;
+                        }
+                    } catch (Throwable th) {
+                        throw th;
+                    }
+                    break;
+                }
+                if (fw3VarW != null) {
+                    ((gw3) fw3VarW).f(fcq.a);
+                }
+                return fcq.a;
+            case 13:
+                ((Integer) obj2).getClass();
+                ((r9l) this.b).y(hk3.P(7), (fm5) obj);
+                return fcq.a;
+            case 14:
+                apl aplVar = (apl) this.b;
+                int iIntValue5 = ((Integer) obj).intValue();
+                lxd lxdVar = (ge6) obj2;
+                he6 key = lxdVar.getKey();
+                lxd lxdVarD1 = aplVar.e.d1(key);
+                if (key == vnd.b) {
+                    lxd lxdVar2 = lxdVarD1;
+                    lxd parent = lxdVar;
+                    while (true) {
+                        if (parent == null) {
+                            parent = null;
+                        } else if (parent != lxdVar2 && (parent instanceof vzl)) {
+                            ly4 ly4Var = (ly4) xxd.b.get((vzl) parent);
+                            parent = ly4Var != null ? ly4Var.getParent() : null;
+========== dqi.java ==========
+package defpackage;
+
+import android.content.Intent;
+import android.net.Uri;
+import com.google.protobuf.DescriptorProtos;
+import com.yandex.messaging.core.net.entities.proto.PollInfoRequest;
+import com.yandex.messaging.core.net.entities.proto.message.MessageRef;
+import com.yandex.messaging.techprofile.accounts.AuthUid;
+import com.yandex.messaging.ui.pollinfo.PollInfoActivity;
+import com.yandex.messaging.ui.polloptioninfo.PollOptionInfoActivity;
+import com.yandex.passport.api.j2;
+import java.util.LinkedHashMap;
+import java.util.List;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class dqi extends lao implements pib {
+    public final /* synthetic */ int e;
+    public int f;
+    public Object g;
+    public /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ dqi(ic6 ic6Var, Object obj, Object obj2, int i) {
+        super(2, ic6Var);
+        this.e = i;
+        this.h = obj;
+        this.i = obj2;
+    }
+
+    private final Object v(Object obj) {
+        AuthUid authUid = (AuthUid) this.h;
+        xe6 xe6Var = xe6.a;
+        int i = this.f;
+        if (i == 0) {
+            nzn.U(obj);
+            pj pjVar = ((s4k) this.g).b;
+            this.f = 1;
+            LinkedHashMap linkedHashMap = pjVar.c;
+            Object objA = linkedHashMap.get(authUid);
+            if (objA == null) {
+                objA = lq0.a();
+                linkedHashMap.put(authUid, objA);
+            }
+            obj = ((pg5) objA).t(this);
+            if (obj == xe6Var) {
+                return xe6Var;
+            }
+        } else {
+            if (i != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            nzn.U(obj);
+        }
+        oj ojVar = (oj) obj;
+        c8q c8qVarH = r8i.h(authUid.getValue(), ojVar.a);
+        fcq fcqVar = fcq.a;
+        if (c8qVarH != null) {
+            ((pib) this.i).invoke(ojVar.b, new c8q(c8qVarH.a));
+        }
+        return fcqVar;
+    }
+
+    private final Object w(Object obj) {
+        vnk vnkVar = (vnk) this.g;
+        xe6 xe6Var = xe6.a;
+        int i = this.f;
+        if (i == 0) {
+            nzn.U(obj);
+            bb9 bb9Var = vnkVar.b;
+            ra9 ra9Var = (ra9) this.h;
+            f3f f3fVar = (f3f) this.i;
+            ra9 ra9VarA = ra9.a(ra9Var, 0, f3fVar != null ? new Long(f3fVar.a) : null, 15);
+            this.f = 1;
+            obj = bb9Var.a(ra9VarA, this);
+            if (obj == xe6Var) {
+                return xe6Var;
+            }
+        } else {
+            if (i != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            nzn.U(obj);
+        }
+        if (!((Boolean) obj).booleanValue()) {
+            vnkVar.c.c(new pmk((g3f) null));
+        }
+        return fcq.a;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:11:0x0040 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:14:0x0049  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:10:0x003e -> B:12:0x0041). Please report as a decompilation issue!!! */
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        */
+    private final java.lang.Object x(java.lang.Object r11) {
+        /*
+            r10 = this;
+            java.lang.Object r0 = r10.i
+            xok r0 = (xok) r0
+            xe6 r1 = xe6.a
+            int r2 = r10.f
+            r3 = 1
+            if (r2 == 0) goto L21
+            if (r2 != r3) goto L19
+            java.lang.Object r2 = r10.g
+            xh2 r2 = (xh2) r2
+            java.lang.Object r4 = r10.h
+            ue6 r4 = (ue6) r4
+            nzn.U(r11)
+            goto L41
+        L19:
+            java.lang.IllegalStateException r11 = new java.lang.IllegalStateException
+            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
+            r11.<init>(r0)
+            throw r11
+        L21:
+            nzn.U(r11)
+            java.lang.Object r11 = r10.h
+            ue6 r11 = (ue6) r11
+            ci2 r2 = r0.d
+            r2.getClass()
+            xh2 r4 = new xh2
+            r4.<init>(r2)
+            r2 = r4
+            r4 = r11
+        L34:
+            r10.h = r4
+            r10.g = r2
+            r10.f = r3
+            java.lang.Object r11 = r2.b(r10)
+            if (r11 != r1) goto L41
+            return r1
+        L41:
+            java.lang.Boolean r11 = (java.lang.Boolean) r11
+            boolean r11 = r11.booleanValue()
+            if (r11 == 0) goto L91
+            java.lang.Object r11 = r2.c()
+            ypi r11 = (ypi) r11
+            java.lang.Object r5 = r11.a
+            ug5 r5 = (ug5) r5
+            java.lang.Object r11 = r11.b
+            pib r11 = (pib) r11
+            qe6 r6 = new qe6
+            java.util.concurrent.atomic.AtomicInteger r7 = r0.h
+            java.lang.String r8 = "<this>"
+            mqd.z(r7, r8)
+            int r7 = r7.getAndAdd(r3)
+            java.lang.String r8 = "orbit-intent-"
+            java.lang.String r7 = okn.l(r7, r8)
+            r6.<init>(r7)
+            ie6 r6 = m51.I(r6, r5)
+            jpk r7 = r0.a
+            le6 r7 = r7.d
+            ie6 r6 = r6.Z0(r7)
+            dqi r7 = new dqi
+            r8 = 26
+            r9 = 0
+            r7.<init>(r11, r0, r9, r8)
+            r11 = 2
+            lnn r11 = lo7.z(r4, r6, r9, r7, r11)
+            sdi r6 = new sdi
+            r7 = 24
+            r6.<init>(r5, r7)
+            r11.H0(r6)
+            goto L34
+        L91:
+            fcq r11 = fcq.a
+            return r11
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.dqi.x(java.lang.Object):java.lang.Object");
+    }
+
+    private final Object y(Object obj) throws Throwable {
+        jel jelVarE;
+        xok xokVar = (xok) this.i;
+        xe6 xe6Var = xe6.a;
+        int i = this.f;
+        jel jelVar = fcq.a;
+        try {
+            if (i == 0) {
+                nzn.U(obj);
+                ue6 ue6Var = (ue6) this.g;
+                pib pibVar = (pib) this.h;
+                p86 p86Var = xokVar.m;
+                this.g = ue6Var;
+                this.f = 1;
+                if (pibVar.invoke(p86Var, this) == xe6Var) {
+                    return xe6Var;
+                }
+            } else {
+                if (i != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                nzn.U(obj);
+            }
+            jelVarE = jelVar;
+        } catch (Throwable th) {
+            jelVarE = nzn.E(th);
+        }
+        Throwable thA = mel.a(jelVarE);
+        if (thA == null) {
+            return jelVar;
+        }
+        throw thA;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:22:0x0075  */
+    /* JADX WARN: Code duplicated, block: B:23:0x0078  */
+    /* JADX WARN: Code duplicated, block: B:26:0x0089  */
+    /* JADX WARN: Code duplicated, block: B:30:0x00ba  */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00c3, code lost:
+    
+        if (r0.a(r14, r13) == r2) goto L33;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private final java.lang.Object z(java.lang.Object r14) {
+        /*
+            Method dump skipped, instruction units count: 201
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.dqi.z(java.lang.Object):java.lang.Object");
+    }
+
+    public final Object invoke(Object obj, Object obj2) {
+        switch (this.e) {
+            case 0:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 1:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 2:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 3:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 4:
+                return q((ic6) obj2, (g1k) obj).t(fcq.a);
+            case 5:
+                return q((ic6) obj2, (xxa) obj).t(fcq.a);
+            case 6:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 7:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 8:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 9:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 10:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 11:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 12:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 13:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 14:
+                return q((ic6) obj2, (xxa) obj).t(fcq.a);
+            case 15:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 16:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 17:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 18:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case DescriptorProtos.FieldOptions.TARGETS_FIELD_NUMBER /* 19 */:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 20:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case DescriptorProtos.FieldOptions.FEATURES_FIELD_NUMBER /* 21 */:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case DescriptorProtos.FieldOptions.FEATURE_SUPPORT_FIELD_NUMBER /* 22 */:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case DescriptorProtos.FileOptions.DEPRECATED_FIELD_NUMBER /* 23 */:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 24:
+                return q((ic6) obj2, (ypi) obj).t(fcq.a);
+            case 25:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 26:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case DescriptorProtos.FileOptions.JAVA_STRING_CHECK_UTF8_FIELD_NUMBER /* 27 */:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 28:
+                return q((ic6) obj2, (xxa) obj).t(fcq.a);
+            default:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+        }
+    }
+
+    public final ic6 q(ic6 ic6Var, Object obj) {
+        switch (this.e) {
+            case 0:
+                return new dqi((j7d) this.h, (ulq) this.i, ic6Var, 0);
