@@ -1,0 +1,465 @@
+]633;E;echo "========== s4s.java ==========";5fbee356-0123-495e-b37b-dc4eda18f69b]633;C========== s4s.java ==========
+package defpackage;
+
+import android.os.Handler;
+import android.os.Looper;
+import com.yandex.messaging.core.net.entities.DegradationConfig;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class s4s implements cw3, Runnable {
+    public final int a;
+    public final oks b;
+    public final taa c;
+    public final Handler d = new Handler();
+    public final int e;
+    public final i9h f;
+    public final taa g;
+    public int h;
+    public boolean i;
+    public final /* synthetic */ t4s j;
+
+    public s4s(t4s t4sVar, int i, oks oksVar, taa taaVar) {
+        int i2;
+        this.j = t4sVar;
+        this.a = i;
+        this.b = oksVar;
+        this.c = taaVar;
+        DegradationConfig degradation = ((pr1) t4sVar.j.g).a().getDegradation();
+        int xivaMaxRetries = degradation.getXivaMaxRetries();
+        Long l = null;
+        Integer numValueOf = xivaMaxRetries < 0 ? null : Integer.valueOf(xivaMaxRetries);
+        if (numValueOf != null) {
+            int iIntValue = numValueOf.intValue();
+            i2 = (iIntValue > 2 ? 2 : iIntValue) + 1;
+        } else {
+            i2 = 3;
+        }
+        this.e = i2;
+        this.f = new i9h((Long) null, degradation.getXivaRetryJitterMinMs(), degradation.getXivaRetryJitterMaxMs(), 1);
+        long xivaMinTimeoutMs = degradation.getXivaMinTimeoutMs();
+        Long lValueOf = Long.valueOf(xivaMinTimeoutMs);
+        if (1 <= xivaMinTimeoutMs && xivaMinTimeoutMs < 2147483648L) {
+            l = lValueOf;
+        }
+        long j = DegradationConfig.DEFAULT_XIVA_MIN_TIMEOUT_MS;
+        if (l != null) {
+            long jLongValue = l.longValue();
+            if (jLongValue >= DegradationConfig.DEFAULT_XIVA_MIN_TIMEOUT_MS) {
+                j = jLongValue;
+            }
+        }
+        this.g = new taa(j, 2);
+    }
+
+    public final void a(dtr dtrVar) {
+        Handler handler = this.d;
+        atl.s(handler.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.i);
+        oks oksVar = this.b;
+        sgn sgnVar = (sgn) oksVar.c;
+        this.j.h(dtrVar, sgnVar.D(), this.a, sgnVar.H(), oksVar.s());
+        int i = this.h + 1;
+        this.h = i;
+        if (i < this.e) {
+            handler.postDelayed(this, this.g.c(0, this.f));
+        }
+    }
+
+    public final void b() {
+        this.i = true;
+        this.d.removeCallbacksAndMessages(null);
+        t4s t4sVar = this.j;
+        synchronized (t4sVar.d) {
+            jkn jknVar = t4sVar.d;
+            int iU = iym.u(jknVar.d, this.a, jknVar.b);
+            if (iU >= 0) {
+                Object[] objArr = jknVar.c;
+                Object obj = objArr[iU];
+                Object obj2 = z3i.j;
+                if (obj != obj2) {
+                    objArr[iU] = obj2;
+                    jknVar.a = true;
+                }
+            }
+        }
+    }
+
+    @Override // defpackage.cw3
+    public final void cancel() {
+        atl.s(this.d.getLooper(), Looper.myLooper(), null);
+        b();
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        atl.s(this.d.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.i);
+        dtr dtrVar = this.j.h;
+        if (dtrVar == null || this.h >= this.e) {
+            return;
+        }
+        a(dtrVar);
+    }
+}
+========== v3s.java ==========
+package defpackage;
+
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+import com.yandex.messaging.core.net.entities.DegradationConfig;
+import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+import com.yandex.messaging.internal.net.socket.XivaInternalMessage;
+import java.io.EOFException;
+import java.io.IOException;
+import java.net.NoRouteToHostException;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
+import java.util.concurrent.TimeUnit;
+import javax.net.ssl.SSLException;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class v3s extends lur implements nfl, cw3 {
+    public final t4s a;
+    public final Object b = new Object();
+    public final Object c = new Object();
+    public final Object d = new Object();
+    public final Object e = new Object();
+    public final Handler f = new Handler();
+    public final taa g;
+    public boolean h;
+    public pfl i;
+    public cw3 j;
+    public ypk k;
+    public int l;
+    public boolean m;
+    public dtr n;
+    public final /* synthetic */ f1n o;
+
+    public v3s(f1n f1nVar, t4s t4sVar) {
+        this.o = f1nVar;
+        this.a = t4sVar;
+        long xivaReconnectBaseIntervalMs = ((pr1) f1nVar.e).a().getDegradation().getXivaReconnectBaseIntervalMs();
+        Long lValueOf = (0 > xivaReconnectBaseIntervalMs || xivaReconnectBaseIntervalMs >= 2147483648L) ? null : Long.valueOf(xivaReconnectBaseIntervalMs);
+        this.g = new taa(lValueOf != null ? lValueOf.longValue() : 0L, 2);
+    }
+
+    public static final void h(v3s v3sVar) {
+        Handler handler = v3sVar.f;
+        atl.s(handler.getLooper(), Looper.myLooper(), null);
+        atl.r(v3sVar.n, null);
+        v3sVar.l++;
+        handler.removeCallbacksAndMessages(v3sVar.d);
+        ypk ypkVar = v3sVar.k;
+        if (ypkVar != null) {
+            ypkVar.a();
+        }
+        v3sVar.k = null;
+        if (v3sVar.l < 3 && v3sVar.a.f()) {
+            if (v3sVar.i == null) {
+                v3sVar.i = ((rfl) v3sVar.o.c).c(v3sVar);
+            }
+            v3sVar.j();
+        }
+    }
+
+    public static final void i(dtr dtrVar, v3s v3sVar) {
+        Handler handler = v3sVar.f;
+        atl.s(handler.getLooper(), Looper.myLooper(), null);
+        atl.s(dtrVar, v3sVar.n, null);
+        dtr dtrVar2 = (ypk) dtrVar;
+        dtrVar2.a();
+        handler.removeCallbacksAndMessages(v3sVar.c);
+        handler.removeCallbacksAndMessages(v3sVar.d);
+        v3sVar.n = null;
+        t4s t4sVar = v3sVar.a;
+        t4sVar.g(dtrVar2);
+        if (t4sVar.f()) {
+            v3sVar.j();
+        }
+    }
+
+    public final void a(dtr dtrVar, int i, String str) {
+        mqd.z(dtrVar, "webSocket");
+        if (h6i.c.a()) {
+            h6i.s("XivaConnect", "onClosed: " + i + " " + str);
+        }
+        this.f.post(new eu4(this, dtrVar, i, str, 4));
+    }
+
+    public final void b(dtr dtrVar, int i, String str) {
+        mqd.z(dtrVar, "webSocket");
+        if (h6i.c.a()) {
+            h6i.s("XivaConnect", "onClosing: " + i + " " + str);
+        }
+        ((ypk) dtrVar).c(i, str);
+    }
+
+    public final void c(ypk ypkVar, Exception exc, ocl oclVar) {
+        if ((exc instanceof SocketException) && mqd.s(exc.getMessage(), "Socket closed")) {
+            return;
+        }
+        f90 f90Var = h6i.c;
+        if (f90Var.a()) {
+            String str = "onFailure: " + oclVar;
+            if (f90Var.a()) {
+                Log.d("XivaConnect", str, exc);
+            }
+        }
+        f1n f1nVar = this.o;
+        if (oclVar != null) {
+            ((s5i) f1nVar.b).b(2, oclVar.c, null);
+        } else if (exc instanceof UnknownHostException) {
+            ((s5i) f1nVar.b).b(4, "DNS_FAILED", null);
+        } else if (exc instanceof SocketTimeoutException) {
+            ((s5i) f1nVar.b).b(6, "TIMEOUT", null);
+        } else if (exc instanceof NoRouteToHostException) {
+            ((s5i) f1nVar.b).b(3, "NO_ROUTE", null);
+        } else if (exc instanceof SSLException) {
+            ((s5i) f1nVar.b).b(5, "SSL_ERROR", null);
+        } else if (!(exc instanceof EOFException)) {
+            ((s5i) f1nVar.b).b(3, "OTHER", null);
+        }
+        this.f.post(new fpq(6, this, ypkVar));
+    }
+
+    @Override // defpackage.cw3
+    public final void cancel() {
+        Handler handler = this.f;
+        atl.s(handler.getLooper(), Looper.myLooper(), null);
+        this.h = true;
+        handler.removeCallbacksAndMessages(null);
+        pfl pflVar = this.i;
+        if (pflVar != null) {
+            pflVar.close();
+        }
+        this.i = null;
+        ypk ypkVar = this.n;
+        if (ypkVar != null) {
+            ypkVar.a();
+        }
+        this.n = null;
+        cw3 cw3Var = this.j;
+        if (cw3Var != null) {
+            cw3Var.cancel();
+        }
+        this.j = null;
+        ypk ypkVar2 = this.k;
+        if (ypkVar2 != null) {
+            ypkVar2.a();
+        }
+        this.k = null;
+    }
+
+    @Override // defpackage.nfl
+    public final void d() {
+        atl.s(this.f.getLooper(), Looper.myLooper(), null);
+        atl.r(this.n, null);
+        this.l = 0;
+        if (this.k == null && this.a.f()) {
+            j();
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void e(dtr dtrVar, bn2 bn2Var) {
+        String str;
+        s4s s4sVar;
+        s4s s4sVar2;
+        mqd.z(dtrVar, "webSocket");
+        f90 f90Var = h6i.c;
+        if (f90Var.a()) {
+            wqh.u("onMessage(base64): ", bn2Var.b(), "XivaConnect");
+        }
+        t4s t4sVar = this.a;
+        if (bn2Var.h() == 0) {
+            return;
+        }
+        ze3 ze3Var = t4sVar.j;
+        long jH = bn2Var.h();
+        ze3Var.getClass();
+        rgn.b(jH);
+        byte[] bArrY = bn2Var.y();
+        oag oagVarA = j7g.a(bArrY.length - 1, bArrY);
+        byte bQ = bn2Var.q(0);
+        if (bQ == 1) {
+            int iR = oagVarA.R();
+            oagVarA.T();
+            int iV = oagVarA.V();
+            String strC0 = oagVarA.c0();
+            if (iR > 3) {
+                oagVarA.T();
+            }
+            int i = ((int) (oagVarA.i + ((long) oagVarA.h))) + 1;
+            synchronized (t4sVar.d) {
+                s4sVar2 = (s4s) t4sVar.d.c(iV);
+            }
+            if (s4sVar2 == null) {
+                if (f90Var.a()) {
+                    h6i.s("Xiva", "Nobody waiting for response with reqId = " + iV + " from path = " + strC0);
+                    return;
+                }
+                return;
+            }
+            rh2 rh2Var = new rh2();
+            rh2Var.write(bArrY, i, bArrY.length - i);
+            try {
+                oks oksVar = s4sVar2.b;
+                sgn sgnVar = (sgn) oksVar.c;
+                sgnVar.w();
+                Object objI = ((gmg) oksVar.d).c.i(rh2Var, sgnVar.l(), sgnVar.H());
+                sgnVar.i();
+                t4sVar.c.post(new axd(t4sVar, s4sVar2, objI, 25));
+                return;
+            } catch (Exception e) {
+                ((s5i) t4sVar.j.d).b(7, "INVALID", null);
+                ((x20) t4sVar.j.c).reportError("xiva DATA frame parse failed for path " + strC0, e);
+                return;
+            }
+        }
+        if (bQ == 2) {
+            oagVarA.R();
+            int iV2 = oagVarA.V();
+            short sW = oagVarA.W();
+            ((s5i) t4sVar.j.d).b(2, "PROXYSTATUS", null);
+            synchronized (t4sVar.d) {
+                s4sVar = (s4s) t4sVar.d.c(iV2);
+            }
+            if (s4sVar == null) {
+                if (f90Var.a()) {
+                    h6i.s("Xiva", "Nobody waiting for response with reqId = " + iV2 + " errorCode = " + ((int) sW));
+                    return;
+                }
+                return;
+            }
+            if (f90Var.a()) {
+                h6i.s("Xiva", "Request had failed reqId = " + iV2 + " errorCode = " + ((int) sW));
+            }
+            t4sVar.c.post(new fpq(8, t4sVar, s4sVar));
+            return;
+        }
+        if (bQ != 3) {
+            if (f90Var.a()) {
+                h6i.s("Xiva", "onPush: Unknown packet type: " + ((int) bn2Var.q(0)));
+                return;
+            }
+            return;
+        }
+        oagVarA.R();
+        String strC1 = oagVarA.c0();
+        mqd.y(strC1, "unpackString(...)");
+        Long lK = w0o.K(strC1);
+        long jLongValue = lK != null ? lK.longValue() : 0L;
+        String strC2 = oagVarA.c0();
+        String strC3 = oagVarA.c0();
+        String strC4 = oagVarA.c0();
+        int i2 = ((int) (oagVarA.i + ((long) oagVarA.h))) + 1;
+        rh2 rh2Var2 = new rh2();
+        int length = bArrY.length - i2;
+        rh2Var2.write(bArrY, i2, length);
+        try {
+            fmg fmgVar = t4sVar.a;
+            mqd.u(strC2);
+            mqd.u(strC3);
+            ServerMessage serverMessageQ = fmgVar.q(strC2, strC3, rh2Var2);
+            try {
+                if (serverMessageQ != null) {
+                    t4sVar.c.post(new ks3(t4sVar, strC2, strC3, jLongValue, serverMessageQ));
+                    return;
+                } else {
+                    ((s5i) t4sVar.j.d).b(7, "OTHER", null);
+                    return;
+                }
+            } catch (IOException e2) {
+                e = e2;
+                str = length;
+            }
+        } catch (IOException e3) {
+            e = e3;
+            str = strC2;
+        }
+        ((s5i) t4sVar.j.d).b(7, "OTHER", null);
+        if (h6i.c.a()) {
+            StringBuilder sbO = wq1.o("Push processing failed service = ", str, " event = ", strC3, " transitId = ");
+            sbO.append(strC4);
+            h6i.w("Xiva", sbO.toString(), e);
+        }
+    }
+
+    public final void f(final dtr dtrVar, String str) {
+        mqd.z(dtrVar, "webSocket");
+        if (h6i.c.a()) {
+            h6i.s("XivaConnect", "onMessage: ".concat(str));
+        }
+        po1 po1Var = rgn.a;
+        rgn.b(v9n.i(str));
+        k4e k4eVar = (k4e) this.o.d;
+        k4eVar.getClass();
+        final XivaInternalMessage xivaInternalMessage = (XivaInternalMessage) k4eVar.a(XivaInternalMessage.class).b(str);
+        String str2 = xivaInternalMessage != null ? xivaInternalMessage.operation : null;
+        if (str2 != null) {
+            int iHashCode = str2.hashCode();
+            Handler handler = this.f;
+            if (iHashCode == -1219769254) {
+                if (str2.equals("subscribed")) {
+                    final int i = 1;
+                    handler.post(new Runnable(this) { // from class: t3s
+                        public final /* synthetic */ v3s b;
+
+                        {
+                            this.b = this;
+                        }
+
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i) {
+                                case 0:
+                                    v3s v3sVar = this.b;
+                                    dtr dtrVar2 = dtrVar;
+                                    XivaInternalMessage xivaInternalMessage2 = xivaInternalMessage;
+                                    if (v3sVar.h) {
+                                        return;
+                                    }
+                                    long j = xivaInternalMessage2.serverIntervalSec;
+                                    atl.s(v3sVar.f.getLooper(), Looper.myLooper(), null);
+                                    atl.o(null, v3sVar.h);
+                                    if (dtrVar2 == v3sVar.n) {
+                                        v3sVar.f.removeCallbacksAndMessages(v3sVar.c);
+                                    }
+                                    if (dtrVar2 == v3sVar.k) {
+                                        v3sVar.f.removeCallbacksAndMessages(v3sVar.b);
+                                        pfl pflVar = v3sVar.i;
+                                        if (pflVar != null) {
+                                            pflVar.close();
+                                        }
+                                        v3sVar.i = null;
+                                        v3sVar.l = 0;
+                                        v3sVar.n = dtrVar2;
+                                        v3sVar.k = null;
+                                        t4s t4sVar = v3sVar.a;
+                                        mqd.z(dtrVar2, "webSocket");
+                                        atl.s(t4sVar.c.getLooper(), Looper.myLooper(), null);
+                                        atl.r(t4sVar.h, null);
+                                        if (h6i.c.a()) {
+                                            h6i.s("XivaSocketFactory", "onOpen");
+                                        }
+                                        t4sVar.h = dtrVar2;
+                                        t4sVar.a.i();
+                                        s3s s3sVar = (s3s) t4sVar.j.f;
+                                        ne6.b(s3sVar.b);
+                                        s3sVar.d = wug.a();
+                                        synchronized (t4sVar.d) {
+                                            int iF = t4sVar.d.f();
+                                            for (int i2 = 0; i2 < iF; i2++) {
+                                                s4s s4sVar = (s4s) t4sVar.d.g(i2);
+                                                s4sVar.getClass();
+                                                atl.s(s4sVar.d.getLooper(), Looper.myLooper(), null);
+                                                s4sVar.h = 0;
+                                                s4sVar.a(dtrVar2);
+                                            }
+                                        }
+                                        synchronized (t4sVar.e) {
+                                            for (i4s i4sVar : t4sVar.e) {
+                                                c8q c8qVar = i4sVar.a;
+========== MessagePack transport ==========
