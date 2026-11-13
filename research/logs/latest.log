@@ -1,8 +1,3 @@
-===== PASSPORT INTERNAL CLASS O =====
-INFO  - loading ...
-ERROR - Incorrect arguments: Input class not found: com.yandex.passport.internal.impl.o
-===== UID CONVERTER ZUM =====
-INFO  - loading ...
-ERROR - Incorrect arguments: Input class not found: defpackage.zum
-===== COPY SOURCES =====
-===== SOURCE LINE COUNTS =====
+===== CLASS O =====
+===== CLASS ZUM =====
+===== CLASS DECLARATIONS =====
