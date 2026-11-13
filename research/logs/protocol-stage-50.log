@@ -1,0 +1,2 @@
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:35:    public rlh(hl4 hl4Var, slh slhVar, PlainMessage plainMessage, ygi ygiVar, String str, qlh qlhVar, wf wfVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/jl4.java:244:        vx6 rlhVar = new rlh(hl4Var, slhVar, plainMessageA, ygiVar, str6, qlhVar, wfVar);
