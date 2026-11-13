@@ -1,0 +1,33 @@
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:3:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:35:    public boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:58:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:5:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:51:    public final boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:125:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java:3:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java:76:        PostMessageResponse postMessageResponse = (PostMessageResponse) objQ;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java:78:        return postMessageResponse == null ? (PostMessageResponse) zukVarK.a : postMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:3:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:28:    public final boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:43:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:3:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:22:                a0((PostMessageResponse) obj);
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:43:    public void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:80:    public int a0(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:4:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:30:    public final boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:54:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:6:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:62:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java:3:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java:15:    public qsj(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java:3:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java:39:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/f92.java:5:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/f92.java:61:    public boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/f92.java:78:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/d84.java:4:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/d84.java:31:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/ik4.java:5:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/ik4.java:66:    public boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/ik4.java:94:    public void S(PostMessageResponse postMessageResponse) {
