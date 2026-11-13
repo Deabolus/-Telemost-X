@@ -1,69 +1,633 @@
-===== com.yandex.passport.internal.authsdk.a =====
-package com.yandex.passport.internal.authsdk;
 
-import defpackage.oyg;
+========== mgn.java ==========
+package defpackage;
 
-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes3.dex */
-public final enum a extends Enum {
-    public static final /* synthetic */ a[] a = null;
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
 
-    static {
-        a[] r0 = {new a("GetAccounts", 0)};
-        a = r0;
-        oyg.B(r0);
-    }
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public interface mgn {
+    void b(String str);
 
-    public static a valueOf(String r1) {
-        return (a) Enum.valueOf(a.class, r1);
-    }
+    boolean c();
 
-    public static a[] values() {
-        return (a[]) a.clone();
-    }
-}
-===== com.yandex.passport.internal.authsdk.b =====
-package com.yandex.passport.internal.authsdk;
+    void close();
 
-import com.yandex.passport.internal.core.accounts.c;
-import com.yandex.passport.internal.filter.l;
+    cw3 f(sgn sgnVar, taa taaVar);
 
-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes3.dex */
-public final class b {
-    public final c a;
-    public final l b;
+    boolean j();
 
-    public b(c r2, l r3) {
-        mqd.z(r2, "accountsRetriever");
-        mqd.z(r3, "accountFilterRepository");
-        this.a = r2;
-        this.b = r3;
-    }
+    String k();
+
+    void l(c8q c8qVar, ClientMessage clientMessage);
+
+    void p(tgn tgnVar);
 }
 
-===== TRUSTED APPLICATION FINGERPRINTS =====
-research/artifacts/auth-stage-13/apk/resources/res/values/public.xml-127-    <public type="array" name="exo_controls_playback_speeds" id="0x7f030007" />
-research/artifacts/auth-stage-13/apk/resources/res/values/public.xml-128-    <public type="array" name="hide_fingerprint_instantly_prefixes" id="0x7f030008" />
-research/artifacts/auth-stage-13/apk/resources/res/values/public.xml-129-    <public type="array" name="passport_facebook_scopes" id="0x7f030009" />
-research/artifacts/auth-stage-13/apk/resources/res/values/public.xml:130:    <public type="array" name="passport_trusted_application_fingerprints" id="0x7f03000a" />
-research/artifacts/auth-stage-13/apk/resources/res/values/public.xml-131-    <public type="array" name="tm_feedback_error_type" id="0x7f03000b" />
-research/artifacts/auth-stage-13/apk/resources/res/values/public.xml-132-    <public type="array" name="tm_feedback_review_type" id="0x7f03000c" />
-research/artifacts/auth-stage-13/apk/resources/res/values/public.xml-133-    <public type="array" name="ui_preview_base_package_names" id="0x7f03000d" />
---
-research/artifacts/auth-stage-13/apk/resources/res/values/arrays.xml-58-        <item>user_gender</item>
-research/artifacts/auth-stage-13/apk/resources/res/values/arrays.xml-59-        <item>user_link</item>
-research/artifacts/auth-stage-13/apk/resources/res/values/arrays.xml-60-    </array>
-research/artifacts/auth-stage-13/apk/resources/res/values/arrays.xml:61:    <array name="passport_trusted_application_fingerprints">
-research/artifacts/auth-stage-13/apk/resources/res/values/arrays.xml-62-        <item>com.edadeal.android:Ucyt+WfG7scFrG9ix/DZjXnG3IJ9xqlHqcHBWZfJRC0=</item>
-research/artifacts/auth-stage-13/apk/resources/res/values/arrays.xml-63-        <item>ru.kinopoisk:bmQ8wpHeuihpnDrkPvnJoa7NZi0UUtd473a2MH7txIU=</item>
-research/artifacts/auth-stage-13/apk/resources/res/values/arrays.xml-64-    </array>
+========== qhg.java ==========
+package defpackage;
 
-===== EXISTING CREDENTIALS SOURCE =====
-research/artifacts/auth-stage-8/performer/sources/com/yandex/passport/internal/methods/performer/e.java
-research/artifacts/auth-stage-8/credentials/sources/com/yandex/passport/internal/credentials/e.java
+import android.content.SharedPreferences;
+import android.os.Looper;
+import android.os.SystemClock;
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+import com.yandex.messaging.internal.entities.SeenMarkerEntity;
+import java.io.Closeable;
+import java.io.IOException;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.TimeUnit;
 
-===== RESULT =====
-total 16K
-drwxrwxrwx+  2 codespace codespace 4.0K Nov 13 10:36 .
-drwxrwxrwx+ 17 codespace codespace 4.0K Nov 13 10:36 ..
--rw-rw-rw-   1 codespace codespace  517 Nov 13 10:36 a.java
--rw-rw-rw-   1 codespace codespace  468 Nov 13 10:36 b.java
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class qhg implements mgn, z4k, qgn, t91 {
+    public final aco a;
+    public final bmc b;
+    public boolean c;
+    public nb1 d;
+    public wc1 e;
+    public boolean f;
+    public f18 g;
+    public final /* synthetic */ rhg h;
+
+    public qhg(rhg rhgVar, aco acoVar) {
+        this.h = rhgVar;
+        this.a = acoVar;
+        cmc cmcVar = rhgVar.b;
+        cmcVar.getClass();
+        this.b = new bmc(cmcVar, this, cmcVar.a, ((wck) cmcVar.d.get()).c);
+        rhgVar.c.a(this);
+    }
+
+    @Override // defpackage.qgn
+    public final cw3 a(lib libVar) {
+        String strValueOf;
+        String string;
+        rhg rhgVar = this.h;
+        Looper looper = rhgVar.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Build request on wrong thread");
+        }
+        atl.o(null, this.c);
+        wc1 wc1Var = this.e;
+        if (wc1Var == null) {
+            cw3.T.getClass();
+            return hlk.b;
+        }
+        nb1 nb1Var = this.d;
+        if (nb1Var == null || (strValueOf = String.valueOf(nb1Var.b)) == null) {
+            strValueOf = rhgVar.h.a;
+        }
+        if (wc1Var.h() && !this.f) {
+            String strG = wc1Var.g();
+            mqd.y(strG, "getRawValue(...)");
+            libVar.invoke(new v4s(strValueOf, strG));
+            return null;
+        }
+        c4s c4sVar = rhgVar.i;
+        isd isdVar = new isd(12, libVar);
+        c4sVar.getClass();
+        mqd.z(strValueOf, "user");
+        atl.s(c4sVar.d, Looper.myLooper(), null);
+        SharedPreferences sharedPreferences = c4sVar.a;
+        String string2 = sharedPreferences.getString("xiva_secret_user", null);
+        w4s w4sVar = (string2 == null || (string = sharedPreferences.getString("xiva_secret_sign", null)) == null) ? null : new w4s(string2, string, sharedPreferences.getLong("xiva_secret_ts", 0L));
+        if (w4sVar != null && w4sVar.a.equals(strValueOf)) {
+            long j = w4sVar.c;
+            c4sVar.b.getClass();
+            if (j > TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis())) {
+                isdVar.invoke(w4sVar);
+                return null;
+            }
+        }
+        c4sVar.e.b(isdVar);
+        if (c4sVar.f == null) {
+            y8q y8qVar = c4sVar.c;
+            wzr wzrVar = new wzr(7, c4sVar, strValueOf);
+            y8qVar.getClass();
+            c4sVar.f = ((bf1) y8qVar.b).a(wq1.g("toString(...)"), new idl(y8qVar, strValueOf, wzrVar, 3), saa.c);
+        }
+        return new ew3(new udr(5, c4sVar, isdVar), 0);
+    }
+
+    @Override // defpackage.mgn
+    public final void b(String str) {
+        mqd.z(str, "reason");
+        this.b.b(str);
+    }
+
+    @Override // defpackage.mgn
+    public final boolean c() {
+        return this.b.c();
+    }
+
+    @Override // defpackage.mgn
+    public final void close() throws IOException {
+        f18 f18Var = this.g;
+        if (f18Var != null) {
+            f18Var.close();
+        }
+        this.b.close();
+    }
+
+    @Override // defpackage.qgn
+    public final boolean d() {
+        aco acoVar = this.a;
+        atl.s(acoVar.C, Looper.myLooper(), null);
+        return !acoVar.D.isEmpty();
+    }
+
+    @Override // defpackage.z4k
+    public final void e() throws IOException {
+        Looper looper = this.h.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Profile removed on wrong thread");
+        }
+        this.c = true;
+        f18 f18Var = this.g;
+        if (f18Var != null) {
+            f18Var.close();
+        }
+        this.b.close();
+    }
+
+    @Override // defpackage.mgn
+    public final cw3 f(sgn sgnVar, taa taaVar) {
+        Looper looper = this.h.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Call made on wrong thread");
+        }
+        if (!this.c) {
+            return this.b.f(sgnVar, taaVar);
+        }
+        cw3.T.getClass();
+        return hlk.b;
+    }
+
+    @Override // defpackage.t91
+    public final void g(xc1 xc1Var, boolean z) {
+        mqd.z(xc1Var, "header");
+        rhg rhgVar = this.h;
+        Looper looper = rhgVar.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Authorization header on wrong thread");
+        }
+        atl.o(null, this.c);
+        wc1 wc1VarB = xc1Var.d() ? xc1Var.b() : null;
+        this.e = wc1VarB;
+        this.d = rhgVar.a;
+        if (wc1VarB != null) {
+            bmc bmcVar = this.b;
+            bmcVar.b("Authorization restart");
+            if (d()) {
+                bmcVar.p(tgn.Restart);
+            }
+        }
+    }
+
+    @Override // defpackage.qgn
+    public final Long h() {
+        aco acoVar = this.a;
+        atl.s(acoVar.C, Looper.myLooper(), null);
+        if (acoVar.D.isEmpty()) {
+            return Long.valueOf(acoVar.G);
+        }
+        return null;
+    }
+
+    @Override // defpackage.qgn
+    public final void i() {
+        rhg rhgVar = this.h;
+        Looper looper = rhgVar.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Connected on wrong thread");
+        }
+        bmc bmcVar = this.b;
+        mqd.z(bmcVar, "connection");
+        g2e g2eVar = new g2e();
+        g2eVar.a = bmcVar;
+        aco acoVar = this.a;
+        acoVar.y.reportEvent("tech_sync_socket_connected");
+        atl.s(acoVar.C, Looper.myLooper(), null);
+        qt5 qt5Var = acoVar.m;
+        atl.s(qt5Var.a, Looper.myLooper(), null);
+        if (qt5Var.f == 0) {
+            qt5Var.b.getClass();
+            qt5Var.f = SystemClock.elapsedRealtime();
+        }
+        acoVar.g.b(g2eVar);
+        acoVar.g();
+        b7j b7jVar = (b7j) rhgVar.e.get();
+        atl.s(b7jVar.d, Looper.myLooper(), null);
+        if (b7jVar.g) {
+            return;
+        }
+        b7jVar.g = true;
+        for (zaj zajVar : b7jVar.f.A()) {
+            b7jVar.a(zajVar.a, (SeenMarkerEntity) zajVar.b);
+        }
+    }
+
+    @Override // defpackage.mgn
+    public final boolean j() {
+        return false;
+    }
+
+    @Override // defpackage.mgn
+    public final String k() {
+        return this.b.k();
+    }
+
+    @Override // defpackage.mgn
+    public final void l(c8q c8qVar, ClientMessage clientMessage) {
+        Looper looper = this.h.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Message posted on wrong thread");
+        }
+        if (!atl.u() && c8qVar != null) {
+            atl.y("Unexpected uid in single-user connection");
+        }
+        if (this.c) {
+            return;
+        }
+        this.b.l(null, clientMessage);
+    }
+
+    @Override // defpackage.qgn
+    public final void m(String str) {
+        rhg rhgVar = this.h;
+        Looper looper = rhgVar.f.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Auth failed on wrong thread");
+        }
+        atl.o(null, this.c);
+        wc1 wc1Var = this.e;
+        if (wc1Var == null) {
+            return;
+        }
+        if (!wc1Var.h() || this.f) {
+            c4s c4sVar = rhgVar.i;
+            atl.s(c4sVar.d, Looper.myLooper(), null);
+            c4sVar.a.edit().remove("xiva_secret_user").remove("xiva_secret_sign").remove("xiva_secret_ts").apply();
+        } else {
+            this.f = true;
+        }
+        if (d()) {
+            this.b.p(tgn.Restart);
+        }
+    }
+
+    @Override // defpackage.qgn
+    public final void n(long j, ServerMessage serverMessage) {
+
+========== e84.java ==========
+package defpackage;
+
+import android.os.Looper;
+import android.os.SystemClock;
+import android.util.LongSparseArray;
+import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+import com.yandex.messaging.core.net.entities.proto.message.ReadMarker;
+import com.yandex.messaging.core.net.entities.proto.message.Report;
+import com.yandex.messaging.core.net.entities.proto.message.SeenMarker;
+import com.yandex.messaging.internal.entities.SeenMarkerEntity;
+import java.util.HashMap;
+import java.util.Random;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class e84 extends vx6 {
+    public final /* synthetic */ int e;
+    public long f;
+    public Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
+
+    public /* synthetic */ e84(Object obj, Object obj2, Object obj3, int i) {
+        this.e = i;
+        this.g = obj;
+        this.h = obj2;
+        this.i = obj3;
+    }
+
+    public final ClientMessage L() {
+        switch (this.e) {
+            case 0:
+                ((r7j) ((pb5) this.g).d).getClass();
+                this.f = SystemClock.elapsedRealtime();
+                return new ClientMessage(null, null, null, null, null, null, null, null, (Report) this.h, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435199, null);
+            case 1:
+                ((r7j) ((b7j) this.g).b.get()).getClass();
+                this.f = SystemClock.elapsedRealtime();
+                SeenMarkerEntity seenMarkerEntity = (SeenMarkerEntity) this.h;
+                String str = seenMarkerEntity.c;
+                mqd.y(str, "chatId");
+                return new ClientMessage(null, null, new SeenMarker(str, seenMarkerEntity.a, seenMarkerEntity.b, seenMarkerEntity.d), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435451, null);
+            default:
+                aok aokVar = (aok) this.h;
+                atl.s(aokVar.b.getLooper(), Looper.myLooper(), null);
+                atl.s(aokVar.b.getLooper(), Looper.myLooper(), null);
+                ReadMarker readMarker = new ReadMarker();
+                readMarker.chatId = aokVar.a;
+                LongSparseArray longSparseArray = aokVar.c;
+                readMarker.timestamps = new long[longSparseArray.size()];
+                int size = longSparseArray.size();
+                for (int i = 0; i < size; i++) {
+                    readMarker.timestamps[i] = longSparseArray.keyAt(i);
+                }
+                this.g = readMarker;
+                ((bok) this.i).c.getClass();
+                this.f = SystemClock.elapsedRealtime();
+                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, (ReadMarker) this.g, null, null, null, null, null, null, null, null, null, false, 0, false, 268402687, null);
+        }
+    }
+
+    public final void S(PostMessageResponse postMessageResponse) {
+        switch (this.e) {
+            case 0:
+                mqd.z(postMessageResponse, "response");
+                ((r7j) ((pb5) this.g).d).c(this.f, "time2ack_report");
+                ((xfg) this.i).run();
+                return;
+            case 1:
+                mqd.z(postMessageResponse, "response");
+                b7j b7jVar = (b7j) this.g;
+                atl.s(b7jVar.d, Looper.myLooper(), null);
+                ((r7j) b7jVar.b.get()).a(this.f, "time2ack_seen_marker");
+                HashMap map = b7jVar.e;
+                String str = (String) this.i;
+                map.remove(str);
+                b7jVar.f.F(str);
+                return;
+            default:
+                mqd.z(postMessageResponse, "response");
+                aok aokVar = (aok) this.h;
+                aokVar.e = null;
+                ReadMarker readMarker = (ReadMarker) this.g;
+                if (readMarker == null) {
+                    throw new IllegalArgumentException("Required value was null.");
+                }
+                long j = this.f;
+                LongSparseArray longSparseArray = aokVar.c;
+                long[] jArr = readMarker.timestamps;
+                mqd.y(jArr, "timestamps");
+                for (long j2 : jArr) {
+                    longSparseArray.remove(j2);
+                }
+                if (longSparseArray.size() == 0) {
+                    return;
+                }
+                aokVar.f.c.getClass();
+                long jElapsedRealtime = SystemClock.elapsedRealtime() - j;
+                Random random = new Random();
+                int i = bok.e;
+                int i2 = bok.d;
+                long jMax = (long) Math.max(0.0d, ((long) (random.nextInt(i - i2) + i2)) - jElapsedRealtime);
+                znk znkVar = new znk(aokVar, 1);
+                aokVar.d = znkVar;
+                aokVar.b.postDelayed(znkVar, jMax);
+                return;
+        }
+    }
+
+    public e84(aok aokVar, bok bokVar) {
+        this.e = 2;
+        this.h = aokVar;
+        this.i = bokVar;
+    }
+}
+
+========== ChatHistoryResponse.java ==========
+package com.yandex.messaging.core.net.entities.proto;
+
+import com.google.protobuf.DescriptorProtos;
+import com.squareup.moshi.Json;
+import com.yandex.messaging.core.net.entities.proto.message.ReducedUserInfo;
+import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+import com.yandex.messaging.core.net.entities.proto.telemost.MeetingInfoFanoutResponse;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public class ChatHistoryResponse {
+
+    @Json(name = "ApprovedByMe")
+    @g8k(tag = 17)
+    public boolean approvedByMe;
+
+    @Json(name = "ChatId")
+    @i4e
+    @g8k(tag = 1)
+    public String chatId;
+
+    @Json(name = "ChatInfo")
+    @g8k(tag = 14)
+    public ChatInfoFromTransport chatInfo;
+
+    @Json(name = "LastEditTsMcs")
+    @g8k(tag = 3)
+    public long lastEditTimestamp;
+
+    @Json(name = "LastTsMcs")
+    @g8k(tag = DescriptorProtos.FieldOptions.TARGETS_FIELD_NUMBER)
+    public long lastMessageTimestamp;
+
+    @Json(name = "LastSeenByMeVersion")
+    @g8k(tag = DescriptorProtos.FileOptions.JAVA_STRING_CHECK_UTF8_FIELD_NUMBER)
+    public Long lastSeenByMeVersion;
+
+    @Json(name = "MeetingInfo")
+    @g8k(tag = 26)
+    public MeetingInfoFanoutResponse meetingInfo;
+
+    @Json(name = "Messages")
+    @g8k(tag = 2)
+    public OutMessage[] messages;
+
+    @Json(name = "HistoryStartTsMcs")
+    @g8k(tag = DescriptorProtos.FieldOptions.FEATURE_SUPPORT_FIELD_NUMBER)
+    public long minMessageTimestamp;
+
+    @Json(name = "MyRole")
+    @g8k(tag = DescriptorProtos.FieldOptions.FEATURES_FIELD_NUMBER)
+    public ChatRole myRole;
+
+    @Json(name = "LastSeenSeqNo")
+    @g8k(tag = 9)
+    public long otherLastSeenSequenceNumber;
+
+    @Json(name = "LastSeenTsMcs")
+    @g8k(tag = 6)
+    public long otherSeenMarker;
+
+    @Json(name = "LastSeenByMeSeqNo")
+    @g8k(tag = 10)
+    public long ownerLastSeenSequenceNumber;
+
+    @Json(name = "LastSeenByMeTsMcs")
+    @g8k(tag = 7)
+    public long ownerSeenMarker;
+
+    @Json(name = "PartnerInfo")
+    @g8k(tag = 18)
+    public ReducedUserInfo partnerInfo;
+
+    @Json(name = "MentionTsMcs")
+    @g8k(tag = DescriptorProtos.FileOptions.DEPRECATED_FIELD_NUMBER)
+    public long[] personalMentions;
+
+    @Json(name = "PinnedMessageInfo")
+    @g8k(tag = 20)
+    public PinnedMessageInfo pinnedMessageInfo;
+
+    @Json(name = "PrivateChatInfo")
+    @g8k(tag = 24)
+    public PrivateChatInfoFromTransport privateChatInfo;
+
+    @Json(name = "SupportedEvents")
+    @g8k(tag = 28)
+    public ChatEventTypes supportedEvents;
+
+    @Json(name = "ThreadParentMessage")
+    @g8k(tag = 25)
+    public ServerMessage threadParentMessage;
+
+    public static class OutMessage {
+
+        @Json(name = "ServerMessage")
+        @i4e
+        @g8k(tag = 101)
+        public ServerMessage serverMessage;
+    }
+}
+
+========== SOCKET / NETWORK REFERENCES ==========
+research/artifacts/decompiled-dex2/sources/defpackage/vd3.java:4:import javax.net.ssl.SSLSocketFactory;
+research/artifacts/decompiled-dex2/sources/defpackage/vd3.java:5:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/vd3.java:29:                SSLSocketFactory sSLSocketFactoryT = pa7.t(l7sVarU);
+research/artifacts/decompiled-dex2/sources/defpackage/e7n.java:8:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/e7n.java:12:    public final OkHttpClient b;
+research/artifacts/decompiled-dex2/sources/defpackage/e7n.java:15:        this.b = new OkHttpClient(new w0i());
+research/artifacts/decompiled-dex2/sources/defpackage/agg.java:6:import java.net.SocketTimeoutException;
+research/artifacts/decompiled-dex2/sources/defpackage/agg.java:178:                        } else if (e instanceof SocketTimeoutException) {
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:8:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/tqh.java:87:                OkHttpClient okHttpClient = new OkHttpClient(w0iVar);
+research/artifacts/decompiled-dex2/sources/defpackage/rgn.java:5:    public static final po1 a = new po1("SocketFrameCounting", "Socket frame counting failed");
+research/artifacts/decompiled-dex2/sources/defpackage/rgn.java:26:        a("Socket.FrameRxBytes", j, new rjl(2, tfg.a, tfg.class, "recordSocketFrameBytes", "recordSocketFrameBytes(Ljava/lang/String;I)V", 0, 2));
+research/artifacts/decompiled-dex2/sources/defpackage/nie.java:12:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/nie.java:175:                OkHttpClient okHttpClient = (OkHttpClient) zcpVar.b;
+research/artifacts/decompiled-dex2/sources/defpackage/nie.java:188:                return new OkHttpClient(w0iVarB);
+research/artifacts/decompiled-dex2/sources/defpackage/hvc.java:5:    public static final hvc b = new hvc("WebSocket", 0);
+research/artifacts/decompiled-dex2/sources/defpackage/hvc.java:16:        return "WebSocket";
+research/artifacts/decompiled-dex2/sources/defpackage/caa.java:46:    EF1("PushWebSocket", "android_push_websocket"),
+research/artifacts/decompiled-dex2/sources/defpackage/y7m.java:25:            g7f.a(2, "webSocketConnectionState: " + qrnVar.getValue() + " -> " + pu5Var, "SdkConfig");
+research/artifacts/decompiled-dex2/sources/defpackage/p7m.java:8:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/p7m.java:144:                return new xdk(ktrVar, neVar, (OkHttpClient) null, (t8n) null, 60);
+research/artifacts/decompiled-dex2/sources/defpackage/to1.java:3:import javax.net.ssl.SSLSocketFactory;
+research/artifacts/decompiled-dex2/sources/defpackage/to1.java:8:    public final /* synthetic */ SSLSocketFactory b;
+research/artifacts/decompiled-dex2/sources/defpackage/to1.java:11:    public /* synthetic */ to1(SSLSocketFactory sSLSocketFactory, l7s l7sVar, int i) {
+research/artifacts/decompiled-dex2/sources/defpackage/xmh.java:34:import java.net.SocketTimeoutException;
+research/artifacts/decompiled-dex2/sources/defpackage/xmh.java:41:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/xmh.java:100:        } else if (iOException instanceof SocketTimeoutException) {
+research/artifacts/decompiled-dex2/sources/defpackage/e0f.java:10:import java.net.SocketTimeoutException;
+research/artifacts/decompiled-dex2/sources/defpackage/e0f.java:211:                if (cause instanceof SocketTimeoutException) {
+research/artifacts/decompiled-dex2/sources/defpackage/g0k.java:9:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/g0k.java:43:                w0i w0iVarB = new OkHttpClient(w0iVar).b();
+research/artifacts/decompiled-dex2/sources/defpackage/g0k.java:47:                return new OkHttpClient(w0iVarB);
+research/artifacts/decompiled-dex2/sources/defpackage/esq.java:10:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/esq.java:83:                return new OkHttpClient();
+research/artifacts/decompiled-dex2/sources/defpackage/uk0.java:5:import java.net.Socket;
+research/artifacts/decompiled-dex2/sources/defpackage/uk0.java:15:    public static final void a(X509TrustManager x509TrustManager, X509Certificate[] x509CertificateArr, String str, Socket socket) throws CertificateException {
+research/artifacts/decompiled-dex2/sources/defpackage/uk0.java:33:    public static final void c(X509TrustManager x509TrustManager, X509Certificate[] x509CertificateArr, String str, Socket socket) throws CertificateException {
+research/artifacts/decompiled-dex2/sources/defpackage/e20.java:127:            ConfigCapabilityProto configCapabilityProto = new ConfigCapabilityProto(path, strJ, xgf.k0(new ypi[]{ypiVar, ypiVar2, ypiVar3, ypiVar4, ypiVar5, ypiVar6, ypiVar7, ypiVar8, ypiVar9, ypiVar10, ypiVar11, ypiVar12, ypiVar13, new ypi("CRYPTOGRAPHY_TYPE", utdVar.a.a), new ypi("LOG_LEVEL", utdVar.c.a), new ypi("PLAIN_FILE_RSA_PADDING", String.valueOf(utdVar.b.a)), new ypi("METRICS_COLLECTOR", ""), new ypi("BASS_URL", ""), new ypi("DIVKIT_VERSION", ""), new ypi("SCREEN_SCALE_FACTOR", String.valueOf(d20Var.c)), new ypi("SPEECHKIT_API_KEY", (String) d20Var.b.v(d20Var, y5eVarArr[1])), new ypi("SPOTTER_LOGGING_HEAD_MILLIS", String.valueOf(DegradationConfig.DEFAULT_HEARTBEAT_MIN_TIMEOUT_MS)), new ypi("SPOTTER_LOGGING_TAIL_MILLIS", String.valueOf(500L)), new ypi("UNIPROXY_URL", "wss://uniproxy.alice.yandex.net/uni.ws"), new ypi("VINS_URL", ""), new ypi("HEADER_COOKIE", ""), new ypi("AUTO_CONNECT", String.valueOf(false)), new ypi("LOGGING_ENABLED", String.valueOf(false)), new ypi("EXECUTE_TTS_AFTER_DIRECTIVES", String.valueOf(false)), new ypi("INTERRUPTION_SPOTTER_ENABLED", String.valueOf(false)), new ypi("AUTO_SPOTTING", String.valueOf(false)), new ypi("LANGUAGE", ""), new ypi("ENABLE_PHONE_CALLS", String.valueOf(false)), new ypi("PHONE_CALLS_REGISTER_ON_ADD", String.valueOf(true)), new ypi("ICOOKIE", ""), new ypi("PROTO_API_ENABLED", String.valueOf(false)), new ypi("ASR_TOPIC", "quasar-general"), new ypi("EARLY_LISTENING", String.valueOf(false)), new ypi("ALLOW_MULTI_UTT", String.valueOf(d20Var.e)), new ypi("ENABLE_E2E_EOU", String.valueOf(d20Var.f))}), (bn2) null, 8, (DefaultConstructorMarker) null);
+research/artifacts/decompiled-dex2/sources/defpackage/vcj.java:747:                if (w0o.x(jlcVar.d(i2), "Sec-WebSocket-Extensions", true)) {
+research/artifacts/decompiled-dex2/sources/defpackage/vcj.java:821:                    ypkVar.c(1010, "unexpected Sec-WebSocket-Extensions in response header");
+research/artifacts/decompiled-dex2/sources/defpackage/vcj.java:825:                ((ypk) this.b).e(x2r.g + " WebSocket " + ((h5l) this.c).a.i(), uokVarS);
+research/artifacts/decompiled-dex2/sources/defpackage/j1i.java:7:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/j1i.java:20:        Map mapSynchronizedMap = Collections.synchronizedMap(new ebe(new ryg(1, this, j1i.class, "createOkHttpClient", "createOkHttpClient(Lio/ktor/client/plugins/HttpTimeoutConfig;)Lokhttp3/OkHttpClient;", 0, 10), new a0i(5)));
+research/artifacts/decompiled-dex2/sources/defpackage/j1i.java:149:        OkHttpClient okHttpClient = (OkHttpClient) this.h.get(kycVar2.a());
+research/artifacts/decompiled-dex2/sources/defpackage/t1i.java:16:import com.yx360.push.websocket.model.RetryPolicy;
+research/artifacts/decompiled-dex2/sources/defpackage/yq6.java:3:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/yq6.java:68:                OkHttpClient okHttpClient = (OkHttpClient) ((bs6) ((cu6) this.b).a.a.c).z0.get();
+research/artifacts/decompiled-dex2/sources/defpackage/ze3.java:72:        rgn.a("Socket.FrameTxBytes", j, new rjl(2, tfg.a, tfg.class, "recordSocketFrameBytes", "recordSocketFrameBytes(Ljava/lang/String;I)V", 0, 3));
+research/artifacts/decompiled-dex2/sources/defpackage/gmg.java:14:        mqd.z(ze3Var, "xivaSocketFactory");
+research/artifacts/decompiled-dex2/sources/defpackage/aa7.java:104:                Flow flowB2 = ((ywh) ca7Var.c).a.b("yx360PushWebSocket");
+research/artifacts/decompiled-dex2/sources/defpackage/b6m.java:60:        okn.y(this.c, ", allowHttpLog=", ", allowWebSocketLog=", sbO, this.d);
+research/artifacts/decompiled-dex2/sources/defpackage/xep.java:5:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/xep.java:40:                return new f1n((Context) this.b.get(), (OkHttpClient) this.c.get(), (nb1) this.d.get(), (ocg) this.e.get(), (nvj) this.f.get());
+research/artifacts/decompiled-dex2/sources/defpackage/ugg.java:11:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/ugg.java:97:                return new OkHttpClient(new w0i());
+research/artifacts/decompiled-dex2/sources/defpackage/ugg.java:99:                return new OkHttpClient(new w0i());
+research/artifacts/decompiled-dex2/sources/defpackage/fa0.java:50:                g7f.a(2, "Background sync requested - websocket is live => skip", "Background Sync");
+research/artifacts/decompiled-dex2/sources/defpackage/m25.java:4:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/m25.java:8:    public final OkHttpClient a;
+research/artifacts/decompiled-dex2/sources/defpackage/m25.java:10:    public m25(OkHttpClient okHttpClient) {
+research/artifacts/decompiled-dex2/sources/defpackage/gf5.java:655:        Integer numT30 = a6i.t(s3eVarH, "enableYx360PushWebSocket");
+research/artifacts/decompiled-dex2/sources/defpackage/t4s.java:151:        mqd.z(dtrVar, "webSocket");
+research/artifacts/decompiled-dex2/sources/defpackage/t4s.java:156:            h6i.s("XivaSocketFactory", "onClosed");
+research/artifacts/decompiled-dex2/sources/defpackage/w5m.java:5:    public static final w5m b = new w5m("Sdk_WebSocketConnectionState");
+research/artifacts/decompiled-dex2/sources/defpackage/w5m.java:16:        return "WebSocketConnectionState";
+research/artifacts/decompiled-dex2/sources/defpackage/i8g.java:6:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/i8g.java:75:                return new mvn((j01) this.b.get(), (k4e) this.d.get(), (kk2) this.e.get(), (OkHttpClient) this.c.get());
+research/artifacts/decompiled-dex2/sources/defpackage/i6h.java:18:        mqd.z(ikeVar, "messengerXivaSocketFactory");
+research/artifacts/decompiled-dex2/sources/defpackage/i6h.java:20:        mqd.z(pjVar, "activeMultiSocketHolder");
+research/artifacts/decompiled-dex2/sources/defpackage/jeo.java:20:    WEB_SOCKET("websocket"),
+research/artifacts/decompiled-dex2/sources/defpackage/b39.java:3:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/b39.java:8:    public final OkHttpClient b;
+research/artifacts/decompiled-dex2/sources/defpackage/b39.java:11:    public b39(hih hihVar, OkHttpClient okHttpClient, c2k c2kVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/cmc.java:18:        mqd.z(ikeVar, "pushWebSocketFeatureToggle");
+research/artifacts/decompiled-dex2/sources/defpackage/cmc.java:21:        mqd.z(ur0Var, "applicationSocketProvider");
+research/artifacts/decompiled-dex2/sources/defpackage/cmc.java:22:        mqd.z(ikeVar2, "xivaSocketFactory");
+research/artifacts/decompiled-dex2/sources/defpackage/p33.java:192:                    objE = h54Var.d.e(ic6Var, new mel(nzn.E(new IllegalStateException("Push WebSocket authentication failed"))));
+research/artifacts/decompiled-dex2/sources/defpackage/kwh.java:17:import com.yx360.push.websocket.model.RetryPolicy;
+research/artifacts/decompiled-dex2/sources/defpackage/zdk.java:30:        return wq1.j("PushWebSocketOptionUi(name=", this.a, ", title=", this.b, ")");
+research/artifacts/decompiled-dex2/sources/defpackage/y97.java:18:        mqd.z(list2, "pushWebSocketOptions");
+research/artifacts/decompiled-dex2/sources/defpackage/y97.java:63:        mqd.z(list4, "pushWebSocketOptions");
+research/artifacts/decompiled-dex2/sources/defpackage/y97.java:95:        sb.append(", pushWebSocketOptions=");
+research/artifacts/decompiled-dex2/sources/defpackage/su9.java:5:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/su9.java:149:                return new su9((OkHttpClient) this.g, ic6Var, 26);
+research/artifacts/decompiled-dex2/sources/defpackage/cwn.java:782:                as1.Y(((jtr) this.g).c, "WebSocketClient", "startConnection", "WebSocketState updated: " + zurVar);
+research/artifacts/decompiled-dex2/sources/defpackage/gj5.java:7:import java.net.SocketTimeoutException;
+research/artifacts/decompiled-dex2/sources/defpackage/gj5.java:160:                return Boolean.valueOf(((thX instanceof uyc) || (thX instanceof kt5) || (thX instanceof SocketTimeoutException) || (th instanceof CancellationException)) ? false : true);
+research/artifacts/decompiled-dex2/sources/defpackage/aco.java:63:        mqd.z(rhgVar, "messengerSocketConnection");
+research/artifacts/decompiled-dex2/sources/defpackage/izc.java:9:import java.net.SocketTimeoutException;
+research/artifacts/decompiled-dex2/sources/defpackage/izc.java:57:            } else if (iOException instanceof SocketTimeoutException) {
+research/artifacts/decompiled-dex2/sources/defpackage/j3.java:493:                f34.o((ue6) obj2, t35.d("cancelOnSocketClosed: socketState != WebSocketState.Open", (Throwable) null));
+research/artifacts/decompiled-dex2/sources/defpackage/j7l.java:6:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/j7l.java:10:    public final OkHttpClient a;
+research/artifacts/decompiled-dex2/sources/defpackage/j7l.java:17:    public j7l(OkHttpClient okHttpClient, h5l h5lVar, ajm ajmVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/v3s.java:12:import java.net.SocketException;
+research/artifacts/decompiled-dex2/sources/defpackage/v3s.java:13:import java.net.SocketTimeoutException;
+research/artifacts/decompiled-dex2/sources/defpackage/v3s.java:80:        mqd.z(dtrVar, "webSocket");
+research/artifacts/decompiled-dex2/sources/defpackage/glh.java:87:                g7f.a(2, wq1.i("websocket flow completed, session=", (String) obj2, " cause=", th != null ? k87.m(th) : null), "SdkWebSocketProviderService");
+research/artifacts/decompiled-dex2/sources/defpackage/lbk.java:22:        return "PushConfig(method=" + jbk.a + ", protocol=" + kbk.a + ", address=push.yandex.ru, teamAddress=push.yandex-team.ru, path=v2/subscribe/websocket, client=maya, service=calendar, port=null)";
+research/artifacts/decompiled-dex2/sources/defpackage/y0n.java:26:import javax.net.ssl.SSLSocketFactory;
+research/artifacts/decompiled-dex2/sources/defpackage/y0n.java:27:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/y0n.java:122:        SSLSocketFactory sSLSocketFactoryT;
+research/artifacts/decompiled-dex2/sources/defpackage/qcp.java:328:                mqd.z(jycVar, "$this$webSocket");
+research/artifacts/decompiled-dex2/sources/defpackage/mvn.java:15:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/mvn.java:22:    public final OkHttpClient g;
+research/artifacts/decompiled-dex2/sources/defpackage/mvn.java:27:    public mvn(j01 j01Var, k4e k4eVar, kk2 kk2Var, OkHttpClient okHttpClient) {
+research/artifacts/decompiled-dex2/sources/defpackage/gf.java:10:import okhttp3.OkHttpClient;
+research/artifacts/decompiled-dex2/sources/defpackage/gf.java:89:                OkHttpClient okHttpClient = (OkHttpClient) this.f.get();
+research/artifacts/decompiled-dex2/sources/defpackage/nqe.java:73:                httpsURLConnection.setSSLSocketFactory(van.j());
+research/artifacts/decompiled-dex2/sources/defpackage/p10.java:48:                    atl.s(looper, looperMyLooper, "Sockets work on logic");
+research/artifacts/decompiled-dex2/sources/defpackage/epa.java:8:import java.net.SocketException;
+research/artifacts/decompiled-dex2/sources/defpackage/epa.java:9:import java.net.SocketTimeoutException;
+research/artifacts/decompiled-dex2/sources/defpackage/epa.java:115:        } else if (exc instanceof SocketTimeoutException) {
+research/artifacts/decompiled-dex2/sources/defpackage/fmg.java:59:            l0dVar.b("v2/subscribe/websocket");
+research/artifacts/decompiled-dex2/sources/defpackage/yfa.java:110:        dy3.u(", enableYx360PushWebSocket=", ", enableOnlyOneWeekSynchronizeAndroid=", sbT, this.E, this.F);
+research/artifacts/decompiled-dex2/sources/defpackage/ux7.java:6:import java.net.SocketAddress;
+research/artifacts/decompiled-dex2/sources/defpackage/ux7.java:19:    public final void connectFailed(URI uri, SocketAddress socketAddress, IOException iOException) {
+
+========== RESULT ==========
+total 36K
+drwxrwxrwx+  2 codespace codespace 4.0K Nov 13 10:41 .
+drwxrwxrwx+ 18 codespace codespace 4.0K Nov 13 10:41 ..
+-rw-rw-rw-   1 codespace codespace 2.8K Nov 13 10:41 ChatHistoryResponse.java
+-rw-rw-rw-   1 codespace codespace 5.2K Nov 13 10:41 e84.java
+-rw-rw-rw-   1 codespace codespace  423 Nov 13 10:41 mgn.java
+-rw-rw-rw-   1 codespace codespace  11K Nov 13 10:41 qhg.java
