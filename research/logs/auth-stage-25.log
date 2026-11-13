@@ -1,0 +1,605 @@
+
+===== quc.java =====
+package defpackage;
+
+import com.google.protobuf.DescriptorProtos;
+import com.yandex.messaging.core.net.ApiRequest;
+import com.yandex.messaging.core.net.ApiResponse;
+import com.yandex.messaging.core.net.entities.ErrorResponseData;
+import io.appmetrica.analytics.AppMetricaYandex;
+import java.io.IOException;
+import java.lang.reflect.Type;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class quc {
+    public static final Object i = new Object();
+    public final n2d a;
+    public final x20 b;
+    public final String c;
+    public final String d;
+    public final k4e e;
+    public final r7j f;
+    public final btm g;
+    public final l0d h;
+
+    public quc(n2d n2dVar, x20 x20Var, String str, String str2, k4e k4eVar, c8k c8kVar, r7j r7jVar, btm btmVar, fsc fscVar) {
+        mqd.z(n2dVar, "identityProvider");
+        mqd.z(x20Var, "analytics");
+        mqd.z(str, "profileId");
+        mqd.z(str2, "userAgent");
+        mqd.z(k4eVar, "jsonSerializer");
+        mqd.z(c8kVar, "proto");
+        mqd.z(r7jVar, "performanceStatAccumulator");
+        mqd.z(btmVar, "uuidHolder");
+        mqd.z(fscVar, "hostEnvironmentProvider");
+        this.a = n2dVar;
+        this.b = x20Var;
+        this.c = str;
+        this.d = str2;
+        this.e = k4eVar;
+        this.f = r7jVar;
+        this.g = btmVar;
+        l0d l0dVar = new l0d();
+        l0dVar.l("https");
+        l0dVar.g((String) fscVar.a.d(fscVar.b));
+        l0dVar.c("api/", false);
+        this.h = l0dVar;
+    }
+
+    public static znc c(quc qucVar, String str, Type type, ocl oclVar) {
+        return qucVar.b(str, type, oclVar, new vd1(3));
+    }
+
+    public final g5l a(Object obj, String str) {
+        mqd.z(str, "method");
+        if (obj == null) {
+            obj = i;
+        }
+        ApiRequest apiRequest = new ApiRequest(str, obj);
+        g5l g5lVar = new g5l();
+        g5lVar.a = this.h.e();
+        g5lVar.g(nxp.class, nxp.Api);
+        g5lVar.g(Object.class, tyc.a);
+        g5lVar.a("User-Agent", this.d);
+        g5lVar.a("X-VERSION", "5");
+        g5lVar.a("X-UUID", this.c);
+        String str2 = this.g.a;
+        mqd.y(str2, "uuid");
+        g5lVar.a("X-Session-Id", str2);
+        k4e k4eVar = this.e;
+        k4eVar.getClass();
+        g5lVar.f(rcd.d(k4eVar.a(ApiRequest.class), apiRequest));
+        String uuid = AppMetricaYandex.getUuid(((a7s) this.a).a);
+        if (uuid != null && uuid.length() != 0) {
+            g5lVar.a("X-METRICA-UUID", uuid);
+        }
+        return g5lVar;
+    }
+
+    public final znc b(String str, Type type, ocl oclVar, vd1 vd1Var) {
+        ndi ndiVarP;
+        mdi mdiVarL;
+        mqd.z(str, "method");
+        mqd.z(oclVar, "response");
+        String str2 = oclVar.c;
+        int i2 = oclVar.d;
+        long j = oclVar.l - oclVar.k;
+        tcl tclVar = oclVar.g;
+        ii2 ii2Var = oclVar.v(256L).d;
+        x20 x20Var = this.b;
+        try {
+            if (tclVar == null) {
+                x20Var.reportError(si2.e(str), new Exception("body is null"));
+                return znc.l(i2, str2, "body is null");
+            }
+            try {
+                boolean zI = oclVar.i();
+                k4e k4eVar = this.e;
+                if (zI) {
+                    ApiResponse apiResponse = (ApiResponse) k4eVar.a(gum.i(ApiResponse.class, new Type[]{type})).g(tclVar.v());
+                    if (apiResponse != null && "ok".equals(apiResponse.getStatus())) {
+                        this.f.c(j * ((long) DescriptorProtos.Edition.EDITION_2023_VALUE), "time2".concat(str));
+                        return new ldi(apiResponse.getData());
+                    }
+                    znc zncVarE = apiResponse != null ? vd1Var.E(apiResponse) : null;
+                    if (zncVarE == null) {
+                        String strB1 = ii2Var.b1();
+                        x20Var.reportError(si2.e(str), new Exception(String.valueOf(i2)));
+                        zncVarE = znc.l(i2, str2, strB1);
+                    }
+                    return zncVarE;
+                }
+                String strB2 = ii2Var.b1();
+                if (i2 / 100 != 5) {
+                    x20Var.reportError(si2.e(str), new Exception(String.valueOf(i2)));
+                }
+                ApiResponse apiResponse2 = (ApiResponse) k4eVar.a(gum.i(ApiResponse.class, new Type[]{ErrorResponseData.class})).g(tclVar.v());
+                if (apiResponse2 == null || !"error".equals(apiResponse2.getStatus())) {
+                    mdiVarL = znc.l(i2, str2, strB2);
+                } else {
+                    String str3 = ((ErrorResponseData) apiResponse2.getData()).code;
+                    mqd.y(str3, "code");
+                    Integer numI = w0o.I(str3);
+                    mdiVarL = znc.l(numI != null ? numI.intValue() : i2, ((ErrorResponseData) apiResponse2.getData()).code, ((ErrorResponseData) apiResponse2.getData()).text);
+                }
+                return mdiVarL;
+            } catch (j2e e) {
+                x20Var.reportError(si2.e(str), e);
+                ndiVarP = znc.p(i2, str2);
+                return ndiVarP;
+            } catch (IOException e2) {
+                x20Var.reportError(si2.e(str), e2);
+                ndiVarP = znc.p(i2, str2);
+                return ndiVarP;
+            }
+        } finally {
+            tclVar.close();
+        }
+    }
+}
+
+===== af1.java =====
+package defpackage;
+
+import android.os.Looper;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class af1 implements l7l, t91 {
+    public final String a;
+    public final bff b;
+    public final taa c;
+    public r91 d;
+    public x1k e;
+    public final /* synthetic */ bf1 f;
+
+    public af1(bf1 bf1Var, String str, bff bffVar, taa taaVar) {
+        mqd.z(str, "requestId");
+        this.f = bf1Var;
+        this.a = str;
+        this.b = bffVar;
+        this.c = taaVar;
+        this.d = bf1Var.c.f(this);
+    }
+
+    public final void a() {
+        atl.s(this.f.a, Looper.myLooper(), null);
+        r91 r91Var = this.d;
+        if (r91Var != null) {
+            r91Var.close();
+        }
+        this.d = null;
+        x1k x1kVar = this.e;
+        if (x1kVar != null) {
+            ((b5k) x1kVar.k.d).c(x1kVar);
+            ig5 ig5Var = x1kVar.j;
+            if (ig5Var != null) {
+                ig5Var.d0();
+                izc izcVar = ig5Var.m;
+                if (izcVar != null) {
+                    izcVar.c();
+                }
+            }
+        }
+    }
+
+    @Override // defpackage.cw3
+    public final void cancel() {
+        atl.s(this.f.a, Looper.myLooper(), null);
+        r91 r91Var = this.d;
+        if (r91Var != null) {
+            r91Var.close();
+        }
+        this.d = null;
+        x1k x1kVar = this.e;
+        if (x1kVar != null) {
+            x1kVar.cancel();
+        }
+        this.e = null;
+    }
+
+    @Override // defpackage.t91
+    public final void g(xc1 xc1Var, boolean z) {
+        mqd.z(xc1Var, "header");
+        x1k x1kVar = this.e;
+        if (x1kVar != null) {
+            x1kVar.cancel();
+        }
+        this.e = null;
+        if (xc1Var.d()) {
+            bf1 bf1Var = this.f;
+            ulf ulfVar = bf1Var.b;
+            ze1 ze1Var = new ze1(bf1Var, xc1Var, this, z, this.b);
+            taa taaVar = this.c;
+            if (taaVar == null) {
+                taaVar = saa.c;
+            }
+            atl.s((Looper) ulfVar.b, Looper.myLooper(), null);
+            this.e = new x1k(ulfVar, this.a, ze1Var, taaVar);
+        }
+    }
+}
+
+===== bff.java =====
+NOT FOUND
+
+===== ulf.java =====
+NOT FOUND
+
+===== fsc.java =====
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class fsc {
+    public final lfg a;
+    public final poq b;
+    public final t8n c;
+    public final g2e d;
+    public final tin e;
+    public final qsa f;
+    public final pze g;
+
+    public fsc(lfg lfgVar, poq poqVar, t8n t8nVar, ro6 ro6Var, g2e g2eVar, tin tinVar, qsa qsaVar, pze pzeVar) {
+        mqd.z(lfgVar, "environment");
+        mqd.z(poqVar, "apiHostHandler");
+        mqd.z(t8nVar, "filesHostHandler");
+        mqd.z(ro6Var, "balancerHostHandler");
+        mqd.z(g2eVar, "reactionsHostHandler");
+        mqd.z(tinVar, "toolsHostHandler");
+        mqd.z(qsaVar, "telemostCloudApiHostHandler");
+        mqd.z(pzeVar, "configPathHandler");
+        this.a = lfgVar;
+        this.b = poqVar;
+        this.c = t8nVar;
+        this.d = g2eVar;
+        this.e = tinVar;
+        this.f = qsaVar;
+        this.g = pzeVar;
+    }
+
+    public final String a() {
+        return (String) this.a.d(this.e);
+    }
+}
+
+===== bf1.java =====
+package defpackage;
+
+import android.os.Looper;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class bf1 {
+    public final Looper a;
+    public final ulf b;
+    public final s91 c;
+    public final mwk d;
+    public final zmq e;
+    public final y9a f;
+    public final f2k g;
+
+    public bf1(Looper looper, ulf ulfVar, s91 s91Var, mwk mwkVar, zmq zmqVar, y9a y9aVar, f2k f2kVar) {
+        mqd.z(looper, "logicLooper");
+        mqd.z(ulfVar, "httpRetrierFactory");
+        mqd.z(s91Var, "authHeaderProvider");
+        mqd.z(mwkVar, "registrationController");
+        mqd.z(zmqVar, "userActionFailedObservable");
+        mqd.z(y9aVar, "experimentConfig");
+        mqd.z(f2kVar, "profileCurrentOrganizationStorage");
+        this.a = looper;
+        this.b = ulfVar;
+        this.c = s91Var;
+        this.d = mwkVar;
+        this.e = zmqVar;
+        this.f = y9aVar;
+        this.g = f2kVar;
+    }
+
+    public final af1 a(String str, bff bffVar, taa taaVar) {
+        mqd.z(str, "requestId");
+        atl.s(this.a, Looper.myLooper(), null);
+        return new af1(this, str, bffVar, taaVar);
+    }
+}
+
+===== s91.java =====
+package defpackage;
+
+import android.content.SharedPreferences;
+import android.os.Handler;
+import android.os.Looper;
+import java.util.Objects;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class s91 implements f1j, z4k {
+    public final uyh a;
+    public final ryh b;
+    public final Looper c;
+    public final Handler d;
+    public final SharedPreferences e;
+    public final ike f;
+    public final oxk g;
+    public final b5k h;
+    public final nb1 i;
+    public xc1 j;
+    public cw3 k;
+    public final q91 l;
+
+    public s91(Looper looper, SharedPreferences sharedPreferences, nb1 nb1Var, ike ikeVar, oxk oxkVar, b5k b5kVar) {
+        uyh uyhVar = new uyh();
+        this.a = uyhVar;
+        this.b = new ryh(uyhVar);
+        this.j = new tc1();
+        atl.s(looper, Looper.myLooper(), null);
+        this.c = looper;
+        this.d = new Handler(looper);
+        this.e = sharedPreferences;
+        this.i = nb1Var;
+        this.f = ikeVar;
+        this.g = oxkVar;
+        this.h = b5kVar;
+        String string = sharedPreferences.getString("oauth_token", null);
+        if (string != null) {
+            Objects.requireNonNull(nb1Var);
+            this.j = xc1.e(string, nb1Var.a);
+        }
+        q91 q91Var = new q91(this, 0);
+        this.l = q91Var;
+        sharedPreferences.registerOnSharedPreferenceChangeListener(q91Var);
+        b5kVar.a(this);
+    }
+
+    @Override // defpackage.f1j
+    public final void a(e1j e1jVar, boolean z) {
+        String str = e1jVar.a;
+        atl.s(this.c, Looper.myLooper(), null);
+        nb1 nb1Var = this.i;
+        Objects.requireNonNull(nb1Var);
+        cw3 cw3Var = this.k;
+        if (cw3Var != null) {
+            cw3Var.cancel();
+            this.k = null;
+        }
+        wc1 wc1VarE = xc1.e(str, nb1Var.a);
+        this.j = wc1VarE;
+        this.e.edit().putString("oauth_token", str).apply();
+        ryh ryhVar = this.b;
+        ryhVar.b();
+        while (ryhVar.hasNext()) {
+            ((t91) ryhVar.next()).g(wc1VarE, z);
+        }
+    }
+
+    public final void b(wc1 wc1Var) {
+        atl.s(this.c, Looper.myLooper(), null);
+        if (this.i != null && this.j.equals(wc1Var)) {
+            atl.r(this.k, null);
+            atl.t(null, this.j.d());
+            String strG = this.j.b().g();
+            this.j = new tc1();
+            this.e.edit().remove("oauth_token").apply();
+            c(strG);
+        }
+    }
+
+    public final void c(String str) {
+        nb1 nb1Var = this.i;
+        Objects.requireNonNull(nb1Var);
+        ryh ryhVar = this.b;
+        ryhVar.b();
+        while (ryhVar.hasNext()) {
+            ((t91) ryhVar.next()).g(this.j, false);
+        }
+        this.k = ((g1j) this.f.get()).d(this, nb1Var, str, this.g);
+    }
+
+    public final void d() {
+        atl.s(this.c, Looper.myLooper(), null);
+        if (this.h.d.get() || this.i == null || this.e.contains("oauth_token") || !this.j.d()) {
+            return;
+        }
+        atl.r(this.k, null);
+        String strG = this.j.b().g();
+        this.j = new tc1();
+        c(strG);
+    }
+
+    @Override // defpackage.z4k
+    public final void e() {
+        atl.s(this.c, Looper.myLooper(), null);
+        this.e.unregisterOnSharedPreferenceChangeListener(this.l);
+        cw3 cw3Var = this.k;
+        if (cw3Var != null) {
+            cw3Var.cancel();
+            this.k = null;
+        }
+    }
+
+    public final r91 f(t91 t91Var) {
+        atl.s(this.c, Looper.myLooper(), null);
+        this.a.b(t91Var);
+        if (this.j.d()) {
+            t91Var.g(this.j, false);
+        }
+        return new r91(0, this, t91Var);
+    }
+}
+
+===== v4s.java =====
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class v4s extends x4s {
+    public final String a;
+    public final String b;
+
+    public v4s(String str, String str2) {
+        mqd.z(str, "user");
+        this.a = str;
+        this.b = str2;
+    }
+
+    @Override // defpackage.x4s
+    public final void a(l0d l0dVar) {
+        l0dVar.d("user", this.a);
+    }
+
+    @Override // defpackage.x4s
+    public final void b(g5l g5lVar) {
+        g5lVar.a("Authorization", "OAuth ".concat(this.b));
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof v4s)) {
+            return false;
+        }
+        v4s v4sVar = (v4s) obj;
+        return mqd.s(this.a, v4sVar.a) && mqd.s(this.b, v4sVar.b);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
+    }
+
+    public final String toString() {
+        return wq1.j("OAuth(user=", this.a, ", token=", this.b, ")");
+    }
+}
+
+===== API URLS AND ENDPOINTS =====
+research/artifacts/decompiled-dex2/sources/defpackage/dx6.java:165:                return new lck(f3r.j(uvcVar, mx6Var), new mx6(1, tzlVar28.a(kvk.a(k6m.class), (dri) null, (iek) null), k6m.class, "baseUrl", "baseUrl(Lcom/yandex/calendar/profile/AccountEnv;)Ljava/lang/String;", 0, 6), ibkVar.a, ibkVar.b);
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java:967:                        throw new IllegalStateException("This is a bug in DataStore. Please file a bug at: https://issuetracker.google.com/issues/new?component=907884&template=1466542");
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java:974:                            throw new IllegalStateException("This is a bug in DataStore. Please file a bug at: https://issuetracker.google.com/issues/new?component=907884&template=1466542");
+research/artifacts/decompiled-dex2/sources/defpackage/ut2.java:35:                    str = "https://id.yandex.%s";
+research/artifacts/decompiled-dex2/sources/defpackage/ut2.java:37:                    str = "https://passport.yandex-team.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ut2.java:39:                    str = "https://id-test.yandex.%s";
+research/artifacts/decompiled-dex2/sources/defpackage/ut2.java:41:                    str = "https://passport-test.yandex-team.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ut2.java:46:                    str = "https://id-rc.yandex.%s";
+research/artifacts/decompiled-dex2/sources/defpackage/sdi.java:279:                    l5kVar.F(new x5k("https://disk.yandex.ru/client/memory-management?filter=disk"));
+research/artifacts/decompiled-dex2/sources/defpackage/fsc.java:15:        mqd.z(poqVar, "apiHostHandler");
+research/artifacts/decompiled-dex2/sources/defpackage/kf6.java:12:        mqd.z(str, "models_base_url");
+research/artifacts/decompiled-dex2/sources/defpackage/kf6.java:23:        return ((rb0) ((vw1) this.d).b).l(-59258892, "SELECT snapshot_json\nFROM corporateLayersSnapshot\nWHERE uid = ? AND models_base_url = ?", libVar, 2, new o16(this, 7));
+research/artifacts/decompiled-dex2/sources/defpackage/u43.java:8:        mqd.z(str, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/hfg.java:27:        return "https://pay.yandex.ru/transaction/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:23:                mqd.z(strA2, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:32:                mqd.z(strA3, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:41:                mqd.z(strA4, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:50:                mqd.z(strA5, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:59:                mqd.z(strA6, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:68:                mqd.z(strA7, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:89:                mqd.z(strA8, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:121:                mqd.z(strA9, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:136:                mqd.z(strA, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/m10.java:112:                tum.s(t8qVar, tum.c("https://push.yandex.ru/v2/subscribe/app"));
+research/artifacts/decompiled-dex2/sources/defpackage/ifg.java:16:        return "https://passport.yandex-team.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ifg.java:32:        return "https://pay.yandex.ru/transaction/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/ml0.java:16:                str = "https://mobapi.calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ml0.java:21:                str = "https://mobapi-test.calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ml0.java:40:            return "https://testing.calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ml0.java:46:            return "https://calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ml0.java:49:            return "https://testing.calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/e8f.java:30:        g5l g5lVarA = ((quc) zm7Var.b).a(new RequestUserParams(), "request_user");
+research/artifacts/decompiled-dex2/sources/defpackage/e8f.java:36:        return fde.j((quc) this.i.b, "request_user", CreateLimitUserData.class, oclVar);
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:334:                                            str2 = "https://%s/chat/#/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:338:                                            str2 = "https://%s/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:366:                                        str2 = "https://%s/chat/#/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:370:                                        str2 = "https://%s/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:425:                                        str2 = "https://%s/chat/#/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:429:                                        str2 = "https://%s/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:449:                                        str2 = "https://%s/chat/#/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:453:                                        str2 = "https://%s/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:474:                                    str2 = "https://%s/chat/#/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:478:                                    str2 = "https://%s/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:594:                                        str2 = "https://%s/chat/#/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:598:                                        str2 = "https://%s/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:618:                                        str2 = "https://%s/chat/#/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:622:                                        str2 = "https://%s/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:643:                                    str2 = "https://%s/chat/#/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:647:                                    str2 = "https://%s/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:695:                                    str2 = "https://%s/chat/#/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:699:                                    str2 = "https://%s/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:719:                                    str2 = "https://%s/chat/#/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:723:                                    str2 = "https://%s/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:744:                                str2 = "https://%s/chat/#/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/f6g.java:748:                                str2 = "https://%s/c/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/fbi.java:215:                url = new URL(String.format("https://graph.%s", Arrays.copyOf(new Object[]{dea.f()}, 1)));
+research/artifacts/decompiled-dex2/sources/defpackage/fbi.java:543:            String strH = dccVar2.h(String.format("https://graph.%s", Arrays.copyOf(new Object[]{dea.f()}, 1)));
+research/artifacts/decompiled-dex2/sources/defpackage/moq.java:43:                                    intent.setData(Uri.parse("https://yandex.ru/support/messenger/rules.html"));
+research/artifacts/decompiled-dex2/sources/defpackage/moq.java:67:                                    intent.setData(Uri.parse("https://yandex.ru/support/messenger/rules.html"));
+research/artifacts/decompiled-dex2/sources/defpackage/efg.java:27:        return "https://pay-test.mail.yandex.ru/transaction/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/p3p.java:14:        return "TestingMobApiHost(url=https://mobapi-test.calendar.yandex.ru)";
+research/artifacts/decompiled-dex2/sources/defpackage/mv2.java:67:        b6m b6mVar = new b6m("https://mobapi.calendar.yandex.ru", "https://calendar.yandex.ru", false, false, new lbk());
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:616:                            if (strI.startsWith("http://www.w3.org/TR/SVG11/feature#")) {
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:701:                } else if ("".equals(attributes.getURI(i)) || "http://www.w3.org/1999/xlink".equals(attributes.getURI(i))) {
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:1333:            sAXParserFactoryNewInstance.setFeature("http://xml.org/sax/features/external-general-entities", false);
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:1334:            sAXParserFactoryNewInstance.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:1338:            xMLReader.setProperty("http://xml.org/sax/properties/lexical-handler", uolVar);
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:1356:                xmlPullParserNewPullParser.setFeature("http://xmlpull.org/v1/doc/features.html#process-docdecl", false);
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:1357:                xmlPullParserNewPullParser.setFeature("http://xmlpull.org/v1/doc/features.html#process-namespaces", true);
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:1817:        if ("http://www.w3.org/2000/svg".equals(str) || "".equals(str)) {
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:2038:                        } else if ("".equals(attributes.getURI(i5)) || "http://www.w3.org/1999/xlink".equals(attributes.getURI(i5))) {
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:2288:                        } else if ("".equals(attributes.getURI(i10)) || "http://www.w3.org/1999/xlink".equals(attributes.getURI(i10))) {
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:2560:                        } else if ("".equals(attributes.getURI(i15)) || "http://www.w3.org/1999/xlink".equals(attributes.getURI(i15))) {
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:2590:                        if (wqh.e(attributes, i16) == 26 && ("".equals(attributes.getURI(i16)) || "http://www.w3.org/1999/xlink".equals(attributes.getURI(i16)))) {
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:2665:                        } else if ("".equals(attributes.getURI(i17)) || "http://www.w3.org/1999/xlink".equals(attributes.getURI(i17))) {
+research/artifacts/decompiled-dex2/sources/defpackage/mz4.java:2754:        if ("http://www.w3.org/2000/svg".equals(str) || "".equals(str)) {
+research/artifacts/decompiled-dex2/sources/defpackage/i0p.java:5:    public static final cwk a = new cwk("https://telemost\\.yandex\\.ru/\\S*");
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:106:                g5l g5lVarA = ((quc) y8qVar.c).a(requestUserParams, "request_user");
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:136:                znc zncVarJ = fde.j((quc) ((y8q) this.j).c, "request_user", XivaSecretContainer.class, oclVar);
+research/artifacts/decompiled-dex2/sources/defpackage/dgn.java:188:                            String strC = una.c("https://center.yandex-team.ru/api/v1/user/", p0o.A0(str3, "@"), "/avatar/80.jpg");
+research/artifacts/decompiled-dex2/sources/defpackage/dgn.java:299:                                String strC2 = una.c("https://center.yandex-team.ru/api/v1/user/", p0o.A0(str3, "@"), "/avatar/80.jpg");
+research/artifacts/decompiled-dex2/sources/defpackage/q93.java:10:        mqd.z(str, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/q93.java:33:        StringBuilder sbO = wq1.o("CalendarSharingRecipientEnvironment(baseUrl=", this.a, ", webBaseUrl=", this.b, ", compatibilityKey=");
+research/artifacts/decompiled-dex2/sources/defpackage/wsb.java:81:                str = "https://%s/chat/p/%s?utm_source=invite";
+research/artifacts/decompiled-dex2/sources/defpackage/wsb.java:85:                str = "https://%s/p/%s?utm_source=invite";
+research/artifacts/decompiled-dex2/sources/defpackage/tkm.java:185:        g5lVar2.i("https://forms-ext-api.yandex.ru/v3/surveys/9481/form/");
+research/artifacts/decompiled-dex2/sources/defpackage/igg.java:11:                return t5c.B(lfgVar) ? "https://%s/#/join/%s/%d" : "https://%s/chat/#/join/%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/igg.java:14:                return "https://%s/join#%s/%d";
+research/artifacts/decompiled-dex2/sources/defpackage/m83.java:36:            mqd.z(str, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/f7b.java:561:        return String.format("https://%s/link#%s", Arrays.copyOf(new Object[]{strX, str}, 2));
+research/artifacts/decompiled-dex2/sources/defpackage/c58.java:193:                e eVar = new e(bVarA, (String) null, (String) null, "https://yandex.ru/", cookie);
+research/artifacts/decompiled-dex2/sources/defpackage/u23.java:11:        mqd.z(str, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/be1.java:115:                g5l g5lVarA2 = xc1Var.a(((quc) ((ike) x71Var.e).get()).a(new RequestUserParams(), "request_user"));
+research/artifacts/decompiled-dex2/sources/defpackage/be1.java:131:                return fde.j((quc) obj, "request_user", RequestUserData.class, oclVar);
+research/artifacts/decompiled-dex2/sources/defpackage/d44.java:8:        mqd.z(str, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/djk.java:5:    public static volatile cjk a = new cjk("https://yandex.ru/clck/click", new hyh(14));
+research/artifacts/decompiled-dex2/sources/defpackage/qe1.java:154:        return e(this, "request_user", requestUserParams, RequestUserData.class, new nd1(qd1Var, 0), r2Var, z2, wfVar, null, new r2(1, this.f, hu7.class, "apply", "apply(Lokhttp3/Request$Builder;)Lokhttp3/Request$Builder;", 0, 26), 128);
+research/artifacts/decompiled-dex2/sources/defpackage/b6m.java:7:    public final String c = "https://cloud-api.yandex.ru/v1/disk/attach/resources/upload?path=attach:/";
+research/artifacts/decompiled-dex2/sources/defpackage/b6m.java:26:            return "https://calendar.yandex-team.ru/mobile/models";
+research/artifacts/decompiled-dex2/sources/defpackage/b6m.java:38:            return "https://calendar.yandex-team.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/k13.java:8:        mqd.z(str, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/n78.java:647:                                    str4 = t5c.B(lfgVar) ? "https://%s/#/join/%s" : "https://%s/chat/#/join/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/n78.java:651:                                    str4 = "https://%s/join#%s";
+research/artifacts/decompiled-dex2/sources/defpackage/n78.java:659:                                    str3 = "https://%s/chat/#/c/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/n78.java:663:                                    str3 = "https://%s/c/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/g5m.java:37:        this.g = str3.equals("ru") ? "https://yandex.ru/support/yandex-360/customers/calendar/app" : "https://yandex.com/support/yandex-360/customers/calendar/app/en/";
+research/artifacts/decompiled-dex2/sources/defpackage/g5m.java:38:        this.h = str3.equals("ru") ? "https://yandex.ru/legal/calendar_mobile_agreement/ru/" : "https://yandex.ru/legal/calendar_mobile_agreement/en/";
+research/artifacts/decompiled-dex2/sources/defpackage/g5m.java:39:        this.i = "https://calendar.yandex.ru/todo";
+research/artifacts/decompiled-dex2/sources/defpackage/g5m.java:40:        this.j = "https://calendar.yandex-team.ru/todo";
+research/artifacts/decompiled-dex2/sources/defpackage/kfg.java:16:        return "https://passport-test.yandex-team.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/kfg.java:32:        return "https://pay-test.mail.yandex.ru/transaction/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/po1.java:148:        return "https://cloud-api.yandex.net";
+research/artifacts/decompiled-dex2/sources/defpackage/xvm.java:649:        String strLookupPrefix = ((Node) l69Var.a).lookupPrefix("http://schemas.android.com/apk/res/android");
+research/artifacts/decompiled-dex2/sources/defpackage/xvm.java:659:            if (namespaceURI.equals("http://schemas.android.com/aapt")) {
+research/artifacts/decompiled-dex2/sources/defpackage/xvm.java:679:        String attributeNS = v89Var.b.getAttributeNS("http://schemas.android.com/apk/res/android", str);
+research/artifacts/decompiled-dex2/sources/defpackage/lfg.java:44:        return "https://passport.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/bve.java:18:        c = new cwk(una.c("https://(?:telemost\\.yandex\\.", strI0, "|telemost\\.(?:dsp|dst)\\.yandex\\.ru)/j/\\d+(?:[/?].*)?"));
+research/artifacts/decompiled-dex2/sources/defpackage/bve.java:19:        d = new cwk(una.c("https://(?:telemost\\.360\\.yandex\\.", strI0, "|telemost\\.(?:dsp|dst)\\.360\\.yandex\\.ru)/j/\\d+(?:[/?].*)?"));
+research/artifacts/decompiled-dex2/sources/defpackage/bve.java:48:        boolean zG = w0o.G(str, "https://telemost.yandex-team.ru/j/", false);
+research/artifacts/decompiled-dex2/sources/defpackage/ca7.java:16:        this.e = hk3.s(f55VarA, new y97(jc9Var, null, jc9Var, null, jc9Var, null, "https://mobapi-test.calendar.yandex.ru"), (pib) null, 6);
+research/artifacts/decompiled-dex2/sources/defpackage/o5m.java:21:        return bff.U(zaVar, this.a.a(), new n2k(1, this.c.a, b6m.class, "baseUrl", "baseUrl(Lcom/yandex/calendar/profile/AccountEnv;)Ljava/lang/String;", 0, 19), new n2k(1, ml0.a, ml0.class, "modelsUrl", "modelsUrl(Lcom/yandex/calendar/domain/debug/model/ApiHostSelection;)Ljava/lang/String;", 0, 20));
+research/artifacts/decompiled-dex2/sources/defpackage/ffg.java:16:        return "https://passport.yandex-team.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ffg.java:32:        return "https://pay-test.mail.yandex.ru/transaction/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/jfg.java:16:        return "https://passport-test.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/jfg.java:32:        return "https://pay-test.mail.yandex.ru/transaction/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/jl0.java:26:        mqd.z(str, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/nx6.java:12:        mqd.z(str, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/l2m.java:118:                                str = "https://mobapi.calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/l2m.java:123:                                str = "https://mobapi-test.calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/j0a.java:108:        String strConcat2 = "https://maps.yandex.ru/?uri=".concat(strEncode2);
+research/artifacts/decompiled-dex2/sources/defpackage/mvn.java:101:            g5lVar.i("https://yastatic.net/s3/home/stream/stories/stickers.json");
+research/artifacts/decompiled-dex2/sources/defpackage/qs2.java:8:        mqd.z(str, "baseUrl");
+research/artifacts/decompiled-dex2/sources/defpackage/qs2.java:24:        return una.c("Resolved(baseUrl=", this.a, ")");
+
+===== HTTP REQUEST PIPELINE =====
