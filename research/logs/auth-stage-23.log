@@ -1,0 +1,292 @@
+
+===== quc.java =====
+package defpackage;
+
+import com.google.protobuf.DescriptorProtos;
+import com.yandex.messaging.core.net.ApiRequest;
+import com.yandex.messaging.core.net.ApiResponse;
+import com.yandex.messaging.core.net.entities.ErrorResponseData;
+import io.appmetrica.analytics.AppMetricaYandex;
+import java.io.IOException;
+import java.lang.reflect.Type;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class quc {
+    public static final Object i = new Object();
+    public final n2d a;
+    public final x20 b;
+    public final String c;
+    public final String d;
+    public final k4e e;
+    public final r7j f;
+    public final btm g;
+    public final l0d h;
+
+    public quc(n2d n2dVar, x20 x20Var, String str, String str2, k4e k4eVar, c8k c8kVar, r7j r7jVar, btm btmVar, fsc fscVar) {
+        mqd.z(n2dVar, "identityProvider");
+        mqd.z(x20Var, "analytics");
+        mqd.z(str, "profileId");
+        mqd.z(str2, "userAgent");
+        mqd.z(k4eVar, "jsonSerializer");
+        mqd.z(c8kVar, "proto");
+        mqd.z(r7jVar, "performanceStatAccumulator");
+        mqd.z(btmVar, "uuidHolder");
+        mqd.z(fscVar, "hostEnvironmentProvider");
+        this.a = n2dVar;
+        this.b = x20Var;
+        this.c = str;
+        this.d = str2;
+        this.e = k4eVar;
+        this.f = r7jVar;
+        this.g = btmVar;
+        l0d l0dVar = new l0d();
+        l0dVar.l("https");
+        l0dVar.g((String) fscVar.a.d(fscVar.b));
+        l0dVar.c("api/", false);
+        this.h = l0dVar;
+    }
+
+    public static znc c(quc qucVar, String str, Type type, ocl oclVar) {
+        return qucVar.b(str, type, oclVar, new vd1(3));
+    }
+
+    public final g5l a(Object obj, String str) {
+        mqd.z(str, "method");
+        if (obj == null) {
+            obj = i;
+        }
+        ApiRequest apiRequest = new ApiRequest(str, obj);
+        g5l g5lVar = new g5l();
+        g5lVar.a = this.h.e();
+        g5lVar.g(nxp.class, nxp.Api);
+        g5lVar.g(Object.class, tyc.a);
+        g5lVar.a("User-Agent", this.d);
+        g5lVar.a("X-VERSION", "5");
+        g5lVar.a("X-UUID", this.c);
+        String str2 = this.g.a;
+        mqd.y(str2, "uuid");
+        g5lVar.a("X-Session-Id", str2);
+        k4e k4eVar = this.e;
+        k4eVar.getClass();
+        g5lVar.f(rcd.d(k4eVar.a(ApiRequest.class), apiRequest));
+        String uuid = AppMetricaYandex.getUuid(((a7s) this.a).a);
+        if (uuid != null && uuid.length() != 0) {
+            g5lVar.a("X-METRICA-UUID", uuid);
+        }
+        return g5lVar;
+    }
+
+    public final znc b(String str, Type type, ocl oclVar, vd1 vd1Var) {
+        ndi ndiVarP;
+        mdi mdiVarL;
+        mqd.z(str, "method");
+        mqd.z(oclVar, "response");
+        String str2 = oclVar.c;
+        int i2 = oclVar.d;
+        long j = oclVar.l - oclVar.k;
+        tcl tclVar = oclVar.g;
+        ii2 ii2Var = oclVar.v(256L).d;
+        x20 x20Var = this.b;
+        try {
+            if (tclVar == null) {
+                x20Var.reportError(si2.e(str), new Exception("body is null"));
+                return znc.l(i2, str2, "body is null");
+            }
+            try {
+                boolean zI = oclVar.i();
+                k4e k4eVar = this.e;
+                if (zI) {
+                    ApiResponse apiResponse = (ApiResponse) k4eVar.a(gum.i(ApiResponse.class, new Type[]{type})).g(tclVar.v());
+                    if (apiResponse != null && "ok".equals(apiResponse.getStatus())) {
+                        this.f.c(j * ((long) DescriptorProtos.Edition.EDITION_2023_VALUE), "time2".concat(str));
+                        return new ldi(apiResponse.getData());
+                    }
+                    znc zncVarE = apiResponse != null ? vd1Var.E(apiResponse) : null;
+                    if (zncVarE == null) {
+                        String strB1 = ii2Var.b1();
+                        x20Var.reportError(si2.e(str), new Exception(String.valueOf(i2)));
+                        zncVarE = znc.l(i2, str2, strB1);
+                    }
+                    return zncVarE;
+                }
+                String strB2 = ii2Var.b1();
+                if (i2 / 100 != 5) {
+                    x20Var.reportError(si2.e(str), new Exception(String.valueOf(i2)));
+                }
+                ApiResponse apiResponse2 = (ApiResponse) k4eVar.a(gum.i(ApiResponse.class, new Type[]{ErrorResponseData.class})).g(tclVar.v());
+                if (apiResponse2 == null || !"error".equals(apiResponse2.getStatus())) {
+                    mdiVarL = znc.l(i2, str2, strB2);
+                } else {
+                    String str3 = ((ErrorResponseData) apiResponse2.getData()).code;
+                    mqd.y(str3, "code");
+                    Integer numI = w0o.I(str3);
+                    mdiVarL = znc.l(numI != null ? numI.intValue() : i2, ((ErrorResponseData) apiResponse2.getData()).code, ((ErrorResponseData) apiResponse2.getData()).text);
+                }
+                return mdiVarL;
+            } catch (j2e e) {
+                x20Var.reportError(si2.e(str), e);
+                ndiVarP = znc.p(i2, str2);
+                return ndiVarP;
+            } catch (IOException e2) {
+                x20Var.reportError(si2.e(str), e2);
+                ndiVarP = znc.p(i2, str2);
+                return ndiVarP;
+            }
+        } finally {
+            tclVar.close();
+        }
+    }
+}
+
+===== y8q.java =====
+NOT FOUND
+
+===== c4s.java =====
+package defpackage;
+
+import android.content.SharedPreferences;
+import android.os.Looper;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class c4s {
+    public final SharedPreferences a;
+    public final k45 b;
+    public final y8q c;
+    public final Looper d;
+    public final uyh e;
+    public l7l f;
+
+    public c4s(SharedPreferences sharedPreferences, k45 k45Var, y8q y8qVar) {
+        mqd.z(sharedPreferences, "prefs");
+        mqd.z(k45Var, "clock");
+        mqd.z(y8qVar, "apiCalls");
+        this.a = sharedPreferences;
+        this.b = k45Var;
+        this.c = y8qVar;
+        this.d = Looper.myLooper();
+        this.e = new uyh();
+    }
+}
+
+===== w4s.java =====
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class w4s extends x4s {
+    public final String a;
+    public final String b;
+    public final long c;
+
+    public w4s(String str, String str2, long j) {
+        mqd.z(str2, "sign");
+        this.a = str;
+        this.b = str2;
+        this.c = j;
+    }
+
+    @Override // defpackage.x4s
+    public final void a(l0d l0dVar) {
+        l0dVar.d("user", this.a);
+        l0dVar.d("sign", this.b);
+        l0dVar.d("ts", String.valueOf(this.c));
+    }
+
+    @Override // defpackage.x4s
+    public final void b(g5l g5lVar) {
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof w4s)) {
+            return false;
+        }
+        w4s w4sVar = (w4s) obj;
+        return mqd.s(this.a, w4sVar.a) && mqd.s(this.b, w4sVar.b) && this.c == w4sVar.c;
+    }
+
+    public final int hashCode() {
+        return Long.hashCode(this.c) + okn.d(this.a.hashCode() * 31, this.b, 31);
+    }
+
+    public final String toString() {
+        return fde.o(this.c, ")", wq1.o("Secret(user=", this.a, ", sign=", this.b, ", ts="));
+    }
+}
+
+===== fsc.java =====
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class fsc {
+    public final lfg a;
+    public final poq b;
+    public final t8n c;
+    public final g2e d;
+    public final tin e;
+    public final qsa f;
+    public final pze g;
+
+    public fsc(lfg lfgVar, poq poqVar, t8n t8nVar, ro6 ro6Var, g2e g2eVar, tin tinVar, qsa qsaVar, pze pzeVar) {
+        mqd.z(lfgVar, "environment");
+        mqd.z(poqVar, "apiHostHandler");
+        mqd.z(t8nVar, "filesHostHandler");
+        mqd.z(ro6Var, "balancerHostHandler");
+        mqd.z(g2eVar, "reactionsHostHandler");
+        mqd.z(tinVar, "toolsHostHandler");
+        mqd.z(qsaVar, "telemostCloudApiHostHandler");
+        mqd.z(pzeVar, "configPathHandler");
+        this.a = lfgVar;
+        this.b = poqVar;
+        this.c = t8nVar;
+        this.d = g2eVar;
+        this.e = tinVar;
+        this.f = qsaVar;
+        this.g = pzeVar;
+    }
+
+    public final String a() {
+        return (String) this.a.d(this.e);
+    }
+}
+
+===== REQUEST_USER CALL SITES =====
+research/artifacts/decompiled-dex2/sources/defpackage/w5s.java:207:        this.m = g5sVar.b.a(new idl(str, iy2Var, ycpVar, 4));
+research/artifacts/decompiled-dex2/sources/defpackage/e8f.java:30:        g5l g5lVarA = ((quc) zm7Var.b).a(new RequestUserParams(), "request_user");
+research/artifacts/decompiled-dex2/sources/defpackage/e8f.java:36:        return fde.j((quc) this.i.b, "request_user", CreateLimitUserData.class, oclVar);
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:81:            c4sVar.f = ((bf1) y8qVar.b).a(wq1.g("toString(...)"), new idl(y8qVar, strValueOf, wzrVar, 3), saa.c);
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:9:import com.yandex.messaging.core.net.entities.xiva.XivaSecretContainer;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:68:                XivaSecretContainer xivaSecretContainer = (XivaSecretContainer) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:106:                g5l g5lVarA = ((quc) y8qVar.c).a(requestUserParams, "request_user");
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:136:                znc zncVarJ = fde.j((quc) ((y8q) this.j).c, "request_user", XivaSecretContainer.class, oclVar);
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:140:                XivaUser xivaUser = ((XivaSecretContainer) ((ldi) zncVarJ).i).user;
+research/artifacts/decompiled-dex2/sources/defpackage/be1.java:115:                g5l g5lVarA2 = xc1Var.a(((quc) ((ike) x71Var.e).get()).a(new RequestUserParams(), "request_user"));
+research/artifacts/decompiled-dex2/sources/defpackage/be1.java:131:                return fde.j((quc) obj, "request_user", RequestUserData.class, oclVar);
+research/artifacts/decompiled-dex2/sources/defpackage/qe1.java:154:        return e(this, "request_user", requestUserParams, RequestUserData.class, new nd1(qd1Var, 0), r2Var, z2, wfVar, null, new r2(1, this.f, hu7.class, "apply", "apply(Lokhttp3/Request$Builder;)Lokhttp3/Request$Builder;", 0, 26), 128);
+
+===== XIVA STORAGE REFERENCES =====
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:60:        c4s c4sVar = rhgVar.i;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:62:        c4sVar.getClass();
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:64:        atl.s(c4sVar.d, Looper.myLooper(), null);
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:65:        SharedPreferences sharedPreferences = c4sVar.a;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:70:            c4sVar.b.getClass();
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:76:        c4sVar.e.b(isdVar);
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:77:        if (c4sVar.f == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:78:            y8q y8qVar = c4sVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:79:            wzr wzrVar = new wzr(7, c4sVar, strValueOf);
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:81:            c4sVar.f = ((bf1) y8qVar.b).a(wq1.g("toString(...)"), new idl(y8qVar, strValueOf, wzrVar, 3), saa.c);
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:83:        return new ew3(new udr(5, c4sVar, isdVar), 0);
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:248:            c4s c4sVar = rhgVar.i;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:249:            atl.s(c4sVar.d, Looper.myLooper(), null);
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:250:            c4sVar.a.edit().remove("xiva_secret_user").remove("xiva_secret_sign").remove("xiva_secret_ts").apply();
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:9:import com.yandex.messaging.core.net.entities.xiva.XivaSecretContainer;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:68:                XivaSecretContainer xivaSecretContainer = (XivaSecretContainer) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:75:                String str = xivaSecretContainer.secret.sign;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:77:                wzrVar.invoke(new w4s(strValueOf, str, xivaSecretContainer.secret.ts));
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:103:                requestUserParams.needXivaSecret = true;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:136:                znc zncVarJ = fde.j((quc) ((y8q) this.j).c, "request_user", XivaSecretContainer.class, oclVar);
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:140:                XivaUser xivaUser = ((XivaSecretContainer) ((ldi) zncVarJ).i).user;
+research/artifacts/decompiled-dex2/sources/defpackage/rhg.java:15:    public rhg(nb1 nb1Var, cmc cmcVar, b5k b5kVar, bpm bpmVar, ike ikeVar, ne6 ne6Var, s91 s91Var, hqq hqqVar, c4s c4sVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/rhg.java:23:        mqd.z(c4sVar, "xivaSecretHolder");
+research/artifacts/decompiled-dex2/sources/defpackage/rhg.java:32:        this.i = c4sVar;
