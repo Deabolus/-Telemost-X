@@ -1,0 +1,8 @@
+]633;E;echo "===== JAVA VERSION =====";bc126f02-661a-43ab-8248-12dbbd713303]633;C===== JAVA VERSION =====
+openjdk version "25.0.5.0.2" 2026-10-22 LTS
+OpenJDK Runtime Environment Microsoft-15804669 (build 25.0.5.0.2+1-LTS)
+OpenJDK 64-Bit Server VM Microsoft-15804669 (build 25.0.5.0.2+1-LTS, mixed mode, sharing)
+===== JAVA HOME =====
+/usr/local/sdkman/candidates/java/current
+===== AVAILABLE JVM =====
+ls: cannot access '/usr/lib/jvm': No such file or directory
