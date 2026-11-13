@@ -1,10 +1,280 @@
 ========== z0j.java ==========
-research/artifacts/decompiled-dex2/sources/defpackage/z0j.java
+package defpackage;
+
+import android.os.Handler;
+import android.os.Looper;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final /* synthetic */ class z0j implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b1j b;
+
+    public /* synthetic */ z0j(b1j b1jVar, int i) {
+        this.a = i;
+        this.b = b1jVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        oxk oxkVar;
+        switch (this.a) {
+            case 0:
+                b1j b1jVar = this.b;
+                Handler handler = b1jVar.a;
+                try {
+                    Object objO = b1jVar.e.o(b1jVar.b);
+                    if (objO == null) {
+                        handler.post(new z0j(b1jVar, 1));
+                    } else {
+                        handler.post(new rtf(19, b1jVar, objO));
+                    }
+                } catch (a91 | b91 unused) {
+                    handler.post(new z0j(b1jVar, 2));
+                    return;
+                } catch (Exception e) {
+                    handler.post(new rtf(20, b1jVar, e));
+                    return;
+                }
+                break;
+            case 1:
+                this.b.a(null);
+                break;
+            default:
+                b1j b1jVar2 = this.b;
+                atl.s(b1jVar2.a.getLooper(), Looper.myLooper(), null);
+                atl.t(null, b1jVar2.g);
+                b1jVar2.g = false;
+                b1jVar2.d.j(b1jVar2.e.name(), "passport_relogin_required", "method");
+                if (!b1jVar2.h && (oxkVar = b1jVar2.c) != null) {
+                    atl.s(oxkVar.a, Looper.myLooper(), null);
+                    oxkVar.d = true;
+                    ryh ryhVar = oxkVar.c;
+                    ryhVar.b();
+                    while (ryhVar.hasNext()) {
+                        rxk rxkVar = (rxk) ryhVar.next();
+                        atl.s((Looper) rxkVar.e.c, Looper.myLooper(), null);
+                        rxkVar.a.post(new qxk(rxkVar, 2));
+                    }
+                    break;
+                }
+                break;
+        }
+    }
+}
+
 ========== a1j.java ==========
-research/artifacts/decompiled-dex2/sources/defpackage/a1j.java
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public interface a1j {
+    void j(Object obj);
+
+    String name();
+
+    Object o(k0j k0jVar);
+}
+
 ========== e1j.java ==========
-research/artifacts/decompiled-dex2/sources/defpackage/e1j.java
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class e1j {
+    public final String a;
+
+    public e1j(String str) {
+        this.a = str;
+    }
+}
+
 ========== k0j.java ==========
-research/artifacts/decompiled-dex2/sources/defpackage/k0j.java
-========== ulf files ==========
-========== ulf class declarations ==========
+package defpackage;
+
+import android.content.Context;
+import android.net.Uri;
+import com.yandex.passport.api.exception.n;
+import com.yandex.passport.api.t;
+import com.yandex.passport.api.u;
+import com.yandex.passport.internal.impl.o;
+import io.sentry.config.a;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class k0j {
+    public final Context a;
+    public final o b;
+    public final t c;
+
+    public k0j(Context context) {
+        this.a = context;
+        o oVarL = a.l(context);
+        this.b = oVarL;
+        this.c = oVarL.f();
+    }
+
+    /* JADX WARN: Code duplicated, block: B:7:0x0013  */
+    public static Object b(k0j k0jVar, kc6 kc6Var) {
+        h0j h0jVar;
+        if (kc6Var instanceof h0j) {
+            h0jVar = (h0j) kc6Var;
+            int i = h0jVar.f;
+            if ((i & Integer.MIN_VALUE) != 0) {
+                h0jVar.f = i - Integer.MIN_VALUE;
+            } else {
+                h0jVar = new h0j(k0jVar, kc6Var);
+            }
+        } else {
+            h0jVar = new h0j(k0jVar, kc6Var);
+        }
+        Object obj = h0jVar.d;
+        xe6 xe6Var = xe6.a;
+        int i2 = h0jVar.f;
+        if (i2 != 0) {
+            if (i2 != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            nzn.U(obj);
+            return ((mel) obj).a;
+        }
+        nzn.U(obj);
+        o oVar = k0jVar.b;
+        h0jVar.f = 1;
+        Object objI = oVar.i(h0jVar);
+        return objI == xe6Var ? xe6Var : objI;
+    }
+
+    /* JADX INFO: Thrown type has an unknown type hierarchy: com.yandex.passport.api.exception.n */
+    public final void a(nb1 nb1Var, Uri uri) throws h91, n {
+        mqd.z(nb1Var, "currentUid");
+        mqd.z(uri, "uri");
+        Object obj = ((mel) lo7.K(fc9.a, new dqi(this, nb1Var, uri, null, 1))).a;
+        if (!(obj instanceof jel)) {
+            ((Boolean) obj).getClass();
+            obj = fcq.a;
+        }
+        n nVarA = mel.a(obj);
+        if (nVarA == null) {
+            return;
+        }
+        if (!(nVarA instanceof n)) {
+            throw nVarA;
+        }
+        throw xo7.T(nVarA);
+    }
+
+    /* JADX INFO: Thrown type has an unknown type hierarchy: com.yandex.passport.api.exception.n */
+    public final hb1 c(nb1 nb1Var) throws h91, n {
+        mqd.z(nb1Var, "uid");
+        Object obj = ((mel) lo7.K(fc9.a, new pwh(this, nb1Var, null, 13))).a;
+        n nVarA = mel.a(obj);
+        if (nVarA == null) {
+            String str = ((u) obj).a;
+            mqd.z(str, "$this$toAuthToken");
+            return new hb1(str);
+        }
+        if (nVarA instanceof n) {
+            throw xo7.T(nVarA);
+        }
+        throw nVarA;
+    }
+}
+
+========== ulf references ==========
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:104:        ulf ulfVar;
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:302:                            ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:306:                        ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:318:                        ulfVar = qq3.j(jl0.g, bihVar2, v5lVar, num, bihVar2);
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:320:                    if (ulfVar.C()) {
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:321:                        Object obj3 = ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:325:                    bihVar = (bih) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:397:                    ulfVar = qq3.j(jl0.g, bihVar3, v5lVar, num, bihVar3);
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:409:                        ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:413:                    ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:415:                if (ulfVar.C()) {
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:416:                    Object obj4 = ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:420:                bihVar = (bih) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:8:    public final /* synthetic */ ulf k;
+research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:11:    public x1k(ulf ulfVar, String str, ze1 ze1Var, taa taaVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:13:        this.k = ulfVar;
+research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:14:        kg5 kg5Var = (kg5) ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:17:        ((b5k) ulfVar.d).a(this);
+research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:35:        ulf ulfVar = this.k;
+research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:36:        atl.s((Looper) ulfVar.b, Looper.myLooper(), null);
+research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:37:        ((b5k) ulfVar.d).c(this);
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:232:        ulf ulfVar;
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:302:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:305:            ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:317:            ulfVar = qq3.j(jl0.g, bihVar2, v5lVar, (Object) null, bihVar2);
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:319:        if (ulfVar.C()) {
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:320:            Object obj = ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:324:        bihVar = (bih) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:364:                ulfVar = qq3.j(jl0.g, bihVar3, v5lVar, (Object) null, bihVar3);
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:377:                    ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:380:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:382:            if (ulfVar.C()) {
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:383:                Object obj2 = ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:387:            bihVar = (bih) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:437:        ulf ulfVar;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:509:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:512:            ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:524:            ulfVar = qq3.j(jl0.g, bihVar2, v5lVar, (Object) null, bihVar2);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:526:        if (ulfVar.C()) {
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:527:            bihVar = (bih) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:533:        Object obj2 = ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:575:                ulfVar = qq3.j(jl0.g, bihVar3, v5lVar, (Object) null, bihVar3);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:588:                    ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:591:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:593:            if (ulfVar.C()) {
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:594:                bihVar = (bih) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:600:            Object obj3 = ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:639:        ulf ulfVar;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:702:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:705:            ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:717:            ulfVar = qq3.j(jl0.g, bihVar2, v5lVar, (Object) null, bihVar2);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:719:        if (ulfVar.C()) {
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:720:            Object obj2 = ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:724:        bihVar = (bih) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:762:                ulfVar = qq3.j(jl0.g, bihVar3, v5lVar, (Object) null, bihVar3);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:775:                    ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:778:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:780:            if (ulfVar.C()) {
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:781:                Object obj3 = ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:785:            bihVar = (bih) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:820:        ulf ulfVar;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:881:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:884:            ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:896:            ulfVar = qq3.j(jl0.g, bihVar2, v5lVar, (Object) null, bihVar2);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:898:        if (ulfVar.C()) {
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:899:            bihVar = (bih) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:905:        Object obj2 = ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:946:                ulfVar = qq3.j(jl0.g, bihVar3, v5lVar, (Object) null, bihVar3);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:959:                    ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:962:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:964:            if (ulfVar.C()) {
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:965:                bihVar = (bih) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:971:            Object obj3 = ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:2064:                                        j97Var.a.reportEvent("tech_insert_message", xgf.k0(new ypi[]{new ypi("trace", (String) ((xeo) new ulf(1).d).getValue()), new ypi("chatId_fromChat", str19), new ypi("chatId_fromMessage", str15), new ypi("timestamp", Long.valueOf(message.b)), new ypi("prevTimestamp", Long.valueOf(message.c)), new ypi("parentMessageTimestamp", q9jVar3.j), new ypi("seqNo", Long.valueOf(message.d))}));
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:2629:                                    j97Var.a.reportEvent("tech_insert_message", xgf.k0(new ypi[]{new ypi("trace", (String) ((xeo) new ulf(1).d).getValue()), new ypi("chatId_fromChat", str19), new ypi("chatId_fromMessage", str15), new ypi("timestamp", Long.valueOf(message.b)), new ypi("prevTimestamp", Long.valueOf(message.c)), new ypi("parentMessageTimestamp", q9jVar3.j), new ypi("seqNo", Long.valueOf(message.d))}));
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:3170:                                j97Var.a.reportEvent("tech_insert_message", xgf.k0(new ypi[]{new ypi("trace", (String) ((xeo) new ulf(1).d).getValue()), new ypi("chatId_fromChat", str19), new ypi("chatId_fromMessage", str15), new ypi("timestamp", Long.valueOf(message.b)), new ypi("prevTimestamp", Long.valueOf(message.c)), new ypi("parentMessageTimestamp", q9jVar3.j), new ypi("seqNo", Long.valueOf(message.d))}));
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:3727:                                j97Var.a.reportEvent("tech_insert_message", xgf.k0(new ypi[]{new ypi("trace", (String) ((xeo) new ulf(1).d).getValue()), new ypi("chatId_fromChat", str19), new ypi("chatId_fromMessage", str15), new ypi("timestamp", Long.valueOf(message.b)), new ypi("prevTimestamp", Long.valueOf(message.c)), new ypi("parentMessageTimestamp", q9jVar3.j), new ypi("seqNo", Long.valueOf(message.d))}));
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:4268:                            j97Var.a.reportEvent("tech_insert_message", xgf.k0(new ypi[]{new ypi("trace", (String) ((xeo) new ulf(1).d).getValue()), new ypi("chatId_fromChat", str19), new ypi("chatId_fromMessage", str15), new ypi("timestamp", Long.valueOf(message.b)), new ypi("prevTimestamp", Long.valueOf(message.c)), new ypi("parentMessageTimestamp", q9jVar3.j), new ypi("seqNo", Long.valueOf(message.d))}));
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:83:        ulf ulfVar;
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:155:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:158:            ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:170:            ulfVar = qq3.j(jl0.g, bihVar2, v5lVar, (Object) null, bihVar2);
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:172:        if (ulfVar.C()) {
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:173:            bihVar = (bih) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:179:        Object obj2 = ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:254:                ulfVar = qq3.j(jl0.g, bihVar3, v5lVar, (Object) null, bihVar3);
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:267:                    ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:270:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:272:            if (ulfVar.C()) {
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:273:                bihVar = (bih) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/f03.java:279:            Object obj3 = ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/rki.java:148:                ulf ulfVar = (ulf) skiVar.e;
+research/artifacts/decompiled-dex2/sources/defpackage/rki.java:150:                if (ulfVar != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/rki.java:152:                    qki qkiVar = (qki) ulfVar.b;
+research/artifacts/decompiled-dex2/sources/defpackage/rki.java:153:                    View view = (View) ulfVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/rki.java:162:                            MotionEvent motionEvent2 = (MotionEvent) ulfVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/aag.java:507:                return new aag((ofg) this.g, (Bundle) this.h, (ulf) this.i, ic6Var, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/g1j.java:106:            return new b1j(k0jVar, oxkVar, this.c, new ulf(str, nb1Var, f1jVar, 15));
+research/artifacts/decompiled-dex2/sources/defpackage/ski.java:47:        ulf ulfVar = (ulf) this.e;
+research/artifacts/decompiled-dex2/sources/defpackage/ski.java:48:        if (ulfVar != null) {
