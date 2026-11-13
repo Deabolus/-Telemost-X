@@ -1,3 +1,33 @@
-===== CLASS O =====
-===== CLASS ZUM =====
-===== CLASS DECLARATIONS =====
+===== WORKSPACE =====
+/workspaces/-Telemost-X
+===== ARTIFACT DIRECTORIES =====
+research/artifacts
+research/artifacts/auth-stage-4
+research/artifacts/auth-stage-4/o
+research/artifacts/auth-stage-4/zum
+research/artifacts/pwh-simple
+research/artifacts/pwh-simple/sources
+research/artifacts/pwh-simple/sources/defpackage
+research/artifacts/dex
+research/artifacts/unpacked
+research/artifacts/decompiled-dex2
+research/artifacts/decompiled-dex2/sources
+research/artifacts/decompiled-dex2/sources/com
+research/artifacts/decompiled-dex2/sources/com/seiko
+research/artifacts/decompiled-dex2/sources/com/lightside
+research/artifacts/decompiled-dex2/sources/com/google
+research/artifacts/decompiled-dex2/sources/com/squareup
+research/artifacts/decompiled-dex2/sources/com/yandex
+research/artifacts/decompiled-dex2/sources/defpackage
+research/artifacts/decompiled-dex2/resources
+===== IMPORTANT SOURCE FILES =====
+research/notes/auth-stage-2/k0j.java
+research/notes/auth-stage-2/pwh.java
+research/artifacts/pwh-simple/sources/defpackage/pwh.java
+research/artifacts/decompiled-dex2/sources/defpackage/k0j.java
+research/artifacts/decompiled-dex2/sources/defpackage/pwh.java
+===== DEX FILES =====
+research/artifacts/dex/classes4.dex
+research/artifacts/dex/classes.dex
+research/artifacts/dex/classes2.dex
+research/artifacts/dex/classes3.dex
