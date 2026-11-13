@@ -1,7 +1,25 @@
-===== EXTRACT g0m =====
-find: ‘research/artifacts/auth-stage-11/g0m’: No such file or directory
-ERROR: g0m.java not found
-INFO  - loading ...
-ERROR - Incorrect arguments: Input class not found: com.yandex.passport.internal.methods.g0m
+===== DEX FILES =====
+research/artifacts/dex/classes4.dex
+research/artifacts/dex/classes.dex
+research/artifacts/dex/classes2.dex
+research/artifacts/dex/classes3.dex
 
-===== PASSPORT PROVIDER MANIFEST =====
+===== SEARCH g0m IN ALL DEX =====
+--- research/artifacts/dex/classes.dex ---
+Lg0m;
+--- research/artifacts/dex/classes2.dex ---
+Lg0m;
+--- research/artifacts/dex/classes3.dex ---
+Lg0m;
+--- research/artifacts/dex/classes4.dex ---
+Lg0m;
+
+===== SEARCH DECOMPILED SOURCES =====
+research/artifacts/decompiled-dex2/sources/defpackage/g0m.java
+
+===== APK FILES =====
+research/artifacts/unpacked/ru.yandex.telemost.apk
+research/artifacts/unpacked/config.xxhdpi.apk
+research/artifacts/unpacked/config.arm64_v8a.apk
+
+===== AVAILABLE ANDROID TOOLS =====
