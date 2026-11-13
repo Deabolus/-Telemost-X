@@ -1,38 +1,38 @@
 
-========== com.yandex.passport.internal.methods.n4 ==========
+========== com.yandex.passport.internal.methods.d6 ==========
 INFO  - loading ...
-INFO  - Saving class 'com.yandex.passport.internal.methods.n4' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-6/com_yandex_passport_internal_methods_n4/sources/com/yandex/passport/internal/methods/n4.java'
+INFO  - Saving class 'com.yandex.passport.internal.methods.d6' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_d6/sources/com/yandex/passport/internal/methods/d6.java'
 INFO  - done
-'research/artifacts/auth-stage-6/com_yandex_passport_internal_methods_n4/sources/com/yandex/passport/internal/methods/n4.java' -> 'research/notes/auth-stage-6/n4.java'
+'research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_d6/sources/com/yandex/passport/internal/methods/d6.java' -> 'research/notes/auth-stage-7/d6.java'
 
-========== com.yandex.passport.internal.methods.requester.j ==========
+========== com.yandex.passport.internal.credentials.e ==========
 INFO  - loading ...
-INFO  - Saving class 'com.yandex.passport.internal.methods.requester.j' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-6/com_yandex_passport_internal_methods_requester_j/sources/com/yandex/passport/internal/methods/requester/j.java'
+INFO  - Saving class 'com.yandex.passport.internal.credentials.e' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-7/com_yandex_passport_internal_credentials_e/sources/com/yandex/passport/internal/credentials/e.java'
 INFO  - done
-'research/artifacts/auth-stage-6/com_yandex_passport_internal_methods_requester_j/sources/com/yandex/passport/internal/methods/requester/j.java' -> 'research/notes/auth-stage-6/j.java'
+'research/artifacts/auth-stage-7/com_yandex_passport_internal_credentials_e/sources/com/yandex/passport/internal/credentials/e.java' -> 'research/notes/auth-stage-7/e.java'
 
-========== com.yandex.passport.internal.impl.s ==========
+========== com.yandex.passport.internal.methods.v5 ==========
 INFO  - loading ...
-INFO  - Saving class 'com.yandex.passport.internal.impl.s' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-6/com_yandex_passport_internal_impl_s/sources/com/yandex/passport/internal/impl/s.java'
+INFO  - Saving class 'com.yandex.passport.internal.methods.v5' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_v5/sources/com/yandex/passport/internal/methods/v5.java'
 INFO  - done
-'research/artifacts/auth-stage-6/com_yandex_passport_internal_impl_s/sources/com/yandex/passport/internal/impl/s.java' -> 'research/notes/auth-stage-6/s.java'
+'research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_v5/sources/com/yandex/passport/internal/methods/v5.java' -> 'research/notes/auth-stage-7/v5.java'
 
-========== com.yandex.passport.internal.entities.b ==========
+========== com.yandex.passport.internal.methods.performer.e ==========
 INFO  - loading ...
-INFO  - Saving class 'com.yandex.passport.internal.entities.b' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-6/com_yandex_passport_internal_entities_b/sources/com/yandex/passport/internal/entities/b.java'
-INFO  - done
-'research/artifacts/auth-stage-6/com_yandex_passport_internal_entities_b/sources/com/yandex/passport/internal/entities/b.java' -> 'research/notes/auth-stage-6/b.java'
+INFO  - Saving class 'com.yandex.passport.internal.methods.performer.e' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_performer_e/sources/com/yandex/passport/internal/methods/performer/e.java'
+ERROR - finished with errors, count: 1
+'research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_performer_e/sources/com/yandex/passport/internal/methods/performer/e.java' -> 'research/notes/auth-stage-7/e.java'
+
+========== PROVIDER REFERENCES ==========
 
 ========== EXTRACTED SOURCES ==========
-total 24K
--rw-rw-rw- 1 codespace codespace 1.8K Nov 13 10:06 b.java
--rw-rw-rw- 1 codespace codespace 9.5K Nov 13 10:06 j.java
--rw-rw-rw- 1 codespace codespace 1.1K Nov 13 10:06 n4.java
--rw-rw-rw- 1 codespace codespace 3.7K Nov 13 10:06 s.java
+total 76K
+-rw-rw-rw- 1 codespace codespace  276 Nov 13 10:08 d6.java
+-rw-rw-rw- 1 codespace codespace  57K Nov 13 10:08 e.java
+-rw-rw-rw- 1 codespace codespace 9.1K Nov 13 10:08 v5.java
 
 ========== LINE COUNTS ==========
-   64 research/notes/auth-stage-6/b.java
-  278 research/notes/auth-stage-6/j.java
-   37 research/notes/auth-stage-6/n4.java
-  125 research/notes/auth-stage-6/s.java
-  504 total
+    9 research/notes/auth-stage-7/d6.java
+ 1479 research/notes/auth-stage-7/e.java
+  260 research/notes/auth-stage-7/v5.java
+ 1748 total
