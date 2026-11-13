@@ -1,25 +1,409 @@
-===== DEX FILES =====
-research/artifacts/dex/classes4.dex
-research/artifacts/dex/classes.dex
-research/artifacts/dex/classes2.dex
-research/artifacts/dex/classes3.dex
+===== COPY G0M SOURCE =====
+Copied successfully
+===== G0M CONTENT =====
+package defpackage;
 
-===== SEARCH g0m IN ALL DEX =====
---- research/artifacts/dex/classes.dex ---
-Lg0m;
---- research/artifacts/dex/classes2.dex ---
-Lg0m;
---- research/artifacts/dex/classes3.dex ---
-Lg0m;
---- research/artifacts/dex/classes4.dex ---
-Lg0m;
+import android.os.Bundle;
+import android.os.Parcelable;
+import com.yandex.passport.internal.methods.f;
+import com.yandex.passport.internal.util.o;
+import java.io.Serializable;
 
-===== SEARCH DECOMPILED SOURCES =====
-research/artifacts/decompiled-dex2/sources/defpackage/g0m.java
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public abstract class g0m implements f {
+    public final /* synthetic */ int a;
+    public final Serializable b;
+    public final boolean c;
 
-===== APK FILES =====
-research/artifacts/unpacked/ru.yandex.telemost.apk
-research/artifacts/unpacked/config.xxhdpi.apk
-research/artifacts/unpacked/config.arm64_v8a.apk
+    public /* synthetic */ g0m(String str, boolean z, int i) {
+        this.a = i;
+        this.b = str;
+        this.c = z;
+    }
 
-===== AVAILABLE ANDROID TOOLS =====
+    public void a() {
+        this.b.getValue();
+    }
+
+    public Parcelable b(Bundle bundle) {
+        switch (this.a) {
+            case 1:
+                String str = (String) this.b;
+                mqd.z(bundle, "bundle");
+                if (this.c) {
+                    bundle.setClassLoader(o.class.getClassLoader());
+                }
+                if (!bundle.containsKey(str)) {
+                    return null;
+                }
+                Parcelable parcelable = bundle.getParcelable(str);
+                if (parcelable != null) {
+                    return parcelable;
+                }
+                throw new IllegalStateException("can't get required parcelable ".concat(str).toString());
+            default:
+                mqd.z(bundle, "bundle");
+                if (this.c) {
+                    bundle.setClassLoader(o.class.getClassLoader());
+                }
+                String str2 = (String) this.b;
+                Parcelable parcelable2 = bundle.getParcelable(str2);
+                if (parcelable2 != null) {
+                    return parcelable2;
+                }
+                throw new IllegalStateException(("can't get required parcelable " + str2).toString());
+        }
+    }
+
+    public /* bridge */ /* synthetic */ Object c(Bundle bundle) {
+        switch (this.a) {
+            case 1:
+                break;
+        }
+        return b(bundle);
+    }
+
+    public void d(Bundle bundle, Object obj) {
+        switch (this.a) {
+            case 1:
+                Parcelable parcelable = (Parcelable) obj;
+                if (parcelable != null) {
+                    bundle.putParcelable((String) this.b, parcelable);
+                }
+                break;
+            default:
+                Parcelable parcelable2 = (Parcelable) obj;
+                mqd.z(parcelable2, "value");
+                bundle.putParcelable((String) this.b, parcelable2);
+                break;
+        }
+    }
+
+    public String getKey() {
+        switch (this.a) {
+            case 1:
+                break;
+        }
+        return (String) this.b;
+    }
+
+    public g0m(boolean z) {
+        this.a = 3;
+        this.c = z;
+        this.b = lo7.B(new iy9(this, 13));
+    }
+
+    public g0m(String str) {
+        this.a = 2;
+        this.b = str;
+        this.c = false;
+    }
+}
+
+===== DECODE APK MANIFEST =====
+75-            <action android:name="android.intent.action.OPEN_DOCUMENT"/>
+76-            <data android:mimeType="*/*"/>
+77-        </intent>
+78-        <intent>
+79-            <action android:name="ru.vk.store.sdk.install.referrer.InstallReferrerProvider"/>
+80-        </intent>
+81:        <provider
+82-            android:name="com.yandex.preinstallsatellite.appmetrica.AppMetricaContentProvider"
+83:            android:authorities="com.yandex.preinstallsatellite.appmetrica.provider"/>
+84-        <intent>
+85-            <action android:name="com.yandex.android.advid.IDENTIFIER_SERVICE"/>
+86-        </intent>
+87-        <intent>
+88-            <action android:name="com.uodis.opendevice.OPENIDS_SERVICE"/>
+89-        </intent>
+--
+782-            android:name="com.yandex.messenger.push.FcmService"
+783-            android:exported="true">
+784-            <intent-filter>
+785-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+786-            </intent-filter>
+787-        </service>
+788:        <provider
+789-            android:name="androidx.startup.InitializationProvider"
+790-            android:exported="false"
+791-            android:authorities="ru.yandex.telemost.androidx-startup"
+792-            android:fitsSystemWindows="false"
+793-            android:directBootAware="true">
+794-            <meta-data
+--
+821-            <meta-data
+822-                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+823-                android:value="androidx.startup"/>
+824-            <meta-data
+825-                android:name="splitties.init.AppCtxInitializer"
+826-                android:value="androidx.startup"/>
+827:        </provider>
+828-        <activity
+829-            android:theme="@style/MessagingTelemost.MessengerTelemostActivity"
+830-            android:name="com.yandex.messaging.telemost.ui.MessengerTelemostActivity"
+831-            android:exported="false"
+832-            android:taskAffinity="ru.yandex.telemost.messaging.telemost"
+833-            android:launchMode="singleTask"
+--
+914-            android:theme="@style/Messaging.MediaViewerActivityTheme"
+915-            android:name="com.yandex.messaging.mediaviewer.MediaViewerActivity"
+916-            android:taskAffinity="ru.yandex.telemost.mediaviewer"
+917-            android:excludeFromRecents="true"
+918-            android:launchMode="singleInstance"
+919-            android:configChanges="smallestScreenSize|screenSize|screenLayout|orientation"/>
+920:        <provider
+921-            android:name="com.yandex.messaging.MessagingFileProvider"
+922-            android:exported="false"
+923:            android:authorities="ru.yandex.telemost.messaging.fileprovider"
+924-            android:initOrder="-1"
+925-            android:grantUriPermissions="true">
+926-            <meta-data
+927-                android:name="android.support.FILE_PROVIDER_PATHS"
+928-                android:resource="@xml/messaging_file_paths"/>
+929:        </provider>
+930:        <provider
+931-            android:name="com.yandex.messaging.files.SharingFileProvider"
+932-            android:exported="false"
+933:            android:authorities="ru.yandex.telemost.sharing.fileprovider"
+934-            android:initOrder="-1"
+935-            android:grantUriPermissions="true">
+936-            <meta-data
+937-                android:name="android.support.FILE_PROVIDER_PATHS"
+938-                android:resource="@xml/messaging_file_paths"/>
+939:        </provider>
+940-        <activity
+941-            android:theme="@style/Messaging.MessengerImagePreviewTheme"
+942-            android:name="com.yandex.messaging.ui.imageviewer.ImageViewerActivity"/>
+943-        <activity
+944-            android:name="com.yandex.messaging.ui.migration.MigrationEnvironmentActivity"
+945-            android:exported="false"
+--
+982-        <receiver
+983-            android:name="com.yandex.telemost.ui.pip.PipActionReceiver"
+984-            android:exported="false"/>
+985-        <receiver
+986-            android:name="com.yandex.telemost.newarch.screensharing.StopScreenShareReceiver"
+987-            android:exported="false"/>
+988:        <provider
+989-            android:name="com.yandex.telemost.logs.TMLogsFileProvider"
+990-            android:exported="false"
+991-            android:authorities="ru.yandex.telemost.telemost"
+992-            android:grantUriPermissions="true">
+993-            <meta-data
+994-                android:name="android.support.FILE_PROVIDER_PATHS"
+995:                android:resource="@xml/tm_file_provider_paths"/>
+996:        </provider>
+997-        <activity
+998-            android:theme="@style/TransparentChooserActivityTheme"
+999-            android:name="com.yandex.attachments.activity.ChooserActivity"
+1000-            android:launchMode="singleTop"
+1001-            android:configChanges="screenSize|orientation"/>
+1002:        <provider
+1003-            android:name="com.yandex.attachments.chooser.ChooserFileProvider"
+1004-            android:exported="false"
+1005:            android:authorities="ru.yandex.telemost.chooser.fileprovider"
+1006-            android:grantUriPermissions="true"/>
+1007-        <meta-data
+1008-            android:name="com.yandex.auth.VERSION"
+1009-            android:value="501"/>
+1010-        <meta-data
+1011-            android:name="com.yandex.auth.INTERNAL_VERSION"
+--
+1024-            android:value="@string/passport_sso_certificate"/>
+1025-        <activity
+1026-            android:name="com.yandex.passport.internal.warm.WarmUpWebViewActivity"
+1027-            android:exported="false"
+1028-            android:process="@string/passport_process_name"/>
+1029-        <service
+1030:            android:name="com.yandex.passport.internal.provider.communication.HostCommunicationService"
+1031-            android:exported="false"/>
+1032-        <activity
+1033-            android:theme="@style/PassportNext.Theme.Light.Transparent.Paranja"
+1034-            android:label=""
+1035-            android:name="com.yandex.passport.internal.ui.router.LoginRouterActivity"
+1036-            android:exported="false"
+--
+1372-            android:process="@string/passport_process_name"/>
+1373-        <activity
+1374-            android:theme="@style/PassportNext.Theme.Light.Transparent"
+1375-            android:name="com.yandex.passport.internal.sloth.credentialmanager.SaveCredentialManagerActivity"
+1376-            android:exported="false"
+1377-            android:process="@string/passport_process_name"/>
+1378:        <provider
+1379-            android:label="Accounts: ru.yandex.telemost"
+1380:            android:name="com.yandex.passport.internal.provider.InternalProvider"
+1381-            android:enabled="true"
+1382-            android:exported="false"
+1383-            android:process="@string/passport_process_name"
+1384:            android:authorities="com.yandex.passport.internal.provider.ru.yandex.telemost"
+1385-            android:initOrder="2147483647"/>
+1386:        <provider
+1387-            android:label="LoginSDK: ru.yandex.telemost"
+1388-            android:name="com.yandex.passport.internal.authsdk.AuthSdkProvider"
+1389-            android:enabled="true"
+1390-            android:exported="true"
+1391-            android:process="@string/passport_process_name"
+1392:            android:authorities="com.yandex.passport.authsdk.provider.ru.yandex.telemost"/>
+1393-        <service
+1394-            android:label="@string/passport_authentication_service_name"
+1395-            android:name="com.yandex.passport.internal.core.auth.AuthenticationService"
+1396-            android:enabled="true"
+1397-            android:exported="false"
+1398-            android:process="@string/passport_process_name">
+--
+1401-                <action android:name="com.yandex.accounts.AccountAuthenticator"/>
+1402-            </intent-filter>
+1403-            <meta-data
+1404-                android:name="android.accounts.AccountAuthenticator"
+1405-                android:resource="@xml/authenticator"/>
+1406-            <meta-data
+1407:                android:name="android.provider.CONTACTS_STRUCTURE"
+1408-                android:resource="@xml/contacts"/>
+1409-        </service>
+1410-        <service
+1411-            android:name="com.yandex.passport.internal.methods.service.PassportMethodBinderService"
+1412-            android:exported="false"
+1413-            android:process="@string/passport_process_name"/>
+--
+1421-                <action android:name="android.content.SyncAdapter"/>
+1422-            </intent-filter>
+1423-            <meta-data
+1424-                android:name="android.content.SyncAdapter"
+1425-                android:resource="@xml/passport_sync_adapter"/>
+1426-            <meta-data
+1427:                android:name="android.provider.CONTACTS_STRUCTURE"
+1428-                android:resource="@xml/contacts"/>
+1429-        </service>
+1430:        <provider
+1431-            android:name="com.yandex.passport.internal.core.sync.SyncProvider"
+1432-            android:enabled="true"
+1433-            android:exported="false"
+1434-            android:process="@string/passport_process_name"
+1435-            android:authorities="@string/passport_sync_adapter_content_authority"/>
+1436-        <receiver
+--
+1478-            android:process="@string/passport_process_name"/>
+1479-        <service
+1480-            android:name="com.yandex.passport.internal.flags.experiments.FetchExperimentsService"
+1481-            android:permission="android.permission.BIND_JOB_SERVICE"
+1482-            android:exported="false"
+1483-            android:process="@string/passport_process_name"/>
+1484:        <provider
+1485-            android:label="SSO: ru.yandex.telemost"
+1486-            android:name="com.yandex.passport.internal.sso.SsoContentProvider"
+1487-            android:enabled="true"
+1488-            android:exported="true"
+1489-            android:process="@string/passport_process_name"
+1490-            android:authorities="com.yandex.passport.internal.sso.ru.yandex.telemost"
+--
+1690-            android:name="io.appmetrica.analytics.push.internal.receiver.TtlBroadcastReceiver"
+1691-            android:exported="false">
+1692-            <intent-filter>
+1693-                <action android:name="io.appmetrica.analytics.push.action.EXPIRED_BY_TTL_ACTION"/>
+1694-            </intent-filter>
+1695-        </receiver>
+1696:        <provider
+1697-            android:name="com.yandex.passport.sloth.ui.SlothFileProvider"
+1698-            android:exported="false"
+1699:            android:authorities="ru.yandex.telemost.passport.sloth.fileprovider"
+1700-            android:grantUriPermissions="true">
+1701-            <meta-data
+1702-                android:name="android.support.FILE_PROVIDER_PATHS"
+1703-                android:resource="@xml/passport_sloth_file_paths"/>
+1704:        </provider>
+1705-        <service android:name="ru.yandex.goloom.lib.impl.peer.hardware.device.ConfigurationObserverService"/>
+1706-        <service
+1707-            android:name="ru.yandex.goloom.lib.impl.session.service.CallService"
+1708-            android:exported="false"
+1709-            android:foregroundServiceType="microphone|phoneCall"/>
+1710-        <activity
+--
+1715-            android:configChanges="screenSize|orientation|keyboardHidden">
+1716-            <intent-filter>
+1717-                <action android:name="ru.yandex.speechkit.action.voice_recognition"/>
+1718-                <category android:name="android.intent.category.DEFAULT"/>
+1719-            </intent-filter>
+1720-        </activity>
+1721:        <provider
+1722-            android:name="com.yandex.calendar.data.attachments.CalendarFileProvider"
+1723-            android:exported="false"
+1724:            android:authorities="ru.yandex.telemost.calendar.fileprovider"
+1725-            android:grantUriPermissions="true">
+1726-            <meta-data
+1727-                android:name="android.support.FILE_PROVIDER_PATHS"
+1728:                android:resource="@xml/calendar_sdk_provider_paths"/>
+1729:        </provider>
+1730-        <service
+1731-            android:name="io.appmetrica.analytics.internal.AppMetricaService"
+1732-            android:enabled="true"
+1733-            android:exported="false"
+1734-            android:process=":AppMetrica">
+1735-            <intent-filter>
+--
+1745-            <intent-filter>
+1746-                <category android:name="android.intent.category.DEFAULT"/>
+1747-                <action android:name="io.appmetrica.analytics.IAppMetricaService"/>
+1748-                <data android:scheme="appmetrica"/>
+1749-            </intent-filter>
+1750-        </service>
+1751:        <provider
+1752-            android:name="io.appmetrica.analytics.internal.PreloadInfoContentProvider"
+1753-            android:enabled="true"
+1754-            android:exported="true"
+1755-            android:process=":AppMetrica"
+1756-            android:authorities="ru.yandex.telemost.appmetrica.preloadinfo.retail"/>
+1757-        <activity
+--
+1798-                android:value="com.google.firebase.components.ComponentRegistrar"/>
+1799-            <meta-data
+1800-                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+1801-                android:value="com.google.firebase.components.ComponentRegistrar"/>
+1802-        </service>
+1803-        <service
+1804:            android:name="io.appmetrica.analytics.push.provider.firebase.AppMetricaMessagingService"
+1805-            android:exported="false">
+1806-            <intent-filter>
+1807-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+1808-            </intent-filter>
+1809-        </service>
+1810-        <activity
+--
+1930-            </intent-filter>
+1931-        </receiver>
+1932-        <service
+1933-            android:name="androidx.room.MultiInstanceInvalidationService"
+1934-            android:exported="false"
+1935-            android:directBootAware="true"/>
+1936:        <provider
+1937-            android:name="io.sentry.android.core.SentryInitProvider"
+1938-            android:exported="false"
+1939-            android:authorities="ru.yandex.telemost.SentryInitProvider"/>
+1940:        <provider
+1941-            android:name="org.jetbrains.compose.resources.AndroidContextProvider"
+1942-            android:enabled="true"
+1943-            android:exported="false"
+1944-            android:authorities="ru.yandex.telemost.resources.AndroidContextProvider"/>
+1945-        <activity
+1946-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+--
+2000-            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+2001-            android:permission="android.permission.BIND_JOB_SERVICE"
+2002-            android:exported="false"/>
+2003-        <receiver
+2004-            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+2005-            android:exported="false"/>
+2006:        <provider
+2007-            android:name="io.sentry.ndk.SentryNdkPreloadProvider"
+2008-            android:exported="false"
+2009-            android:authorities="ru.yandex.telemost.SentryNdkPreloadProvider"
+2010-            android:initOrder="2000000000"/>
+2011-        <meta-data
+2012-            android:name="com.huawei.hms.client.appid"
+Manifest copied
+
+===== FINAL FILES =====
+total 112K
+drwxrwxrwx+  2 codespace codespace 4.0K Nov 13 10:33 .
+drwxrwxrwx+ 15 codespace codespace 4.0K Nov 13 10:27 ..
+-rw-rw-rw-   1 codespace codespace  98K Nov 13 10:33 AndroidManifest.xml
+-rw-rw-rw-   1 codespace codespace 2.9K Nov 13 10:32 g0m.java
