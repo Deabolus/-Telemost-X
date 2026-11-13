@@ -1,0 +1,187 @@
+]633;E;echo "========== gmg.java ==========";5fbee356-0123-495e-b37b-dc4eda18f69b]633;C========== gmg.java ==========
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class gmg {
+    public final ze3 a;
+    public final s5i b;
+    public final ssp c;
+    public final k4e d;
+    public final ocg e;
+    public final k45 f;
+    public final q8b g;
+
+    public gmg(ze3 ze3Var, s5i s5iVar, ssp sspVar, k4e k4eVar, ocg ocgVar, k45 k45Var, q8b q8bVar) {
+        mqd.z(ze3Var, "xivaSocketFactory");
+        mqd.z(s5iVar, "onlineReporter");
+        mqd.z(sspVar, "protocol");
+        mqd.z(k4eVar, "jsonSerializer");
+        mqd.z(ocgVar, "messagingConfiguration");
+        mqd.z(k45Var, "clock");
+        mqd.z(q8bVar, "foregroundTimeTracker");
+        this.a = ze3Var;
+        this.b = s5iVar;
+        this.c = sspVar;
+        this.d = k4eVar;
+        this.e = ocgVar;
+        this.f = k45Var;
+        this.g = q8bVar;
+    }
+
+    public final fmg a(String str, String str2, String str3, l0d l0dVar, w3s w3sVar, boolean z, qgn qgnVar) {
+        mqd.z(str, "sessionId");
+        mqd.z(str2, "service");
+        mqd.z(str3, "tags");
+        mqd.z(l0dVar, "xivaUrl");
+        mqd.z(w3sVar, "xivaDomain");
+        return new fmg(this, qgnVar, str2, str, z, l0dVar, w3sVar, str3);
+    }
+}
+========== s4k.java ==========
+package defpackage;
+
+import android.os.Looper;
+import android.os.SystemClock;
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+import com.yandex.messaging.techprofile.accounts.AuthUid;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.concurrent.CancellationException;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class s4k implements mgn {
+    public final AuthUid a;
+    public final pj b;
+    public final kn2 c;
+    public final nj d;
+    public final String e;
+
+    public s4k(ue6 ue6Var, AuthUid authUid, qhg qhgVar, pj pjVar) {
+        mqd.z(ue6Var, "parentScope");
+        mqd.z(pjVar, "socketHolder");
+        this.a = authUid;
+        this.b = pjVar;
+        this.c = x44.K(ue6Var);
+        nj njVar = new nj(this, qhgVar);
+        this.d = njVar;
+        Looper looper = pjVar.a.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Unexpected thread");
+        }
+        LinkedHashMap linkedHashMap = pjVar.d;
+        Object arrayList = linkedHashMap.get(authUid);
+        if (arrayList == null) {
+            arrayList = new ArrayList();
+            linkedHashMap.put(authUid, arrayList);
+        }
+        ((List) arrayList).add(njVar);
+        pjVar.e.remove(authUid);
+        mgn mgnVarA = pjVar.a(authUid);
+        if (mgnVarA != null) {
+            fmg fmgVar = (fmg) mgnVarA;
+            if (fmgVar.c()) {
+                qhgVar.q(false);
+                if (fmgVar.e()) {
+                    qhgVar.i();
+                }
+            }
+        }
+        this.e = "xiva";
+    }
+
+    public final void a(AuthUid authUid, pib pibVar) {
+        lo7.z(this.c, (ie6) null, (ze6) null, new dqi(this, authUid, pibVar, null, 23), 3);
+    }
+
+    @Override // defpackage.mgn
+    public final void b(String str) {
+        mqd.z(str, "reason");
+        a(this.a, new rw(str, 21));
+    }
+
+    @Override // defpackage.mgn
+    public final boolean c() {
+        mgn mgnVarA = this.b.a(this.a);
+        if (mgnVarA != null) {
+            return ((fmg) mgnVarA).c();
+        }
+        return false;
+    }
+
+    @Override // defpackage.mgn
+    public final void close() {
+        Long lH;
+        pj pjVar = this.b;
+        pjVar.getClass();
+        nj njVar = this.d;
+        mqd.z(njVar, "info");
+        Looper looper = pjVar.a.a;
+        Looper looperMyLooper = Looper.myLooper();
+        if (!atl.u()) {
+            atl.s(looper, looperMyLooper, "Unexpected thread");
+        }
+        LinkedHashMap linkedHashMap = pjVar.d;
+        AuthUid authUid = this.a;
+        List list = (List) linkedHashMap.get(authUid);
+        if ((list == null || !list.remove(njVar)) && !atl.u()) {
+            atl.y("No connection delegate for the same account");
+        }
+        Collection collection = (Collection) linkedHashMap.get(authUid);
+        if (collection == null || collection.isEmpty()) {
+            LinkedHashMap linkedHashMap2 = pjVar.e;
+            qhg qhgVar = njVar.b;
+            if (qhgVar.d()) {
+                pjVar.b.getClass();
+                lH = Long.valueOf(SystemClock.elapsedRealtime());
+            } else {
+                lH = qhgVar.h();
+            }
+            linkedHashMap2.put(authUid, lH);
+        }
+        f34.o(this.c, (CancellationException) null);
+    }
+
+    @Override // defpackage.mgn
+    public final cw3 f(sgn sgnVar, taa taaVar) {
+        return new ew3(new lpj(lo7.z(this.c, (ie6) null, (ze6) null, new dqi(this, this.a, new y3k(1, taaVar, sgnVar), null, 22), 3), 1), 0);
+    }
+
+    @Override // defpackage.mgn
+    public final boolean j() {
+        return false;
+    }
+
+    @Override // defpackage.mgn
+    public final String k() {
+        return this.e;
+    }
+
+    @Override // defpackage.mgn
+    public final void l(c8q c8qVar, ClientMessage clientMessage) {
+        a(this.a, new trh(clientMessage, 7));
+    }
+
+    @Override // defpackage.mgn
+    public final void p(tgn tgnVar) {
+        a(this.a, new trh(tgnVar, 8));
+    }
+}
+========== ur0.java ==========
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class ur0 {
+    public final jpo a;
+    public final ne6 b;
+
+    public ur0(jpo jpoVar, ne6 ne6Var) {
+        mqd.z(jpoVar, "technicalProfile");
+        mqd.z(ne6Var, "coroutineDispatchers");
+        this.a = jpoVar;
+        this.b = ne6Var;
+    }
+}
+========== ClientMessage socket calls ==========
