@@ -1,45 +1,38 @@
 
-========== classes ==========
------ com.yandex.passport.internal.impl.o -----
+========== com.yandex.passport.internal.methods.n4 ==========
 INFO  - loading ...
-ERROR - Incorrect arguments: Input class not found: com.yandex.passport.internal.impl.o
------ defpackage.zum -----
-INFO  - loading ...
-ERROR - Incorrect arguments: Input class not found: defpackage.zum
-
-========== classes2 ==========
------ com.yandex.passport.internal.impl.o -----
-INFO  - loading ...
-ERROR - Incorrect arguments: Input class not found: com.yandex.passport.internal.impl.o
------ defpackage.zum -----
-INFO  - loading ...
-ERROR - Incorrect arguments: Input class not found: defpackage.zum
-
-========== classes3 ==========
------ com.yandex.passport.internal.impl.o -----
-INFO  - loading ...
-INFO  - Saving class 'com.yandex.passport.internal.impl.o' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-5/classes3_com_yandex_passport_internal_impl_o/sources/com/yandex/passport/internal/impl/o.java'
+INFO  - Saving class 'com.yandex.passport.internal.methods.n4' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-6/com_yandex_passport_internal_methods_n4/sources/com/yandex/passport/internal/methods/n4.java'
 INFO  - done
-research/artifacts/auth-stage-5/classes3_com_yandex_passport_internal_impl_o/sources/com/yandex/passport/internal/impl/o.java
------ defpackage.zum -----
-INFO  - loading ...
-INFO  - Saving class 'defpackage.zum' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-5/classes3_defpackage_zum/sources/defpackage/zum.java'
-ERROR - finished with errors, count: 1
-research/artifacts/auth-stage-5/classes3_defpackage_zum/sources/defpackage/zum.java
+'research/artifacts/auth-stage-6/com_yandex_passport_internal_methods_n4/sources/com/yandex/passport/internal/methods/n4.java' -> 'research/notes/auth-stage-6/n4.java'
 
-========== classes4 ==========
------ com.yandex.passport.internal.impl.o -----
+========== com.yandex.passport.internal.methods.requester.j ==========
 INFO  - loading ...
-ERROR - Incorrect arguments: Input class not found: com.yandex.passport.internal.impl.o
------ defpackage.zum -----
+INFO  - Saving class 'com.yandex.passport.internal.methods.requester.j' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-6/com_yandex_passport_internal_methods_requester_j/sources/com/yandex/passport/internal/methods/requester/j.java'
+INFO  - done
+'research/artifacts/auth-stage-6/com_yandex_passport_internal_methods_requester_j/sources/com/yandex/passport/internal/methods/requester/j.java' -> 'research/notes/auth-stage-6/j.java'
+
+========== com.yandex.passport.internal.impl.s ==========
 INFO  - loading ...
-ERROR - Incorrect arguments: Input class not found: defpackage.zum
+INFO  - Saving class 'com.yandex.passport.internal.impl.s' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-6/com_yandex_passport_internal_impl_s/sources/com/yandex/passport/internal/impl/s.java'
+INFO  - done
+'research/artifacts/auth-stage-6/com_yandex_passport_internal_impl_s/sources/com/yandex/passport/internal/impl/s.java' -> 'research/notes/auth-stage-6/s.java'
 
-========== COPY FOUND SOURCES ==========
-'research/artifacts/auth-stage-5/classes3_com_yandex_passport_internal_impl_o/sources/com/yandex/passport/internal/impl/o.java' -> 'research/notes/auth-stage-5/o.java'
-'research/artifacts/auth-stage-5/classes3_defpackage_zum/sources/defpackage/zum.java' -> 'research/notes/auth-stage-5/zum.java'
+========== com.yandex.passport.internal.entities.b ==========
+INFO  - loading ...
+INFO  - Saving class 'com.yandex.passport.internal.entities.b' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-6/com_yandex_passport_internal_entities_b/sources/com/yandex/passport/internal/entities/b.java'
+INFO  - done
+'research/artifacts/auth-stage-6/com_yandex_passport_internal_entities_b/sources/com/yandex/passport/internal/entities/b.java' -> 'research/notes/auth-stage-6/b.java'
 
-========== RESULT ==========
-total 40K
--rw-rw-rw- 1 codespace codespace  25K Nov 13 10:05 o.java
--rw-rw-rw- 1 codespace codespace 9.7K Nov 13 10:05 zum.java
+========== EXTRACTED SOURCES ==========
+total 24K
+-rw-rw-rw- 1 codespace codespace 1.8K Nov 13 10:06 b.java
+-rw-rw-rw- 1 codespace codespace 9.5K Nov 13 10:06 j.java
+-rw-rw-rw- 1 codespace codespace 1.1K Nov 13 10:06 n4.java
+-rw-rw-rw- 1 codespace codespace 3.7K Nov 13 10:06 s.java
+
+========== LINE COUNTS ==========
+   64 research/notes/auth-stage-6/b.java
+  278 research/notes/auth-stage-6/j.java
+   37 research/notes/auth-stage-6/n4.java
+  125 research/notes/auth-stage-6/s.java
+  504 total
