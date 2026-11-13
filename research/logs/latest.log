@@ -1,11 +1,7 @@
-===== com.yandex.passport.internal.methods.x5 =====
-Extracted: research/notes/auth-stage-10/x5.java
-10 research/notes/auth-stage-10/x5.java
-===== com.yandex.passport.internal.methods.d3 =====
-Extracted: research/notes/auth-stage-10/d3.java
-18 research/notes/auth-stage-10/d3.java
+===== EXTRACT g0m =====
+find: ‘research/artifacts/auth-stage-11/g0m’: No such file or directory
+ERROR: g0m.java not found
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: com.yandex.passport.internal.methods.g0m
 
-===== RESULT =====
-total 8.0K
--rw-rw-rw- 1 codespace codespace 504 Nov 13 10:12 d3.java
--rw-rw-rw- 1 codespace codespace 284 Nov 13 10:12 x5.java
+===== PASSPORT PROVIDER MANIFEST =====
