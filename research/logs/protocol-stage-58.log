@@ -1,0 +1,795 @@
+]633;E;echo "========== t4s.java ==========";5fbee356-0123-495e-b37b-dc4eda18f69b]633;C========== t4s.java ==========
+package defpackage;
+
+import android.os.Handler;
+import android.os.Looper;
+import com.google.protobuf.DescriptorProtos;
+import java.util.ArrayList;
+import org.msgpack.core.buffer.MessageBuffer;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class t4s implements h4s {
+    public final fmg a;
+    public final m0d b;
+    public final Handler c = new Handler();
+    public final jkn d = new jkn(0);
+    public final ArrayList e = new ArrayList();
+    public int f = 1;
+    public v3s g;
+    public dtr h;
+    public boolean i;
+    public final /* synthetic */ ze3 j;
+
+    public t4s(ze3 ze3Var, fmg fmgVar, m0d m0dVar) {
+        this.j = ze3Var;
+        this.a = fmgVar;
+        this.b = m0dVar;
+    }
+
+    @Override // defpackage.h4s
+    public final boolean a() {
+        return this.h != null;
+    }
+
+    /* JADX INFO: Thrown type has an unknown type hierarchy: mnh */
+    @Override // defpackage.h4s
+    public final void b(String str) throws mnh {
+        mqd.z(str, "reason");
+        atl.s(this.c.getLooper(), Looper.myLooper(), null);
+        v3s v3sVar = this.g;
+        if (v3sVar != null) {
+            t4s t4sVar = v3sVar.a;
+            Handler handler = v3sVar.f;
+            atl.s(handler.getLooper(), Looper.myLooper(), null);
+            handler.removeCallbacksAndMessages(null);
+            v3sVar.m = false;
+            cw3 cw3Var = v3sVar.j;
+            if (cw3Var != null) {
+                cw3Var.cancel();
+            }
+            v3sVar.j = null;
+            ypk ypkVar = v3sVar.k;
+            if (ypkVar != null) {
+                ypkVar.a();
+            }
+            v3sVar.k = null;
+            ypk ypkVar2 = v3sVar.n;
+            if (ypkVar2 != null) {
+                ypkVar2.c(DescriptorProtos.Edition.EDITION_2023_VALUE, str);
+                v3sVar.n = null;
+                t4sVar.g(ypkVar2);
+            }
+            t4sVar.a.m(true);
+            if (v3sVar.h) {
+                return;
+            }
+            if (cw3Var != null) {
+                v3sVar.m();
+            } else {
+                v3sVar.k(new d1p(0, v3sVar, v3s.class, "tryConnect", "tryConnect()V", 0, 7));
+            }
+        }
+    }
+
+    /* JADX INFO: Thrown type has an unknown type hierarchy: mnh */
+    @Override // defpackage.h4s
+    public final void c() throws mnh {
+        atl.s(this.c.getLooper(), Looper.myLooper(), null);
+        v3s v3sVar = this.g;
+        boolean z = v3sVar != null;
+        if (v3sVar == null) {
+            f1n f1nVar = (f1n) this.j.b;
+            f1nVar.getClass();
+            this.g = new v3s(f1nVar, this);
+        }
+        v3s v3sVar2 = this.g;
+        if (v3sVar2 != null) {
+            atl.s(v3sVar2.f.getLooper(), Looper.myLooper(), null);
+            if (v3sVar2.n == null && v3sVar2.k == null && !v3sVar2.m) {
+                v3sVar2.a.a.m(false);
+                if (v3sVar2.j != null) {
+                    return;
+                }
+                if (z) {
+                    v3sVar2.k(new d1p(0, v3sVar2, v3s.class, "tryConnect", "tryConnect()V", 0, 8));
+                } else {
+                    v3sVar2.m();
+                }
+            }
+        }
+    }
+
+    @Override // defpackage.h4s
+    public final void close() {
+        atl.s(this.c.getLooper(), Looper.myLooper(), null);
+        this.i = true;
+        v3s v3sVar = this.g;
+        if (v3sVar != null) {
+            v3sVar.cancel();
+        }
+        this.g = null;
+    }
+
+    @Override // defpackage.h4s
+    public final cw3 d(oks oksVar, taa taaVar) {
+        atl.s(this.c.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.i);
+        int i = this.f;
+        this.f = i + 1;
+        s4s s4sVar = new s4s(this, i, oksVar, taaVar);
+        synchronized (this.d) {
+            this.d.e(i, s4sVar);
+        }
+        dtr dtrVar = this.h;
+        if (dtrVar != null) {
+            atl.s(s4sVar.d.getLooper(), Looper.myLooper(), null);
+            s4sVar.h = 0;
+            s4sVar.a(dtrVar);
+        }
+        return s4sVar;
+    }
+
+    @Override // defpackage.h4s
+    public final void e(c8q c8qVar, rh2 rh2Var) {
+        dtr dtrVar = this.h;
+        if (dtrVar != null) {
+            int i = this.f;
+            this.f = i + 1;
+            h(dtrVar, c8qVar, i, "push", rh2Var);
+        } else {
+            synchronized (this.e) {
+                this.e.add(new i4s(c8qVar, rh2Var));
+            }
+        }
+    }
+
+    public final boolean f() {
+        atl.s(this.c.getLooper(), Looper.myLooper(), null);
+        return this.a.g();
+    }
+
+    public final void g(dtr dtrVar) {
+        mqd.z(dtrVar, "webSocket");
+        atl.s(this.c.getLooper(), Looper.myLooper(), null);
+        atl.s(this.h, dtrVar, null);
+        atl.o(null, this.i);
+        if (h6i.c.a()) {
+            h6i.s("XivaSocketFactory", "onClosed");
+        }
+        this.h = null;
+        ((s3s) this.j.f).a(f());
+        this.a.n();
+    }
+
+    public final void h(dtr dtrVar, c8q c8qVar, int i, String str, rh2 rh2Var) {
+        rh2 rh2Var2 = new rh2();
+        rh2Var2.t0(1);
+        ph2 ph2Var = new ph2(rh2Var2, 0);
+        h7g h7gVar = j7g.b;
+        h7gVar.getClass();
+        dki dkiVar = new dki();
+        dkiVar.a = ph2Var;
+        dkiVar.b = MessageBuffer.a(8192);
+        l7g l7gVar = new l7g(dkiVar, h7gVar);
+        try {
+            l7gVar.l(c8qVar != null ? 4 : 3);
+            l7gVar.H((byte) 0);
+            if (i < -32) {
+                if (i < -32768) {
+                    l7gVar.Q((byte) -46, i);
+                } else if (i < -128) {
+                    l7gVar.T((byte) -47, (short) i);
+                } else {
+                    l7gVar.J((byte) -48, (byte) i);
+                }
+            } else if (i < 128) {
+                l7gVar.H((byte) i);
+            } else if (i < 256) {
+                l7gVar.J((byte) -52, (byte) i);
+            } else if (i < 65536) {
+                l7gVar.T((byte) -51, (short) i);
+            } else {
+                l7gVar.Q((byte) -50, i);
+            }
+            l7gVar.w(str);
+            if (c8qVar != null) {
+                byte b = c8qVar.a;
+                if (b < -32) {
+                    l7gVar.J((byte) -48, b);
+                } else {
+                    l7gVar.H(b);
+                }
+            }
+            l7gVar.close();
+            rh2Var2.g1(rh2Var);
+            bn2 bn2VarH0 = rh2Var2.h0();
+            ypk ypkVar = (ypk) dtrVar;
+            ypkVar.getClass();
+            mqd.z(bn2VarH0, "bytes");
+            if (ypkVar.h(2, bn2VarH0)) {
+                ze3.c(this.j, bn2VarH0.h());
+            }
+        } catch (Throwable th) {
+            try {
+                throw th;
+            } catch (Throwable th2) {
+                vd1.v(l7gVar, th);
+                throw th2;
+            }
+        }
+    }
+
+    @Override // defpackage.h4s
+    public final void stop() {
+        atl.s(this.c.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.i);
+        ypk ypkVar = this.h;
+        if (ypkVar != null) {
+            ypkVar.c(DescriptorProtos.Edition.EDITION_2023_VALUE, "bye");
+        }
+    }
+}
+========== r4s.java ==========
+package defpackage;
+
+import android.os.Handler;
+import android.os.Looper;
+import java.util.concurrent.CancellationException;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class r4s implements h4s {
+    public final fmg a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final w3s e;
+    public xdk f;
+    public final qrn g;
+    public final Handler h;
+    public final xeo i;
+    public final xeo j;
+    public volatile boolean k;
+    public volatile boolean l;
+    public final ud3 m;
+    public final xeo n;
+    public lnn o;
+    public final z9h p;
+    public final ci2 q;
+    public lnn r;
+    public final /* synthetic */ ze3 s;
+
+    public r4s(ze3 ze3Var, fmg fmgVar, String str, String str2, String str3, w3s w3sVar) {
+        mqd.z(str3, "session");
+        mqd.z(w3sVar, "xivaDomain");
+        this.s = ze3Var;
+        this.a = fmgVar;
+        this.b = str;
+        this.c = str2;
+        this.d = str3;
+        this.e = w3sVar;
+        this.g = rrn.a(Boolean.FALSE);
+        Looper looperMyLooper = Looper.myLooper();
+        this.h = new Handler(looperMyLooper == null ? Looper.getMainLooper() : looperMyLooper);
+        this.i = lo7.B(new udr(6, ze3Var, this));
+        final int i = 0;
+        this.j = lo7.B(new kib(this) { // from class: j4s
+            public final /* synthetic */ r4s b;
+
+            {
+                this.b = this;
+            }
+
+            public final Object invoke() {
+                switch (i) {
+                    case 0:
+                        return f34.d(m51.I(wlm.a(), this.b.h()));
+                    default:
+                        r4s r4sVar = this.b;
+                        return new zr2(r4sVar.a, r4sVar.h());
+                }
+            }
+        });
+        this.m = new ud3();
+        final int i2 = 1;
+        this.n = lo7.B(new kib(this) { // from class: j4s
+            public final /* synthetic */ r4s b;
+
+            {
+                this.b = this;
+            }
+
+            public final Object invoke() {
+                switch (i2) {
+                    case 0:
+                        return f34.d(m51.I(wlm.a(), this.b.h()));
+                    default:
+                        r4s r4sVar = this.b;
+                        return new zr2(r4sVar.a, r4sVar.h());
+                }
+            }
+        });
+        this.p = new z9h();
+        this.q = ko7.b(Integer.MAX_VALUE, 6, (vh2) null);
+    }
+
+    /* JADX INFO: Thrown type has an unknown type hierarchy: eae */
+    /* JADX WARN: Code duplicated, block: B:7:0x0013  */
+    public static final void f(r4s r4sVar, xdk xdkVar, kc6 kc6Var) throws eae {
+        k4s k4sVar;
+        if (kc6Var instanceof k4s) {
+            k4sVar = (k4s) kc6Var;
+            int i = k4sVar.f;
+            if ((i & Integer.MIN_VALUE) != 0) {
+                k4sVar.f = i - Integer.MIN_VALUE;
+            } else {
+                k4sVar = new k4s(r4sVar, kc6Var);
+            }
+        } else {
+            k4sVar = new k4s(r4sVar, kc6Var);
+        }
+        Object obj = k4sVar.d;
+        xe6 xe6Var = xe6.a;
+        int i2 = k4sVar.f;
+        if (i2 == 0) {
+            nzn.U(obj);
+            lok lokVar = xdkVar.h;
+            l4s l4sVar = new l4s(r4sVar, r4sVar.s);
+            k4sVar.f = 1;
+            if (lokVar.a.b(l4sVar, k4sVar) == xe6Var) {
+                return;
+            }
+        } else {
+            if (i2 != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            nzn.U(obj);
+        }
+        throw new eae();
+    }
+
+    /* JADX WARN: Code duplicated, block: B:107:0x022f  */
+    /* JADX WARN: Code duplicated, block: B:109:0x0237  */
+    /* JADX WARN: Code duplicated, block: B:115:0x0280  */
+    /* JADX WARN: Code duplicated, block: B:129:0x0156 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:130:0x00e4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:137:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:138:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:42:0x00d9  */
+    /* JADX WARN: Code duplicated, block: B:50:0x0111  */
+    /* JADX WARN: Code duplicated, block: B:58:0x012b  */
+    /* JADX WARN: Code duplicated, block: B:60:0x0133  */
+    /* JADX WARN: Code duplicated, block: B:64:0x014a  */
+    /* JADX WARN: Code duplicated, block: B:82:0x01dd  */
+    /* JADX WARN: Code duplicated, block: B:85:0x01e6 A[Catch: Exception -> 0x01ea, TryCatch #4 {Exception -> 0x01ea, blocks: (B:83:0x01e2, B:85:0x01e6, B:88:0x01ed, B:92:0x01f5, B:94:0x01fb), top: B:125:0x01e2 }] */
+    /* JADX WARN: Code duplicated, block: B:88:0x01ed A[Catch: Exception -> 0x01ea, TryCatch #4 {Exception -> 0x01ea, blocks: (B:83:0x01e2, B:85:0x01e6, B:88:0x01ed, B:92:0x01f5, B:94:0x01fb), top: B:125:0x01e2 }] */
+    /* JADX WARN: Code duplicated, block: B:8:0x001c  */
+    /* JADX WARN: Code duplicated, block: B:90:0x01f1 A[ADDED_TO_REGION] */
+    /* JADX WARN: Code duplicated, block: B:91:0x01f3 A[DONT_INVERT] */
+    /* JADX WARN: Code duplicated, block: B:92:0x01f5 A[Catch: Exception -> 0x01ea, TryCatch #4 {Exception -> 0x01ea, blocks: (B:83:0x01e2, B:85:0x01e6, B:88:0x01ed, B:92:0x01f5, B:94:0x01fb), top: B:125:0x01e2 }] */
+    /* JADX WARN: Code duplicated, block: B:93:0x01fa  */
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x0212, code lost:
+    
+        if (x44.o(r2, r13) == r14) goto L116;
+     */
+    /* JADX WARN: Instruction removed from duplicated block: B:109:0x0237, please report this as an issue */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v44 */
+    /* JADX WARN: Type inference failed for: r0v45, types: [taa] */
+    /* JADX WARN: Type inference failed for: r0v5, types: [s5i] */
+    /* JADX WARN: Type inference failed for: r0v51 */
+    /* JADX WARN: Type inference failed for: r10v0 */
+    /* JADX WARN: Type inference failed for: r10v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r10v18 */
+    /* JADX WARN: Type inference failed for: r10v24 */
+    /* JADX WARN: Type inference failed for: r10v25 */
+    /* JADX WARN: Type inference failed for: r10v28 */
+    /* JADX WARN: Type inference failed for: r10v29 */
+    /* JADX WARN: Type inference failed for: r10v31 */
+    /* JADX WARN: Type inference failed for: r10v32 */
+    /* JADX WARN: Type inference failed for: r10v9 */
+    /* JADX WARN: Type inference failed for: r15v0 */
+    /* JADX WARN: Type inference failed for: r15v1 */
+    /* JADX WARN: Type inference failed for: r15v11 */
+    /* JADX WARN: Type inference failed for: r15v12 */
+    /* JADX WARN: Type inference failed for: r15v15 */
+    /* JADX WARN: Type inference failed for: r15v16 */
+    /* JADX WARN: Type inference failed for: r15v2, types: [i9h, oks, taa, vuk, xuk] */
+    /* JADX WARN: Type inference failed for: r15v7 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v12 */
+    /* JADX WARN: Type inference failed for: r1v13 */
+    /* JADX WARN: Type inference failed for: r1v14, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v17 */
+    /* JADX WARN: Type inference failed for: r1v18 */
+    /* JADX WARN: Type inference failed for: r1v19 */
+    /* JADX WARN: Type inference failed for: r1v20 */
+    /* JADX WARN: Type inference failed for: r1v21 */
+    /* JADX WARN: Type inference failed for: r1v22 */
+    /* JADX WARN: Type inference failed for: r1v7 */
+    /* JADX WARN: Type inference failed for: r2v1, types: [taa] */
+    /* JADX WARN: Type inference failed for: r2v10 */
+    /* JADX WARN: Type inference failed for: r2v11 */
+    /* JADX WARN: Type inference failed for: r2v17 */
+    /* JADX WARN: Type inference failed for: r2v3 */
+    /* JADX WARN: Type inference failed for: r3v14 */
+    /* JADX WARN: Type inference failed for: r3v23 */
+    /* JADX WARN: Type inference failed for: r3v37 */
+    /* JADX WARN: Type inference failed for: r3v38 */
+    /* JADX WARN: Type inference failed for: r3v4, types: [oks] */
+    /* JADX WARN: Type inference failed for: r4v0 */
+    /* JADX WARN: Type inference failed for: r4v18 */
+    /* JADX WARN: Type inference failed for: r4v19 */
+    /* JADX WARN: Type inference failed for: r4v20 */
+    /* JADX WARN: Type inference failed for: r4v23 */
+    /* JADX WARN: Type inference failed for: r4v24 */
+    /* JADX WARN: Type inference failed for: r4v25 */
+    /* JADX WARN: Type inference failed for: r4v26 */
+    /* JADX WARN: Type inference failed for: r4v27 */
+    /* JADX WARN: Type inference failed for: r4v28 */
+    /* JADX WARN: Type inference failed for: r4v29 */
+    /* JADX WARN: Type inference failed for: r6v9 */
+    /* JADX WARN: Type inference failed for: r8v10 */
+    /* JADX WARN: Type inference failed for: r8v13 */
+    /* JADX WARN: Type inference failed for: r8v14 */
+    /* JADX WARN: Type inference failed for: r8v15 */
+    /* JADX WARN: Type inference failed for: r8v16 */
+    /* JADX WARN: Type inference failed for: r8v17, types: [taa] */
+    /* JADX WARN: Type inference failed for: r8v19 */
+    /* JADX WARN: Type inference failed for: r8v20 */
+    /* JADX WARN: Type inference failed for: r8v21 */
+    /* JADX WARN: Type inference failed for: r8v22 */
+    /* JADX WARN: Type inference failed for: r8v23 */
+    /* JADX WARN: Type inference failed for: r8v24 */
+    /* JADX WARN: Type inference failed for: r8v25 */
+    /* JADX WARN: Type inference failed for: r8v9, types: [int] */
+    /* JADX WARN: Type inference failed for: r9v13 */
+    /* JADX WARN: Type inference failed for: r9v14 */
+    /* JADX WARN: Type inference failed for: r9v15 */
+    /* JADX WARN: Type inference failed for: r9v19 */
+    /* JADX WARN: Type inference failed for: r9v20 */
+    /* JADX WARN: Type inference failed for: r9v21 */
+    /* JADX WARN: Type inference failed for: r9v22 */
+    /* JADX WARN: Type inference failed for: r9v8, types: [taa] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public static final java.lang.Object g(defpackage.r4s r19, oks r20, int r21, defpackage.taa r22, kc6 r23) throws java.lang.Exception {
+        /*
+            Method dump skipped, instruction units count: 662
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.r4s.g(r4s, oks, int, taa, kc6):java.lang.Object");
+    }
+
+    @Override // defpackage.h4s
+    public final boolean a() {
+        return ((Boolean) this.g.getValue()).booleanValue();
+    }
+
+    @Override // defpackage.h4s
+    public final void b(String str) {
+        mqd.z(str, "reason");
+        if (h6i.c.a()) {
+            h6i.s("Xiva", "Restart request: ".concat(str));
+        }
+        if (this.k || !this.l) {
+            return;
+        }
+        j(true);
+    }
+
+    @Override // defpackage.h4s
+    public final void c() {
+        if (this.k) {
+            return;
+        }
+        if (this.l) {
+            if (((Boolean) this.g.getValue()).booleanValue()) {
+                return;
+            }
+            if (h6i.c.a()) {
+                h6i.s("Xiva", "startIfNeeded: already started but disconnected, forcing reconnect");
+            }
+            j(false);
+            return;
+        }
+        this.l = true;
+        lnn lnnVar = this.r;
+        if (lnnVar == null || !lnnVar.a()) {
+            this.r = lo7.z(i(), (ie6) null, (ze6) null, new q4s(this, this.s, null), 3);
+        }
+        j(false);
+    }
+
+    @Override // defpackage.h4s
+    public final void close() {
+        this.k = true;
+        this.q.o((Throwable) null);
+        xdk xdkVar = this.f;
+        if (xdkVar != null) {
+            xdkVar.q();
+        }
+        f34.o(i(), (CancellationException) null);
+    }
+
+    @Override // defpackage.h4s
+    public final cw3 d(oks oksVar, taa taaVar) {
+        return new ew3(new lpj(lo7.z(i(), (li7) this.s.i, (ze6) null, new wl1(this, oksVar, taaVar, (ic6) null), 2), 2), 0);
+    }
+
+    @Override // defpackage.h4s
+    public final void e(c8q c8qVar, rh2 rh2Var) {
+        this.q.j(new i4s(c8qVar, rh2Var));
+    }
+
+    public final le6 h() {
+        return (le6) this.i.getValue();
+    }
+
+    public final ue6 i() {
+        return (ue6) this.j.getValue();
+    }
+========== ze3.java ==========
+package defpackage;
+
+import android.app.Activity;
+import android.app.RemoteInput;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.media.MediaCodec;
+import android.media.MediaFormat;
+import android.media.MediaMuxer;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
+import android.text.Editable;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.CharacterStyle;
+import android.view.Surface;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import com.yandex.messaging.internal.entities.TextMessageData;
+import com.yandex.telemost.ui.views.SmallIconButton;
+import io.appmetrica.analytics.AppMetricaYandex;
+import io.sentry.ILogger;
+import io.sentry.android.replay.util.f;
+import io.sentry.android.replay.util.h;
+import io.sentry.android.replay.video.a;
+import io.sentry.android.replay.video.b;
+import io.sentry.android.replay.video.c;
+import io.sentry.k5;
+import io.sentry.k6;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.WeakHashMap;
+import java.util.concurrent.CancellationException;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class ze3 implements h6g, s41 {
+    public final /* synthetic */ int a;
+    public Object b;
+    public Object c;
+    public Object d;
+    public Object e;
+    public Object f;
+    public Object g;
+    public Object h;
+    public Object i;
+
+    public static final void c(ze3 ze3Var, long j) {
+        ze3Var.getClass();
+        po1 po1Var = rgn.a;
+        rgn.a("Socket.FrameTxBytes", j, new rjl(2, tfg.a, tfg.class, "recordSocketFrameBytes", "recordSocketFrameBytes(Ljava/lang/String;I)V", 0, 3));
+    }
+
+    public static int j(Editable editable, int i, int i2) {
+        int length = editable.length();
+        if (i2 > length) {
+            i2 = length;
+        }
+        if (i < 0) {
+            i = 0;
+        }
+        while (i2 > i && xkc.Y(editable.charAt(i2 - 1))) {
+            i2--;
+        }
+        return i2;
+    }
+
+    public static int k(Editable editable, int i, int i2) {
+        if (i < 0) {
+            i = 0;
+        }
+        int length = editable.length();
+        if (i2 > length) {
+            i2 = length;
+        }
+        while (i < i2 && xkc.Y(editable.charAt(i))) {
+            i++;
+        }
+        return i;
+    }
+
+    public static void s(Editable editable, CharacterStyle characterStyle, int i, int i2, lib libVar) {
+        int iK;
+        int iJ;
+        int iK2;
+        int iJ2;
+        int spanStart = editable.getSpanStart(characterStyle);
+        int spanEnd = editable.getSpanEnd(characterStyle);
+        CharacterStyle characterStyle2 = (CharacterStyle) libVar.invoke(characterStyle);
+        if (spanStart >= i2 || spanEnd <= i) {
+            return;
+        }
+        editable.removeSpan(characterStyle);
+        if (spanStart < i && iK2 < (iJ2 = j(editable, (iK2 = k(editable, spanStart, i)), i))) {
+            editable.setSpan(characterStyle, iK2, iJ2, 33);
+        }
+        if (spanEnd <= i2 || characterStyle2 == null || iK >= (iJ = j(editable, (iK = k(editable, i2, spanEnd)), spanEnd))) {
+            return;
+        }
+        editable.setSpan(characterStyle2, iK, iJ, 33);
+    }
+
+    @Override // defpackage.h6g
+    public sc9 a() {
+        return new sc9(n68.a((tn3) this.i));
+    }
+
+    public lok b() {
+        return (lok) this.g;
+    }
+
+    public void d(int i, int i2, kib kibVar, Integer num) {
+        Drawable drawableE;
+        ViewGroup viewGroup = (ViewGroup) this.e;
+        TextView textView = new TextView(new dc6(viewGroup.getContext(), 2132083215));
+        m51.V(textView, i2, 2130969750);
+        textView.setText(i);
+        if (num != null) {
+            int iIntValue = num.intValue();
+            if (iIntValue != 0) {
+                Context context = textView.getContext();
+                mqd.y(context, "getContext(...)");
+                drawableE = n9.e(context, iIntValue);
+            } else {
+                drawableE = null;
+            }
+            p50.O(textView, drawableE, true);
+        }
+        viewGroup.addView(textView);
+        textView.setOnClickListener(new ac4(kibVar, this, 0));
+    }
+
+    public void e(int i, int i2, kib kibVar) {
+        ViewGroup viewGroup = (ViewGroup) this.e;
+        TextView textView = new TextView(new dc6(viewGroup.getContext(), 2132083216));
+        m51.V(textView, i2, 2130969746);
+        textView.setText(i);
+        viewGroup.addView(textView);
+        textView.setOnClickListener(new ac4(kibVar, this, 1));
+    }
+
+    /* JADX WARN: Code duplicated, block: B:132:0x02de A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:159:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:160:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:58:0x010d  */
+    /* JADX WARN: Code duplicated, block: B:61:0x0125 A[Catch: all -> 0x028a, TRY_ENTER, TRY_LEAVE, TryCatch #2 {all -> 0x028a, blocks: (B:56:0x0108, B:61:0x0125), top: B:137:0x0108 }] */
+    /* JADX WARN: Code duplicated, block: B:64:0x014d  */
+    /* JADX WARN: Code duplicated, block: B:68:0x0173  */
+    /* JADX WARN: Code duplicated, block: B:75:0x01a6  */
+    /* JADX WARN: Code duplicated, block: B:78:0x01b4  */
+    /* JADX WARN: Code duplicated, block: B:81:0x01d2 A[Catch: all -> 0x0278, TRY_ENTER, TRY_LEAVE, TryCatch #9 {all -> 0x0278, blocks: (B:76:0x01b0, B:81:0x01d2), top: B:149:0x01b0 }] */
+    /* JADX WARN: Code duplicated, block: B:86:0x01f1  */
+    /* JADX WARN: Code duplicated, block: B:90:0x0214  */
+    /* JADX WARN: Code duplicated, block: B:97:0x024b A[PHI: r2 r4 r6 r10
+      0x024b: PHI (r2v39 fcq) = (r2v37 fcq), (r2v41 fcq) binds: [B:95:0x0247, B:20:0x0060] A[DONT_GENERATE, DONT_INLINE]
+      0x024b: PHI (r4v33 zuk) = (r4v40 zuk), (r4v41 zuk) binds: [B:95:0x0247, B:20:0x0060] A[DONT_GENERATE, DONT_INLINE]
+      0x024b: PHI (r6v27 long) = (r6v31 long), (r6v28 long) binds: [B:95:0x0247, B:20:0x0060] A[DONT_GENERATE, DONT_INLINE]
+      0x024b: PHI (r10v15 qvh) = (r10v14 qvh), (r10v0 qvh) binds: [B:95:0x0247, B:20:0x0060] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0121, code lost:
+    
+        if (lo7.Q(r0, r3, r10) == r14) goto L132;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x01ce, code lost:
+    
+        if (lo7.Q(r0, r5, r12) == r14) goto L132;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r4v6 */
+    /* JADX WARN: Type inference failed for: r6v24, types: [long] */
+    /* JADX WARN: Type inference failed for: r6v25, types: [long] */
+    /* JADX WARN: Type inference failed for: r6v3, types: [int] */
+    /* JADX WARN: Type inference failed for: r6v32 */
+    /* JADX WARN: Type inference failed for: r6v33 */
+    /* JADX WARN: Type inference failed for: r6v4 */
+    /* JADX WARN: Type inference failed for: r6v5 */
+    /* JADX WARN: Type inference failed for: r9v23 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public java.lang.Object f(long r19, kc6 r21) throws java.lang.Throwable {
+        /*
+            Method dump skipped, instruction units count: 766
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.ze3.f(long, kc6):java.lang.Object");
+    }
+
+    public g5l g() {
+        g5l g5lVar = new g5l();
+        g5lVar.i("https://" + ((fsc) this.h).a() + "/rtc/call_feedback");
+        g5lVar.a("User-Agent", (String) this.f);
+        g5lVar.a("X-UUID", (String) this.e);
+        String uuid = AppMetricaYandex.getUuid(((a7s) ((n2d) this.d)).a);
+        if (uuid != null && uuid.length() != 0) {
+            g5lVar.a("X-METRICA-UUID", uuid);
+        }
+        return g5lVar;
+    }
+
+    public void h(boolean z) {
+        ByteBuffer byteBuffer;
+        b bVar = (b) this.h;
+        MediaCodec.BufferInfo bufferInfo = (MediaCodec.BufferInfo) this.g;
+        MediaCodec mediaCodec = (MediaCodec) this.e;
+        k6 k6Var = (k6) this.b;
+        if (k6Var.getSessionReplay().n) {
+            k6Var.getLogger().g(k5.DEBUG, "[Encoder]: drainCodec(" + z + ')', new Object[0]);
+        }
+        if (z) {
+            if (k6Var.getSessionReplay().n) {
+                k6Var.getLogger().g(k5.DEBUG, "[Encoder]: sending EOS to encoder", new Object[0]);
+            }
+            mediaCodec.signalEndOfInputStream();
+        }
+        ByteBuffer[] outputBuffers = mediaCodec.getOutputBuffers();
+        int i = 0;
+        do {
+            int iDequeueOutputBuffer = mediaCodec.dequeueOutputBuffer(bufferInfo, 100000L);
+            if (iDequeueOutputBuffer != -1) {
+                if (iDequeueOutputBuffer == -3) {
+                    outputBuffers = mediaCodec.getOutputBuffers();
+                } else if (iDequeueOutputBuffer == -2) {
+                    if (bVar.c) {
+                        throw new RuntimeException("format changed twice");
+                    }
+                    MediaFormat outputFormat = mediaCodec.getOutputFormat();
+                    mqd.y(outputFormat, "getOutputFormat(...)");
+                    if (k6Var.getSessionReplay().n) {
+                        k6Var.getLogger().g(k5.DEBUG, "[Encoder]: encoder output format changed: " + outputFormat, new Object[0]);
+                    }
+                    MediaMuxer mediaMuxer = bVar.b;
+                    bVar.d = mediaMuxer.addTrack(outputFormat);
+                    mediaMuxer.start();
+                    bVar.c = true;
+                } else if (iDequeueOutputBuffer < 0) {
+                    if (k6Var.getSessionReplay().n) {
+                        k6Var.getLogger().g(k5.DEBUG, okn.l(iDequeueOutputBuffer, "[Encoder]: unexpected result from encoder.dequeueOutputBuffer: "), new Object[0]);
+                    }
+========== oks.java ==========
+========== Transport references ==========
