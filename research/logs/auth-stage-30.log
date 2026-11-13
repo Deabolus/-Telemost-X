@@ -1,0 +1,27 @@
+===== ALL HOST HANDLER REFERENCES =====
+research/artifacts/decompiled-dex2/sources/defpackage/fsc.java:15:        mqd.z(poqVar, "apiHostHandler");
+research/artifacts/decompiled-dex2/sources/defpackage/fsc.java:20:        mqd.z(qsaVar, "telemostCloudApiHostHandler");
+
+===== POQ DESCRIPTOR IN DEX =====
+--- research/artifacts/dex/classes.dex ---
+Lpoq;
+--- research/artifacts/dex/classes2.dex ---
+Lpoq;
+apiHostHandler
+telemostCloudApiHostHandler
+--- research/artifacts/dex/classes3.dex ---
+Lpoq;
+--- research/artifacts/dex/classes4.dex ---
+Lpoq;
+
+===== API HOST CONFIGURATION STRINGS =====
+research/artifacts/decompiled-dex2/sources/defpackage/fsc.java:15:        mqd.z(poqVar, "apiHostHandler");
+research/artifacts/decompiled-dex2/sources/defpackage/qsa.java:112:        return "cloud-api.yandex.net";
+research/artifacts/decompiled-dex2/sources/defpackage/qsa.java:117:        return "cloud-api.yandex.net";
+research/artifacts/decompiled-dex2/sources/defpackage/qsa.java:122:        return "cloud-api.dst.yandex.net";
+research/artifacts/decompiled-dex2/sources/defpackage/qsa.java:178:        return "cloud-api.dst.yandex.net";
+research/artifacts/decompiled-dex2/sources/defpackage/b6m.java:7:    public final String c = "https://cloud-api.yandex.ru/v1/disk/attach/resources/upload?path=attach:/";
+research/artifacts/decompiled-dex2/sources/defpackage/f5s.java:12:        l0dVar.g("cloud-api.yandex.net");
+research/artifacts/decompiled-dex2/sources/defpackage/po1.java:148:        return "https://cloud-api.yandex.net";
+
+===== FSC CLASS REFERENCES =====
