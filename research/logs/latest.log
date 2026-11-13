@@ -1,280 +1,809 @@
-========== z0j.java ==========
+========== b1j.java ==========
 package defpackage;
 
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemClock;
+import java.util.concurrent.Executor;
+import java.util.concurrent.TimeUnit;
 
 /* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
-public final /* synthetic */ class z0j implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b1j b;
+public final class b1j implements Runnable, cw3 {
+    public static final Object i = new Object();
+    public final Handler a;
+    public final k0j b;
+    public final oxk c;
+    public final x20 d;
+    public final a1j e;
+    public final Executor f;
+    public boolean g;
+    public boolean h;
 
-    public /* synthetic */ z0j(b1j b1jVar, int i) {
-        this.a = i;
-        this.b = b1jVar;
+    public b1j(k0j k0jVar, oxk oxkVar, x20 x20Var, a1j a1jVar) {
+        Executor executor = AsyncTask.THREAD_POOL_EXECUTOR;
+        this.a = new Handler();
+        this.b = k0jVar;
+        this.c = oxkVar;
+        this.d = x20Var;
+        this.e = a1jVar;
+        this.f = executor;
+        b();
+    }
+
+    public final void a(String str) {
+        Handler handler = this.a;
+        atl.s(handler.getLooper(), Looper.myLooper(), null);
+        atl.t(null, this.g);
+        this.d.d("passport_request_failed", "method", this.e.name(), "message", str);
+        this.g = false;
+        if (this.h) {
+            return;
+        }
+        handler.postAtTime(this, i, TimeUnit.SECONDS.toMillis(2L) + SystemClock.uptimeMillis());
+    }
+
+    public final void b() {
+        Handler handler = this.a;
+        atl.s(handler.getLooper(), Looper.myLooper(), null);
+        if (this.g) {
+            return;
+        }
+        this.g = true;
+        handler.removeCallbacksAndMessages(i);
+        this.f.execute(new z0j(this, 0));
+    }
+
+    @Override // defpackage.cw3
+    public final void cancel() {
+        Handler handler = this.a;
+        atl.s(handler.getLooper(), Looper.myLooper(), null);
+        this.h = true;
+        handler.removeCallbacksAndMessages(i);
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        oxk oxkVar;
-        switch (this.a) {
-            case 0:
-                b1j b1jVar = this.b;
-                Handler handler = b1jVar.a;
-                try {
-                    Object objO = b1jVar.e.o(b1jVar.b);
-                    if (objO == null) {
-                        handler.post(new z0j(b1jVar, 1));
-                    } else {
-                        handler.post(new rtf(19, b1jVar, objO));
-                    }
-                } catch (a91 | b91 unused) {
-                    handler.post(new z0j(b1jVar, 2));
-                    return;
-                } catch (Exception e) {
-                    handler.post(new rtf(20, b1jVar, e));
-                    return;
-                }
-                break;
-            case 1:
-                this.b.a(null);
-                break;
-            default:
-                b1j b1jVar2 = this.b;
-                atl.s(b1jVar2.a.getLooper(), Looper.myLooper(), null);
-                atl.t(null, b1jVar2.g);
-                b1jVar2.g = false;
-                b1jVar2.d.j(b1jVar2.e.name(), "passport_relogin_required", "method");
-                if (!b1jVar2.h && (oxkVar = b1jVar2.c) != null) {
-                    atl.s(oxkVar.a, Looper.myLooper(), null);
-                    oxkVar.d = true;
-                    ryh ryhVar = oxkVar.c;
-                    ryhVar.b();
-                    while (ryhVar.hasNext()) {
-                        rxk rxkVar = (rxk) ryhVar.next();
-                        atl.s((Looper) rxkVar.e.c, Looper.myLooper(), null);
-                        rxkVar.a.post(new qxk(rxkVar, 2));
-                    }
-                    break;
-                }
-                break;
+        atl.s(this.a.getLooper(), Looper.myLooper(), null);
+        if (this.h) {
+            return;
         }
+        b();
     }
 }
 
-========== a1j.java ==========
+========== dqi.java ==========
 package defpackage;
 
-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
-public interface a1j {
-    void j(Object obj);
-
-    String name();
-
-    Object o(k0j k0jVar);
-}
-
-========== e1j.java ==========
-package defpackage;
-
-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
-public final class e1j {
-    public final String a;
-
-    public e1j(String str) {
-        this.a = str;
-    }
-}
-
-========== k0j.java ==========
-package defpackage;
-
-import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
-import com.yandex.passport.api.exception.n;
-import com.yandex.passport.api.t;
-import com.yandex.passport.api.u;
-import com.yandex.passport.internal.impl.o;
-import io.sentry.config.a;
+import com.google.protobuf.DescriptorProtos;
+import com.yandex.messaging.core.net.entities.proto.PollInfoRequest;
+import com.yandex.messaging.core.net.entities.proto.message.MessageRef;
+import com.yandex.messaging.techprofile.accounts.AuthUid;
+import com.yandex.messaging.ui.pollinfo.PollInfoActivity;
+import com.yandex.messaging.ui.polloptioninfo.PollOptionInfoActivity;
+import com.yandex.passport.api.j2;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 /* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
-public final class k0j {
-    public final Context a;
-    public final o b;
-    public final t c;
+public final class dqi extends lao implements pib {
+    public final /* synthetic */ int e;
+    public int f;
+    public Object g;
+    public /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
 
-    public k0j(Context context) {
-        this.a = context;
-        o oVarL = a.l(context);
-        this.b = oVarL;
-        this.c = oVarL.f();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ dqi(ic6 ic6Var, Object obj, Object obj2, int i) {
+        super(2, ic6Var);
+        this.e = i;
+        this.h = obj;
+        this.i = obj2;
     }
 
-    /* JADX WARN: Code duplicated, block: B:7:0x0013  */
-    public static Object b(k0j k0jVar, kc6 kc6Var) {
-        h0j h0jVar;
-        if (kc6Var instanceof h0j) {
-            h0jVar = (h0j) kc6Var;
-            int i = h0jVar.f;
-            if ((i & Integer.MIN_VALUE) != 0) {
-                h0jVar.f = i - Integer.MIN_VALUE;
-            } else {
-                h0jVar = new h0j(k0jVar, kc6Var);
+    private final Object v(Object obj) {
+        AuthUid authUid = (AuthUid) this.h;
+        xe6 xe6Var = xe6.a;
+        int i = this.f;
+        if (i == 0) {
+            nzn.U(obj);
+            pj pjVar = ((s4k) this.g).b;
+            this.f = 1;
+            LinkedHashMap linkedHashMap = pjVar.c;
+            Object objA = linkedHashMap.get(authUid);
+            if (objA == null) {
+                objA = lq0.a();
+                linkedHashMap.put(authUid, objA);
+            }
+            obj = ((pg5) objA).t(this);
+            if (obj == xe6Var) {
+                return xe6Var;
             }
         } else {
-            h0jVar = new h0j(k0jVar, kc6Var);
-        }
-        Object obj = h0jVar.d;
-        xe6 xe6Var = xe6.a;
-        int i2 = h0jVar.f;
-        if (i2 != 0) {
-            if (i2 != 1) {
+            if (i != 1) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             nzn.U(obj);
-            return ((mel) obj).a;
         }
-        nzn.U(obj);
-        o oVar = k0jVar.b;
-        h0jVar.f = 1;
-        Object objI = oVar.i(h0jVar);
-        return objI == xe6Var ? xe6Var : objI;
+        oj ojVar = (oj) obj;
+        c8q c8qVarH = r8i.h(authUid.getValue(), ojVar.a);
+        fcq fcqVar = fcq.a;
+        if (c8qVarH != null) {
+            ((pib) this.i).invoke(ojVar.b, new c8q(c8qVarH.a));
+        }
+        return fcqVar;
     }
 
-    /* JADX INFO: Thrown type has an unknown type hierarchy: com.yandex.passport.api.exception.n */
-    public final void a(nb1 nb1Var, Uri uri) throws h91, n {
-        mqd.z(nb1Var, "currentUid");
-        mqd.z(uri, "uri");
-        Object obj = ((mel) lo7.K(fc9.a, new dqi(this, nb1Var, uri, null, 1))).a;
-        if (!(obj instanceof jel)) {
-            ((Boolean) obj).getClass();
-            obj = fcq.a;
+    private final Object w(Object obj) {
+        vnk vnkVar = (vnk) this.g;
+        xe6 xe6Var = xe6.a;
+        int i = this.f;
+        if (i == 0) {
+            nzn.U(obj);
+            bb9 bb9Var = vnkVar.b;
+            ra9 ra9Var = (ra9) this.h;
+            f3f f3fVar = (f3f) this.i;
+            ra9 ra9VarA = ra9.a(ra9Var, 0, f3fVar != null ? new Long(f3fVar.a) : null, 15);
+            this.f = 1;
+            obj = bb9Var.a(ra9VarA, this);
+            if (obj == xe6Var) {
+                return xe6Var;
+            }
+        } else {
+            if (i != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            nzn.U(obj);
         }
-        n nVarA = mel.a(obj);
-        if (nVarA == null) {
-            return;
+        if (!((Boolean) obj).booleanValue()) {
+            vnkVar.c.c(new pmk((g3f) null));
         }
-        if (!(nVarA instanceof n)) {
-            throw nVarA;
-        }
-        throw xo7.T(nVarA);
+        return fcq.a;
     }
 
-    /* JADX INFO: Thrown type has an unknown type hierarchy: com.yandex.passport.api.exception.n */
-    public final hb1 c(nb1 nb1Var) throws h91, n {
-        mqd.z(nb1Var, "uid");
-        Object obj = ((mel) lo7.K(fc9.a, new pwh(this, nb1Var, null, 13))).a;
-        n nVarA = mel.a(obj);
-        if (nVarA == null) {
-            String str = ((u) obj).a;
-            mqd.z(str, "$this$toAuthToken");
-            return new hb1(str);
+    /* JADX WARN: Code duplicated, block: B:11:0x0040 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:14:0x0049  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:10:0x003e -> B:12:0x0041). Please report as a decompilation issue!!! */
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        */
+    private final java.lang.Object x(java.lang.Object r11) {
+        /*
+            r10 = this;
+            java.lang.Object r0 = r10.i
+            xok r0 = (xok) r0
+            xe6 r1 = xe6.a
+            int r2 = r10.f
+            r3 = 1
+            if (r2 == 0) goto L21
+            if (r2 != r3) goto L19
+            java.lang.Object r2 = r10.g
+            xh2 r2 = (xh2) r2
+            java.lang.Object r4 = r10.h
+            ue6 r4 = (ue6) r4
+            nzn.U(r11)
+            goto L41
+        L19:
+            java.lang.IllegalStateException r11 = new java.lang.IllegalStateException
+            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
+            r11.<init>(r0)
+            throw r11
+        L21:
+            nzn.U(r11)
+            java.lang.Object r11 = r10.h
+            ue6 r11 = (ue6) r11
+            ci2 r2 = r0.d
+            r2.getClass()
+            xh2 r4 = new xh2
+            r4.<init>(r2)
+            r2 = r4
+            r4 = r11
+        L34:
+            r10.h = r4
+            r10.g = r2
+            r10.f = r3
+            java.lang.Object r11 = r2.b(r10)
+            if (r11 != r1) goto L41
+            return r1
+        L41:
+            java.lang.Boolean r11 = (java.lang.Boolean) r11
+            boolean r11 = r11.booleanValue()
+            if (r11 == 0) goto L91
+            java.lang.Object r11 = r2.c()
+            ypi r11 = (ypi) r11
+            java.lang.Object r5 = r11.a
+            ug5 r5 = (ug5) r5
+            java.lang.Object r11 = r11.b
+            pib r11 = (pib) r11
+            qe6 r6 = new qe6
+            java.util.concurrent.atomic.AtomicInteger r7 = r0.h
+            java.lang.String r8 = "<this>"
+            mqd.z(r7, r8)
+            int r7 = r7.getAndAdd(r3)
+            java.lang.String r8 = "orbit-intent-"
+            java.lang.String r7 = okn.l(r7, r8)
+            r6.<init>(r7)
+            ie6 r6 = m51.I(r6, r5)
+            jpk r7 = r0.a
+            le6 r7 = r7.d
+            ie6 r6 = r6.Z0(r7)
+            dqi r7 = new dqi
+            r8 = 26
+            r9 = 0
+            r7.<init>(r11, r0, r9, r8)
+            r11 = 2
+            lnn r11 = lo7.z(r4, r6, r9, r7, r11)
+            sdi r6 = new sdi
+            r7 = 24
+            r6.<init>(r5, r7)
+            r11.H0(r6)
+            goto L34
+        L91:
+            fcq r11 = fcq.a
+            return r11
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.dqi.x(java.lang.Object):java.lang.Object");
+    }
+
+    private final Object y(Object obj) throws Throwable {
+        jel jelVarE;
+        xok xokVar = (xok) this.i;
+        xe6 xe6Var = xe6.a;
+        int i = this.f;
+        jel jelVar = fcq.a;
+        try {
+            if (i == 0) {
+                nzn.U(obj);
+                ue6 ue6Var = (ue6) this.g;
+                pib pibVar = (pib) this.h;
+                p86 p86Var = xokVar.m;
+                this.g = ue6Var;
+                this.f = 1;
+                if (pibVar.invoke(p86Var, this) == xe6Var) {
+                    return xe6Var;
+                }
+            } else {
+                if (i != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                nzn.U(obj);
+            }
+            jelVarE = jelVar;
+        } catch (Throwable th) {
+            jelVarE = nzn.E(th);
         }
-        if (nVarA instanceof n) {
-            throw xo7.T(nVarA);
+        Throwable thA = mel.a(jelVarE);
+        if (thA == null) {
+            return jelVar;
         }
-        throw nVarA;
+        throw thA;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:22:0x0075  */
+    /* JADX WARN: Code duplicated, block: B:23:0x0078  */
+    /* JADX WARN: Code duplicated, block: B:26:0x0089  */
+    /* JADX WARN: Code duplicated, block: B:30:0x00ba  */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00c3, code lost:
+    
+        if (r0.a(r14, r13) == r2) goto L33;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private final java.lang.Object z(java.lang.Object r14) {
+        /*
+            Method dump skipped, instruction units count: 201
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.dqi.z(java.lang.Object):java.lang.Object");
+    }
+
+    public final Object invoke(Object obj, Object obj2) {
+        switch (this.e) {
+            case 0:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 1:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 2:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 3:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 4:
+                return q((ic6) obj2, (g1k) obj).t(fcq.a);
+            case 5:
+                return q((ic6) obj2, (xxa) obj).t(fcq.a);
+            case 6:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 7:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 8:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 9:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 10:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 11:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 12:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 13:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 14:
+                return q((ic6) obj2, (xxa) obj).t(fcq.a);
+            case 15:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 16:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 17:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 18:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case DescriptorProtos.FieldOptions.TARGETS_FIELD_NUMBER /* 19 */:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 20:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case DescriptorProtos.FieldOptions.FEATURES_FIELD_NUMBER /* 21 */:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case DescriptorProtos.FieldOptions.FEATURE_SUPPORT_FIELD_NUMBER /* 22 */:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case DescriptorProtos.FileOptions.DEPRECATED_FIELD_NUMBER /* 23 */:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 24:
+                return q((ic6) obj2, (ypi) obj).t(fcq.a);
+            case 25:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 26:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case DescriptorProtos.FileOptions.JAVA_STRING_CHECK_UTF8_FIELD_NUMBER /* 27 */:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 28:
+                return q((ic6) obj2, (xxa) obj).t(fcq.a);
+            default:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+        }
+    }
+
+    public final ic6 q(ic6 ic6Var, Object obj) {
+        switch (this.e) {
+            case 0:
+                return new dqi((j7d) this.h, (ulq) this.i, ic6Var, 0);
+            case 1:
+                return new dqi((k0j) this.g, (nb1) this.h, (Uri) this.i, ic6Var, 1);
+            case 2:
+                return new dqi((Intent) this.g, (y0j) this.h, (idn) this.i, ic6Var, 2);
+            case 3:
+                dqi dqiVar = new dqi((y0j) this.h, (j2) this.i, ic6Var, 3);
+                dqiVar.g = obj;
+                return dqiVar;
+            case 4:
+                dqi dqiVar2 = new dqi((d7j) this.h, (MessageRef) this.i, ic6Var, 4);
+                dqiVar2.g = obj;
+                return dqiVar2;
+            case 5:
+                dqi dqiVar3 = new dqi((vdj) this.i, ic6Var, 5);
+                dqiVar3.h = obj;
+                return dqiVar3;
+            case 6:
+                return new dqi((ukm) this.h, (String) this.g, (ci2) this.i, ic6Var);
+            case 7:
+                return new dqi((amj) this.h, (List) this.i, ic6Var, 7);
+            case 8:
+                return new dqi((PollInfoActivity) this.h, (opj) this.i, ic6Var, 8);
+            case 9:
+                return new dqi((vpj) this.g, (PollInfoRequest) this.h, (g1k) this.i, ic6Var, 9);
+            case 10:
+                return new dqi((gqj) this.g, (PollInfoRequest) this.h, (fqj) this.i, ic6Var, 10);
+            case 11:
+                return new dqi((PollOptionInfoActivity) this.h, (hqj) this.i, ic6Var, 11);
+            case 12:
+                dqi dqiVar4 = new dqi(ic6Var, (brj) this.h, (PollInfoRequest) this.i, 12);
+                dqiVar4.g = obj;
+                return dqiVar4;
+            case 13:
+                return new dqi((zuk) this.h, (orj) this.i, ic6Var, 13);
+            case 14:
+                dqi dqiVar5 = new dqi((atj) this.i, ic6Var, 14);
+                dqiVar5.h = obj;
+                return dqiVar5;
+            case 15:
+                return new dqi((String) this.g, (j54) this.h, (String) this.i, ic6Var, 15);
+            case 16:
+                dqi dqiVar6 = new dqi((vzj) this.h, (qzj) this.i, ic6Var, 16);
+                dqiVar6.g = obj;
+                return dqiVar6;
+            case 17:
+                dqi dqiVar7 = new dqi((x3k) this.h, (q3k) this.i, ic6Var, 17);
+                dqiVar7.g = obj;
+                return dqiVar7;
+            case 18:
+                return new dqi((lib) this.h, (e4k) this.i, ic6Var, 18);
+            case DescriptorProtos.FieldOptions.TARGETS_FIELD_NUMBER /* 19 */:
+                return new dqi((e4k) this.h, (pn7) this.i, ic6Var);
+            case 20:
+                dqi dqiVar8 = new dqi(ic6Var, (e4k) this.h, (pq4) this.i, 20);
+                dqiVar8.g = obj;
+                return dqiVar8;
+            case DescriptorProtos.FieldOptions.FEATURES_FIELD_NUMBER /* 21 */:
+                return new dqi((pn7) this.h, (l4k) this.i, ic6Var);
+            case DescriptorProtos.FieldOptions.FEATURE_SUPPORT_FIELD_NUMBER /* 22 */:
+                return new dqi((s4k) this.g, (AuthUid) this.h, (y3k) this.i, ic6Var, 22);
+            case DescriptorProtos.FileOptions.DEPRECATED_FIELD_NUMBER /* 23 */:
+                return new dqi((s4k) this.g, (AuthUid) this.h, (pib) this.i, ic6Var, 23);
+            case 24:
+                dqi dqiVar9 = new dqi((xdk) this.h, (j7d) this.i, ic6Var, 24);
+                dqiVar9.g = obj;
+                return dqiVar9;
+            case 25:
+                return new dqi((vnk) this.g, (ra9) this.h, (f3f) this.i, ic6Var, 25);
+            case 26:
+                dqi dqiVar10 = new dqi((pib) this.h, (xok) this.i, ic6Var, 26);
+                dqiVar10.g = obj;
+                return dqiVar10;
+            case DescriptorProtos.FileOptions.JAVA_STRING_CHECK_UTF8_FIELD_NUMBER /* 27 */:
+                dqi dqiVar11 = new dqi((xok) this.i, ic6Var, 27);
+                dqiVar11.h = obj;
+                return dqiVar11;
+            case 28:
+                dqi dqiVar12 = new dqi((e6d) this.h, (dpk) this.i, ic6Var, 28);
+                dqiVar12.g = obj;
+                return dqiVar12;
+            default:
+                dqi dqiVar13 = new dqi((f6d) this.h, (epk) this.i, ic6Var, 29);
+                dqiVar13.g = obj;
+                return dqiVar13;
+        }
+    }
+
+    /* JADX WARN: Code duplicated, block: B:383:0x0923  */
+    /* JADX WARN: Code duplicated, block: B:385:0x0939  */
+    /* JADX WARN: Code duplicated, block: B:532:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v74, types: [java.lang.Object, mgn] */
+    /* JADX WARN: Type inference failed for: r9v0, types: [ic6] */
+    /* JADX WARN: Type inference failed for: r9v1 */
+    /* JADX WARN: Type inference failed for: r9v15 */
+    /* JADX WARN: Type inference failed for: r9v2 */
+    /* JADX WARN: Type inference failed for: r9v3, types: [com.yandex.messaging.core.net.entities.proto.PollInfoResponse$AnswerVotes[]] */
+    /* JADX WARN: Type inference failed for: r9v4, types: [com.yandex.messaging.core.net.entities.proto.PollInfoResponse$AnswerVotes[]] */
+    /* JADX WARN: Type inference fix 'apply assigned field type' failed
+    java.lang.UnsupportedOperationException: ArgType.getObject(), call class: class jadx.core.dex.instructions.args.ArgType$UnknownArg
+    	at jadx.core.dex.instructions.args.ArgType.getObject(ArgType.java:596)
+    	at jadx.core.dex.attributes.nodes.ClassTypeVarsAttr.getTypeVarsMapFor(ClassTypeVarsAttr.java:35)
+    	at jadx.core.dex.nodes.utils.TypeUtils.replaceClassGenerics(TypeUtils.java:177)
+    	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.insertExplicitUseCast(FixTypesVisitor.java:397)
+    	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.tryFieldTypeWithNewCasts(FixTypesVisitor.java:359)
+    	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.applyFieldType(FixTypesVisitor.java:309)
+    	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.visit(FixTypesVisitor.java:94)
+     */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:236:0x0529 -> B:238:0x052c). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:379:0x0911 -> B:381:0x0914). Please report as a decompilation issue!!! */
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        */
+    public final java.lang.Object t(java.lang.Object r26) {
+        /*
+            Method dump skipped, instruction units count: 2996
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.dqi.t(java.lang.Object):java.lang.Object");
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dqi(pn7 pn7Var, l4k l4kVar, ic6 ic6Var) {
+        super(2, ic6Var);
+        this.e = 21;
+        this.h = (xxd) pn7Var;
+        this.i = l4kVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dqi(e4k e4kVar, pn7 pn7Var, ic6 ic6Var) {
+        super(2, ic6Var);
+        this.e = 19;
+        this.h = e4kVar;
+        this.i = (xxd) pn7Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dqi(ukm ukmVar, String str, ci2 ci2Var, ic6 ic6Var) {
+        super(2, ic6Var);
+        this.e = 6;
+        this.h = ukmVar;
+        this.g = str;
+        this.i = ci2Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ dqi(Object obj, ic6 ic6Var, int i) {
+        super(2, ic6Var);
+        this.e = i;
+        this.i = obj;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ dqi(Object obj, Object obj2, ic6 ic6Var, int i) {
+        super(2, ic6Var);
+        this.e = i;
+        this.h = obj;
+        this.i = obj2;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ dqi(Object obj, Object obj2, Object obj3, ic6 ic6Var, int i) {
+        super(2, ic6Var);
+        this.e = i;
+        this.g = obj;
+        this.h = obj2;
+        this.i = obj3;
     }
 }
 
-========== ulf references ==========
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:104:        ulf ulfVar;
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:302:                            ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:306:                        ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:318:                        ulfVar = qq3.j(jl0.g, bihVar2, v5lVar, num, bihVar2);
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:320:                    if (ulfVar.C()) {
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:321:                        Object obj3 = ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:325:                    bihVar = (bih) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:397:                    ulfVar = qq3.j(jl0.g, bihVar3, v5lVar, num, bihVar3);
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:409:                        ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:413:                    ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:415:                if (ulfVar.C()) {
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:416:                    Object obj4 = ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/rz0.java:420:                bihVar = (bih) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:8:    public final /* synthetic */ ulf k;
-research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:11:    public x1k(ulf ulfVar, String str, ze1 ze1Var, taa taaVar) {
-research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:13:        this.k = ulfVar;
-research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:14:        kg5 kg5Var = (kg5) ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:17:        ((b5k) ulfVar.d).a(this);
-research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:35:        ulf ulfVar = this.k;
-research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:36:        atl.s((Looper) ulfVar.b, Looper.myLooper(), null);
-research/artifacts/decompiled-dex2/sources/defpackage/x1k.java:37:        ((b5k) ulfVar.d).c(this);
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:232:        ulf ulfVar;
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:302:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:305:            ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:317:            ulfVar = qq3.j(jl0.g, bihVar2, v5lVar, (Object) null, bihVar2);
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:319:        if (ulfVar.C()) {
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:320:            Object obj = ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:324:        bihVar = (bih) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:364:                ulfVar = qq3.j(jl0.g, bihVar3, v5lVar, (Object) null, bihVar3);
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:377:                    ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:380:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:382:            if (ulfVar.C()) {
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:383:                Object obj2 = ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/ixq.java:387:            bihVar = (bih) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:437:        ulf ulfVar;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:509:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:512:            ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:524:            ulfVar = qq3.j(jl0.g, bihVar2, v5lVar, (Object) null, bihVar2);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:526:        if (ulfVar.C()) {
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:527:            bihVar = (bih) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:533:        Object obj2 = ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:575:                ulfVar = qq3.j(jl0.g, bihVar3, v5lVar, (Object) null, bihVar3);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:588:                    ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:591:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:593:            if (ulfVar.C()) {
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:594:                bihVar = (bih) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:600:            Object obj3 = ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:639:        ulf ulfVar;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:702:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:705:            ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:717:            ulfVar = qq3.j(jl0.g, bihVar2, v5lVar, (Object) null, bihVar2);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:719:        if (ulfVar.C()) {
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:720:            Object obj2 = ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:724:        bihVar = (bih) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:762:                ulfVar = qq3.j(jl0.g, bihVar3, v5lVar, (Object) null, bihVar3);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:775:                    ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:778:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:780:            if (ulfVar.C()) {
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:781:                Object obj3 = ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:785:            bihVar = (bih) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:820:        ulf ulfVar;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:881:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:884:            ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:896:            ulfVar = qq3.j(jl0.g, bihVar2, v5lVar, (Object) null, bihVar2);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:898:        if (ulfVar.C()) {
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:899:            bihVar = (bih) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:905:        Object obj2 = ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:946:                ulfVar = qq3.j(jl0.g, bihVar3, v5lVar, (Object) null, bihVar3);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:959:                    ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:962:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:964:            if (ulfVar.C()) {
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:965:                bihVar = (bih) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/wl1.java:971:            Object obj3 = ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/vop.java:2064:                                        j97Var.a.reportEvent("tech_insert_message", xgf.k0(new ypi[]{new ypi("trace", (String) ((xeo) new ulf(1).d).getValue()), new ypi("chatId_fromChat", str19), new ypi("chatId_fromMessage", str15), new ypi("timestamp", Long.valueOf(message.b)), new ypi("prevTimestamp", Long.valueOf(message.c)), new ypi("parentMessageTimestamp", q9jVar3.j), new ypi("seqNo", Long.valueOf(message.d))}));
-research/artifacts/decompiled-dex2/sources/defpackage/vop.java:2629:                                    j97Var.a.reportEvent("tech_insert_message", xgf.k0(new ypi[]{new ypi("trace", (String) ((xeo) new ulf(1).d).getValue()), new ypi("chatId_fromChat", str19), new ypi("chatId_fromMessage", str15), new ypi("timestamp", Long.valueOf(message.b)), new ypi("prevTimestamp", Long.valueOf(message.c)), new ypi("parentMessageTimestamp", q9jVar3.j), new ypi("seqNo", Long.valueOf(message.d))}));
-research/artifacts/decompiled-dex2/sources/defpackage/vop.java:3170:                                j97Var.a.reportEvent("tech_insert_message", xgf.k0(new ypi[]{new ypi("trace", (String) ((xeo) new ulf(1).d).getValue()), new ypi("chatId_fromChat", str19), new ypi("chatId_fromMessage", str15), new ypi("timestamp", Long.valueOf(message.b)), new ypi("prevTimestamp", Long.valueOf(message.c)), new ypi("parentMessageTimestamp", q9jVar3.j), new ypi("seqNo", Long.valueOf(message.d))}));
-research/artifacts/decompiled-dex2/sources/defpackage/vop.java:3727:                                j97Var.a.reportEvent("tech_insert_message", xgf.k0(new ypi[]{new ypi("trace", (String) ((xeo) new ulf(1).d).getValue()), new ypi("chatId_fromChat", str19), new ypi("chatId_fromMessage", str15), new ypi("timestamp", Long.valueOf(message.b)), new ypi("prevTimestamp", Long.valueOf(message.c)), new ypi("parentMessageTimestamp", q9jVar3.j), new ypi("seqNo", Long.valueOf(message.d))}));
-research/artifacts/decompiled-dex2/sources/defpackage/vop.java:4268:                            j97Var.a.reportEvent("tech_insert_message", xgf.k0(new ypi[]{new ypi("trace", (String) ((xeo) new ulf(1).d).getValue()), new ypi("chatId_fromChat", str19), new ypi("chatId_fromMessage", str15), new ypi("timestamp", Long.valueOf(message.b)), new ypi("prevTimestamp", Long.valueOf(message.c)), new ypi("parentMessageTimestamp", q9jVar3.j), new ypi("seqNo", Long.valueOf(message.d))}));
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:83:        ulf ulfVar;
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:155:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:158:            ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:170:            ulfVar = qq3.j(jl0.g, bihVar2, v5lVar, (Object) null, bihVar2);
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:172:        if (ulfVar.C()) {
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:173:            bihVar = (bih) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:179:        Object obj2 = ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:254:                ulfVar = qq3.j(jl0.g, bihVar3, v5lVar, (Object) null, bihVar3);
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:267:                    ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:270:                ulfVar = new ulf(v5lVar, objA, (Object) null, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:272:            if (ulfVar.C()) {
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:273:                bihVar = (bih) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/f03.java:279:            Object obj3 = ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/rki.java:148:                ulf ulfVar = (ulf) skiVar.e;
-research/artifacts/decompiled-dex2/sources/defpackage/rki.java:150:                if (ulfVar != null) {
-research/artifacts/decompiled-dex2/sources/defpackage/rki.java:152:                    qki qkiVar = (qki) ulfVar.b;
-research/artifacts/decompiled-dex2/sources/defpackage/rki.java:153:                    View view = (View) ulfVar.d;
-research/artifacts/decompiled-dex2/sources/defpackage/rki.java:162:                            MotionEvent motionEvent2 = (MotionEvent) ulfVar.c;
-research/artifacts/decompiled-dex2/sources/defpackage/aag.java:507:                return new aag((ofg) this.g, (Bundle) this.h, (ulf) this.i, ic6Var, 4);
-research/artifacts/decompiled-dex2/sources/defpackage/g1j.java:106:            return new b1j(k0jVar, oxkVar, this.c, new ulf(str, nb1Var, f1jVar, 15));
-research/artifacts/decompiled-dex2/sources/defpackage/ski.java:47:        ulf ulfVar = (ulf) this.e;
-research/artifacts/decompiled-dex2/sources/defpackage/ski.java:48:        if (ulfVar != null) {
+========== pwh.java ==========
+package defpackage;
+
+import android.content.Context;
+import android.view.textclassifier.TextClassifier;
+import com.google.protobuf.DescriptorProtos;
+import com.yandex.passport.api.j2;
+import java.util.Collection;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class pwh extends lao implements pib {
+    public final /* synthetic */ int e;
+    public int f;
+    public Object g;
+    public final /* synthetic */ Object h;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pwh(pib pibVar, k1j k1jVar, ic6 ic6Var) {
+        super(2, ic6Var);
+        this.e = 16;
+        this.g = (lao) pibVar;
+        this.h = k1jVar;
+    }
+
+    /* JADX INFO: Thrown type has an unknown type hierarchy: eae */
+    public final Object invoke(Object obj, Object obj2) throws eae {
+        switch (this.e) {
+            case 0:
+                return q((ic6) obj2, (xxa) obj).t(fcq.a);
+            case 1:
+                return q((ic6) obj2, (z2s) obj).t(fcq.a);
+            case 2:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 3:
+                return q((ic6) obj2, (kzf) obj).t(fcq.a);
+            case 4:
+                return q((ic6) obj2, (xxa) obj).t(fcq.a);
+            case 5:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 6:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 7:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 8:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 9:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 10:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 11:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 12:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 13:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 14:
+                return q((ic6) obj2, (j2) obj).t(fcq.a);
+            case 15:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 16:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 17:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 18:
+                return q((ic6) obj2, (uak) obj).t(fcq.a);
+            case DescriptorProtos.FieldOptions.TARGETS_FIELD_NUMBER /* 19 */:
+                return q((ic6) obj2, (Collection) obj).t(fcq.a);
+            case 20:
+                return q((ic6) obj2, (xxa) obj).t(fcq.a);
+            case DescriptorProtos.FieldOptions.FEATURES_FIELD_NUMBER /* 21 */:
+                return q((ic6) obj2, (xxa) obj).t(fcq.a);
+            case DescriptorProtos.FieldOptions.FEATURE_SUPPORT_FIELD_NUMBER /* 22 */:
+                return q((ic6) obj2, (g1k) obj).t(fcq.a);
+            case DescriptorProtos.FileOptions.DEPRECATED_FIELD_NUMBER /* 23 */:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 24:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 25:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 26:
+                q((ic6) obj2, (ue6) obj).t(fcq.a);
+                return xe6.a;
+            case DescriptorProtos.FileOptions.JAVA_STRING_CHECK_UTF8_FIELD_NUMBER /* 27 */:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+            case 28:
+                q((ic6) obj2, (ue6) obj).t(fcq.a);
+                return xe6.a;
+            default:
+                return q((ic6) obj2, (ue6) obj).t(fcq.a);
+        }
+    }
+
+    public final ic6 q(ic6 ic6Var, Object obj) {
+        switch (this.e) {
+            case 0:
+                pwh pwhVar = new pwh((Long) this.h, ic6Var, 0);
+                pwhVar.g = obj;
+                return pwhVar;
+            case 1:
+                pwh pwhVar2 = new pwh((tgi) this.h, ic6Var, 1);
+                pwhVar2.g = obj;
+                return pwhVar2;
+            case 2:
+                return new pwh((l4i) this.g, (j4i) this.h, ic6Var, 2);
+            case 3:
+                pwh pwhVar3 = new pwh((rii) this.h, ic6Var, 3);
+                pwhVar3.g = obj;
+                return pwhVar3;
+            case 4:
+                pwh pwhVar4 = new pwh((tzk) this.h, ic6Var, 4);
+                pwhVar4.g = obj;
+                return pwhVar4;
+            case 5:
+                return new pwh((lni) this.g, (m7n) this.h, ic6Var, 5);
+            case 6:
+                return new pwh((lni) this.g, (ci2) this.h, ic6Var, 6);
+            case 7:
+                return new pwh((api) this.g, (a9h) this.h, ic6Var, 7);
+            case 8:
+                return new pwh((a61) this.g, (ivi) this.h, ic6Var, 8);
+            case 9:
+                return new pwh((awi) this.g, (String) this.h, ic6Var, 9);
+            case 10:
+                return new pwh((nbr) this.g, (a9h) this.h, ic6Var, 10);
+            case 11:
+                return new pwh((gm4) this.g, (cyi) this.h, ic6Var, 11);
+            case 12:
+                return new pwh((k0j) this.g, (String) this.h, ic6Var, 12);
+            case 13:
+                return new pwh((k0j) this.g, (nb1) this.h, ic6Var, 13);
+            case 14:
+                pwh pwhVar5 = new pwh((y0j) this.h, ic6Var, 14);
+                pwhVar5.g = obj;
+                return pwhVar5;
+            case 15:
+                return new pwh((y0j) this.g, (d2n) this.h, ic6Var, 15);
+            case 16:
+                return new pwh((pib) this.g, (k1j) this.h, ic6Var);
+            case 17:
+                return new pwh((a5j) this.h, ic6Var, 17);
+            case 18:
+                pwh pwhVar6 = new pwh((a5j) this.h, ic6Var, 18);
+                pwhVar6.g = obj;
+                return pwhVar6;
+            case DescriptorProtos.FieldOptions.TARGETS_FIELD_NUMBER /* 19 */:
+                pwh pwhVar7 = new pwh((o5j) this.h, ic6Var, 19);
+                pwhVar7.g = obj;
+                return pwhVar7;
+            case 20:
+                pwh pwhVar8 = new pwh((tcj) this.h, ic6Var, 20);
+                pwhVar8.g = obj;
+                return pwhVar8;
+            case DescriptorProtos.FieldOptions.FEATURES_FIELD_NUMBER /* 21 */:
+                pwh pwhVar9 = new pwh((zdj) this.h, ic6Var, 21);
+                pwhVar9.g = obj;
+                return pwhVar9;
+            case DescriptorProtos.FieldOptions.FEATURE_SUPPORT_FIELD_NUMBER /* 22 */:
+                pwh pwhVar10 = new pwh((oks) this.h, ic6Var, 22);
+                pwhVar10.g = obj;
+                return pwhVar10;
+            case DescriptorProtos.FileOptions.DEPRECATED_FIELD_NUMBER /* 23 */:
+                return new pwh((TextClassifier) this.g, (pib) this.h, ic6Var);
+            case 24:
+                return new pwh((gnj) this.g, (xnj) this.h, ic6Var, 24);
+            case 25:
+                return new pwh((Context) this.g, (pib) this.h, ic6Var);
+            case 26:
+                return new pwh((nrn) this.g, (lib) this.h, ic6Var, 26);
+            case DescriptorProtos.FileOptions.JAVA_STRING_CHECK_UTF8_FIELD_NUMBER /* 27 */:
+                return new pwh((vcj) this.g, (dxp) this.h, ic6Var, 27);
+            case 28:
+                return new pwh((c2k) this.g, (lib) this.h, ic6Var);
+            default:
+                return new pwh((x3k) this.g, (m3k) this.h, ic6Var, 29);
+        }
+    }
+
+    /* JADX INFO: Thrown type has an unknown type hierarchy: eae */
+    /* JADX WARN: Code duplicated, block: B:362:0x073d  */
+    /* JADX WARN: Code duplicated, block: B:472:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:356:0x0732, code lost:
+    
+        if (r6 == r0) goto L365;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public final java.lang.Object t(java.lang.Object r21) throws eae {
+        /*
+            Method dump skipped, instruction units count: 2156
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.pwh.t(java.lang.Object):java.lang.Object");
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pwh(c2k c2kVar, lib libVar, ic6 ic6Var) {
+        super(2, ic6Var);
+        this.e = 28;
+        this.g = c2kVar;
+        this.h = (lao) libVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pwh(Context context, pib pibVar, ic6 ic6Var) {
+        super(2, ic6Var);
+        this.e = 25;
+        this.g = context;
+        this.h = (lao) pibVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pwh(TextClassifier textClassifier, pib pibVar, ic6 ic6Var) {
+        super(2, ic6Var);
+        this.e = 23;
+        this.g = textClassifier;
+        this.h = (lao) pibVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ pwh(Object obj, ic6 ic6Var, int i) {
+        super(2, ic6Var);
+        this.e = i;
+        this.h = obj;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ pwh(Object obj, Object obj2, ic6 ic6Var, int i) {
+        super(2, ic6Var);
+        this.e = i;
+        this.g = obj;
+        this.h = obj2;
+    }
+}
+
+========== h0j.java ==========
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class h0j extends kc6 {
+    public /* synthetic */ Object d;
+    public final /* synthetic */ k0j e;
+    public int f;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h0j(k0j k0jVar, kc6 kc6Var) {
+        super(kc6Var);
+        this.e = k0jVar;
+    }
+
+    public final Object t(Object obj) {
+        this.d = obj;
+        this.f |= Integer.MIN_VALUE;
+        Object objB = k0j.b(this.e, this);
+        return objB == xe6.a ? objB : new mel(objB);
+    }
+}
+
+========== ulf declaration search ==========
