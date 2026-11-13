@@ -1,0 +1,733 @@
+
+===== poq.java =====
+NOT FOUND
+
+===== ze1.java =====
+SOURCE: research/artifacts/decompiled-dex2/sources/defpackage/ze1.java
+package defpackage;
+
+import android.os.Handler;
+import android.os.Looper;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class ze1 extends wo7 {
+    public final /* synthetic */ bf1 j;
+    public final /* synthetic */ xc1 k;
+    public final /* synthetic */ af1 l;
+    public final /* synthetic */ boolean m;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ze1(bf1 bf1Var, xc1 xc1Var, af1 af1Var, boolean z, bff bffVar) {
+        super(bffVar);
+        this.j = bf1Var;
+        this.k = xc1Var;
+        this.l = af1Var;
+        this.m = z;
+    }
+
+    public final boolean C(f7f f7fVar) {
+        mqd.z(f7fVar, "error");
+        bf1 bf1Var = this.j;
+        s91 s91Var = bf1Var.c;
+        atl.s(bf1Var.a, Looper.myLooper(), null);
+        af1 af1Var = this.l;
+        bf1 bf1Var2 = af1Var.f;
+        String str = f7fVar.b;
+        mqd.y(str, "code");
+        boolean zM = p0o.M(str, "user_does_not_exist", false);
+        xc1 xc1Var = this.k;
+        if (zM) {
+            new Handler(Looper.getMainLooper()).post(new rl(bf1Var2, 14));
+        } else if (!uuh.b(f7fVar) || this.m) {
+            if (uuh.a(f7fVar)) {
+                s91Var.b(xc1Var.b());
+                bf1Var.e.a(25, true);
+                return true;
+            }
+            atl.s(bf1Var2.a, Looper.myLooper(), null);
+            if (!af1Var.b.C(f7fVar)) {
+                return false;
+            }
+            r91 r91Var = af1Var.d;
+            if (r91Var != null) {
+                r91Var.close();
+            }
+            af1Var.d = null;
+            return true;
+        }
+        s91Var.b(xc1Var.b());
+        return true;
+    }
+
+    public final void E(Object obj) {
+        af1 af1Var = this.l;
+        atl.s(af1Var.f.a, Looper.myLooper(), null);
+        r91 r91Var = af1Var.d;
+        if (r91Var != null) {
+            r91Var.close();
+        }
+        af1Var.d = null;
+        af1Var.b.E(obj);
+    }
+
+    @Override // defpackage.wo7
+    public final void F() {
+        if (this.i.X()) {
+            this.l.a();
+        }
+        super.F();
+    }
+
+    @Override // defpackage.wo7
+    public final g5l I() {
+        bf1 bf1Var = this.j;
+        atl.s(bf1Var.a, Looper.myLooper(), null);
+        g5l g5lVarI = this.i.I();
+        mqd.y(g5lVarI, "makeRequest(...)");
+        y9a y9aVar = bf1Var.f;
+        i82 i82Var = tcg.q;
+        mqd.y(i82Var, "WORKPLACES");
+        if (y9aVar.a(i82Var)) {
+            g5lVarI.d("X-Ya-Organization-Id", String.valueOf(((Number) bf1Var.g.g.getValue()).longValue()));
+        }
+        g5l g5lVarA = this.k.a(g5lVarI);
+        mqd.y(g5lVarA, "apply(...)");
+        return g5lVarA;
+    }
+}
+
+===== x1k.java =====
+SOURCE: research/artifacts/decompiled-dex2/sources/defpackage/x1k.java
+package defpackage;
+
+import android.os.Looper;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class x1k extends wo7 implements l7l, z4k {
+    public ig5 j;
+    public final /* synthetic */ ulf k;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x1k(ulf ulfVar, String str, ze1 ze1Var, taa taaVar) {
+        super(ze1Var);
+        this.k = ulfVar;
+        kg5 kg5Var = (kg5) ulfVar.c;
+        atl.s(kg5Var.a, Looper.myLooper(), null);
+        this.j = new ig5(kg5Var, str, this, taaVar);
+        ((b5k) ulfVar.d).a(this);
+    }
+
+    public final boolean C(f7f f7fVar) {
+        if (!this.i.C(f7fVar)) {
+            return false;
+        }
+        ((b5k) this.k.d).c(this);
+        return true;
+    }
+
+    public final void E(Object obj) {
+        ((b5k) this.k.d).c(this);
+        this.i.E(obj);
+    }
+
+    @Override // defpackage.cw3
+    public final void cancel() {
+        ulf ulfVar = this.k;
+        atl.s((Looper) ulfVar.b, Looper.myLooper(), null);
+        ((b5k) ulfVar.d).c(this);
+        ig5 ig5Var = this.j;
+        if (ig5Var != null) {
+            ig5Var.cancel();
+            this.j = null;
+        }
+    }
+
+    @Override // defpackage.z4k
+    public final void e() {
+        ig5 ig5Var = this.j;
+        if (ig5Var != null) {
+            ig5Var.cancel();
+            this.j = null;
+        }
+    }
+}
+
+===== ulf.java =====
+NOT FOUND
+
+===== bff.java =====
+NOT FOUND
+
+===== y8q.java =====
+NOT FOUND
+
+===== idl.java =====
+SOURCE: research/artifacts/decompiled-dex2/sources/defpackage/idl.java
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.RequestUserParams;
+import com.yandex.messaging.core.net.entities.UserData;
+import com.yandex.messaging.core.net.entities.chatcreate.CreateChannelParam;
+import com.yandex.messaging.core.net.entities.chatcreate.CreateFamilyChatParam;
+import com.yandex.messaging.core.net.entities.chatcreate.CreateGroupChatParam;
+import com.yandex.messaging.core.net.entities.chatcreate.GroupChatData;
+import com.yandex.messaging.core.net.entities.xiva.XivaSecretContainer;
+import com.yandex.messaging.core.net.entities.xiva.XivaUser;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class idl extends bff {
+    public final /* synthetic */ int i;
+    public final /* synthetic */ Object j;
+    public final /* synthetic */ Object k;
+    public final /* synthetic */ Object l;
+
+    public /* synthetic */ idl(jdl jdlVar, wpm wpmVar, wf wfVar, Object obj, int i) {
+        this.i = i;
+        this.k = jdlVar;
+        this.j = wpmVar;
+        this.l = obj;
+    }
+
+    public boolean C(f7f f7fVar) {
+        switch (this.i) {
+            case 0:
+                wpm wpmVar = (wpm) this.j;
+                ((y94) wpmVar.c).j(new rh9(f7fVar));
+                return true;
+            case 1:
+                wpm wpmVar2 = (wpm) this.j;
+                ((y94) wpmVar2.c).j(new rh9(f7fVar));
+                return true;
+            case 2:
+                wpm wpmVar3 = (wpm) this.j;
+                ((y94) wpmVar3.c).j(new rh9(f7fVar));
+                return true;
+            case 3:
+            default:
+                return super.C(f7fVar);
+            case 4:
+                mqd.z(f7fVar, "error");
+                ((ycp) this.k).invoke(Integer.valueOf(f7fVar.a));
+                return true;
+        }
+    }
+
+    public final void E(Object obj) {
+        switch (this.i) {
+            case 0:
+                GroupChatData groupChatData = (GroupChatData) obj;
+                ((jdl) this.k).a.a(groupChatData.getErrors());
+                ((wpm) this.j).s(groupChatData.getChatData(), (UserData) null);
+                break;
+            case 1:
+                GroupChatData groupChatData2 = (GroupChatData) obj;
+                ((jdl) this.k).a.a(groupChatData2.getErrors());
+                ((wpm) this.j).s(groupChatData2.getChatData(), (UserData) null);
+                break;
+            case 2:
+                GroupChatData groupChatData3 = (GroupChatData) obj;
+                ((jdl) this.k).a.a(groupChatData3.getErrors());
+                ((wpm) this.j).s(groupChatData3.getChatData(), (UserData) null);
+                break;
+            case 3:
+                XivaSecretContainer xivaSecretContainer = (XivaSecretContainer) obj;
+                mqd.z(xivaSecretContainer, "response");
+                wzr wzrVar = (wzr) this.k;
+                XivaUser xivaUser = xivaSecretContainer.user;
+                long j = xivaUser.uid;
+                String strValueOf = j != 0 ? String.valueOf(j) : xivaUser.guid;
+                mqd.y(strValueOf, "getTokenUser(...)");
+                String str = xivaSecretContainer.secret.sign;
+                mqd.y(str, "sign");
+                wzrVar.invoke(new w4s(strValueOf, str, xivaSecretContainer.secret.ts));
+                break;
+            default:
+                ((iy2) this.l).invoke(Long.valueOf(((Number) obj).longValue()));
+                break;
+        }
+    }
+
+    public void F() {
+        switch (this.i) {
+            case 4:
+                ((ycp) this.k).invoke(-1);
+                break;
+        }
+    }
+
+    public final g5l I() {
+        switch (this.i) {
+            case 0:
+                return ((jdl) this.k).c.a((CreateGroupChatParam) this.l, "create_chat");
+            case 1:
+                return ((jdl) this.k).c.a((CreateFamilyChatParam) this.l, "create_chat");
+            case 2:
+                return ((jdl) this.k).c.a((CreateChannelParam) this.l, "create_chat");
+            case 3:
+                RequestUserParams requestUserParams = new RequestUserParams();
+                requestUserParams.needXivaSecret = true;
+                y8q y8qVar = (y8q) this.j;
+                hu7 hu7Var = (hu7) y8qVar.d;
+                g5l g5lVarA = ((quc) y8qVar.c).a(requestUserParams, "request_user");
+                hu7Var.b(g5lVarA);
+                return g5lVarA;
+            default:
+                g5l g5lVar = new g5l();
+                g5lVar.i((String) this.j);
+                g5lVar.g(nxp.class, nxp.FileUpload);
+                g5lVar.e("HEAD", (f6l) null);
+                return g5lVar;
+        }
+    }
+
+    public boolean i() {
+        switch (this.i) {
+            case 4:
+                return false;
+            default:
+                return super.i();
+        }
+    }
+
+    public final znc s(ocl oclVar) {
+        switch (this.i) {
+            case 0:
+                return fde.j(((jdl) this.k).c, "create_chat", GroupChatData.class, oclVar);
+            case 1:
+                return fde.j(((jdl) this.k).c, "create_chat", GroupChatData.class, oclVar);
+            case 2:
+                return fde.j(((jdl) this.k).c, "create_chat", GroupChatData.class, oclVar);
+            case 3:
+                znc zncVarJ = fde.j((quc) ((y8q) this.j).c, "request_user", XivaSecretContainer.class, oclVar);
+                if (!(zncVarJ instanceof ldi)) {
+                    return zncVarJ;
+                }
+                XivaUser xivaUser = ((XivaSecretContainer) ((ldi) zncVarJ).i).user;
+                long j = xivaUser.uid;
+                return !mqd.s((j > 0L ? 1 : (j == 0L ? 0 : -1)) != 0 ? String.valueOf(j) : xivaUser.guid, (String) this.l) ? new znc(17) : zncVarJ;
+            default:
+                tcl tclVar = oclVar.g;
+                if (tclVar != null) {
+                    tclVar.close();
+                }
+                if (oclVar.i()) {
+                    String strC = ocl.c(oclVar, "Content-Length");
+                    return new ldi(Long.valueOf(strC != null ? Long.parseLong(strC) : 0L));
+                }
+                int i = oclVar.d;
+                return i == 404 ? new ldi(0L) : znc.p(i, oclVar.c);
+        }
+    }
+
+    public wf z() {
+        switch (this.i) {
+            case 0:
+                return ((y94) ((wpm) this.j).c).a();
+            case 1:
+                return ((y94) ((wpm) this.j).c).a();
+            case 2:
+                return ((y94) ((wpm) this.j).c).a();
+            case 3:
+            default:
+                return super.z();
+            case 4:
+                return new wf(true);
+        }
+    }
+
+    public /* synthetic */ idl(Object obj, Object obj2, lib libVar, int i) {
+        this.i = i;
+        this.j = obj;
+        this.l = obj2;
+        this.k = libVar;
+    }
+}
+
+===== be1.java =====
+SOURCE: research/artifacts/decompiled-dex2/sources/defpackage/be1.java
+package defpackage;
+
+import android.os.Looper;
+import com.yandex.messaging.core.net.entities.ChatData;
+import com.yandex.messaging.core.net.entities.RequestUserData;
+import com.yandex.messaging.core.net.entities.RequestUserParams;
+import com.yandex.messaging.core.net.entities.TogglePushTokenData;
+import com.yandex.messaging.core.net.entities.TogglePushTokenParams;
+import com.yandex.messaging.core.net.entities.chatcreate.CreatePrivateChatData;
+import com.yandex.messaging.core.net.entities.chatcreate.CreatePrivateChatParam;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class be1 extends bff {
+    public final /* synthetic */ int i;
+    public final /* synthetic */ boolean j;
+    public final /* synthetic */ Object k;
+    public final /* synthetic */ Object l;
+    public final /* synthetic */ Object m;
+    public final /* synthetic */ Object n;
+
+    public /* synthetic */ be1(int i, Object obj, Object obj2, Object obj3, Object obj4, boolean z) {
+        this.i = i;
+        this.k = obj;
+        this.l = obj2;
+        this.m = obj3;
+        this.n = obj4;
+        this.j = z;
+    }
+
+    public final boolean C(f7f f7fVar) {
+        switch (this.i) {
+            case 0:
+                mqd.z(f7fVar, "error");
+                boolean z = f7fVar.a == 403;
+                if (this.j && z) {
+                    ryj ryjVar = ((qe1) this.m).g;
+                    atl.s(ryjVar.a.get(), Looper.myLooper(), null);
+                    ryjVar.b.post(new xfg(ryjVar, 16));
+                }
+                ((pd1) this.k).j(z ? uh9.c : new rh9(f7fVar));
+                return true;
+            case 1:
+                mqd.z(f7fVar, "error");
+                return false;
+            default:
+                d1j d1jVar = (d1j) this.m;
+                mqd.z(f7fVar, "error");
+                x71 x71Var = (x71) this.l;
+                ne6.b((ne6) x71Var.i);
+                if (!uuh.b(f7fVar) || this.j) {
+                    if (!uuh.a(f7fVar)) {
+                        return false;
+                    }
+                    d1jVar.f = null;
+                    ((zmq) x71Var.g).a(25, true);
+                    return true;
+                }
+                d1jVar.f = null;
+                String str = ((e1j) this.n).a;
+                mqd.y(str, "token");
+                d1j.b(d1jVar, str);
+                return true;
+        }
+    }
+
+    public final void E(Object obj) {
+        switch (this.i) {
+            case 0:
+                CreatePrivateChatData createPrivateChatData = (CreatePrivateChatData) obj;
+                mqd.z(createPrivateChatData, "response");
+                pd1 pd1Var = (pd1) this.k;
+                ChatData chatData = createPrivateChatData.chat;
+                mqd.y(chatData, "chat");
+                pd1Var.s(chatData, createPrivateChatData.user);
+                break;
+            case 1:
+                TogglePushTokenData togglePushTokenData = (TogglePushTokenData) obj;
+                mqd.z(togglePushTokenData, "response");
+                ((pe9) this.n).c0(togglePushTokenData);
+                break;
+            default:
+                RequestUserData requestUserData = (RequestUserData) obj;
+                mqd.z(requestUserData, "response");
+                ne6.b((ne6) ((x71) this.l).i);
+                d1j d1jVar = (d1j) this.m;
+                e1j e1jVar = (e1j) this.n;
+                x71 x71Var = d1jVar.h;
+                ne6.b((ne6) x71Var.i);
+                ig5 ig5Var = d1jVar.f;
+                if (!atl.u() && ig5Var == null) {
+                    atl.y("User request is missing");
+                }
+                ig5 ig5Var2 = d1jVar.g;
+                if (!atl.u() && ig5Var2 != null) {
+                    atl.y("Experiments request is already running");
+                }
+                d1jVar.f = null;
+                wc1 wc1VarE = xc1.e(e1jVar.a, d1jVar.a.a);
+                d1jVar.g = ((kg5) ((ike) x71Var.d).get()).a(new pe1(wc1VarE, x71Var, d1jVar, requestUserData, e1jVar, this.j, 1));
+                break;
+        }
+    }
+
+    public final g5l I() {
+        switch (this.i) {
+            case 0:
+                return ((qe1) this.m).b.a((CreatePrivateChatParam) this.n, "create_private_chat");
+            case 1:
+                g5l g5lVarA = ((ise) this.k).b.a(new TogglePushTokenParams((String) this.l, this.j), "toggle_push_token");
+                ((vc1) this.m).a(g5lVarA);
+                return g5lVarA;
+            default:
+                xc1 xc1Var = (xc1) this.k;
+                x71 x71Var = (x71) this.l;
+                g5l g5lVarA2 = xc1Var.a(((quc) ((ike) x71Var.e).get()).a(new RequestUserParams(), "request_user"));
+                ((hu7) x71Var.f).b(g5lVarA2);
+                mqd.y(g5lVarA2, "apply(...)");
+                return g5lVarA2;
+        }
+    }
+
+    public final znc s(ocl oclVar) {
+        switch (this.i) {
+            case 0:
+                return fde.j(((qe1) this.m).b, "create_private_chat", CreatePrivateChatData.class, oclVar);
+            case 1:
+                return fde.j(((ise) this.k).b, "toggle_push_token", TogglePushTokenData.class, oclVar);
+            default:
+                Object obj = ((ike) ((x71) this.l).e).get();
+                mqd.y(obj, "get(...)");
+                return fde.j((quc) obj, "request_user", RequestUserData.class, oclVar);
+        }
+    }
+
+    public wf z() {
+        switch (this.i) {
+            case 0:
+                wf wfVarA = ((pd1) this.k).a();
+                return wfVarA == null ? (wf) this.l : wfVarA;
+            default:
+                return super.z();
+        }
+    }
+
+    public be1(ise iseVar, String str, boolean z, vc1 vc1Var, pe9 pe9Var) {
+        this.i = 1;
+        this.k = iseVar;
+        this.l = str;
+        this.j = z;
+        this.m = vc1Var;
+        this.n = pe9Var;
+    }
+}
+
+===== e8f.java =====
+SOURCE: research/artifacts/decompiled-dex2/sources/defpackage/e8f.java
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.CreateLimitUserData;
+import com.yandex.messaging.core.net.entities.RequestUserParams;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class e8f extends bff {
+    public final /* synthetic */ zm7 i;
+    public final /* synthetic */ d8f j;
+
+    public e8f(zm7 zm7Var, d8f d8fVar) {
+        this.i = zm7Var;
+        this.j = d8fVar;
+    }
+
+    public final void E(Object obj) {
+        CreateLimitUserData createLimitUserData = (CreateLimitUserData) obj;
+        mqd.z(createLimitUserData, "response");
+        String str = createLimitUserData.user.guid;
+        mqd.y(str, "guid");
+        String str2 = createLimitUserData.yambToken;
+        mqd.y(str2, "yambToken");
+        sse sseVar = (sse) this.j;
+        ne6.b(sseVar.a.k);
+        sseVar.c.post(new axd(sseVar, str, str2, 3));
+    }
+
+    public final g5l I() {
+        zm7 zm7Var = this.i;
+        g5l g5lVarA = ((quc) zm7Var.b).a(new RequestUserParams(), "request_user");
+        ((hu7) zm7Var.c).b(g5lVarA);
+        return g5lVarA;
+    }
+
+    public final znc s(ocl oclVar) {
+        return fde.j((quc) this.i.b, "request_user", CreateLimitUserData.class, oclVar);
+    }
+}
+
+===== qe1.java =====
+SOURCE: research/artifacts/decompiled-dex2/sources/defpackage/qe1.java
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.Bucket;
+import com.yandex.messaging.core.net.entities.ChangeChatMembersParams;
+import com.yandex.messaging.core.net.entities.GetStaffDataParam;
+import com.yandex.messaging.core.net.entities.GetUsersDataParam;
+import com.yandex.messaging.core.net.entities.RequestUserData;
+import com.yandex.messaging.core.net.entities.RequestUserParams;
+import com.yandex.messaging.core.net.entities.SearchParams;
+import java.util.ArrayList;
+import java.util.UUID;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class qe1 implements qck {
+    public final ooq a;
+    public final quc b;
+    public final exc c;
+    public final nla d;
+    public final kna e;
+    public final hu7 f;
+    public final ryj g;
+    public final m04 h;
+    public final y9a i;
+    public final ike j;
+    public final n2d k;
+    public final j78 l;
+    public final ike m;
+    public final k4e n;
+    public final r7j o;
+
+    public qe1(ooq ooqVar, quc qucVar, lt1 lt1Var, exc excVar, nla nlaVar, kna knaVar, hu7 hu7Var, ryj ryjVar, m04 m04Var, y9a y9aVar, ike ikeVar, n2d n2dVar, j78 j78Var, ike ikeVar2, k4e k4eVar, r7j r7jVar) {
+        mqd.z(ooqVar, "httpRetrierFactory");
+        mqd.z(qucVar, "apiCallFactory");
+        mqd.z(lt1Var, "balancerApiCallFactory");
+        mqd.z(excVar, "fileCallFactory");
+        mqd.z(nlaVar, "cacheManager");
+        mqd.z(knaVar, "fileProgressObservable");
+        mqd.z(hu7Var, "deviceInfoProvider");
+        mqd.z(ryjVar, "privacyApiRestrictionsObservable");
+        mqd.z(m04Var, "changeChatMemberErrorsObservable");
+        mqd.z(y9aVar, "experimentConfig");
+        mqd.z(ikeVar, "yadiskResumableUploadsFeatureToggle");
+        mqd.z(n2dVar, "identityProvider");
+        mqd.z(j78Var, "downloadFileReporter");
+        mqd.z(ikeVar2, "fastStartupSyncRetryFeatureToggle");
+        mqd.z(k4eVar, "jsonSerializer");
+        mqd.z(r7jVar, "performanceStatAccumulator");
+        this.a = ooqVar;
+        this.b = qucVar;
+        this.c = excVar;
+        this.d = nlaVar;
+        this.e = knaVar;
+        this.f = hu7Var;
+        this.g = ryjVar;
+        this.h = m04Var;
+        this.i = y9aVar;
+        this.j = ikeVar;
+        this.k = n2dVar;
+        this.l = j78Var;
+        this.m = ikeVar2;
+        this.n = k4eVar;
+        this.o = r7jVar;
+    }
+
+    public static af1 d(qe1 qe1Var, rd1 rd1Var, ChangeChatMembersParams changeChatMembersParams, lib libVar, int i) {
+        ld5 ld5Var = new ld5(1);
+        if ((i & 8) != 0) {
+            libVar = new bk0(18);
+        }
+        lib libVar2 = libVar;
+        qe1Var.getClass();
+        return qe1Var.a.a(new ud1(qe1Var, changeChatMembersParams, libVar2, rd1Var, (kib) ld5Var));
+    }
+
+    public static af1 e(qe1 qe1Var, String str, Object obj, Class cls, lib libVar, lib libVar2, boolean z, wf wfVar, taa taaVar, r2 r2Var, int i) {
+        wf wfVar2 = (i & 64) != 0 ? new wf(false) : wfVar;
+        taa taaVar2 = (i & 128) != 0 ? saa.c : taaVar;
+        r2 bk0Var = (i & 256) != 0 ? new bk0(17) : r2Var;
+        ooq ooqVar = qe1Var.a;
+        zd1 zd1Var = new zd1(wfVar2, bk0Var, qe1Var, str, obj, z, cls, libVar, libVar2);
+        ooqVar.getClass();
+        String string = UUID.randomUUID().toString();
+        mqd.y(string, "toString(...)");
+        return ooqVar.b(string, zd1Var, taaVar2);
+    }
+
+    @Override // defpackage.qck
+    public final cw3 a(tco tcoVar, String str, String str2, pck pckVar, String str3, boolean z, String str4, String str5, String str6) {
+        mqd.z(str2, "deviceModel");
+        mqd.z(pckVar, "pushToken");
+        mqd.z(str3, "deviceId");
+        return this.a.a(new le1(this, str, str2, pckVar.a, pckVar, str3, z, str4, str5, str6, tcoVar));
+    }
+
+    @Override // defpackage.qck
+    public final cw3 b(pe9 pe9Var, String str, boolean z) {
+        return this.a.a(new me1(this, str, z, pe9Var));
+    }
+
+    public final af1 c(rd1 rd1Var, go5 go5Var, String str) {
+        mqd.z(str, "chatId");
+        return this.a.a(new ud1(rd1Var, new wf(true), this, str, go5Var, 0));
+    }
+
+    public final af1 f(Class cls, lib libVar, Bucket.GetParams getParams, wf wfVar) {
+        return this.a.a(new ee1(wfVar, this, getParams, cls, libVar));
+    }
+
+    public final af1 g(pd1 pd1Var, String str, wf wfVar) {
+        mqd.z(str, "chatId");
+        String strG = wq1.g("toString(...)");
+        ud1 ud1Var = new ud1(pd1Var, wfVar, this, new String[]{str}, strG);
+        ooq ooqVar = this.a;
+        ooqVar.getClass();
+        return ooqVar.b(strG, ud1Var, null);
+    }
+
+    public final af1 h(rd1 rd1Var, String str, wf wfVar) {
+        mqd.z(str, "nickname");
+        GetStaffDataParam getStaffDataParam = new GetStaffDataParam();
+        getStaffDataParam.nickname = str;
+        return this.a.a(new hw(rd1Var, wfVar, this, getStaffDataParam, 8));
+    }
+
+    public final af1 i(qd1 qd1Var, String... strArr) {
+        mqd.z(strArr, "ids");
+        ArrayList arrayList = new ArrayList();
+        for (String str : strArr) {
+            arrayList.add(new qek("id", str));
+        }
+        return this.a.a(new je1(this, arrayList, qd1Var));
+    }
+
+    public final af1 j(rd1 rd1Var, String str) {
+        mqd.z(str, "userId");
+        wf wfVar = new wf(false);
+        GetUsersDataParam getUsersDataParam = new GetUsersDataParam();
+        getUsersDataParam.guids = new String[]{str};
+        return this.a.a(new hw(rd1Var, wfVar, this, getUsersDataParam, 10));
+    }
+
+    public final af1 k(rd1 rd1Var, SearchParams searchParams, t8n t8nVar) {
+        return this.a.a(new hw(t8nVar, this, searchParams, rd1Var, 14));
+    }
+
+    public final af1 l(Class cls, od1 od1Var, Bucket bucket) {
+        return this.a.a(new hw(this, bucket, cls, od1Var, 15));
+    }
+
+    public final af1 m(qd1 qd1Var, r2 r2Var, boolean z, Boolean bool, wf wfVar, boolean z2) {
+        RequestUserParams requestUserParams = new RequestUserParams();
+        requestUserParams.bindPhoneNumber = z;
+        requestUserParams.enablePersonalDiscovery = bool;
+        return e(this, "request_user", requestUserParams, RequestUserData.class, new nd1(qd1Var, 0), r2Var, z2, wfVar, null, new r2(1, this.f, hu7.class, "apply", "apply(Lokhttp3/Request$Builder;)Lokhttp3/Request$Builder;", 0, 26), 128);
+    }
+}
+
+===== POQ AND HOST IMPLEMENTATIONS =====
+research/artifacts/decompiled-dex2/sources/com/yandex/div/legacy/dagger/Yatagan$DivComponent.java:203:        i48 i48Var2 = new i48(lk2Var, r86VarF, lk2Var2, pkbVar, a38Var, tmmVar, r86Var, pkbVar2, a38Var2, tmmVar2, new mcq(this.h, contextI4, fgrVarJ4, xa4Var2, es6VarG3, q78Var3), new poq(new CachingProviderImpl(this), 21));
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/audio/AudioPlayerPlugin.java:36:        this.component = new poq(dependencies, 14);
+research/artifacts/decompiled-dex2/sources/defpackage/j38.java:71:        poq poqVar = new poq(new j30[]{ch2Var, vkiVar}, 8);
+research/artifacts/decompiled-dex2/sources/defpackage/fsc.java:15:        mqd.z(poqVar, "apiHostHandler");
+research/artifacts/decompiled-dex2/sources/defpackage/fsc.java:20:        mqd.z(qsaVar, "telemostCloudApiHostHandler");
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:109:                return new u23(qq3.m(bff.U(zaVar, o5mVar.a.a(), new n2k(1, o5mVar.c.a, b6m.class, "webApiBaseUrl", "webApiBaseUrl(Lcom/yandex/calendar/profile/AccountEnv;)Ljava/lang/String;", 0, 21), new n2k(1, ml0.a, ml0.class, "webApiUrl", "webApiUrl(Lcom/yandex/calendar/domain/debug/model/ApiHostSelection;)Ljava/lang/String;", 0, 22)), "/api/import"), (uvc) tzlVar13.a(kvk.a(uvc.class), (dri) null, (iek) null), new mx6(1, tzlVar13.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 5), (zx4) tzlVar13.a(kvk.a(zx4.class), (dri) null, (iek) null));
+research/artifacts/decompiled-dex2/sources/defpackage/lcp.java:17:        this.c = new poq(view.getContext(), new as(this, 8), (Handler) null);
+research/artifacts/decompiled-dex2/sources/defpackage/rx1.java:120:            poq poqVar = new poq(new j30[]{ch2Var, vkiVar}, 8);
+research/artifacts/decompiled-dex2/sources/defpackage/eu6.java:128:        poq poqVar = new poq((Activity) this.j.get());
+research/artifacts/decompiled-dex2/sources/defpackage/su0.java:32:                    return new poq((Bitmap) obj, 7);
+research/artifacts/decompiled-dex2/sources/defpackage/su0.java:55:                    return new poq((Drawable) obj, 22);
+research/artifacts/decompiled-dex2/sources/defpackage/ski.java:201:        poq poqVar = new poq(stickersView.getContext(), new rki(1, stickersView, this), (Handler) null);
+research/artifacts/decompiled-dex2/sources/defpackage/p3p.java:14:        return "TestingMobApiHost(url=https://mobapi-test.calendar.yandex.ru)";
+research/artifacts/decompiled-dex2/sources/defpackage/iu6.java:32:        poq poqVar = new poq(this.a);
+research/artifacts/decompiled-dex2/sources/defpackage/mv2.java:59:        poq poqVar = new poq(17);
+research/artifacts/decompiled-dex2/sources/defpackage/gh9.java:17:        this.c = new poq(view.getContext(), new as(this, 6), (Handler) null);
+research/artifacts/decompiled-dex2/sources/defpackage/ez1.java:71:        this.j1 = new poq(view.getContext(), new as(this, 1), (Handler) null);
+research/artifacts/decompiled-dex2/sources/defpackage/aa7.java:122:                Flow flowB4 = nt7Var2.b("debugCustomApiHost");
+research/artifacts/decompiled-dex2/sources/defpackage/pl0.java:16:                return new poq((ihg) this.b.get());
+research/artifacts/decompiled-dex2/sources/defpackage/uu4.java:150:        this.H = new poq(context, new as(this, 2), (Handler) null);
+research/artifacts/decompiled-dex2/sources/defpackage/y97.java:65:        mqd.z(str8, "customApiHostText");
+research/artifacts/decompiled-dex2/sources/defpackage/y97.java:103:        sb.append(", customApiHostText=");
+research/artifacts/decompiled-dex2/sources/defpackage/o5m.java:21:        return bff.U(zaVar, this.a.a(), new n2k(1, this.c.a, b6m.class, "baseUrl", "baseUrl(Lcom/yandex/calendar/profile/AccountEnv;)Ljava/lang/String;", 0, 19), new n2k(1, ml0.a, ml0.class, "modelsUrl", "modelsUrl(Lcom/yandex/calendar/domain/debug/model/ApiHostSelection;)Ljava/lang/String;", 0, 20));
+research/artifacts/decompiled-dex2/sources/defpackage/bon.java:17:        this.c = new poq(view.getContext(), new as(this, 7), (Handler) null);
+research/artifacts/decompiled-dex2/sources/defpackage/r97.java:8:        this.a = !z ? rrn.a(new ul0(null)) : hu0.X0(new q97(new ij2(nt7Var.b("debugApiEnvironment"), nt7Var.b("debugCustomApiHost"), new xi(3, 12, (ic6) null), 8), 0), ue6Var, h2n.a, tl0.a);
+
+===== AUTH HEADER INJECTION =====
+research/artifacts/decompiled-dex2/sources/defpackage/zfg.java:38:            xc1Var.a(g5lVarB);
+research/artifacts/decompiled-dex2/sources/defpackage/be1.java:115:                g5l g5lVarA2 = xc1Var.a(((quc) ((ike) x71Var.e).get()).a(new RequestUserParams(), "request_user"));
+research/artifacts/decompiled-dex2/sources/defpackage/wc1.java:9:        g5lVar.a("Authorization", f());
+research/artifacts/decompiled-dex2/sources/defpackage/pe1.java:86:                g5l g5lVarA = xc1Var.a(((quc) ((ike) x71Var.e).get()).a(null, "get_experiments"));
