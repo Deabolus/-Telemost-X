@@ -1,0 +1,575 @@
+===== AUTH STAGE 19 =====
+
+===== SEARCH: xc1.java =====
+research/artifacts/decompiled-dex2/sources/defpackage/xc1.java
+
+===== SEARCH: wc1.java =====
+research/artifacts/decompiled-dex2/sources/defpackage/wc1.java
+
+===== SEARCH: vc1.java =====
+research/artifacts/decompiled-dex2/sources/defpackage/vc1.java
+
+===== SEARCH: tc1.java =====
+research/artifacts/decompiled-dex2/sources/defpackage/tc1.java
+
+===== SEARCH: e1j.java =====
+research/artifacts/decompiled-dex2/sources/defpackage/e1j.java
+
+===== SEARCH: q91.java =====
+research/artifacts/decompiled-dex2/sources/defpackage/q91.java
+
+===== SEARCH: ryh.java =====
+research/artifacts/decompiled-dex2/sources/defpackage/ryh.java
+
+===== SEARCH: g91.java =====
+research/artifacts/decompiled-dex2/sources/defpackage/g91.java
+
+===== SEARCH: t91.java =====
+research/artifacts/decompiled-dex2/sources/defpackage/t91.java
+
+===== SEARCH: g1j.java =====
+research/artifacts/decompiled-dex2/sources/defpackage/g1j.java
+
+===== EXTRACTED SOURCES =====
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/t91.java
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/g91.java
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/vc1.java
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/g1j.java
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/e1j.java
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/q91.java
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/xc1.java
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/ryh.java
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/tc1.java
+
+===== TOKEN AND SECRET REFERENCES =====
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/vc1.java:22:        return "OAuth token";
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/g1j.java:108:        e("refreshToken");
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/q91.java:3:import android.content.SharedPreferences;
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/q91.java:7:public final /* synthetic */ class q91 implements SharedPreferences.OnSharedPreferenceChangeListener {
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/q91.java:16:    @Override // android.content.SharedPreferences.OnSharedPreferenceChangeListener
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/q91.java:17:    public final void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String str) {
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/q91.java:21:                if ("oauth_token".equals(str)) {
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/q91.java:32:                if (mqd.s(str, "oauth_token")) {
+research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/q91.java:33:                    h54Var.j(sharedPreferences.getString("oauth_token", null));
+
+===== SOURCE CONTENT =====
+
+========== research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/t91.java ==========
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public interface t91 {
+    void g(xc1 xc1Var, boolean z);
+}
+
+========== research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/g91.java ==========
+package defpackage;
+
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v1 g91[], still in use, count: 1, list:
+  (r0v1 g91[]) from 0x0039: INVOKE (r0v1 g91[]) STATIC call: oyg.B(java.lang.Enum[]):lg9
+	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:164)
+	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:129)
+	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:101)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at jadx.core.utils.InsnRemover.unbindInsns(InsnRemover.java:100)
+	at jadx.core.utils.InsnRemover.removeAllAndUnbind(InsnRemover.java:257)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:187)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:102)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class g91 {
+    d("Production", false),
+    e("TeamProduction", true),
+    f("Testing", false),
+    g("TeamTesting", true),
+    h("Rc", false);
+
+    public static final z39 c;
+    public final int a;
+    public final boolean b;
+
+    static {
+        oyg.B(g91VarArr);
+        c = new z39();
+    }
+
+    public g91(String str, boolean z) {
+        super(str, i);
+        this.a = i;
+        this.b = z;
+    }
+
+    public static g91 valueOf(String str) {
+        return (g91) Enum.valueOf(g91.class, str);
+    }
+
+    public static g91[] values() {
+        return (g91[]) i.clone();
+    }
+}
+
+========== research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/vc1.java ==========
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class vc1 extends wc1 {
+    public final /* synthetic */ String a;
+
+    public vc1(String str) {
+        this.a = str;
+    }
+
+    @Override // defpackage.wc1
+    public final String f() {
+        return "OAuth " + this.a;
+    }
+
+    @Override // defpackage.wc1
+    public final String g() {
+        return this.a;
+    }
+
+    public final String toString() {
+        return "OAuth token";
+    }
+}
+
+========== research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/g1j.java ==========
+package defpackage;
+
+import android.content.Context;
+import android.content.Intent;
+import com.yandex.passport.api.c;
+import com.yandex.passport.api.e;
+import com.yandex.passport.api.f3;
+import com.yandex.passport.api.g1;
+import com.yandex.passport.api.i2;
+import com.yandex.passport.api.t;
+import com.yandex.passport.api.w1;
+import com.yandex.passport.api.x1;
+import com.yandex.passport.api.z0;
+import com.yandex.passport.data.network.core.s;
+import com.yandex.passport.internal.properties.a;
+import com.yandex.passport.internal.properties.h;
+import com.yandex.passport.internal.properties.j0;
+import com.yandex.passport.internal.properties.l0;
+import com.yandex.passport.internal.properties.m;
+import com.yandex.passport.internal.properties.w;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class g1j {
+    public final Context a;
+    public final k0j b;
+    public final x20 c;
+
+    public g1j(Context context, k0j k0jVar, x20 x20Var) {
+        this.a = context;
+        this.b = k0jVar;
+        this.c = x20Var;
+    }
+
+    public final Intent a(da1 da1Var) {
+        a aVarU;
+        h hVar = null;
+        k0j k0jVar = this.b;
+        if (k0jVar == null) {
+            e("createLoginIntent");
+            return null;
+        }
+        Context context = this.a;
+        mqd.z(context, "appContext");
+        t tVar = k0jVar.c;
+        m mVar = new m();
+        mVar.q((g1) null);
+        mVar.b = zdr.c0(da1Var.a);
+        mVar.q = da1Var.d;
+        mVar.f = inm.p(da1Var.b);
+        tb1 tb1Var = da1Var.c;
+        mqd.z(tb1Var, "<this>");
+        z0 z0Var = z0.a;
+        s.u(new g9n(22));
+        w wVarX = s.x(new wh(21));
+        boolean z = tb1Var.a;
+        boolean z2 = false;
+        c cVar = c.a;
+        if (z) {
+            g9n g9nVar = new g9n(22);
+            g9nVar.c = e.b;
+            g9nVar.d = cVar;
+            g9nVar.b = false;
+            aVarU = s.u(g9nVar);
+            z2 = true;
+        } else {
+            g9n g9nVar2 = new g9n(22);
+            g9nVar2.c = e.a;
+            g9nVar2.d = cVar;
+            g9nVar2.b = true;
+            aVarU = s.u(g9nVar2);
+        }
+        mVar.o = new j0(z2, false, false, z0Var, true, (String) null, (String) null, (String) null, (String) null, false, false, (String) null, s.u(aVarU), s.x(wVarX), false, true);
+        e91 e91Var = da1Var.e;
+        if (e91Var != null) {
+            i2 i2Var = i2.a;
+            x1.O0.getClass();
+            hVar = new h(inm.p(e91Var.b), io.sentry.config.a.J(zum.f(e91Var.a)), e91Var.c, true, (l0) null, w1.b, kc9.a);
+        }
+        mVar.p = hVar;
+        return tVar.d(context, s.f(mVar));
+    }
+
+    public final Intent b(nb1 nb1Var) {
+        k0j k0jVar = this.b;
+        if (k0jVar == null) {
+            e("createUpgradeIntent");
+            return null;
+        }
+        mqd.z(nb1Var, "uid");
+        return ((com.yandex.passport.internal.upgrader.h) k0jVar.b.h.getValue()).a.a(k0jVar.a, new f3(zum.f(nb1Var)));
+    }
+
+    public final cw3 c(f1j f1jVar, nb1 nb1Var, oxk oxkVar) {
+        k0j k0jVar = this.b;
+        if (k0jVar != null) {
+            return new b1j(k0jVar, oxkVar, this.c, new t1i(nb1Var, f1jVar));
+        }
+        e("getToken");
+        cw3.T.getClass();
+        return hlk.b;
+    }
+
+    public final cw3 d(f1j f1jVar, nb1 nb1Var, String str, oxk oxkVar) {
+        k0j k0jVar = this.b;
+        if (k0jVar != null) {
+            return new b1j(k0jVar, oxkVar, this.c, new ulf(str, nb1Var, f1jVar, 15));
+        }
+        e("refreshToken");
+        cw3.T.getClass();
+        return hlk.b;
+    }
+
+    public final void e(String str) {
+        String strConcat = "PassportWrapper_".concat(str);
+        x20 x20Var = this.c;
+        mqd.z(x20Var, "<this>");
+        mqd.z(strConcat, "tag");
+        x20Var.j(strConcat, "tech_ignoring_auth_operation", "tag");
+    }
+}
+
+========== research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/e1j.java ==========
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class e1j {
+    public final String a;
+
+    public e1j(String str) {
+        this.a = str;
+    }
+}
+
+========== research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/q91.java ==========
+package defpackage;
+
+import android.content.SharedPreferences;
+import android.os.Looper;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final /* synthetic */ class q91 implements SharedPreferences.OnSharedPreferenceChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ q91(Object obj, int i) {
+        this.a = i;
+        this.b = obj;
+    }
+
+    @Override // android.content.SharedPreferences.OnSharedPreferenceChangeListener
+    public final void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String str) {
+        switch (this.a) {
+            case 0:
+                s91 s91Var = (s91) this.b;
+                if ("oauth_token".equals(str)) {
+                    if (Looper.myLooper() != s91Var.c) {
+                        s91Var.d.post(new rl(s91Var, 13));
+                    } else {
+                        s91Var.d();
+                    }
+                    break;
+                }
+                break;
+            default:
+                h54 h54Var = (g1k) this.b;
+                if (mqd.s(str, "oauth_token")) {
+                    h54Var.j(sharedPreferences.getString("oauth_token", null));
+                }
+                break;
+        }
+    }
+}
+
+========== research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/xc1.java ==========
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public abstract class xc1 {
+    public static wc1 e(String str, g91 g91Var) {
+        return g91Var == g91.e ? new uc1(str, 1) : new vc1(str);
+    }
+
+    public g5l a(g5l g5lVar) {
+        return g5lVar;
+    }
+
+    public wc1 b() {
+        throw new IllegalStateException();
+    }
+
+    public boolean c(String str) {
+        return false;
+    }
+
+    public boolean d() {
+        return false;
+    }
+}
+
+========== research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/ryh.java ==========
+package defpackage;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class ryh implements Iterator {
+    public final /* synthetic */ int a = 0;
+    public int b;
+    public int c;
+    public boolean d;
+    public final /* synthetic */ Iterable e;
+
+    public ryh(tyh tyhVar, byte b) {
+        this.e = tyhVar;
+        tyhVar.c++;
+        this.b = tyhVar.b.size();
+    }
+
+    public void a() {
+        switch (this.a) {
+            case 0:
+                if (!this.d) {
+                    this.d = true;
+                }
+                break;
+            default:
+                if (!this.d) {
+                    this.d = true;
+                    tyh tyhVar = (tyh) this.e;
+                    int i = tyhVar.c - 1;
+                    tyhVar.c = i;
+                    if (i <= 0 && tyhVar.d) {
+                        tyhVar.d = false;
+                        ArrayList arrayList = tyhVar.b;
+                        for (int size = arrayList.size() - 1; size >= 0; size--) {
+                            if (arrayList.get(size) == null) {
+                                arrayList.remove(size);
+                            }
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    public void b() {
+        uyh uyhVar = this.e;
+        if (!this.d) {
+            this.d = true;
+            uyh.a(uyhVar);
+        }
+        uyhVar.b++;
+        this.b = uyhVar.a.size();
+        this.d = false;
+        this.c = 0;
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        switch (this.a) {
+            case 0:
+                int i = this.c;
+                while (i < this.b && ((g8n) this.e).a.get(i) == null) {
+                    i++;
+                }
+                if (i < this.b) {
+                    return true;
+                }
+                a();
+                return false;
+            case 1:
+                int i2 = this.c;
+                while (i2 < this.b && ((tyh) this.e).b.get(i2) == null) {
+                    i2++;
+                }
+                if (i2 < this.b) {
+                    return true;
+                }
+                a();
+                return false;
+            case 2:
+                uyh uyhVar = this.e;
+                int i3 = this.c;
+                while (i3 < this.b && uyhVar.a.get(i3) == null) {
+                    i3++;
+                }
+                if (i3 < this.b) {
+                    return true;
+                }
+                if (!this.d) {
+                    this.d = true;
+                    uyh.a(uyhVar);
+                }
+                return false;
+            default:
+                tyh tyhVar = (tyh) this.e;
+                int i4 = this.c;
+                while (i4 < this.b && tyhVar.b.get(i4) == null) {
+                    i4++;
+                }
+                if (i4 < this.b) {
+                    return true;
+                }
+                if (!this.d) {
+                    this.d = true;
+                    tyh.a(tyhVar);
+                }
+                return false;
+        }
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = ((g8n) this.e).a;
+                while (true) {
+                    int i = this.c;
+                    if (i < this.b && arrayList.get(i) == null) {
+                        this.c++;
+                    }
+                }
+                int i2 = this.c;
+                if (i2 < this.b) {
+                    this.c = i2 + 1;
+                    return arrayList.get(i2);
+                }
+                a();
+                throw new NoSuchElementException();
+            case 1:
+                ArrayList arrayList2 = ((tyh) this.e).b;
+                while (true) {
+                    int i3 = this.c;
+                    if (i3 < this.b && arrayList2.get(i3) == null) {
+                        this.c++;
+                    }
+                }
+                int i4 = this.c;
+                if (i4 < this.b) {
+                    this.c = i4 + 1;
+                    return arrayList2.get(i4);
+                }
+                a();
+                throw new NoSuchElementException();
+            case 2:
+                uyh uyhVar = this.e;
+                ArrayList arrayList3 = uyhVar.a;
+                while (true) {
+                    int i5 = this.c;
+                    if (i5 < this.b && arrayList3.get(i5) == null) {
+                        this.c++;
+                    }
+                }
+                int i6 = this.c;
+                if (i6 < this.b) {
+                    this.c = i6 + 1;
+                    return arrayList3.get(i6);
+                }
+                if (!this.d) {
+                    this.d = true;
+                    uyh.a(uyhVar);
+                }
+                throw new NoSuchElementException();
+            default:
+                tyh tyhVar = (tyh) this.e;
+                ArrayList arrayList4 = tyhVar.b;
+                while (true) {
+                    int i7 = this.c;
+                    if (i7 < this.b && arrayList4.get(i7) == null) {
+                        this.c++;
+                    }
+                }
+                int i8 = this.c;
+                if (i8 < this.b) {
+                    this.c = i8 + 1;
+                    return arrayList4.get(i8);
+                }
+                if (!this.d) {
+                    this.d = true;
+                    tyh.a(tyhVar);
+                }
+                throw new NoSuchElementException();
+        }
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        switch (this.a) {
+            case 0:
+                throw new UnsupportedOperationException();
+            case 1:
+                throw new UnsupportedOperationException();
+            case 2:
+                throw new UnsupportedOperationException();
+            default:
+                throw new UnsupportedOperationException();
+        }
+    }
+
+    public ryh(tyh tyhVar) {
+        this.e = tyhVar;
+        tyhVar.c++;
+        this.b = tyhVar.b.size();
+    }
+
+    public ryh(g8n g8nVar) {
+        this.e = g8nVar;
+        this.b = g8nVar.a.size();
+    }
+
+    public ryh(uyh uyhVar) {
+        this.e = uyhVar;
+        uyhVar.b++;
+        this.b = uyhVar.a.size();
+    }
+}
+
+========== research/notes/auth-stage-19/research/artifacts/decompiled-dex2/sources/defpackage/tc1.java ==========
+package defpackage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class tc1 extends xc1 {
+    public final boolean equals(Object obj) {
+        return obj instanceof xc1 ? ((xc1) obj) instanceof tc1 : super.equals(obj);
+    }
+
+    public final int hashCode() {
+        return 0;
+    }
+
+    public final String toString() {
+        return "No header";
+    }
+}
