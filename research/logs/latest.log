@@ -1,5 +1,8 @@
+===== PASSPORT INTERNAL CLASS O =====
 INFO  - loading ...
-INFO  - Saving class 'defpackage.pwh' to file '/workspaces/-Telemost-X/research/artifacts/pwh-simple/sources/defpackage/pwh.java'
-INFO  - done
-===== EXTRACTED SOURCE =====
-1073 research/notes/auth-stage-3/pwh-simple.java
+ERROR - Incorrect arguments: Input class not found: com.yandex.passport.internal.impl.o
+===== UID CONVERTER ZUM =====
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: defpackage.zum
+===== COPY SOURCES =====
+===== SOURCE LINE COUNTS =====
