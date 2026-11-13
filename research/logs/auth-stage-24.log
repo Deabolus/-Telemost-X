@@ -1,0 +1,201 @@
+
+===== y8q.java =====
+NOT FOUND
+
+===== bf1.java =====
+package defpackage;
+
+import android.os.Looper;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class bf1 {
+    public final Looper a;
+    public final ulf b;
+    public final s91 c;
+    public final mwk d;
+    public final zmq e;
+    public final y9a f;
+    public final f2k g;
+
+    public bf1(Looper looper, ulf ulfVar, s91 s91Var, mwk mwkVar, zmq zmqVar, y9a y9aVar, f2k f2kVar) {
+        mqd.z(looper, "logicLooper");
+        mqd.z(ulfVar, "httpRetrierFactory");
+        mqd.z(s91Var, "authHeaderProvider");
+        mqd.z(mwkVar, "registrationController");
+        mqd.z(zmqVar, "userActionFailedObservable");
+        mqd.z(y9aVar, "experimentConfig");
+        mqd.z(f2kVar, "profileCurrentOrganizationStorage");
+        this.a = looper;
+        this.b = ulfVar;
+        this.c = s91Var;
+        this.d = mwkVar;
+        this.e = zmqVar;
+        this.f = y9aVar;
+        this.g = f2kVar;
+    }
+
+    public final af1 a(String str, bff bffVar, taa taaVar) {
+        mqd.z(str, "requestId");
+        atl.s(this.a, Looper.myLooper(), null);
+        return new af1(this, str, bffVar, taaVar);
+    }
+}
+
+===== hu7.java =====
+package defpackage;
+
+import android.content.Context;
+import android.os.Build;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
+import android.util.Pair;
+import java.util.Locale;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class hu7 {
+    public final Context a;
+
+    public hu7(Context context) {
+        this.a = context;
+    }
+
+    public static void a(g5l g5lVar, String str, String str2) {
+        if (str2 == null) {
+            return;
+        }
+        int length = str2.length();
+        for (int i = 0; i < length; i++) {
+            char cCharAt = str2.charAt(i);
+            if ((cCharAt <= 31 && cCharAt != '\t') || cCharAt >= 127) {
+                g5lVar.a(str, "unexpected_value");
+                return;
+            }
+        }
+        g5lVar.a(str, str2);
+    }
+
+    /* JADX WARN: Code duplicated, block: B:9:0x006b  */
+    public final void b(g5l g5lVar) {
+        Pair pair;
+        Context context = this.a;
+        a(g5lVar, "X-App-Version", n9.b(context));
+        a(g5lVar, "X-App-Id", context.getPackageName());
+        a(g5lVar, "X-App-Platform", "android");
+        a(g5lVar, "X-App-Platform-Version", String.valueOf(Build.VERSION.SDK_INT));
+        a(g5lVar, "X-App-Device-Manufacturer", Build.MANUFACTURER);
+        a(g5lVar, "X-App-Device-Model", Build.MODEL);
+        a(g5lVar, "X-App-Device-Locale", Locale.getDefault().toString());
+        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
+        if (telephonyManager != null) {
+            String networkOperator = telephonyManager.getNetworkOperator();
+            if (TextUtils.isEmpty(networkOperator) || networkOperator.length() <= 3) {
+                pair = null;
+            } else {
+                pair = new Pair(networkOperator.substring(0, 3), networkOperator.substring(3));
+            }
+        } else {
+            pair = null;
+        }
+        if (pair != null) {
+            a(g5lVar, "X-App-Operator-MCC", (String) pair.first);
+            a(g5lVar, "X-App-Operator-MNC", (String) pair.second);
+        }
+    }
+
+    public final String c() {
+        Context context = this.a;
+        String packageName = context.getPackageName();
+        String strB = n9.b(context);
+        if (strB == null) {
+            strB = "257.0";
+        }
+        return wq1.j("Android ", packageName, "/", strB, " MessengerKit/257.0");
+    }
+}
+
+===== lfg.java =====
+package defpackage;
+
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public abstract class lfg {
+    public static final jfg a;
+    public static final efg b;
+    public static final hfg c;
+    public static final kfg d;
+    public static final ffg e;
+    public static final ifg f;
+    public static final /* synthetic */ lfg[] g;
+
+    static {
+        jfg jfgVar = new jfg();
+        a = jfgVar;
+        efg efgVar = new efg();
+        b = efgVar;
+        hfg hfgVar = new hfg();
+        c = hfgVar;
+        kfg kfgVar = new kfg();
+        d = kfgVar;
+        ffg ffgVar = new ffg();
+        e = ffgVar;
+        ifg ifgVar = new ifg();
+        f = ifgVar;
+        lfg[] lfgVarArr = {jfgVar, efgVar, hfgVar, kfgVar, ffgVar, ifgVar};
+        g = lfgVarArr;
+        oyg.B(lfgVarArr);
+    }
+
+    public static lfg valueOf(String str) {
+        return (lfg) Enum.valueOf(lfg.class, str);
+    }
+
+    public static lfg[] values() {
+        return (lfg[]) g.clone();
+    }
+
+    public abstract g91 b();
+
+    public String c() {
+        return "https://passport.yandex.ru";
+    }
+
+    public abstract Object d(gfg gfgVar);
+
+    public abstract boolean e();
+
+    public abstract String h();
+}
+
+===== poq.java =====
+NOT FOUND
+
+===== AUTH INTERCEPTOR REFERENCES =====
+research/artifacts/decompiled-dex2/sources/defpackage/svm.java:158:        pVar.k("Ya-Consumer-Authorization", "OAuth ".concat(str));
+research/artifacts/decompiled-dex2/sources/defpackage/v4s.java:21:        g5lVar.a("Authorization", "OAuth ".concat(this.b));
+research/artifacts/decompiled-dex2/sources/defpackage/uc1.java:17:                return "YAMBAUTH " + this.b;
+research/artifacts/decompiled-dex2/sources/defpackage/uc1.java:19:                return "OAuthTeam " + this.b;
+research/artifacts/decompiled-dex2/sources/defpackage/uc1.java:45:                return "YAMBAUTH token";
+research/artifacts/decompiled-dex2/sources/defpackage/uc1.java:47:                return "OAuthTeam token";
+research/artifacts/decompiled-dex2/sources/defpackage/ehb.java:198:                return Boolean.valueOf(str3.equals("Authorization"));
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:66:        String string2 = sharedPreferences.getString("xiva_secret_user", null);
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:67:        w4s w4sVar = (string2 == null || (string = sharedPreferences.getString("xiva_secret_sign", null)) == null) ? null : new w4s(string2, string, sharedPreferences.getLong("xiva_secret_ts", 0L));
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:149:            atl.s(looper, looperMyLooper, "Authorization header on wrong thread");
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:157:            bmcVar.b("Authorization restart");
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:250:            c4sVar.a.edit().remove("xiva_secret_user").remove("xiva_secret_sign").remove("xiva_secret_ts").apply();
+research/artifacts/decompiled-dex2/sources/defpackage/eqo.java:847:            atl.y("Authorization screen must be opened from unauthorized screen or profile, but was opened from " + ongVar);
+research/artifacts/decompiled-dex2/sources/defpackage/tkm.java:255:                g5lVar.a("Authorization", "OAuth ".concat(string));
+research/artifacts/decompiled-dex2/sources/defpackage/tkm.java:289:            g5lVar.a("Authorization", "OAuth ".concat(string));
+research/artifacts/decompiled-dex2/sources/defpackage/cze.java:163:        if (str.startsWith("Authorization: ") && (iIndexOf = str.indexOf(32, 15)) > 0 && iIndexOf < str.length()) {
+research/artifacts/decompiled-dex2/sources/defpackage/wc1.java:9:        g5lVar.a("Authorization", f());
+research/artifacts/decompiled-dex2/sources/defpackage/quc.java:66:        g5lVar.a("X-Session-Id", str2);
+research/artifacts/decompiled-dex2/sources/defpackage/po1.java:213:                clm.c(jycVar3, "Authorization", "OAuth ".concat(str));
+research/artifacts/decompiled-dex2/sources/defpackage/po1.java:250:                        clm.c(jycVar3, "Authorization", "OAuth ".concat(str));
+research/artifacts/decompiled-dex2/sources/defpackage/u4s.java:36:        g5lVar.a("Authorization", "OAuth " + zb5.I0(this.c, ",", (String) null, (String) null, (lib) null, 62));
+research/artifacts/decompiled-dex2/sources/defpackage/gwc.java:46:                    jycVar.c.c("Authorization", "OAuth ".concat(str));
+research/artifacts/decompiled-dex2/sources/defpackage/ic.java:22:                mqd.z(eVar, "$this$getAuthorizationUrl");
+
+===== API HOST CONFIGURATION =====
+research/artifacts/decompiled-dex2/sources/defpackage/fsc.java:15:        mqd.z(poqVar, "apiHostHandler");
+research/artifacts/decompiled-dex2/sources/defpackage/bve.java:48:        boolean zG = w0o.G(str, "https://telemost.yandex-team.ru/j/", false);
+research/artifacts/decompiled-dex2/sources/defpackage/dgg.java:11:    public static final ArrayList d = rld.j("telemost.yandex.");
