@@ -1,0 +1,870 @@
+===== API METHOD CALLS =====
+research/artifacts/decompiled-dex2/sources/defpackage/or3.java:23:        String str = (String) uqlVar.a("camera_attachment_launcher_key");
+research/artifacts/decompiled-dex2/sources/defpackage/or3.java:52:        String str2 = (String) uqlVar.a("pending_camera_attachment_path");
+research/artifacts/decompiled-dex2/sources/defpackage/or3.java:53:        String str3 = (String) uqlVar.a("validating_camera_attachment_path");
+research/artifacts/decompiled-dex2/sources/defpackage/or3.java:54:        String str4 = (String) uqlVar.a("completed_camera_attachment_path");
+research/artifacts/decompiled-dex2/sources/defpackage/cy.java:29:            kq0.d(kibVar2, a.a(d.n(fugVar, xw8.h), "msg_ai_editor_copy_button"), false, (q1d) null, (q7h) null, (rwm) null, o0i.a, om5Var, (i2 & 14) | 1572864, 60);
+research/artifacts/decompiled-dex2/sources/defpackage/ueg.java:382:        long jA = qp0Var.e().a("privacy");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:392:            kocVar.a("chats_missed_users_calculated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:497:        kocVar.a("chats_calculated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:519:        kocVar.a("chats_missed_loaded");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:523:        kocVar.a("chats_coroutine_check");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:528:        kocVar.a("chats_db_started");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:570:        kocVar.a("chats_missed_users_calculated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:723:                kocVar.a("threads_deleted");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:736:                kocVar.a("threads_calculated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:760:                kocVar.a("threads_updated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:766:                kocVar.a("threads_db_updated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:777:            kocVar.a("threads_cleared");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:822:                kocVar.a("threads_deleted");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:835:                kocVar.a("threads_calculated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:860:                kocVar.a("threads_updated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:866:                kocVar.a("threads_db_updated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:876:            kocVar.a("threads_cleared");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1253:            this.v.a("chats_missed_calculated");
+research/artifacts/decompiled-dex2/sources/defpackage/dx6.java:163:                mx6 mx6Var = new mx6(1, tzlVar28.a(kvk.a(ewc.class), (dri) null, jvc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 7);
+research/artifacts/decompiled-dex2/sources/defpackage/e3.java:91:                    qq0.j(u6n.g(2132018306, om5Var12), this.b, eh8.b, a.a(cug.a, "folder_edit_add_chats_button"), (ah8) null, false, false, om5Var12, 384, 496);
+research/artifacts/decompiled-dex2/sources/defpackage/e3.java:234:                    v1d.b(b7dVar, strG, a.a(androidx.compose.foundation.a.e(cug.a, (q7h) objP, (vdd) null, false, new gjl(0), this.b, 12), "folder_settings_tab"), ke8.d(om5Var16).d0(), om5Var16, 0, 0);
+research/artifacts/decompiled-dex2/sources/defpackage/xjd.java:52:                hkdVar.n.q.a("ai_editor_open", kc9.a);
+research/artifacts/decompiled-dex2/sources/defpackage/p4b.java:66:        long jA = x3bVar.b.e().a("folders");
+research/artifacts/decompiled-dex2/sources/defpackage/px0.java:90:                        this.b.i.d.a("chooser", true);
+research/artifacts/decompiled-dex2/sources/defpackage/px0.java:96:                            qx0Var2.d.a("chooser", false);
+research/artifacts/decompiled-dex2/sources/defpackage/px0.java:126:                        this.b.i.d.a("chooser", true);
+research/artifacts/decompiled-dex2/sources/defpackage/px0.java:132:                            qx0Var2.d.a("chooser", false);
+research/artifacts/decompiled-dex2/sources/defpackage/px0.java:169:                            this.b.i.d.a("chooser", true);
+research/artifacts/decompiled-dex2/sources/defpackage/px0.java:175:                                qx0Var2.d.a("chooser", false);
+research/artifacts/decompiled-dex2/sources/defpackage/px0.java:212:                        this.b.i.d.a("chooser", true);
+research/artifacts/decompiled-dex2/sources/defpackage/px0.java:218:                            qx0Var2.d.a("chooser", false);
+research/artifacts/decompiled-dex2/sources/defpackage/ax.java:28:                dx.b((kib) obj4, a.a(d.n(cugVar, f), "msg_ai_editor_button"), (fm5) obj2, 0);
+research/artifacts/decompiled-dex2/sources/defpackage/pa.java:2550:        lqd.d(lo8Var, vectorPainterK, strG, androidx.compose.ui.platform.a.a(d.e(cug.a, 1.0f), "spam_user_banner"), jo8Var, ko8Var, (String) null, kibVar3, om5Var, 70, 64);
+research/artifacts/decompiled-dex2/sources/defpackage/pa.java:3366:                lqd.d(lo8.b, wnm.k(ijm.f(ke8.c), fm5Var2), (String) obj6, androidx.compose.ui.platform.a.a(d.e(a.n(cugVar, (imi) obj7), 1.0f), "inactive_user_banner"), (jo8) null, (ko8) null, str10, (kib) null, fm5Var2, 70, 176);
+research/artifacts/decompiled-dex2/sources/defpackage/ax4.java:329:                y84Var.a(str7, e46Var.n, new ryf("contact_info", str7), false);
+research/artifacts/decompiled-dex2/sources/defpackage/sdi.java:362:                bukVar.k.a(bukVar.p, "search_filter_reset", wqh.p("type", str), null);
+research/artifacts/decompiled-dex2/sources/defpackage/u14.java:406:                        kq0.c(vectorPainterK, (m5e) objP9, eh8.a, a.a(cugVar, "folder_edit_confirm_button"), ((rh6) lrnVar2.getValue()).h, u6n.g(2132018806, om5Var17), (ah8) null, om5Var17, 392, 416);
+research/artifacts/decompiled-dex2/sources/defpackage/u14.java:418:                        yj8.a(wj8Var, true, (lib) objP10, a.a(d.n(cugVar, xw8.m), "folder_edit_confirm_button"), (xj8) null, (String) null, om5Var17, 54, 48);
+research/artifacts/decompiled-dex2/sources/defpackage/q5s.java:29:        Map mapK0 = xgf.k0(new ypi[]{new ypi("chatId", str), new ypi("chosenSource", Integer.valueOf(i)), new ypi("messageDataSource", num), new ypi("isStub", Boolean.valueOf(q9jVar.k)), new ypi("isStub_new", mb4VarA != null ? Boolean.valueOf(ChatFlags.a(mb4VarA.j, 64L)) : null), new ypi("isChatWithSupportBot", Boolean.valueOf(q9jVar.g)), new ypi("isChatWithSupportBot_new", boolValueOf), new ypi("isBusiness", Boolean.valueOf(q9jVar.p)), new ypi("namespace", Integer.valueOf(q9jVar.o))});
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:21:                pq4 pq4Var = new pq4(1, tzlVar.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 28);
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:30:                pq4 pq4Var2 = new pq4(1, tzlVar2.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 22);
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:39:                pq4 pq4Var3 = new pq4(1, tzlVar3.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 23);
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:48:                pq4 pq4Var4 = new pq4(1, tzlVar4.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 21);
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:57:                pq4 pq4Var5 = new pq4(1, tzlVar5.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 29);
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:66:                pq4 pq4Var6 = new pq4(1, tzlVar6.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 20);
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:73:                return new u43(((o5m) tzlVar7.a(s15VarA7, (dri) null, (iek) null)).a(null), (uvc) tzlVar7.a(kvk.a(uvc.class), (dri) null, (iek) null), new pq4(1, tzlVar7.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 24), (zx4) tzlVar7.a(kvk.a(zx4.class), (dri) null, (iek) null));
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:77:                return new d44(((o5m) tzlVar8.a(s15VarA8, (dri) null, (iek) null)).a(null), (uvc) tzlVar8.a(kvk.a(uvc.class), (dri) null, (iek) null), new pq4(1, tzlVar8.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 19), (zx4) tzlVar8.a(kvk.a(zx4.class), (dri) null, (iek) null));
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:81:                return new u43(((o5m) tzlVar9.a(s15VarA9, (dri) null, (iek) null)).a(null), (uvc) tzlVar9.a(kvk.a(uvc.class), (dri) null, (iek) null), new pq4(1, tzlVar9.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 25), (zx4) tzlVar9.a(kvk.a(zx4.class), (dri) null, (iek) null));
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:87:                pq4 pq4Var7 = new pq4(1, tzlVar10.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 26);
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:94:                return new k13(((o5m) tzlVar11.a(s15VarA11, (dri) null, (iek) null)).a(null), (uvc) tzlVar11.a(kvk.a(uvc.class), (dri) null, (iek) null), new pq4(1, tzlVar11.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 27), (zx4) tzlVar11.a(kvk.a(zx4.class), (dri) null, (iek) null));
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:98:                return new k13(((o5m) tzlVar12.a(s15VarA12, (dri) null, (iek) null)).a(null), (uvc) tzlVar12.a(kvk.a(uvc.class), (dri) null, (iek) null), new pq4(1, tzlVar12.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 18), (zx4) tzlVar12.a(kvk.a(zx4.class), (dri) null, (iek) null));
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:109:                return new u23(qq3.m(bff.U(zaVar, o5mVar.a.a(), new n2k(1, o5mVar.c.a, b6m.class, "webApiBaseUrl", "webApiBaseUrl(Lcom/yandex/calendar/profile/AccountEnv;)Ljava/lang/String;", 0, 21), new n2k(1, ml0.a, ml0.class, "webApiUrl", "webApiUrl(Lcom/yandex/calendar/domain/debug/model/ApiHostSelection;)Ljava/lang/String;", 0, 22)), "/api/import"), (uvc) tzlVar13.a(kvk.a(uvc.class), (dri) null, (iek) null), new mx6(1, tzlVar13.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 5), (zx4) tzlVar13.a(kvk.a(zx4.class), (dri) null, (iek) null));
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:113:                return new u23(((o5m) tzlVar14.a(s15VarA14, (dri) null, (iek) null)).a(null), (uvc) tzlVar14.a(kvk.a(uvc.class), (dri) null, (iek) null), new mx6(1, tzlVar14.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 4), (zx4) tzlVar14.a(kvk.a(zx4.class), (dri) null, (iek) null));
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:119:                mx6 mx6Var = new mx6(1, tzlVar15.a(kvk.a(ewc.class), (dri) null, ivc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 8);
+research/artifacts/decompiled-dex2/sources/defpackage/ex6.java:134:                mx6 mx6Var2 = new mx6(1, tzlVar16.a(kvk.a(ewc.class), (dri) null, jvc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 9);
+research/artifacts/decompiled-dex2/sources/defpackage/k5d.java:7342:            fug fugVarA = androidx.compose.ui.platform.a.a(androidx.compose.foundation.a.g(androidx.compose.foundation.a.b(t35.O(jwm.f(d.k(a.k(cugVar, (lib) objP), fG, fG2).f(fugVar), 8 * f10, qklVarB, false, 0L, 0L, 28), qklVarB), ec5.c(f10, ke8.d(om5Var2).b()), xo7.e), z, (String) null, (gjl) null, kibVar, 14), "tm_participant_video_slot_with_frame");
+research/artifacts/decompiled-dex2/sources/defpackage/dop.java:322:            wnm.e(oa1.a(this.r, new ka1(false), "android_messenger_write_to_chat", kibVar, new a94(this, 2)), this.e);
+research/artifacts/decompiled-dex2/sources/defpackage/e8f.java:30:        g5l g5lVarA = ((quc) zm7Var.b).a(new RequestUserParams(), "request_user");
+research/artifacts/decompiled-dex2/sources/defpackage/re1.java:264:                gw3Var7.w(new gw(ue6Var7, r8h.u(qe1Var7.a.a(new ke1(qe1Var7, "get_scheduled_messages", scheduledChatRequest, null, ScheduledMessagesList.class, ma2Var))), 23));
+research/artifacts/decompiled-dex2/sources/defpackage/re1.java:286:                gw3Var8.w(new gw(ue6Var8, r8h.u(qe1Var8.a.a(new ke1(qe1Var8, "get_scheduled_messages_hint", scheduledChatRequest2, null, ScheduledMessagesHint.class, ma2Var2))), 24));
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:131:        ((r7j) slhVar.f.get()).a(this.e, "time2ack_plain");
+research/artifacts/decompiled-dex2/sources/defpackage/oa.java:114:                    fug fugVarA2 = androidx.compose.ui.platform.a.a(cug.a, "folder_add_chats_list_done_button");
+research/artifacts/decompiled-dex2/sources/defpackage/h6e.java:59:            ((w5i) ikeVar.get()).a(jCurrentTimeMillis, false, g2eVar == null ? "harvester_null" : "runnable_null");
+research/artifacts/decompiled-dex2/sources/defpackage/h6e.java:70:            ((w5i) ikeVar.get()).a(jCurrentTimeMillis, false, "throttled");
+research/artifacts/decompiled-dex2/sources/defpackage/h6e.java:96:            ((w5i) ikeVar.get()).a(jCurrentTimeMillis, false, "user_limited");
+research/artifacts/decompiled-dex2/sources/defpackage/h6e.java:114:            ((w5i) ikeVar.get()).a(jCurrentTimeMillis, true, "sent");
+research/artifacts/decompiled-dex2/sources/defpackage/fbi.java:533:        mu5Var.a("batch_app_id", strC);
+research/artifacts/decompiled-dex2/sources/defpackage/fbi.java:577:        mu5Var.a("batch", string);
+research/artifacts/decompiled-dex2/sources/defpackage/h3.java:64:                        un3Var.a("mic_off", mjVar2.b);
+research/artifacts/decompiled-dex2/sources/defpackage/h3.java:66:                        un3Var.a("mic_on", mjVar2.b);
+research/artifacts/decompiled-dex2/sources/defpackage/nr0.java:1003:            fug fugVarA = a.a(d.d(fugVar, 1.0f), "call_list_screen");
+research/artifacts/decompiled-dex2/sources/defpackage/nr0.java:2594:            fug fugVarA = a.a(d.d(fugVar2, 1.0f), "global_search_progress_indicator");
+research/artifacts/decompiled-dex2/sources/defpackage/buk.java:120:        vp4.c(vp4Var, "search_input", xgf.k0(new ypi[]{new ypi("type", vp4.a(ro4Var.a)), new ypi("mode", up4Var.b ? "list" : "chat"), new ypi("state", str), new ypi("is_period_chosen", Boolean.valueOf(ro4Var.c != null)), new ypi("is_author_chosen", Boolean.valueOf(ro4Var.b != null)), new ypi("is_important", Boolean.valueOf(ro4Var.d))}), null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/ud1.java:155:                return ((qe1) this.j).b.a((ChangeChatMembersParams) this.l, "change_chat_members");
+research/artifacts/decompiled-dex2/sources/defpackage/ud1.java:157:                return ((qe1) this.j).b.a(new GetChatInfoParam((String[]) this.n), "get_chats_info");
+research/artifacts/decompiled-dex2/sources/defpackage/ud1.java:160:                g5l g5lVarA = ((x48) this.l).c.a(wq1.h("docviewer_link/", e58Var.a), f3r.I(new qek("tld", e58Var.b)));
+research/artifacts/decompiled-dex2/sources/defpackage/ae1.java:52:                return this.j.b.a(new CreateInviteLinkTokenParams(null, 1, null), "create_token");
+research/artifacts/decompiled-dex2/sources/defpackage/ae1.java:55:                g5l g5lVarA = qe1Var.b.a(null, "get_experiments");
+research/artifacts/decompiled-dex2/sources/defpackage/g17.java:20:                this.b.a("Network error", xgf.k0(new ypi[]{new ypi("message", ""), new ypi("requestId", str), new ypi("statusCode", num)}));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:331:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:473:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:634:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:775:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:917:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:1087:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:1228:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:1369:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:1513:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:1655:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:1797:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:1938:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:2079:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:2221:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:2386:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:2528:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:2670:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:2812:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:2954:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:3096:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:3238:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:3379:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:3520:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:3662:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:3804:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:3946:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:4088:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:4230:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:4372:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:4514:                                return new qb3(new g2e((a30) tzlVar.a(kvk.a(a30.class), (dri) null, (iek) null)), new kwn((String) tzlVar.a(kvk.a(String.class), (dri) null, r7m.b), ((Boolean) tzlVar.a(kvk.a(Boolean.class), (dri) null, s7m.b)).booleanValue() ? "sdk" : "app"));
+research/artifacts/decompiled-dex2/sources/defpackage/xd1.java:54:        return this.i.b.a(new CheckAliasParams(this.j), "check_alias");
+research/artifacts/decompiled-dex2/sources/defpackage/g8.java:791:                fug fugVarF = d.c(fugVar2, 0.95f).f(((Boolean) om5Var8.j(faq.a)).booleanValue() ? androidx.compose.ui.platform.a.a(fugVar2, "calendar.location.searchState.".concat(((q4f) a9hVar2.getValue()).a.length() == 0 ? "empty" : "filled")) : fugVar2);
+research/artifacts/decompiled-dex2/sources/defpackage/g8.java:1204:                    fug fugVarA4 = androidx.compose.ui.platform.a.a(d.d(fugVar7, 1.0f), "folder_edit_screen");
+research/artifacts/decompiled-dex2/sources/defpackage/q84.java:46:        return this.i.a.a(this.j, "update_chat_organizations");
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java:39:        ((r7j) vt4Var.f.get()).a(this.q, "time2chat_history");
+research/artifacts/decompiled-dex2/sources/defpackage/ce1.java:32:        return this.i.b.a(null, "disable_discovery");
+research/artifacts/decompiled-dex2/sources/defpackage/pe9.java:187:                    x5sVar.a(i2, i3, i, false, null, "finish_url_expired");
+research/artifacts/decompiled-dex2/sources/defpackage/pe9.java:194:                    x5sVar.a(i4, i5, i, true, Long.valueOf(jC), "retry_head");
+research/artifacts/decompiled-dex2/sources/defpackage/pe9.java:200:                    x5sVar.a(i6, i7, i, false, null, "finish_error");
+research/artifacts/decompiled-dex2/sources/defpackage/hu7.java:26:                g5lVar.a(str, "unexpected_value");
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:96:                return ((jdl) this.k).c.a((CreateGroupChatParam) this.l, "create_chat");
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:98:                return ((jdl) this.k).c.a((CreateFamilyChatParam) this.l, "create_chat");
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:100:                return ((jdl) this.k).c.a((CreateChannelParam) this.l, "create_chat");
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:106:                g5l g5lVarA = ((quc) y8qVar.c).a(requestUserParams, "request_user");
+research/artifacts/decompiled-dex2/sources/defpackage/wd1.java:83:                return this.j.b.a(new GetChatInfoParam(new String[]{this.k}), "get_chats_info");
+research/artifacts/decompiled-dex2/sources/defpackage/wd1.java:85:                return this.j.b.a(new GetCommonChatsParam(this.k), "get_chats_info");
+research/artifacts/decompiled-dex2/sources/defpackage/wd1.java:87:                return this.j.c.a(String.format("file_shortterm/%s", Arrays.copyOf(new Object[]{this.k}, 1)), f3r.J(new qek[]{new qek("attach", "true"), new qek("get_url", "1")}));
+research/artifacts/decompiled-dex2/sources/defpackage/wd1.java:89:                return this.j.b.a(new ResolveInviteLinkTokenParams(this.k), "resolve_token");
+research/artifacts/decompiled-dex2/sources/defpackage/d88.java:58:        j26Var.a("sync_download_failed", xgf.k0(new ypi[]{new ypi("uuid", str2), new ypi("version", Long.valueOf(j)), new ypi("reason", str)}));
+research/artifacts/decompiled-dex2/sources/defpackage/me1.java:32:        return this.i.b.a(new TogglePushTokenParams(this.j, this.k), "toggle_push_token");
+research/artifacts/decompiled-dex2/sources/defpackage/xt4.java:201:                        j26Var.a("sync_check_hash", xgf.k0(new ypi[]{new ypi("uuid", str3), new ypi("hash", str2)}));
+research/artifacts/decompiled-dex2/sources/defpackage/ze3.java:332:            if (h.a(fVar).equalsIgnoreCase("spreadtrum") || h.a(fVar).equalsIgnoreCase("unisoc")) {
+research/artifacts/decompiled-dex2/sources/defpackage/u59.java:141:                        u59Var.x.a("ai_editor_open", kc9.a);
+research/artifacts/decompiled-dex2/sources/defpackage/u59.java:255:                        u59Var.x.a("ai_editor_open", kc9.a);
+research/artifacts/decompiled-dex2/sources/defpackage/cj5.java:163:                    v1d.c(wnm.k(tum.j(ke8.c), om5Var12), (String) null, a.a(cugVar, "add_to_folder_dialog_folder_item_tick"), 0L, om5Var12, 56, 8);
+research/artifacts/decompiled-dex2/sources/defpackage/cj5.java:299:                    t35.j(h1s.k0(2131234872, 0, om5Var40), (String) null, a.a(cugVar, "tm_waiting_room_empty_placeholder_image"), (p00) null, (ra6) null, 0.0f, (gc5) null, om5Var40, 48, 120);
+research/artifacts/decompiled-dex2/sources/defpackage/cj5.java:366:                return new jla(f3r.j((uvc) tzlVar.a(dy3.c(tzlVar, "$this$factory", (dri) obj2, "it", uvc.class), (dri) null, (iek) null), new pq4(1, tzlVar.a(kvk.a(ewc.class), (dri) null, fvc.b), ewc.class, "build", "build(Lio/ktor/client/HttpClientConfig;)V", 0, 17)));
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:268:        long jA = nh2Var.a("custom_user_statuses");
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:345:        if (foldersBucket.version <= nh2Var.a("folders")) {
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:1633:        hiddenPrivateChatsBucket2.version = nh2Var.a("local_hidden_private_chats");
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:1864:                if (miniappsBucket.version <= nh2Var.a("miniapps")) {
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:2369:        if (nh2Var.a("preferences") >= preferencesBucket.version) {
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:2399:            long jA = nh2Var.a("pinned_chats");
+research/artifacts/decompiled-dex2/sources/defpackage/be1.java:107:                return ((qe1) this.m).b.a((CreatePrivateChatParam) this.n, "create_private_chat");
+research/artifacts/decompiled-dex2/sources/defpackage/be1.java:109:                g5l g5lVarA = ((ise) this.k).b.a(new TogglePushTokenParams((String) this.l, this.j), "toggle_push_token");
+research/artifacts/decompiled-dex2/sources/defpackage/be1.java:115:                g5l g5lVarA2 = xc1Var.a(((quc) ((ike) x71Var.e).get()).a(new RequestUserParams(), "request_user"));
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:388:                return ((qe1) this.j).b.a((ChangeChatAdminsParams) this.k, "change_chat_admins");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:390:                return ((qe1) this.j).b.a((ChangeChatRolesParams) this.k, "change_chat_role");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:392:                return ((qe1) this.j).b.a((GetChatInfoByAlias) this.k, "get_chats_info");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:394:                return ((qe1) this.j).b.a((GetChatDataByInviteHashParams) this.k, "get_chats_info");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:396:                return ((qe1) this.j).b.a((OnboardingPassedParams) this.k, "commit_onboarding_passed");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:398:                return ((qe1) this.j).b.a((OnboardingPassedParams) this.k, "commit_onboarding_passed");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:400:                return ((qe1) this.j).b.a((ContactCheckHashParam) this.k, "contact_check_hash");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:402:                g5l g5lVarA = ((qe1) this.j).b.a((ContactsDownloadParam) this.k, "list_contacts");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:409:                return ((qe1) this.j).b.a((GetChatDataByInviteHashParams) this.l, "get_chats_info");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:411:                return ((qe1) this.j).b.a(new GetChatInfoParam((String[]) this.k), "get_chats_info");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:413:                return ((qe1) this.j).b.a((RecommendedChatsParams) this.k, "get_recommended_chats");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:415:                return ((qe1) this.j).b.a((RecommendedUsersParams) this.k, "get_recommended_users");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:417:                return ((qe1) this.j).b.a((GetUrlPreviewRequestParam) this.k, "get_url_preview");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:419:                return ((qe1) this.j).b.a((GetUsersDataParam) this.k, "get_users_data");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:421:                return ((qe1) this.j).b.a((LeaveParams) this.k, "leave");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:423:                return ((qe1) this.j).b.a((LeaveThreadParams) this.k, "leave_thread");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:425:                return ((qe1) this.j).b.a((PinnedChatsBucket) this.k, "set_bucket");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:427:                return ((qe1) this.j).b.a((RevokeInviteLinkParams) this.k, "invite_renew");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:429:                return ((qe1) this.j).b.a((ChatParticipantsSearchParams) this.k, "search_chat_members");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:431:                return ((qe1) this.j).b.a((SetChatInfoParams) this.k, "set_chat_info");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:433:                return ((qe1) this.j).b.a((ChatSettingsParams) this.k, "update_chat_settings");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:435:                return ((qe1) this.j).b.a((UserStatusPresetBucket) this.k, "set_bucket");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:437:                return ((qe1) this.j).b.a((FoldersBucket) this.k, "set_bucket");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:439:                return ((qe1) this.j).b.a((PreferencesBucket) this.k, "set_bucket");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:458:                return ((l0g) this.j).b.a((CreateMeetingApiParams) this.k, "create_meeting");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:471:                return ((l0g) this.k).b.a(new CreatePersonalMeetingApiParams(str2, str, l0g.h), "create_personal_meeting");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:473:                return ((l0g) this.j).b.a((StartMeetingCallParams) this.k, "meeting_call");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:475:                return ((jdl) this.l).c.a((JoinParams) this.j, "invite");
+research/artifacts/decompiled-dex2/sources/defpackage/td1.java:477:                return ((jdl) this.l).c.a((JoinThreadParams) this.j, "join_to_thread");
+research/artifacts/decompiled-dex2/sources/defpackage/lkd.java:434:        qm5Var.a("msg_sent", xgf.k0(new ypi[]{new ypi("edit", Boolean.FALSE), new ypi("attachment", Boolean.valueOf(z2)), new ypi("ai_edited", Boolean.valueOf(z))}));
+research/artifacts/decompiled-dex2/sources/defpackage/m5o.java:90:                awVar.b("suggest_directive_execution_error", suggest, this.m, e7gVar, f3r.J(new ypi[]{new ypi("directive_name", directive.a), new ypi("directive_details", directive.a()), new ypi("error_message", BotRequestKt.a(error))}));
+research/artifacts/decompiled-dex2/sources/defpackage/uu4.java:558:        this.w.b(this.F, "timeline", this.o.a() ? "loaded" : "loading");
+research/artifacts/decompiled-dex2/sources/defpackage/ugg.java:48:                t15Var.a("months", and.b, false);
+research/artifacts/decompiled-dex2/sources/defpackage/m86.java:38:        qrn qrnVarA2 = rrn.a(Boolean.valueOf(sharedPreferences.getBoolean("contacts_sync_enabled", false)));
+research/artifacts/decompiled-dex2/sources/defpackage/m86.java:40:        qrn qrnVarA3 = rrn.a(Integer.valueOf(sharedPreferences.getInt("contacts_uploaded_vers", -1)));
+research/artifacts/decompiled-dex2/sources/defpackage/pv.java:68:                awVar.a("ai_bot_action_directive_execution_error", aiBotAction, e7gVar, f3r.J(new ypi[]{new ypi("directive_name", directive.a), new ypi("directive_details", directive.a()), new ypi("error_message", BotRequestKt.a(error))}));
+research/artifacts/decompiled-dex2/sources/defpackage/pv.java:75:        svVar.b.a("ai_bot_action_handled", aiBotAction, e7gVar, f3r.J(new ypi[]{new ypi("all_directives_count", Integer.valueOf(aiBotAction.getDirectives().size())), new ypi("parsed_directives_count", Integer.valueOf(zb5.x0(aiBotAction.getDirectives()).size())), new ypi("handled_directives_count", Integer.valueOf(arrayList.size()))}));
+research/artifacts/decompiled-dex2/sources/defpackage/f04.java:48:            x20Var.reportEvent("make admin", xgf.k0(new ypi[]{new ypi("chat id", q9jVar.b), new ypi("chat type", q9jVar.a()), new ypi("user", str)}));
+research/artifacts/decompiled-dex2/sources/defpackage/f04.java:65:            x20Var.reportEvent("remove admin", xgf.k0(new ypi[]{new ypi("chat id", q9jVar.b), new ypi("chat type", q9jVar.a()), new ypi("user", str2)}));
+research/artifacts/decompiled-dex2/sources/defpackage/gf5.java:1267:            fug fugVarA = a.a(e6q.t(2, ke8.d(om5Var).e(), androidx.compose.foundation.a.b(cugVar, jA, qklVar), qklVar), "tm_call_status_tag");
+research/artifacts/decompiled-dex2/sources/defpackage/hp4.java:33:                    pgrVar.a(view2, "search_navigation", new kp4(vp4Var, 0));
+research/artifacts/decompiled-dex2/sources/defpackage/hp4.java:78:                    vp4.c(vp4Var4, "search_mode", xgf.k0(new ypi[]{new ypi("type", vp4.a(ro4VarA.a)), new ypi("mode", z2 ? "list" : "chat"), new ypi("state", vp4Var4.k)}), null, 4);
+research/artifacts/decompiled-dex2/sources/defpackage/l69.java:232:        jtdVar.r.a("select_all_clicked", ygf.f0(new ypi("all_selected", bool)));
+research/artifacts/decompiled-dex2/sources/defpackage/njq.java:112:                        j26Var.a("sync_upload_success", xgf.k0(new ypi[]{new ypi("uuid", str), new ypi("version", Long.valueOf(jG)), new ypi("duration", lValueOf), new ypi("type", strD)}));
+research/artifacts/decompiled-dex2/sources/defpackage/njq.java:136:        j26Var.a("sync_upload_failed", xgf.k0(new ypi[]{new ypi("uuid", str2), new ypi("version", Long.valueOf(this.l)), new ypi("reason", str), new ypi("type", str3)}));
+research/artifacts/decompiled-dex2/sources/defpackage/le1.java:67:                return ((qe1) this.s).b.a(new SetPushTokenParams(this.j, this.k, this.m, this.l.b.a, this.o, this.n, this.p, this.q, (String) this.t), "set_push_token");
+research/artifacts/decompiled-dex2/sources/defpackage/le1.java:71:                g5l g5lVarA = qucVar.a(new SetPushTokenParams(this.j, this.k, pckVar.a, pckVar.b.a, this.m, this.n, this.o, this.p, this.q), "set_push_token");
+research/artifacts/decompiled-dex2/sources/defpackage/yd1.java:30:        g5l g5lVarA = this.i.b.a(this.j, "upload_contacts");
+research/artifacts/decompiled-dex2/sources/defpackage/yd1.java:44:        j26Var.a("sync_upload_send", xgf.k0(new ypi[]{new ypi("uuid", str), new ypi("count", Integer.valueOf(i)), new ypi("type", str2)}));
+research/artifacts/decompiled-dex2/sources/defpackage/qv.java:38:        awVar.a("ai_bot_action_pressed", aiBotAction, e7gVar, listJ);
+research/artifacts/decompiled-dex2/sources/defpackage/ym.java:68:                ((ghg) this.b).a().b().j(Boolean.TRUE, "tech_subscribe_guid_finish", "enforce");
+research/artifacts/decompiled-dex2/sources/defpackage/po1.java:605:        LinkedHashMap linkedHashMapN0 = xgf.n0(new ypi[]{new ypi("from_push", Boolean.valueOf(vo3Var.e() != null)), new ypi("in_foreground", Boolean.valueOf(vq0Var.a())), new ypi("message_type", ((uc) vo3Var).a), new ypi("ringing_id", vo3Var.b())});
+research/artifacts/decompiled-dex2/sources/defpackage/ubo.java:104:                j26Var.a("sync_download_init", xgf.k0(new ypi[]{new ypi("uuid", str), new ypi("version", Long.valueOf(jG))}));
+research/artifacts/decompiled-dex2/sources/defpackage/ubo.java:264:            j26Var.a("sync_upload_init", xgf.k0(new ypi[]{new ypi("uuid", str), new ypi("version", Long.valueOf(jG)), new ypi("type", strD)}));
+research/artifacts/decompiled-dex2/sources/defpackage/r8g.java:21:        this.b.a("msg time 2 backend", "msg_time_2_backend", xgf.k0(new ypi[]{ypiVar, new ypi("time_diff", Long.valueOf(jCurrentTimeMillis - j)), new ypi("time_diff_insert", Long.valueOf(slmVar.g - j)), new ypi("msg_type", rlm.c(slmVar.c)), new ypi("connection_status", Integer.valueOf(slmVar.d)), new ypi("chat_type", str), new ypi("is_predicted", Boolean.valueOf(z)), new ypi("source", Integer.valueOf(p8gVar.ordinal())), new ypi("result", o8gVar.a), new ypi("backend_retry_count", Integer.valueOf(slmVar.f))}));
+research/artifacts/decompiled-dex2/sources/defpackage/r8g.java:27:        this.b.a("msg time 2 ui", "msg_time_2_ui", xgf.k0(new ypi[]{ypiVar, new ypi("time_diff", Long.valueOf(System.currentTimeMillis() - slmVar.e)), new ypi("msg_type", rlm.c(slmVar.c)), new ypi("connection_status", Integer.valueOf(slmVar.d)), new ypi("result", q8gVar.a)}));
+research/artifacts/decompiled-dex2/sources/defpackage/ir4.java:135:            lq0.b(h1s.k0(2131234061, 0, om5Var2), kibVar2, eh8Var, androidx.compose.ui.platform.a.a(a.s(cugVar, fx8.d, 0.0f, 0.0f, 0.0f, 14), "chat_search_toolbar_close_button"), false, u6n.g(2132017526, om5Var2), ah8Var, om5Var2, ((i4 << 3) & 112) | 100663680, 176);
+research/artifacts/decompiled-dex2/sources/defpackage/ir4.java:685:            j12.b(str, libVar3, androidx.compose.ui.platform.a.a(fugVar, "chat_search_query_input"), false, false, qap.a(qapVarF, jC0, 0L, (u6b) null, (q6b) null, (n5b) null, 0L, (b02) null, 0L, (i5p) null, 0, 0L, (g8p) null, (tkj) null, (cte) null, 16777214), new j8e(0, 3, 119), (e8e) null, true, 0, 0, (ijr) null, (lib) null, q7hVar3, new chn(jC0), m51.J(-887451053, true, new pa(str3, str2, qapVarF, false, 5), fm5Var3), fm5Var2, (i2 & 14) | 102236160 | ((i2 >> 3) & 112), (i2 & 7168) | 196608, 7832);
+research/artifacts/decompiled-dex2/sources/defpackage/udr.java:385:                o0Var.c(n0Var, m0Var, xgf.k0(new ypi[]{new ypi("code_from", String.valueOf((String) kVar2.g.a(kVar2, y5eVarArr[5]))), new ypi("have_code", String.valueOf(str != null))}));
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:73:                ((r7j) b7jVar.b.get()).a(this.f, "time2ack_seen_marker");
+research/artifacts/decompiled-dex2/sources/defpackage/c8g.java:279:                        Intent intentA = p0jVarB.a(null, proxyPassportActivity.getIntent().getStringExtra("phone_number"));
+research/artifacts/decompiled-dex2/sources/defpackage/mjq.java:55:        j26Var.a("sync_upload_response", xgf.k0(new ypi[]{new ypi("uuid", str), new ypi("version", Long.valueOf(j)), new ypi("count", Integer.valueOf(length2)), new ypi("type", str2)}));
+research/artifacts/decompiled-dex2/sources/defpackage/z75.java:111:        return y9aVar.a(i82Var) ? "blocking_coroutine" : "legacy";
+research/artifacts/decompiled-dex2/sources/defpackage/xn.java:336:                    ellVar.a(hzdVar.a, new ryf("call_list_connect", (String) null), false);
+research/artifacts/decompiled-dex2/sources/defpackage/biq.java:560:            p8i.j(kibVar, androidx.compose.ui.platform.a.a(fugVar, "msg_ai_editor_bottom_sheet"), at8.a, strG, (String) null, (pib) null, vs8Var, yj7Var, (ys8) null, m51.J(-1581554031, true, new pw(gxVar, qyVar, charSequence, libVar, 0), fm5Var2), fm5Var2, ((i3 >> 12) & 14) | 805306368, 304);
+research/artifacts/decompiled-dex2/sources/defpackage/biq.java:722:            ex8.b(str2, androidx.compose.ui.platform.a.a(cug.a, "ai_editor_error_snackbar"), new DsSnackbar.Icon(wnm.k(ijm.f(ke8.c), om5Var), new ec5(zdr.i(zdr.J(context, 2130969746)))), 2000L, dx8VarF, om5Var, i4 | 197168, 24);
+research/artifacts/decompiled-dex2/sources/defpackage/v23.java:94:                fug fugVarA = a.a(d.e(cugVar, 1.0f), "chat_threads_container");
+research/artifacts/decompiled-dex2/sources/defpackage/xvm.java:635:            qq0.f(((i2 << 3) & 112) | 287104, 0, 1984, om5Var, ah8Var, eh8Var, kibVar, androidx.compose.ui.platform.a.a(d.e(fugVar2, 1.0f), "unauthorized_screen_login_button"), vectorPainterK, strG, false, false);
+research/artifacts/decompiled-dex2/sources/defpackage/pe1.java:86:                g5l g5lVarA = xc1Var.a(((quc) ((ike) x71Var.e).get()).a(null, "get_experiments"));
+research/artifacts/decompiled-dex2/sources/defpackage/qbo.java:45:        j26Var.a("sync_download_success", vffVar.b());
+research/artifacts/decompiled-dex2/sources/defpackage/t59.java:80:            qm5Var.a("msg_sent", xgf.k0(new ypi[]{new ypi("edit", Boolean.TRUE), new ypi("ai_edited", Boolean.valueOf(z))}));
+research/artifacts/decompiled-dex2/sources/defpackage/ee1.java:27:        return this.j.b.a(this.k, "get_bucket");
+research/artifacts/decompiled-dex2/sources/defpackage/ei7.java:224:        return Uri.fromFile(file).buildUpon().authority(this.e.a()).scheme("content").build();
+research/artifacts/decompiled-dex2/sources/defpackage/de1.java:60:                return this.j.b.a(new EnablePersonalDiscoveryParams(this.k), "enable_discovery");
+research/artifacts/decompiled-dex2/sources/defpackage/de1.java:62:                return this.j.b.a(new RemoveDisplayRestrictionParams(this.k), "remove_display_restriction");
+research/artifacts/decompiled-dex2/sources/defpackage/j3.java:456:                return ((z75) obj2).b.a() ? "foreground" : "background";
+research/artifacts/decompiled-dex2/sources/defpackage/nk7.java:15:        qrn qrnVarA = rrn.a(Integer.valueOf(sharedPreferences.getInt("default_reaction_code", 100102)));
+research/artifacts/decompiled-dex2/sources/defpackage/ppp.java:16:        return ((f2q) this.a).a("timezones", str, (String) kbeVar.c.a.getValue(), kbeVar.b);
+research/artifacts/decompiled-dex2/sources/defpackage/wm.java:28:                String str = (String) uqlVar.a("pending_camera_attachment_path");
+research/artifacts/decompiled-dex2/sources/defpackage/cr.java:48:                long jA = fvnVar.e.e().a("sticker_packs");
+research/artifacts/decompiled-dex2/sources/defpackage/cr.java:72:                long jA2 = fvnVar2.e.e().a("sticker_packs");
+research/artifacts/decompiled-dex2/sources/defpackage/fkr.java:423:        ujrVar.p.B(ujr.r[0], oa1.a(ujrVar.j, new ka1(!sc4Var.r), "android_messenger_send_voice_to_chat", bkrVar, new a94(ujrVar, 3)));
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:258:                return ((qe1) this.l).b.a((ActivateChatRequestParams) this.m, "activate_chat");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:260:                return ((qe1) this.l).b.a((AddFilesParams) this.m, "add_files");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:262:                return ((qe1) this.m).b.a((GetChatInfoByAlias) this.j, "get_chats_info");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:264:                return ((qe1) this.l).b.a((ChatParticipantsParams) this.m, "get_chat_members");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:266:                return ((qe1) this.l).b.a((GetChatSettingsParams) this.m, "get_chat_settings");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:268:                return ((qe1) this.l).b.a((GetMediaMessagesParams) this.m, "get_media_messages");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:270:                return ((qe1) this.k).b.a(new GetOrganizationsParams((List) this.m, (String) this.l), "get_organizations");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:272:                return ((qe1) this.m).b.a((GetStaffDataParam) this.j, "get_user_by_nickname");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:274:                return ((qe1) this.l).b.a((GetSuggestParam) this.m, "get_suggest");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:276:                return ((qe1) this.m).b.a((GetUsersDataParam) this.j, "get_users_data");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:278:                return ((qe1) this.k).b.a((GetUserGapsParam) this.m, "staff_proxy");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:280:                return ((qe1) this.k).b.a((JoinParams) this.l, "invite");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:283:                g5l g5lVarA2 = qe1Var.b.a((ResolveYaDiskParams) this.m, "upload_to_disk");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:294:                return ((qe1) this.l).b.a((SearchParams) this.m, "search");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:296:                return ((qe1) this.k).b.a((Bucket) this.l, "set_bucket");
+research/artifacts/decompiled-dex2/sources/defpackage/hw.java:298:                return ((qe1) this.l).b.a((ShareFileParams) this.m, "share_file");
+research/artifacts/decompiled-dex2/sources/defpackage/hkd.java:1057:            wnm.e(oa1.a(this.L, new ka1(!sc4Var.r), "android_messenger_write_to_chat", kibVar, new a94(this, 1)), this.c.v());
+research/artifacts/decompiled-dex2/sources/defpackage/l2m.java:44:                mqd.z(((bqq) ((aqq) tzlVar2.a(kvk.a(aqq.class), (dri) null, (iek) null))).a, "config");
+research/artifacts/decompiled-dex2/sources/defpackage/l2m.java:52:                mqd.z(((bqq) ((aqq) tzlVar3.a(kvk.a(aqq.class), (dri) null, (iek) null))).a, "config");
+research/artifacts/decompiled-dex2/sources/defpackage/zmc.java:86:        hiddenPrivateChatsBucket.version = qp0Var.e().a("local_hidden_private_chats");
+research/artifacts/decompiled-dex2/sources/defpackage/zmc.java:120:        hiddenPrivateChatsBucket.version = qp0Var.e().a("local_hidden_private_chats");
+research/artifacts/decompiled-dex2/sources/defpackage/zmc.java:147:        if (j <= nh2Var.a("remote_hidden_private_chats")) {
+research/artifacts/decompiled-dex2/sources/defpackage/nzm.java:77:            fug fugVarA = a.a(cug.a, "tm_start_summarization_dialog");
+research/artifacts/decompiled-dex2/sources/defpackage/nzm.java:186:                    vj8.b(ri8Var, arrayList, a.a(androidx.compose.foundation.layout.a.s(fugVar, 0.0f, fx8.m, 0.0f, 0.0f, 13), "telemessenger_onboarding"), si8.b, om5Var, i12 | 1794048);
+research/artifacts/decompiled-dex2/sources/defpackage/d84.java:34:        ((r7j) pb5Var.d).a(this.e, "time2ack_report");
+research/artifacts/decompiled-dex2/sources/defpackage/p10.java:63:                    x20Var.j(Boolean.valueOf(pjVar.a(authUidN) != null), "tech_multi_socket_proxy_connection", "has_real_socket");
+research/artifacts/decompiled-dex2/sources/defpackage/ztk.java:23:                    bukVar.j.a(view, "search_input", new kr4(bukVar.l, 2));
+research/artifacts/decompiled-dex2/sources/defpackage/zhp.java:2992:            fug fugVarA = androidx.compose.ui.platform.a.a(a.b(cug.a, ke8.d(om5Var).a(), xo7.e), "folder_add_chats_list_chat_item");
+research/artifacts/decompiled-dex2/sources/defpackage/zhp.java:3073:            fug fugVarA2 = androidx.compose.ui.platform.a.a(t35.O(fugVarA, rkl.d(f2, f2, 0.0f, 0.0f, 12)), "folder_add_chats_list");
+research/artifacts/decompiled-dex2/sources/defpackage/ikp.java:581:                    mnpVar.d.a("qm_sdk_chat_timeline", "qm_sdk_chat_timeline", xgf.k0(new ypi[]{ypiVar, ypiVar2, ypiVar3, ypiVar4, ypiVar5, new ypi("gap_time", Long.valueOf(jLongValue3)), new ypi("gap_count", Integer.valueOf(knpVar2.h)), new ypi("connection", mnpVar.a.a().b), new ypi("gapless", Boolean.TRUE)}));
+research/artifacts/decompiled-dex2/sources/defpackage/ge1.java:33:        g5l g5lVarA = this.i.b.a(this.j, "get_members_and_contacts_suggest");
+research/artifacts/decompiled-dex2/sources/defpackage/fe1.java:94:                return ((qe1) this.j).b.a(null, "get_disk_info");
+research/artifacts/decompiled-dex2/sources/defpackage/fe1.java:96:                return ((qe1) this.j).b.a(null, "purge_contacts");
+research/artifacts/decompiled-dex2/sources/defpackage/ie1.java:65:                g5l g5lVarA = ((qe1) this.l).b.a((OrganizationChatSuggestParams) this.m, "get_organization_chat_suggest");
+research/artifacts/decompiled-dex2/sources/defpackage/zoe.java:62:                    if (bpe.a(rb0Var, "legacy_" + ((String) it.next()))) {
+
+===== CLIENT MESSAGE CONSTRUCTION =====
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/PostMessage.java:53:    public final ClientMessage getClientMessage() {
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/message/ClientMessageJsonAdapter.java:309:            return new ClientMessage(typingFromJson, heartbeatFromJson, seenMarkerFromJson, plainMessageFromJson2, stateSyncFromJson, systemMessageFromJson, botRequestFromJson, serverNotificationFromJson, reportFromJson, reactionFromJson, callingMessageFromJson, meetingCallingMessageFromJson, pinMessageFromJson, pinMessageFromJson2, chatApprovalFromJson, readMarkerFromJson, updateFieldsFromJson, clearUserHistoryFromJson, voteFromJson, translationMessageFromJson, userStatusMessageFromJson, unseenMarkerFromJson, typingEnhancedFromJson, plainMessageFromJson, chatOpenFromJson, boolFromJson.booleanValue(), numFromJson.intValue(), boolFromJson2.booleanValue());
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/message/ClientMessage.java:101:    public ClientMessage() {
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/message/ClientMessage.java:287:        return new ClientMessage(typing, heartbeat, seenMarker, plain, stateSync, systemMessage, botRequest, notification, report, reaction, callingMessage, meetingCallingMessage, pin, unpin, chatApproval, readMarker, updateFields, clearUserHistory, vote, translationMessage, userStatus, unseenMarker, typingEnhanced, ephemeral, chatOpen, isSilent, notificationBehaviour, withPersistentInlineButtons);
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/message/ClientMessage.java:359:        return "ClientMessage(typing=" + this.typing + ", heartbeat=" + this.heartbeat + ", seenMarker=" + this.seenMarker + ", plain=" + this.plain + ", stateSync=" + this.stateSync + ", systemMessage=" + this.systemMessage + ", botRequest=" + this.botRequest + ", notification=" + this.notification + ", report=" + this.report + ", reaction=" + this.reaction + ", callingMessage=" + this.callingMessage + ", meetingCallingMessage=" + this.meetingCallingMessage + ", pin=" + this.pin + ", unpin=" + this.unpin + ", chatApproval=" + this.chatApproval + ", readMarker=" + this.readMarker + ", updateFields=" + this.updateFields + ", clearUserHistory=" + this.clearUserHistory + ", vote=" + this.vote + ", translationMessage=" + this.translationMessage + ", userStatus=" + this.userStatus + ", unseenMarker=" + this.unseenMarker + ", typingEnhanced=" + this.typingEnhanced + ", ephemeral=" + this.ephemeral + ", chatOpen=" + this.chatOpen + ", isSilent=" + this.isSilent + ", notificationBehaviour=" + this.notificationBehaviour + ", withPersistentInlineButtons=" + this.withPersistentInlineButtons + ")";
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/message/ClientMessage.java:362:    public ClientMessage(@Json(name = "Typing") Typing typing, @Json(name = "Heartbeat") Heartbeat heartbeat, @Json(name = "SeenMarker") SeenMarker seenMarker, @Json(name = "Plain") PlainMessage plainMessage, @Json(name = "StateSync") StateSync stateSync, @Json(name = "SystemMessage") SystemMessage systemMessage, @Json(name = "BotRequest") BotRequest botRequest, @Json(name = "Notification") ServerNotification serverNotification, @Json(name = "Report") Report report, @Json(name = "Reaction") Reaction reaction, @Json(name = "CallingMessage") CallingMessage callingMessage, @Json(name = "MeetingCallingMessage") MeetingCallingMessage meetingCallingMessage, @Json(name = "Pin") PinMessage pinMessage, @Json(name = "Unpin") PinMessage pinMessage2, @Json(name = "ChatApproval") ChatApproval chatApproval, @Json(name = "ReadMarker") ReadMarker readMarker, @Json(name = "UpdateFields") UpdateFields updateFields, @Json(name = "ClearUserHistory") ClearUserHistory clearUserHistory, @Json(name = "Vote") Vote vote, @Json(name = "TranslationMessage") TranslationMessage translationMessage, @Json(name = "UserStatus") UserStatusMessage userStatusMessage, @Json(name = "UnseenMarker") UnseenMarker unseenMarker, @Json(name = "TypingEnhanced") TypingEnhanced typingEnhanced, @Json(name = "Ephemeral") PlainMessage plainMessage2, @Json(name = "ChatOpen") ChatOpen chatOpen, @Json(name = "IsSilent") boolean z, @Json(name = "NotificationBehaviour") int i, @Json(name = "PersistentInlineButtons") boolean z2) {
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/message/ClientMessage.java:393:    public /* synthetic */ ClientMessage(Typing typing, Heartbeat heartbeat, SeenMarker seenMarker, PlainMessage plainMessage, StateSync stateSync, SystemMessage systemMessage, BotRequest botRequest, ServerNotification serverNotification, Report report, Reaction reaction, CallingMessage callingMessage, MeetingCallingMessage meetingCallingMessage, PinMessage pinMessage, PinMessage pinMessage2, ChatApproval chatApproval, ReadMarker readMarker, UpdateFields updateFields, ClearUserHistory clearUserHistory, Vote vote, TranslationMessage translationMessage, UserStatusMessage userStatusMessage, UnseenMarker unseenMarker, TypingEnhanced typingEnhanced, PlainMessage plainMessage2, ChatOpen chatOpen, boolean z, int i, boolean z2, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/scheduled/ScheduledMessagePayload.java:27:    public final ClientMessage getClientMessage() {
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/scheduled/ScheduledMessagePayload.java:43:    public final ClientMessage getClientMessage() {
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/scheduled/ScheduledMessagePayloadJsonAdapter.java:63:        this.clientMessageAdapter.toJson(jsonWriter, scheduledMessagePayload2.getClientMessage());
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:25:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, chatApproval, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268419071, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:27:                return new ClientMessage(null, null, null, (PlainMessage) this.f, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:29:                return new ClientMessage(null, null, null, (PlainMessage) this.f, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java:82:            PlainMessage plainMessage = scheduledMessageDto.getMessagePayload().getClientMessage().plain;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:48:        return new ClientMessage(null, null, null, this.j, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, this.k.j ? 3 : 0, false, 201326583, null);
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:25:        return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new UnseenMarker(this.e.b.b, this.f, this.g, this.h), null, null, null, false, 0, false, 266338303, null);
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java:45:                            ((mgn) g2eVar.a).l(null, new ClientMessage(new Typing(cjiVar.c.b, 0, null, null, 14, null), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435454, null));
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:32:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new ClearUserHistory(((g25) this.f).a.b), null, null, null, null, null, null, null, false, 0, false, 268304383, null);
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:39:                return new ClientMessage(null, heartbeat, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435453, null);
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:200:            String strC = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:308:                String strC2 = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:397:            String strC3 = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default3, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:27:        return new ClientMessage(null, null, null, null, null, null, null, null, null, new Reaction(this.e.c.a.b, this.f.getTimestamp(), this.g, this.h), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268434943, null);
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java:39:        return new ClientMessage(null, null, null, null, null, null, new BotRequest(str2, obj, null, messageContext, null, null, null, 116, null), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435391, null);
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:35:                return new ClientMessage(null, null, null, null, null, null, null, null, (Report) this.h, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435199, null);
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:42:                return new ClientMessage(null, null, new SeenMarker(str, seenMarkerEntity.a, seenMarkerEntity.b, seenMarkerEntity.d), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435451, null);
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:58:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, (ReadMarker) this.g, null, null, null, null, null, null, null, null, null, false, 0, false, 268402687, null);
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java:36:        return new ClientMessage(null, null, null, null, null, null, new BotRequest(str, null, null, new MessageContext(str2, lD != null ? lD.longValue() : 0L, Long.valueOf(this.g), this.h), this.j, null, this.i, 38, null), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435391, null);
+research/artifacts/decompiled-dex2/sources/defpackage/f92.java:38:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new UpdateFields(((pag) this.f).b.b, ((xfq) this.g).a, (Integer) this.h, null), null, null, null, null, null, null, null, null, false, 0, false, 268369919, null);
+research/artifacts/decompiled-dex2/sources/defpackage/f92.java:57:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new Vote(str, j, numArr, iOrdinal, messageRef), null, null, null, null, null, null, false, 0, false, 268173311, null);
+research/artifacts/decompiled-dex2/sources/defpackage/d84.java:28:        return new ClientMessage(null, null, null, null, null, null, null, null, this.g, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435199, null);
+research/artifacts/decompiled-dex2/sources/defpackage/eq2.java:159:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new TypingEnhanced(((ds4) obj2).a.b, ylmVar.a, ylmVar.b, new TypingEnhanced.Meta(ylmVar.c, ylmVar.d)), null, null, false, 0, false, 264241151, null);
+research/artifacts/decompiled-dex2/sources/defpackage/ik4.java:48:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new ChatOpen(str, iOrdinal, new ClientInfo(strB, strC, language, str2), messengerSupportContext), false, 0, false, 251658239, null);
+research/artifacts/decompiled-dex2/sources/defpackage/ik4.java:50:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, (PinMessage) obj, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268431359, null);
+research/artifacts/decompiled-dex2/sources/defpackage/ik4.java:62:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new UserStatusMessage(i2, iH, iX, ko6Var != null ? new CustomStatusMessage(ko6Var.a, ko6Var.b, null, ko6Var.c, 4, null) : null), null, null, null, null, false, 0, false, 267386879, null);
+
+===== SEND MESSAGE REFERENCES =====
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:5:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:20:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:25:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, chatApproval, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268419071, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:27:                return new ClientMessage(null, null, null, (PlainMessage) this.f, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:29:                return new ClientMessage(null, null, null, (PlainMessage) this.f, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:31:                return (ClientMessage) ((eq2) this.f).invoke();
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java:3:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java:19:    void l(c8q c8qVar, ClientMessage clientMessage);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:23:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:634:        ClientMessage clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/m52.java:109:                jw0Var.sendMessage(jw0Var.obtainMessage(8, this));
+research/artifacts/decompiled-dex2/sources/defpackage/m52.java:113:                    jw0Var2.sendMessage(jw0Var2.obtainMessage(8, this));
+research/artifacts/decompiled-dex2/sources/defpackage/m52.java:116:                    jw0Var3.sendMessage(jw0Var3.obtainMessage(6, this));
+research/artifacts/decompiled-dex2/sources/defpackage/m52.java:125:                jw0Var4.sendMessageDelayed(jw0Var4.obtainMessage(7, this), i2);
+research/artifacts/decompiled-dex2/sources/defpackage/m52.java:129:                jw0Var5.sendMessage(jw0Var5.obtainMessage(8, this));
+research/artifacts/decompiled-dex2/sources/defpackage/m52.java:134:            jw0Var6.sendMessage(jw0Var6.obtainMessage(8, this));
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:7:import com.yandex.messaging.core.net.entities.directives.SendMessageDirective;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:16:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:112:        ClientMessage clientMessage = serverMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:153:        ClientMessage clientMessage = serverMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:203:                ClientMessage clientMessage2 = serverMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:570:                                        SendMessageDirective sendMessageDirective = new SendMessageDirective();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:575:                                        sendMessageDirective.text = str3;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:592:                                        sendMessageDirective.callbackData = map2;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:593:                                        arrayList4.add(sendMessageDirective);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:619:                                SendMessageDirective sendMessageDirective2 = new SendMessageDirective();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:624:                                sendMessageDirective2.text = str3;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:641:                                sendMessageDirective2.callbackData = map2;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:642:                                arrayList4.add(sendMessageDirective2);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:722:                                    SendMessageDirective sendMessageDirective3 = new SendMessageDirective();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:727:                                    sendMessageDirective3.text = str3;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:744:                                    sendMessageDirective3.callbackData = map2;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:745:                                    arrayList4.add(sendMessageDirective3);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:771:                            SendMessageDirective sendMessageDirective4 = new SendMessageDirective();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:776:                            sendMessageDirective4.text = str3;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:793:                            sendMessageDirective4.callbackData = map2;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:794:                            arrayList4.add(sendMessageDirective4);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:873:                            SendMessageDirective sendMessageDirective5 = new SendMessageDirective();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:878:                            sendMessageDirective5.text = str3;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:895:                            sendMessageDirective5.callbackData = map2;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:896:                            arrayList4.add(sendMessageDirective5);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:922:                    SendMessageDirective sendMessageDirective6 = new SendMessageDirective();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:927:                    sendMessageDirective6.text = str3;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:944:                    sendMessageDirective6.callbackData = map2;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:945:                    arrayList4.add(sendMessageDirective6);
+research/artifacts/decompiled-dex2/sources/defpackage/bbp.java:16:        mqd.z(dopVar, "sendMessageFacade");
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java:82:            PlainMessage plainMessage = scheduledMessageDto.getMessagePayload().getClientMessage().plain;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:8:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:45:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:48:        return new ClientMessage(null, null, null, this.j, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, this.k.j ? 3 : 0, false, 201326583, null);
+research/artifacts/decompiled-dex2/sources/defpackage/w35.java:23:        mqd.z(dopVar, "sendMessageFacade");
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java:10:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java:98:        ClientMessage clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java:4:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java:20:    public final Object a(ClientMessage clientMessage, xdo xdoVar, long j, kc6 kc6Var) throws mnh {
+research/artifacts/decompiled-dex2/sources/defpackage/jl4.java:58:        mqd.z(tlmVar, "sendMessageTimeProfiler");
+research/artifacts/decompiled-dex2/sources/defpackage/pt5.java:23:        mqd.z(hk4Var, "chatOpenClientMessageUseCase");
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:6:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:219:    public final void l(c8q c8qVar, ClientMessage clientMessage) {
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java:6:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java:24:        ClientMessage clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/ay7.java:13:import com.yandex.messaging.core.net.entities.directives.SendMessageDirective;
+research/artifacts/decompiled-dex2/sources/defpackage/ay7.java:36:        mqd.z(qlmVar, "sendMessageDirectiveHandler");
+research/artifacts/decompiled-dex2/sources/defpackage/ay7.java:90:            } else if (directive instanceof SendMessageDirective) {
+research/artifacts/decompiled-dex2/sources/defpackage/ay7.java:91:                this.f.a(bn4Var2, (SendMessageDirective) directive);
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:5:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:24:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:25:        return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new UnseenMarker(this.e.b.b, this.f, this.g, this.h), null, null, null, false, 0, false, 266338303, null);
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java:5:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java:45:                            ((mgn) g2eVar.a).l(null, new ClientMessage(new Typing(cjiVar.c.b, 0, null, null, 14, null), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435454, null));
+research/artifacts/decompiled-dex2/sources/defpackage/q5d.java:35:                            jw0Var.sendMessage(messageObtainMessage);
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:6:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:29:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:32:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new ClearUserHistory(((g25) this.f).a.b), null, null, null, null, null, null, null, false, 0, false, 268304383, null);
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:39:                return new ClientMessage(null, heartbeat, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435453, null);
+research/artifacts/decompiled-dex2/sources/defpackage/qlm.java:3:import com.yandex.messaging.core.net.entities.directives.SendMessageDirective;
+research/artifacts/decompiled-dex2/sources/defpackage/qlm.java:18:    public final void a(bn4 bn4Var, SendMessageDirective sendMessageDirective) {
+research/artifacts/decompiled-dex2/sources/defpackage/qlm.java:20:        mqd.z(sendMessageDirective, "payload");
+research/artifacts/decompiled-dex2/sources/defpackage/qlm.java:21:        TextMessageData textMessageData = new TextMessageData(0, sendMessageDirective.text);
+research/artifacts/decompiled-dex2/sources/defpackage/qlm.java:23:        Object obj = sendMessageDirective.callbackData;
+research/artifacts/decompiled-dex2/sources/defpackage/wv.java:5:import com.yandex.messaging.core.net.entities.directives.SendMessageDirective;
+research/artifacts/decompiled-dex2/sources/defpackage/wv.java:68:                yvVar.a.a(yvVar.d, (SendMessageDirective) directive);
+research/artifacts/decompiled-dex2/sources/defpackage/nbh.java:47:                        zbsVar.sendMessage(zbsVar.obtainMessage(2, e));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:5:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:200:            String strC = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:308:                String strC2 = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:397:            String strC3 = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default3, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/gh.java:44:        mqd.z(tlmVar, "sendMessageTimeProfiler");
+research/artifacts/decompiled-dex2/sources/defpackage/lkd.java:54:        mqd.z(dopVar, "sendMessageFacade");
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:6:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:26:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:27:        return new ClientMessage(null, null, null, null, null, null, null, null, null, new Reaction(this.e.c.a.b, this.f.getTimestamp(), this.g, this.h), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268434943, null);
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java:4:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java:29:    public final ClientMessage a(Object obj, String str) {
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java:39:        return new ClientMessage(null, null, null, null, null, null, new BotRequest(str2, obj, null, messageContext, null, null, null, 116, null), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435391, null);
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java:4:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java:118:                ClientMessage clientMessage = (ClientMessage) this.b;
+research/artifacts/decompiled-dex2/sources/defpackage/it4.java:64:        mqd.z(tlmVar, "sendMessageTimeProfiler");
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:7:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:30:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:35:                return new ClientMessage(null, null, null, null, null, null, null, null, (Report) this.h, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435199, null);
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:42:                return new ClientMessage(null, null, new SeenMarker(str, seenMarkerEntity.a, seenMarkerEntity.b, seenMarkerEntity.d), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435451, null);
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:58:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, (ReadMarker) this.g, null, null, null, null, null, null, null, null, null, false, 0, false, 268402687, null);
+research/artifacts/decompiled-dex2/sources/defpackage/z75.java:3:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/z75.java:43:            ClientMessage clientMessage = serverMessage2.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/z75.java:45:            ClientMessage clientMessage2 = serverMessage2.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/bpm.java:11:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/bpm.java:249:        ClientMessage clientMessage = serverMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/bpm.java:314:        ClientMessage clientMessage = serverMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/bpm.java:444:            ClientMessage clientMessage2 = serverMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/bpm.java:769:        ClientMessage clientMessage = serverMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java:5:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java:28:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java:36:        return new ClientMessage(null, null, null, null, null, null, new BotRequest(str, null, null, new MessageContext(str2, lD != null ? lD.longValue() : 0L, Long.valueOf(this.g), this.h), this.j, null, this.i, 38, null), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435391, null);
+research/artifacts/decompiled-dex2/sources/defpackage/yv.java:12:        mqd.z(qlmVar, "sendMessageDirectiveHandler");
+research/artifacts/decompiled-dex2/sources/defpackage/bmc.java:4:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/bmc.java:66:    public final void l(c8q c8qVar, ClientMessage clientMessage) {
+research/artifacts/decompiled-dex2/sources/defpackage/s4k.java:5:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/s4k.java:123:    public final void l(c8q c8qVar, ClientMessage clientMessage) {
+research/artifacts/decompiled-dex2/sources/defpackage/ujr.java:27:        mqd.z(dopVar, "sendMessageFacade");
+research/artifacts/decompiled-dex2/sources/defpackage/app.java:62:        mqd.z(tlmVar, "sendMessageTimeProfiler");
+research/artifacts/decompiled-dex2/sources/defpackage/hkd.java:118:        mqd.z(dopVar, "sendMessageFacade");
+research/artifacts/decompiled-dex2/sources/defpackage/fuk.java:16:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/fuk.java:259:                return new fuk((kpm) this.f, (ClientMessage) this.g, ic6Var, 17);
+research/artifacts/decompiled-dex2/sources/defpackage/fuk.java:593:                ((kpm) this.f).a.J.l(null, (ClientMessage) this.g);
+research/artifacts/decompiled-dex2/sources/defpackage/f92.java:6:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/f92.java:30:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/f92.java:38:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new UpdateFields(((pag) this.f).b.b, ((xfq) this.g).a, (Integer) this.h, null), null, null, null, null, null, null, null, null, false, 0, false, 268369919, null);
+research/artifacts/decompiled-dex2/sources/defpackage/f92.java:57:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new Vote(str, j, numArr, iOrdinal, messageRef), null, null, null, null, null, null, false, 0, false, 268173311, null);
+research/artifacts/decompiled-dex2/sources/defpackage/d84.java:5:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/d84.java:25:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/d84.java:28:        return new ClientMessage(null, null, null, null, null, null, null, null, this.g, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435199, null);
+research/artifacts/decompiled-dex2/sources/defpackage/fmg.java:7:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/fmg.java:214:    public final void l(c8q c8qVar, ClientMessage clientMessage) {
+research/artifacts/decompiled-dex2/sources/defpackage/eq2.java:10:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/eq2.java:159:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new TypingEnhanced(((ds4) obj2).a.b, ylmVar.a, ylmVar.b, new TypingEnhanced.Meta(ylmVar.c, ylmVar.d)), null, null, false, 0, false, 264241151, null);
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:94:                    ReducedChatHistoryResponse.ReducedClientMessage reducedClientMessage = reducedServerMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:95:                    mqd.y(reducedClientMessage, "clientMessage");
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:96:                    ReducedChatHistoryResponse.ReducedPlainMessage reducedPlainMessage = reducedClientMessage.plain;
+research/artifacts/decompiled-dex2/sources/defpackage/r5d.java:157:            jw0Var.sendMessage(jw0Var.obtainMessage(1, zn3Var));
+research/artifacts/decompiled-dex2/sources/defpackage/r5d.java:171:        jw0Var.sendMessage(jw0Var.obtainMessage(0, zn3Var));
+research/artifacts/decompiled-dex2/sources/defpackage/ik4.java:10:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/ik4.java:31:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/ik4.java:48:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new ChatOpen(str, iOrdinal, new ClientInfo(strB, strC, language, str2), messengerSupportContext), false, 0, false, 251658239, null);
+research/artifacts/decompiled-dex2/sources/defpackage/ik4.java:50:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, (PinMessage) obj, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268431359, null);
+research/artifacts/decompiled-dex2/sources/defpackage/ik4.java:52:                return (ClientMessage) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/ik4.java:62:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new UserStatusMessage(i2, iH, iX, ko6Var != null ? new CustomStatusMessage(ko6Var.a, ko6Var.b, null, ko6Var.c, 4, null) : null), null, null, null, null, false, 0, false, 267386879, null);
+research/artifacts/decompiled-dex2/sources/defpackage/fi4.java:8:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/fi4.java:27:        ClientMessage clientMessage;
+
+===== HISTORY SYNC ENTRY POINTS =====
+===== woc.java =====
+10-import com.yandex.messaging.core.net.entities.HiddenPrivateChatsBucket;
+11-import com.yandex.messaging.core.net.entities.MiniappsBucket;
+12-import com.yandex.messaging.core.net.entities.PinnedChatsBucket;
+13-import com.yandex.messaging.core.net.entities.PreferencesBucket;
+14-import com.yandex.messaging.core.net.entities.PrivacyBucket;
+15-import com.yandex.messaging.core.net.entities.RestrictionsBucket;
+16-import com.yandex.messaging.core.net.entities.StickerPacksBucket;
+17-import com.yandex.messaging.core.net.entities.UserStatusPresetBucket;
+18:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+19-import com.yandex.messaging.core.net.entities.proto.ChatInfoFromTransport;
+20-import com.yandex.messaging.core.net.entities.proto.ChatRole;
+21:import com.yandex.messaging.core.net.entities.proto.HistoryResponse;
+22-import com.yandex.messaging.core.net.entities.proto.PinnedMessageInfo;
+23-import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+24-import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+25-import com.yandex.messaging.core.net.entities.proto.message.ReducedUserInfo;
+26-import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+27-import com.yandex.messaging.core.net.entities.proto.message.ServerMessageInfo;
+28-import com.yandex.messaging.internal.entities.ChatFlags;
+29-import com.yandex.messaging.internal.entities.ChatNamespaces;
+--
+81-    public final mwk z;
+82-
+83-    static {
+84-        e0f e0fVar = s19.b;
+85-        O = s19.n(y62.T(7, x19.h));
+86-    }
+87-
+88-    public woc(eoc eocVar, wep wepVar, ueg uegVar, zmc zmcVar, dj4 dj4Var, do4 do4Var, ike ikeVar, uqg uqgVar, qp0 qp0Var, kx4 kx4Var, anh anhVar, keo keoVar, Looper looper, ne6 ne6Var, ayo ayoVar, eaa eaaVar, n2s n2sVar, oo6 oo6Var, qe1 qe1Var, wxr wxrVar, p4b p4bVar, koc kocVar, odj odjVar, gpg gpgVar, hqq hqqVar, mwk mwkVar, k4k k4kVar, ike ikeVar2, ike ikeVar3, ike ikeVar4, z3f z3fVar, x20 x20Var, vq0 vq0Var, ike ikeVar5, vcj vcjVar, k45 k45Var, SharedPreferences sharedPreferences) {
+89:        mqd.z(eocVar, "historyLoader");
+90-        mqd.z(wepVar, "threadsHistoryLoader");
+91-        mqd.z(uegVar, "cacheStorage");
+92-        mqd.z(zmcVar, "hiddenPrivateChatsBucketManager");
+93-        mqd.z(dj4Var, "mutingsController");
+94-        mqd.z(do4Var, "chatScopeHolder");
+95-        mqd.z(ikeVar, "stickersController");
+96-        mqd.z(uqgVar, "missedUsersResolver");
+97-        mqd.z(qp0Var, "appDatabase");
+98-        mqd.z(kx4Var, "chatsLoader");
+99-        mqd.z(anhVar, "noSchemeObjectsVersionRepository");
+100:        mqd.z(keoVar, "syncVersionCalculator");
+101-        mqd.z(looper, "logicLooper");
+102-        mqd.z(ne6Var, "dispatchers");
+103-        mqd.z(ayoVar, "telemostController");
+104-        mqd.z(eaaVar, "experimentsController");
+105-        mqd.z(n2sVar, "workspaceVersionHandler");
+106-        mqd.z(oo6Var, "customStatusesController");
+107-        mqd.z(qe1Var, "authorizedApiCalls");
+108-        mqd.z(wxrVar, "whoamiLoader");
+109-        mqd.z(p4bVar, "foldersRepository");
+110:        mqd.z(kocVar, "syncMetricsReporter");
+111-        mqd.z(odjVar, "personalPreferencesController");
+112-        mqd.z(gpgVar, "migrationEnvironmentController");
+113-        mqd.z(hqqVar, "userCredentials");
+114-        mqd.z(mwkVar, "registrationController");
+115-        mqd.z(k4kVar, "profileMainCoroutineScope");
+116-        mqd.z(ikeVar2, "recreateProfileOnMismatchGuidFeatureToggle");
+117-        mqd.z(ikeVar3, "improvedHistorySyncFeatureToggle");
+118-        mqd.z(ikeVar4, "skipMeetingsInHistorySyncFeatureToggle");
+--
+172-    public static final long a(woc wocVar, List list) {
+173-        long jLongValue;
+174-        long jLongValue2;
+175-        Long lValueOf;
+176-        Long lValueOf2;
+177-        Iterator it = list.iterator();
+178-        Long l = null;
+179-        if (it.hasNext()) {
+180:            ChatHistoryResponse.OutMessage[] outMessageArr = ((ChatHistoryResponse) it.next()).messages;
+181-            if (outMessageArr == null) {
+182-                jLongValue = 0;
+183-            } else {
+184-                if (outMessageArr.length != 0) {
+185-                    lValueOf2 = Long.valueOf(outMessageArr[0].serverMessage.serverMessageInfo.timestamp);
+186-                    int length = outMessageArr.length - 1;
+187-                    if (1 <= length) {
+188-                        int i = 1;
+--
+203-                if (lValueOf2 != null) {
+204-                    jLongValue = lValueOf2.longValue();
+205-                } else {
+206-                    jLongValue = 0;
+207-                }
+208-            }
+209-            Long lValueOf4 = Long.valueOf(jLongValue);
+210-            while (it.hasNext()) {
+211:                ChatHistoryResponse.OutMessage[] outMessageArr2 = ((ChatHistoryResponse) it.next()).messages;
+212-                if (outMessageArr2 == null) {
+213-                    jLongValue2 = 0;
+214-                } else {
+215-                    if (outMessageArr2.length != 0) {
+216-                        lValueOf = Long.valueOf(outMessageArr2[0].serverMessage.serverMessageInfo.timestamp);
+217-                        int length2 = outMessageArr2.length - 1;
+218-                        if (1 <= length2) {
+219-                            int i2 = 1;
+--
+249-        }
+250-        return 0L;
+251-    }
+252-
+253-    public static final long b(woc wocVar, List list) {
+254-        Long l;
+255-        Iterator it = list.iterator();
+256-        if (it.hasNext()) {
+257:            ChatRole chatRole = ((ChatHistoryResponse) it.next()).myRole;
+258-            Long lValueOf = Long.valueOf(chatRole != null ? chatRole.version : 0L);
+259-            while (it.hasNext()) {
+260:                ChatRole chatRole2 = ((ChatHistoryResponse) it.next()).myRole;
+261-                Long lValueOf2 = Long.valueOf(chatRole2 != null ? chatRole2.version : 0L);
+262-                if (lValueOf.compareTo(lValueOf2) < 0) {
+263-                    lValueOf = lValueOf2;
+264-                }
+265-            }
+266-            l = lValueOf;
+267-        } else {
+268-            l = null;
+--
+277-    /* JADX WARN: Code duplicated, block: B:119:0x02b9  */
+278-    /* JADX WARN: Code duplicated, block: B:120:0x02bc  */
+279-    /* JADX WARN: Code duplicated, block: B:124:0x02c4  */
+280-    /* JADX WARN: Code duplicated, block: B:138:? A[RETURN, SYNTHETIC] */
+281-    /* JADX WARN: Code duplicated, block: B:72:0x0174  */
+282-    /* JADX WARN: Code duplicated, block: B:8:0x001e  */
+283-    /* JADX WARN: Multi-variable type inference failed */
+284-    /* JADX WARN: Type inference failed for: r14v1 */
+285:    /* JADX WARN: Type inference failed for: r14v2, types: [com.yandex.messaging.core.net.entities.BucketsData, com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse[], com.yandex.messaging.core.net.entities.proto.HistoryResponse, java.util.ArrayList] */
+286-    /* JADX WARN: Type inference failed for: r14v4 */
+287:    public static final Object d(woc wocVar, long j, HistoryResponse historyResponse, BucketsData bucketsData, ArrayList arrayList, kc6 kc6Var) {
+288-        moc mocVar;
+289-        ArrayList arrayList2;
+290:        HistoryResponse historyResponse2;
+291-        List list;
+292-        boolean z;
+293-        ArrayList arrayList3;
+294:        ChatHistoryResponse[] chatHistoryResponseArr;
+295-        BucketsData bucketsData2;
+296-        long j2;
+297-        Iterator it;
+298-        LinkedHashMap linkedHashMap;
+299-        PinnedMessageInfo pinnedMessageInfo;
+300-        ChatRole chatRole;
+301-        Long l;
+302-        List list2;
+303-        boolean z2;
+304-        ?? r14;
+305-        boolean z3;
+306-        boolean z4;
+307-        Serializable serializable;
+308-        yuk yukVar;
+309-        ChatData[] chatDataArr;
+310-        long j3;
+311:        HistoryResponse historyResponse3;
+312-        String str;
+313-        anh anhVar;
+314-        int i;
+315-        boolean z5;
+316-        koc kocVar = wocVar.v;
+317-        if (kc6Var instanceof moc) {
+318-            mocVar = (moc) kc6Var;
+319-            int i2 = mocVar.p;
+--
+330-        Serializable serializable2 = xe6.a;
+331-        int i3 = mocVar2.p;
+332-        if (i3 != 0) {
+333-            if (i3 == 1) {
+334-                long j4 = mocVar2.d;
+335-                list = mocVar2.j;
+336-                ArrayList arrayList4 = mocVar2.i;
+337-                arrayList2 = mocVar2.h;
+338:                ChatHistoryResponse[] chatHistoryResponseArr2 = mocVar2.g;
+339-                BucketsData bucketsData3 = mocVar2.f;
+340:                HistoryResponse historyResponse4 = mocVar2.e;
+341-                nzn.U(obj);
+342-                arrayList3 = arrayList4;
+343:                chatHistoryResponseArr = chatHistoryResponseArr2;
+344-                bucketsData2 = bucketsData3;
+345-                j2 = j4;
+346:                historyResponse2 = historyResponse4;
+347-                z = true;
+348-            } else if (i3 == 2) {
+349-                boolean z6 = mocVar2.m;
+350-                j3 = mocVar2.d;
+351-                yuk yukVar2 = mocVar2.l;
+352-                ChatData[] chatDataArr2 = mocVar2.k;
+353-                List list3 = mocVar2.j;
+354:                historyResponse3 = mocVar2.e;
+355-                nzn.U(obj);
+356-                serializable = serializable2;
+357-                list2 = list3;
+358-                z4 = false;
+359-                z3 = true;
+360-                z2 = z6;
+361-                yukVar = yukVar2;
+362-                chatDataArr = chatDataArr2;
+--
+368-                mocVar2.i = r14;
+369-                mocVar2.j = list2;
+370-                mocVar2.k = chatDataArr;
+371-                mocVar2.l = yukVar;
+372-                mocVar2.d = j3;
+373-                mocVar2.m = z2;
+374-                mocVar2.p = 3;
+375-                str = r14;
+376:                if (wocVar.k(historyResponse3, mocVar2) == serializable) {
+377-                    return serializable;
+378-                }
+379-            } else {
+380-                if (i3 != 3) {
+381-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+382-                }
+383-                yukVar = mocVar2.l;
+384-                chatDataArr = mocVar2.k;
+--
+402-                SharedPreferences.Editor editorEdit = anhVar.a.edit();
+403-                editorEdit.putInt("no_scheme_objects_version", 10);
+404-                editorEdit.apply();
+405-            }
+406-            return new loc(yukVar.a, chatDataArr.length, list2.size());
+407-        }
+408-        nzn.U(obj);
+409-        atl.s(wocVar.m, Looper.myLooper(), null);
+410:        ChatHistoryResponse[] chatHistoryResponseArr3 = historyResponse.chats;
+411:        if (chatHistoryResponseArr3 == null) {
+412:            chatHistoryResponseArr3 = new ChatHistoryResponse[0];
+413-        }
+414:        ChatHistoryResponse[] chatHistoryResponseArr4 = chatHistoryResponseArr3;
+415-        arrayList2 = new ArrayList();
+416:        for (ChatHistoryResponse chatHistoryResponse : chatHistoryResponseArr4) {
+417:            ChatRole chatRole2 = chatHistoryResponse.myRole;
+418-            if (chatRole2 != null && chatRole2.role == 3) {
+419:                arrayList2.add(chatHistoryResponse);
+420-            }
+421-        }
+422-        ArrayList arrayList5 = new ArrayList();
+423:        for (ChatHistoryResponse chatHistoryResponse2 : chatHistoryResponseArr4) {
+424:            ChatRole chatRole3 = chatHistoryResponse2.myRole;
+425-            if (chatRole3 == null || chatRole3.role != 3) {
+426:                arrayList5.add(chatHistoryResponse2);
+427-            }
+428-        }
+===== kbg.java =====
+1-package defpackage;
+2-
+3:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+4-import com.yandex.messaging.core.net.entities.proto.CommonRequestFields;
+5-import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+6:import com.yandex.messaging.core.net.entities.proto.HistoryResponse;
+7-import com.yandex.messaging.core.net.entities.proto.message.HistoryTranslationDataFilter;
+8-import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+9-
+10-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+11-public abstract class kbg extends k8k {
+12-    public final String k;
+13-    public final tbg l;
+14-    public final String m;
+--
+23-        this.k = str;
+24-        this.l = tbgVar;
+25-        this.m = str2;
+26-        this.n = str3;
+27-        this.o = j;
+28-        this.p = x20Var;
+29-    }
+30-
+31:    public final ChatHistoryResponse R(HistoryResponse historyResponse) {
+32:        mqd.z(historyResponse, "response");
+33:        ChatHistoryResponse[] chatHistoryResponseArr = historyResponse.chats;
+34:        if (chatHistoryResponseArr != null) {
+35:            for (ChatHistoryResponse chatHistoryResponse : chatHistoryResponseArr) {
+36:                if (mqd.s(chatHistoryResponse.chatId, this.k)) {
+37:                    return chatHistoryResponse;
+38-                }
+39-            }
+40-        }
+41-        return null;
+42-    }
+43-
+44-    /* JADX INFO: Thrown type has an unknown type hierarchy: mnh */
+45-    @Override // 
+46-    /* JADX INFO: renamed from: S */
+47-    public HistoryRequest v(int i, int i2) throws mnh {
+48:        HistoryRequest historyRequest = new HistoryRequest();
+49:        historyRequest.chatId = this.k;
+50-        tbg tbgVar = this.l;
+51-        sbg sbgVar = tbgVar.c;
+52-        long j = tbgVar.a;
+53-        long j2 = tbgVar.b;
+54-        int iOrdinal = sbgVar.ordinal();
+55-        long j3 = this.o;
+56-        if (iOrdinal == 0) {
+57:            historyRequest.limit = 1 + j3;
+58:            historyRequest.offset = j3;
+59:            historyRequest.maxTimestamp = j2;
+60:            historyRequest.minTimestamp = j2;
+61-        } else if (iOrdinal == 1) {
+62:            historyRequest.limit = j3;
+63:            historyRequest.offset = 0L;
+64:            historyRequest.maxTimestamp = j + 1;
+65:            historyRequest.minTimestamp = j2;
+66-        } else {
+67-            if (iOrdinal != 2) {
+68-                throw new mnh();
+69-            }
+70:            historyRequest.limit = ((long) 2) * j3;
+71:            historyRequest.offset = j3 + 1;
+72:            historyRequest.maxTimestamp = j + 1;
+73:            historyRequest.minTimestamp = j2;
+74-        }
+75:        historyRequest.inviteHash = this.m;
+76-        String str = this.n;
+77-        if (str != null) {
+78:            historyRequest.translationDataFilter = new HistoryTranslationDataFilter(str, null);
+79-        }
+80:        historyRequest.commonFields = new CommonRequestFields(i2 > 0, i);
+81:        return historyRequest;
+82-    }
+83-
+84:    public void x(HistoryResponse historyResponse) {
+85-        String chatId;
+86:        ChatHistoryResponse chatHistoryResponse;
+87:        mqd.z(historyResponse, "response");
+88:        ChatHistoryResponse[] chatHistoryResponseArr = historyResponse.chats;
+89:        int length = chatHistoryResponseArr != null ? chatHistoryResponseArr.length : 0;
+90-        boolean z = length <= 1;
+91-        boolean zU = atl.u();
+92-        String str = this.k;
+93-        if (!zU && !z) {
+94:            atl.y("queried messages for single chat " + str + ", but loaded history for " + length + " chats");
+95-        }
+96-        String str2 = null;
+97-        x20 x20Var = this.p;
+98-        if (length > 1) {
+99:            ChatHistoryResponse[] chatHistoryResponseArr2 = historyResponse.chats;
+100:            x20Var.reportEvent("tech_9225_multiple_chats_in_history", xgf.k0(new ypi[]{new ypi("chatsCount", Integer.valueOf(length)), new ypi("chats", chatHistoryResponseArr2 != null ? tt0.K0(chatHistoryResponseArr2, (String) null, new r1g(12), 31) : null), new ypi("queriedChat", str)}));
+101-        }
+102-        if (length == 1) {
+103:            ChatHistoryResponse[] chatHistoryResponseArr3 = historyResponse.chats;
+104:            if (chatHistoryResponseArr3 != null && (chatHistoryResponse = (ChatHistoryResponse) tt0.z0(chatHistoryResponseArr3)) != null) {
+105:                str2 = chatHistoryResponse.chatId;
+106-            }
+107-            if (!atl.u()) {
+108-                atl.n(str2, str, "chatIds must be same");
+109-            }
+110-            if (!mqd.s(str2, str)) {
+111-                x20Var.reportEvent("tech_9225_incorrect_chat_answer", xgf.k0(new ypi[]{new ypi("queriedChatId", str), new ypi("responseChatId", str2)}));
+112-            }
+113-        }
+114:        ChatHistoryResponse[] chatHistoryResponseArr4 = historyResponse.chats;
+115:        if (chatHistoryResponseArr4 != null) {
+116:            for (ChatHistoryResponse chatHistoryResponse2 : chatHistoryResponseArr4) {
+117:                ChatHistoryResponse.OutMessage[] outMessageArr = chatHistoryResponse2.messages;
+118-                if (outMessageArr != null) {
+119:                    for (ChatHistoryResponse.OutMessage outMessage : outMessageArr) {
+120-                        PlainMessage plainMessage = outMessage.serverMessage.clientMessage.plain;
+121-                        if (plainMessage != null && (chatId = plainMessage.getChatId()) != null) {
+122:                            String str3 = chatHistoryResponse2.chatId;
+123-                            if (!atl.u()) {
+124-                                atl.n(str3, chatId, "ChatIds must be same");
+125-                            }
+126:                            if (!mqd.s(chatHistoryResponse2.chatId, chatId)) {
+127:                                x20Var.reportEvent("tech_9225_incorrect_chat_id_in_messages", xgf.k0(new ypi[]{new ypi("queriedChatId", str), new ypi("responseChatId", chatHistoryResponse2.chatId), new ypi("msgChatId", chatId)}));
+128-                            }
+129-                        }
+130-                    }
+131-                }
+132-            }
+133-        }
+134-    }
+135-}
+===== l5i.java =====
+1-package defpackage;
+2-
+3-import android.os.Looper;
+4:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+5:import com.yandex.messaging.core.net.entities.proto.HistoryResponse;
+6-
+7-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+8-public final class l5i {
+9-    public final Looper a = Looper.myLooper();
+10-    public final gkp b;
+11-    public final it4 c;
+12-    public final mgn d;
+13-    public cw3 e;
+14-
+15-    public l5i(gkp gkpVar, it4 it4Var, mgn mgnVar) {
+16-        this.b = gkpVar;
+17-        this.c = it4Var;
+18-        this.d = mgnVar;
+19-    }
+20-
+21:    public static void a(l5i l5iVar, HistoryResponse historyResponse) {
+22:        ChatHistoryResponse chatHistoryResponse = null;
+23-        atl.s(l5iVar.a, Looper.myLooper(), null);
+24-        String str = l5iVar.b.a.b;
+25-        l5iVar.e = null;
+26:        ChatHistoryResponse[] chatHistoryResponseArr = historyResponse.chats;
+27:        if (chatHistoryResponseArr == null || chatHistoryResponseArr.length == 0) {
+28-            return;
+29-        }
+30:        for (ChatHistoryResponse chatHistoryResponse2 : chatHistoryResponseArr) {
+31:            if (chatHistoryResponse2.chatId.equals(str)) {
+32:                chatHistoryResponse = chatHistoryResponse2;
+33-                break;
+34-            }
+35-        }
+36:        if (chatHistoryResponse == null) {
+37-            return;
+38-        }
+39:        l5iVar.c.h(chatHistoryResponse);
+40-    }
+41-}
