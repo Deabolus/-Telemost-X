@@ -1,0 +1,349 @@
+package defpackage;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Handler;
+import android.os.Looper;
+import android.preference.PreferenceManager;
+import android.view.GestureDetector;
+import android.view.ViewGroup;
+import androidx.compose.ui.node.LayoutNode;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.yandex.messaging.internal.entities.BusinessItem;
+import java.nio.ByteBuffer;
+import java.security.GeneralSecurityException;
+import java.security.Provider;
+import java.security.Security;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Set;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes3.dex */
+public final class poq implements gfg, upa, xpf, rja, uy6, uoq, fb6, j61, h4o, te9, lca, ehc {
+    public static final Object c = new Object();
+    public final /* synthetic */ int a;
+    public Object b;
+
+    public /* synthetic */ poq(Object obj, int i) {
+        this.a = i;
+        this.b = obj;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:102:0x015c  */
+    /* JADX WARN: Code duplicated, block: B:115:0x017f  */
+    /* JADX WARN: Code duplicated, block: B:36:0x0097  */
+    /* JADX WARN: Code duplicated, block: B:38:0x009b  */
+    /* JADX WARN: Code duplicated, block: B:40:0x00a7  */
+    /* JADX WARN: Code duplicated, block: B:77:0x0108  */
+    /* JADX WARN: Code duplicated, block: B:79:0x010e  */
+    /* JADX WARN: Code duplicated, block: B:7:0x0017  */
+    /* JADX WARN: Code duplicated, block: B:82:0x0115  */
+    /* JADX WARN: Code duplicated, block: B:85:0x0119  */
+    /* JADX WARN: Code duplicated, block: B:89:0x0124  */
+    /* JADX WARN: Code duplicated, block: B:91:0x012a  */
+    /* JADX WARN: Code duplicated, block: B:93:0x0134  */
+    /* JADX WARN: Code duplicated, block: B:94:0x0136  */
+    /* JADX WARN: Code duplicated, block: B:98:0x0145  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:102:0x015c -> B:103:0x015d). Please report as a decompilation issue!!! */
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+        */
+    public static final java.lang.Object m(defpackage.poq r11, mx r12, kc6 r13) {
+        /*
+            Method dump skipped, instruction units count: 389
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: defpackage.poq.m(poq, mx, kc6):java.lang.Object");
+    }
+
+    public /* bridge */ /* synthetic */ Object C() {
+        return "api.messenger.alpha.yandex.net";
+    }
+
+    public Object I() {
+        ((ihg) this.b).getClass();
+        return "api.messenger.yandex.net";
+    }
+
+    public /* bridge */ /* synthetic */ Object K() {
+        return "api.messenger.yandex.net";
+    }
+
+    public /* bridge */ /* synthetic */ Object L() {
+        return "api.messenger.test.yandex.net";
+    }
+
+    public /* bridge */ /* synthetic */ Object V() {
+        return "api.messenger.alpha.yandex.net";
+    }
+
+    public void a() {
+    }
+
+    public void b(ppa ppaVar) {
+        ((gw3) this.b).f(ppaVar.a);
+    }
+
+    public void c(npa npaVar) {
+    }
+
+    public Object d(ic6 ic6Var) {
+        switch (this.a) {
+            case 7:
+                return new cja((Bitmap) this.b);
+            default:
+                Drawable drawable = (Drawable) this.b;
+                if (!(drawable instanceof BitmapDrawable)) {
+                    return new dja(new h3d(drawable));
+                }
+                Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+                mqd.y(bitmap, "getBitmap(...)");
+                return new cja(bitmap);
+        }
+    }
+
+    public String e(Object obj) {
+        return ((fgc) obj).b;
+    }
+
+    public Object f() {
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        byteBuffer.position(0);
+        return byteBuffer;
+    }
+
+    /* JADX INFO: Thrown type has an unknown type hierarchy: mnh */
+    @Override // defpackage.uoq
+    public void g(BusinessItem businessItem) throws mnh {
+        mqd.z(businessItem, "item");
+        ((k94) this.b).t.i0(businessItem);
+    }
+
+    public int getHeight() {
+        return ((ExtendedFloatingActionButton) this.b).getCollapsedSize();
+    }
+
+    public int getPaddingEnd() {
+        return ((ExtendedFloatingActionButton) this.b).getCollapsedPadding();
+    }
+
+    public int getPaddingStart() {
+        return ((ExtendedFloatingActionButton) this.b).getCollapsedPadding();
+    }
+
+    public int getWidth() {
+        return ((ExtendedFloatingActionButton) this.b).getCollapsedSize();
+    }
+
+    public void h() {
+        v8a v8aVar = ((nj7) this.b).W0;
+        if (v8aVar != null) {
+            v8aVar.a();
+        }
+    }
+
+    @Override // defpackage.uoq
+    public void i(BusinessItem businessItem) {
+        mqd.z(businessItem, "item");
+    }
+
+    public Iterator j() {
+        return ((Iterable) this.b).iterator();
+    }
+
+    public boolean k(db6 db6Var) {
+        mqd.z(db6Var, "contentType");
+        return db6Var.N((db6) this.b);
+    }
+
+    public void l() {
+        v8a v8aVar = ((nj7) this.b).W0;
+        if (v8aVar != null) {
+            v8aVar.a();
+        }
+    }
+
+    public void n(LayoutNode layoutNode) {
+        if (!layoutNode.J()) {
+            ggd.b("DepthSortedSet.add called on an unattached node");
+        }
+        ((ohn) this.b).add(layoutNode);
+    }
+
+    /* JADX WARN: Code duplicated, block: B:7:0x0013  */
+    public Object o(mx mxVar, kc6 kc6Var) {
+        kx kxVar;
+        if (kc6Var instanceof kx) {
+            kxVar = (kx) kc6Var;
+            int i = kxVar.f;
+            if ((i & Integer.MIN_VALUE) != 0) {
+                kxVar.f = i - Integer.MIN_VALUE;
+            } else {
+                kxVar = new kx(this, kc6Var);
+            }
+        } else {
+            kxVar = new kx(this, kc6Var);
+        }
+        Object objP = kxVar.d;
+        xe6 xe6Var = xe6.a;
+        int i2 = kxVar.f;
+        if (i2 == 0) {
+            nzn.U(objP);
+            if (mxVar.a.length() == 0) {
+                return new rx(hx.e);
+            }
+            if (mxVar.a.length() > 10000) {
+                return new rx(hx.g);
+            }
+            k3 k3Var = new k3(this, mxVar, (ic6) null, 13);
+            kxVar.f = 1;
+            objP = j2n.p(120000L, k3Var, kxVar);
+            if (objP == xe6Var) {
+                return xe6Var;
+            }
+        } else {
+            if (i2 != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            nzn.U(objP);
+        }
+        tx txVar = (tx) objP;
+        return txVar == null ? new rx(hx.b) : txVar;
+    }
+
+    public void p() {
+        m49 m49Var = (m49) this.b;
+        m49Var.e1.cancel();
+        m49Var.k1 = null;
+    }
+
+    public Object q() {
+        ((ihg) this.b).getClass();
+        return "api.messenger.test.yandex.net";
+    }
+
+    public Object r(String str) throws GeneralSecurityException {
+        String[] strArr = {"GmsCore_OpenSSL", "AndroidOpenSSL", "Conscrypt"};
+        ArrayList arrayList = new ArrayList();
+        for (int i = 0; i < 3; i++) {
+            Provider provider = Security.getProvider(strArr[i]);
+            if (provider != null) {
+                arrayList.add(provider);
+            }
+        }
+        Iterator it = arrayList.iterator();
+        Exception exc = null;
+        while (it.hasNext()) {
+            try {
+                return ((kf9) this.b).e(str, (Provider) it.next());
+            } catch (Exception e) {
+                if (exc == null) {
+                    exc = e;
+                }
+            }
+        }
+        throw new GeneralSecurityException("No good Provider found.", exc);
+    }
+
+    public gb1 s() {
+        Activity activity = (Activity) this.b;
+        mqd.z(activity, "<this>");
+        return xkc.e0(activity, 2130969805).data != 0 ? gb1.a : gb1.b;
+    }
+
+    public boolean t(LayoutNode layoutNode) {
+        if (!layoutNode.J()) {
+            ggd.b("DepthSortedSet.remove called on an unattached node");
+        }
+        return ((ohn) this.b).remove(layoutNode);
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 20:
+                return ((ohn) this.b).toString();
+            default:
+                return super.toString();
+        }
+    }
+
+    public ViewGroup.LayoutParams v() {
+        ExtendedFloatingActionButton extendedFloatingActionButton = (ExtendedFloatingActionButton) this.b;
+        return new ViewGroup.LayoutParams(extendedFloatingActionButton.getCollapsedSize(), extendedFloatingActionButton.getCollapsedSize());
+    }
+
+    public void x() {
+        m49 m49Var = (m49) this.b;
+        m49Var.e1.cancel();
+        m49Var.k1 = null;
+    }
+
+    public poq(ihg ihgVar) {
+        this.a = 3;
+        mqd.z(ihgVar, "hostProvider");
+        this.b = ihgVar;
+    }
+
+    public poq(Activity activity) {
+        this.a = 5;
+        mqd.z(activity, "activity");
+        this.b = activity;
+    }
+
+    public poq(fx fxVar) {
+        this.a = 2;
+        mqd.z(fxVar, "dataSource");
+        this.b = fxVar;
+    }
+
+    public poq(Context context, GestureDetector.SimpleOnGestureListener simpleOnGestureListener, Handler handler) {
+        this.a = 28;
+        this.b = new GestureDetector(context, simpleOnGestureListener, handler);
+    }
+
+    public poq(fi5 fi5Var) {
+        this.a = 1;
+        Context context = (Context) fi5Var.a;
+        String str = (String) fi5Var.b;
+        String str2 = (String) fi5Var.c;
+        if (str != null) {
+            Context applicationContext = context.getApplicationContext();
+            if (str2 == null) {
+                PreferenceManager.getDefaultSharedPreferences(applicationContext).edit();
+            } else {
+                applicationContext.getSharedPreferences(str2, 0).edit();
+            }
+            this.b = (d6c) fi5Var.g;
+            return;
+        }
+        throw new IllegalArgumentException("keysetName cannot be null");
+    }
+
+    public poq(int i) {
+        this.a = i;
+        switch (i) {
+            case 17:
+                this.b = hu0.Y(rrn.a(Boolean.TRUE));
+                break;
+            case 18:
+                Set set = bud.a;
+                mqd.z(set, "needInterceptPaths");
+                this.b = set;
+                break;
+            case 19:
+                this.b = o8f.T(Looper.getMainLooper());
+                break;
+            case 20:
+                this.b = new ohn(f3r.b);
+                break;
+            case 27:
+                this.b = null;
+                break;
+        }
+    }
+}
