@@ -1,72 +1,32 @@
-========== CREDENTIALS ==========
+
+========== com.yandex.passport.internal.provider.InternalProvider ==========
 INFO  - loading ...
-INFO  - Saving class 'com.yandex.passport.internal.credentials.e' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-8/credentials/sources/com/yandex/passport/internal/credentials/e.java'
+INFO  - Saving class 'com.yandex.passport.internal.provider.InternalProvider' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-9/com_yandex_passport_internal_provider_InternalProvider/sources/com/yandex/passport/internal/provider/InternalProvider.java'
 INFO  - done
 
-========== TOKEN PERFORMER ==========
+========== com.yandex.passport.internal.util.k ==========
 INFO  - loading ...
-INFO  - Saving class 'com.yandex.passport.internal.methods.performer.e' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-8/performer/sources/com/yandex/passport/internal/methods/performer/e.java'
-ERROR - finished with errors, count: 1
+INFO  - Saving class 'com.yandex.passport.internal.util.k' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-9/com_yandex_passport_internal_util_k/sources/com/yandex/passport/internal/util/k.java'
+INFO  - done
 
-========== PROVIDER / MANIFEST SEARCH ==========
-research/notes/auth-stage-5/o.java:18:import com.yandex.passport.internal.provider.InternalProvider;
-research/notes/auth-stage-6/j.java:3:import android.content.ContentProviderClient;
-research/notes/auth-stage-6/j.java:230:        ContentProviderClient r8 = ((ContentResolver) r6.b).acquireUnstableContentProviderClient((Uri) r6.c);     // Catch: Throwable -> L23
-research/notes/auth-stage-7/e.java:831:        com.yandex.passport.internal.autologin.ui.e r8 = com.yandex.passport.internal.provider.communication.c.d;     // Catch: RemoteException -> L10
-research/notes/auth-stage-7/e.java:841:        com.yandex.passport.internal.provider.communication.l r14 = (com.yandex.passport.internal.provider.communication.l) r13;     // Catch: RemoteException -> L10
-research/notes/auth-stage-7/e.java:842:        if ((r14 instanceof com.yandex.passport.internal.provider.communication.j) == false) goto L35;
-research/notes/auth-stage-7/e.java:843:        com.yandex.passport.internal.provider.communication.e r15 = (com.yandex.passport.internal.provider.communication.e) ((y8k) r8.c).get();     // Catch: RemoteException -> L10
-research/notes/auth-stage-7/e.java:846:        r7 = com.yandex.passport.internal.provider.communication.r.b(r15, (com.yandex.passport.internal.provider.communication.j) r14, this);     // Catch: RemoteException -> L10
-research/notes/auth-stage-7/e.java:850:        if ((r14 instanceof com.yandex.passport.internal.provider.communication.k) == false) goto L43;
-research/notes/auth-stage-7/e.java:851:        com.yandex.passport.internal.provider.communication.i r16 = (com.yandex.passport.internal.provider.communication.i) ((y8k) r8.d).get();     // Catch: RemoteException -> L10
-research/notes/auth-stage-7/e.java:854:        r2 = com.yandex.passport.internal.provider.communication.r.b(r16, (com.yandex.passport.internal.provider.communication.k) r14, this);     // Catch: RemoteException -> L10
-research/notes/auth-stage-8/performer_e.java:831:        com.yandex.passport.internal.autologin.ui.e r8 = com.yandex.passport.internal.provider.communication.c.d;     // Catch: RemoteException -> L10
-research/notes/auth-stage-8/performer_e.java:841:        com.yandex.passport.internal.provider.communication.l r14 = (com.yandex.passport.internal.provider.communication.l) r13;     // Catch: RemoteException -> L10
-research/notes/auth-stage-8/performer_e.java:842:        if ((r14 instanceof com.yandex.passport.internal.provider.communication.j) == false) goto L35;
-research/notes/auth-stage-8/performer_e.java:843:        com.yandex.passport.internal.provider.communication.e r15 = (com.yandex.passport.internal.provider.communication.e) ((y8k) r8.c).get();     // Catch: RemoteException -> L10
-research/notes/auth-stage-8/performer_e.java:846:        r7 = com.yandex.passport.internal.provider.communication.r.b(r15, (com.yandex.passport.internal.provider.communication.j) r14, this);     // Catch: RemoteException -> L10
-research/notes/auth-stage-8/performer_e.java:850:        if ((r14 instanceof com.yandex.passport.internal.provider.communication.k) == false) goto L43;
-research/notes/auth-stage-8/performer_e.java:851:        com.yandex.passport.internal.provider.communication.i r16 = (com.yandex.passport.internal.provider.communication.i) ((y8k) r8.d).get();     // Catch: RemoteException -> L10
-research/notes/auth-stage-8/performer_e.java:854:        r2 = com.yandex.passport.internal.provider.communication.r.b(r16, (com.yandex.passport.internal.provider.communication.k) r14, this);     // Catch: RemoteException -> L10
-research/artifacts/auth-stage-5/classes3_com_yandex_passport_internal_impl_o/sources/com/yandex/passport/internal/impl/o.java:18:import com.yandex.passport.internal.provider.InternalProvider;
-research/artifacts/auth-stage-6/com_yandex_passport_internal_methods_requester_j/sources/com/yandex/passport/internal/methods/requester/j.java:3:import android.content.ContentProviderClient;
-research/artifacts/auth-stage-6/com_yandex_passport_internal_methods_requester_j/sources/com/yandex/passport/internal/methods/requester/j.java:230:        ContentProviderClient r8 = ((ContentResolver) r6.b).acquireUnstableContentProviderClient((Uri) r6.c);     // Catch: Throwable -> L23
-research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_performer_e/sources/com/yandex/passport/internal/methods/performer/e.java:831:        com.yandex.passport.internal.autologin.ui.e r8 = com.yandex.passport.internal.provider.communication.c.d;     // Catch: RemoteException -> L10
-research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_performer_e/sources/com/yandex/passport/internal/methods/performer/e.java:841:        com.yandex.passport.internal.provider.communication.l r14 = (com.yandex.passport.internal.provider.communication.l) r13;     // Catch: RemoteException -> L10
-research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_performer_e/sources/com/yandex/passport/internal/methods/performer/e.java:842:        if ((r14 instanceof com.yandex.passport.internal.provider.communication.j) == false) goto L35;
-research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_performer_e/sources/com/yandex/passport/internal/methods/performer/e.java:843:        com.yandex.passport.internal.provider.communication.e r15 = (com.yandex.passport.internal.provider.communication.e) ((y8k) r8.c).get();     // Catch: RemoteException -> L10
-research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_performer_e/sources/com/yandex/passport/internal/methods/performer/e.java:846:        r7 = com.yandex.passport.internal.provider.communication.r.b(r15, (com.yandex.passport.internal.provider.communication.j) r14, this);     // Catch: RemoteException -> L10
-research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_performer_e/sources/com/yandex/passport/internal/methods/performer/e.java:850:        if ((r14 instanceof com.yandex.passport.internal.provider.communication.k) == false) goto L43;
-research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_performer_e/sources/com/yandex/passport/internal/methods/performer/e.java:851:        com.yandex.passport.internal.provider.communication.i r16 = (com.yandex.passport.internal.provider.communication.i) ((y8k) r8.d).get();     // Catch: RemoteException -> L10
-research/artifacts/auth-stage-7/com_yandex_passport_internal_methods_performer_e/sources/com/yandex/passport/internal/methods/performer/e.java:854:        r2 = com.yandex.passport.internal.provider.communication.r.b(r16, (com.yandex.passport.internal.provider.communication.k) r14, this);     // Catch: RemoteException -> L10
-research/artifacts/auth-stage-8/performer/sources/com/yandex/passport/internal/methods/performer/e.java:831:        com.yandex.passport.internal.autologin.ui.e r8 = com.yandex.passport.internal.provider.communication.c.d;     // Catch: RemoteException -> L10
-research/artifacts/auth-stage-8/performer/sources/com/yandex/passport/internal/methods/performer/e.java:841:        com.yandex.passport.internal.provider.communication.l r14 = (com.yandex.passport.internal.provider.communication.l) r13;     // Catch: RemoteException -> L10
-research/artifacts/auth-stage-8/performer/sources/com/yandex/passport/internal/methods/performer/e.java:842:        if ((r14 instanceof com.yandex.passport.internal.provider.communication.j) == false) goto L35;
-research/artifacts/auth-stage-8/performer/sources/com/yandex/passport/internal/methods/performer/e.java:843:        com.yandex.passport.internal.provider.communication.e r15 = (com.yandex.passport.internal.provider.communication.e) ((y8k) r8.c).get();     // Catch: RemoteException -> L10
-research/artifacts/auth-stage-8/performer/sources/com/yandex/passport/internal/methods/performer/e.java:846:        r7 = com.yandex.passport.internal.provider.communication.r.b(r15, (com.yandex.passport.internal.provider.communication.j) r14, this);     // Catch: RemoteException -> L10
-research/artifacts/auth-stage-8/performer/sources/com/yandex/passport/internal/methods/performer/e.java:850:        if ((r14 instanceof com.yandex.passport.internal.provider.communication.k) == false) goto L43;
-research/artifacts/auth-stage-8/performer/sources/com/yandex/passport/internal/methods/performer/e.java:851:        com.yandex.passport.internal.provider.communication.i r16 = (com.yandex.passport.internal.provider.communication.i) ((y8k) r8.d).get();     // Catch: RemoteException -> L10
-research/artifacts/auth-stage-8/performer/sources/com/yandex/passport/internal/methods/performer/e.java:854:        r2 = com.yandex.passport.internal.provider.communication.r.b(r16, (com.yandex.passport.internal.provider.communication.k) r14, this);     // Catch: RemoteException -> L10
-research/artifacts/decompiled-dex2/sources/com/yandex/attachments/chooser/ChooserFileProvider.java:3:import android.content.ContentProvider;
-research/artifacts/decompiled-dex2/sources/com/yandex/attachments/chooser/ChooserFileProvider.java:15:public class ChooserFileProvider extends ContentProvider {
-research/artifacts/decompiled-dex2/sources/com/yandex/attachments/chooser/ChooserFileProvider.java:19:    @Override // android.content.ContentProvider
-research/artifacts/decompiled-dex2/sources/com/yandex/attachments/chooser/ChooserFileProvider.java:24:    @Override // android.content.ContentProvider
-research/artifacts/decompiled-dex2/sources/com/yandex/attachments/chooser/ChooserFileProvider.java:29:    @Override // android.content.ContentProvider
-research/artifacts/decompiled-dex2/sources/com/yandex/attachments/chooser/ChooserFileProvider.java:34:    @Override // android.content.ContentProvider
-research/artifacts/decompiled-dex2/sources/com/yandex/attachments/chooser/ChooserFileProvider.java:39:    @Override // android.content.ContentProvider
-research/artifacts/decompiled-dex2/sources/com/yandex/attachments/chooser/ChooserFileProvider.java:63:    @Override // android.content.ContentProvider
-research/artifacts/decompiled-dex2/sources/com/yandex/attachments/chooser/ChooserFileProvider.java:88:    @Override // android.content.ContentProvider
-research/artifacts/decompiled-dex2/sources/defpackage/axd.java:36:import com.yandex.passport.internal.provider.InternalProvider;
-research/artifacts/decompiled-dex2/sources/defpackage/xdg.java:188:        edg edgVar = new edg(1, messengerActivity.w(), jeg.class, "applyMainContentWithForceUpdate", "applyMainContentWithForceUpdate(Lcom/yandex/messaging/forceupdate/ForceUpdateContentProvider;)V", 0, 23);
-research/artifacts/decompiled-dex2/sources/defpackage/zid.java:11:import com.yandex.passport.internal.provider.communication.o;
-research/artifacts/decompiled-dex2/sources/defpackage/udr.java:98:import com.yandex.passport.internal.provider.a;
-research/artifacts/decompiled-dex2/sources/defpackage/rmr.java:9:import com.yandex.passport.internal.provider.communication.c;
-research/artifacts/decompiled-dex2/sources/defpackage/rmr.java:10:import com.yandex.passport.internal.provider.communication.d;
+========== com.yandex.passport.internal.methods.n4 ==========
+INFO  - loading ...
+INFO  - Saving class 'com.yandex.passport.internal.methods.n4' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-9/com_yandex_passport_internal_methods_n4/sources/com/yandex/passport/internal/methods/n4.java'
+INFO  - done
 
-========== EXTRACTED FILES ==========
-total 64K
--rw-rw-rw- 1 codespace codespace 1.8K Nov 13 10:09 credentials_e.java
--rw-rw-rw- 1 codespace codespace  57K Nov 13 10:09 performer_e.java
-   68 research/notes/auth-stage-8/credentials_e.java
- 1479 research/notes/auth-stage-8/performer_e.java
- 1547 total
+========== com.yandex.passport.internal.entities.b ==========
+INFO  - loading ...
+INFO  - Saving class 'com.yandex.passport.internal.entities.b' to file '/workspaces/-Telemost-X/research/artifacts/auth-stage-9/com_yandex_passport_internal_entities_b/sources/com/yandex/passport/internal/entities/b.java'
+INFO  - done
+
+========== FILES ==========
+total 32K
+-rw-rw-rw- 1 codespace codespace  19K Nov 13 10:10 InternalProvider.java
+-rw-rw-rw- 1 codespace codespace 1.8K Nov 13 10:11 b.java
+-rw-rw-rw- 1 codespace codespace 1.7K Nov 13 10:10 k.java
+-rw-rw-rw- 1 codespace codespace 1.1K Nov 13 10:11 n4.java
+  635 research/notes/auth-stage-9/InternalProvider.java
+   64 research/notes/auth-stage-9/b.java
+   60 research/notes/auth-stage-9/k.java
+   37 research/notes/auth-stage-9/n4.java
+  796 total
