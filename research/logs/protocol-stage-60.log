@@ -1,0 +1,85 @@
+]633;E;echo "========== ypk.java ==========";5fbee356-0123-495e-b37b-dc4eda18f69b]633;C========== ypk.java ==========
+========== dtr.java ==========
+========== t4s remaining ==========
+    public final void g(dtr dtrVar) {
+        mqd.z(dtrVar, "webSocket");
+        atl.s(this.c.getLooper(), Looper.myLooper(), null);
+        atl.s(this.h, dtrVar, null);
+        atl.o(null, this.i);
+        if (h6i.c.a()) {
+            h6i.s("XivaSocketFactory", "onClosed");
+        }
+        this.h = null;
+        ((s3s) this.j.f).a(f());
+        this.a.n();
+    }
+
+    public final void h(dtr dtrVar, c8q c8qVar, int i, String str, rh2 rh2Var) {
+        rh2 rh2Var2 = new rh2();
+        rh2Var2.t0(1);
+        ph2 ph2Var = new ph2(rh2Var2, 0);
+        h7g h7gVar = j7g.b;
+        h7gVar.getClass();
+        dki dkiVar = new dki();
+        dkiVar.a = ph2Var;
+        dkiVar.b = MessageBuffer.a(8192);
+        l7g l7gVar = new l7g(dkiVar, h7gVar);
+        try {
+            l7gVar.l(c8qVar != null ? 4 : 3);
+            l7gVar.H((byte) 0);
+            if (i < -32) {
+                if (i < -32768) {
+                    l7gVar.Q((byte) -46, i);
+                } else if (i < -128) {
+                    l7gVar.T((byte) -47, (short) i);
+                } else {
+                    l7gVar.J((byte) -48, (byte) i);
+                }
+            } else if (i < 128) {
+                l7gVar.H((byte) i);
+            } else if (i < 256) {
+                l7gVar.J((byte) -52, (byte) i);
+            } else if (i < 65536) {
+                l7gVar.T((byte) -51, (short) i);
+            } else {
+                l7gVar.Q((byte) -50, i);
+            }
+            l7gVar.w(str);
+            if (c8qVar != null) {
+                byte b = c8qVar.a;
+                if (b < -32) {
+                    l7gVar.J((byte) -48, b);
+                } else {
+                    l7gVar.H(b);
+                }
+            }
+            l7gVar.close();
+            rh2Var2.g1(rh2Var);
+            bn2 bn2VarH0 = rh2Var2.h0();
+            ypk ypkVar = (ypk) dtrVar;
+            ypkVar.getClass();
+            mqd.z(bn2VarH0, "bytes");
+            if (ypkVar.h(2, bn2VarH0)) {
+                ze3.c(this.j, bn2VarH0.h());
+            }
+        } catch (Throwable th) {
+            try {
+                throw th;
+            } catch (Throwable th2) {
+                vd1.v(l7gVar, th);
+                throw th2;
+            }
+        }
+    }
+
+    @Override // defpackage.h4s
+    public final void stop() {
+        atl.s(this.c.getLooper(), Looper.myLooper(), null);
+        atl.o(null, this.i);
+        ypk ypkVar = this.h;
+        if (ypkVar != null) {
+            ypkVar.c(DescriptorProtos.Edition.EDITION_2023_VALUE, "bye");
+        }
+    }
+}
+========== WebSocket implementation references ==========
