@@ -1,0 +1,70 @@
+===== ALL DEX DIRECTORIES =====
+research/artifacts/decompiled-dex2
+
+===== MISSING CLASS SEARCH =====
+
+--- ulf ---
+
+--- g1k ---
+
+--- rl ---
+
+===== AUTH REFERENCES ACROSS ALL DEX =====
+research/artifacts/decompiled-dex2/sources/defpackage/axd.java:254:                mwkVar.a(wa1Var, new va1(mwkVar, new po1(str2, new uc1(str3, 0))));
+research/artifacts/decompiled-dex2/sources/defpackage/uc1.java:17:                return "YAMBAUTH " + this.b;
+research/artifacts/decompiled-dex2/sources/defpackage/uc1.java:19:                return "OAuthTeam " + this.b;
+research/artifacts/decompiled-dex2/sources/defpackage/uc1.java:45:                return "YAMBAUTH token";
+research/artifacts/decompiled-dex2/sources/defpackage/uc1.java:47:                return "OAuthTeam token";
+research/artifacts/decompiled-dex2/sources/defpackage/toa.java:9:        mqd.z(str, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/toa.java:31:        return wq1.j("FileTransferUserChat(personalGuid=", this.a, ", chatId=", this.b, ")");
+research/artifacts/decompiled-dex2/sources/defpackage/mpk.java:260:        editorEdit.remove("oauth_token");
+research/artifacts/decompiled-dex2/sources/defpackage/g1j.java:108:        e("refreshToken");
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:68:                XivaSecretContainer xivaSecretContainer = (XivaSecretContainer) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:69:                mqd.z(xivaSecretContainer, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:71:                XivaUser xivaUser = xivaSecretContainer.user;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:75:                String str = xivaSecretContainer.secret.sign;
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:77:                wzrVar.invoke(new w4s(strValueOf, str, xivaSecretContainer.secret.ts));
+research/artifacts/decompiled-dex2/sources/defpackage/tkm.java:253:            string = ((SharedPreferences) ze3Var.i).getString("oauth_token", null);
+research/artifacts/decompiled-dex2/sources/defpackage/tkm.java:287:        string = ((SharedPreferences) ze3Var.i).getString("oauth_token", null);
+research/artifacts/decompiled-dex2/sources/defpackage/s78.java:9:        mqd.z(str, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/s78.java:31:        return wq1.j("DownloadKey(personalGuid=", this.a, ", fileId=", this.b, ")");
+research/artifacts/decompiled-dex2/sources/defpackage/hpq.java:64:            atl.o(null, s91Var.e.contains("oauth_token"));
+research/artifacts/decompiled-dex2/sources/defpackage/hpq.java:91:        editorEdit.putString("oauth_token", xc1Var.b().g());
+research/artifacts/decompiled-dex2/sources/defpackage/po1.java:624:        mqd.z(str, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/po1.java:679:        mqd.z(str, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/rhg.java:23:        mqd.z(c4sVar, "xivaSecretHolder");
+research/artifacts/decompiled-dex2/sources/defpackage/z0j.java:46:                b1jVar2.d.j(b1jVar2.e.name(), "passport_relogin_required", "method");
+research/artifacts/decompiled-dex2/sources/defpackage/q91.java:21:                if ("oauth_token".equals(str)) {
+research/artifacts/decompiled-dex2/sources/defpackage/q91.java:32:                if (mqd.s(str, "oauth_token")) {
+research/artifacts/decompiled-dex2/sources/defpackage/q91.java:33:                    h54Var.j(sharedPreferences.getString("oauth_token", null));
+research/artifacts/decompiled-dex2/sources/defpackage/hqq.java:9:        mqd.z(str, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/hqq.java:26:        return una.c("UserCredentials(personalGuid=", this.a, ")");
+research/artifacts/decompiled-dex2/sources/defpackage/s91.java:36:        String string = sharedPreferences.getString("oauth_token", null);
+research/artifacts/decompiled-dex2/sources/defpackage/s91.java:60:        this.e.edit().putString("oauth_token", str).apply();
+research/artifacts/decompiled-dex2/sources/defpackage/s91.java:75:            this.e.edit().remove("oauth_token").apply();
+research/artifacts/decompiled-dex2/sources/defpackage/s91.java:93:        if (this.h.d.get() || this.i == null || this.e.contains("oauth_token") || !this.j.d()) {
+research/artifacts/decompiled-dex2/sources/defpackage/pc4.java:8:        mqd.z(str, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/xc1.java:6:        return g91Var == g91.e ? new uc1(str, 1) : new vc1(str);
+research/artifacts/decompiled-dex2/sources/defpackage/aco.java:509:        mqd.z(str2, "personalGuid");
+research/artifacts/decompiled-dex2/sources/defpackage/fuk.java:367:                    wa1Var = new va1(mwkVar, new po1(str, new uc1(str2, 0)));
+research/artifacts/decompiled-dex2/sources/defpackage/ise.java:26:        String string = ((SharedPreferences) this.c.get()).getString("oauth_token", null);
+research/artifacts/decompiled-dex2/sources/defpackage/ise.java:40:        String string = ((SharedPreferences) this.c.get()).getString("oauth_token", null);
+research/artifacts/decompiled-dex2/sources/defpackage/roa.java:32:        return wq1.j("FileTransferNotificationTarget(personalGuid=", this.a, ", chatId=", this.b, ")");
+
+===== TOKEN FACTORY REFERENCES =====
+research/artifacts/decompiled-dex2/sources/defpackage/axd.java:254:                mwkVar.a(wa1Var, new va1(mwkVar, new po1(str2, new uc1(str3, 0))));
+research/artifacts/decompiled-dex2/sources/defpackage/uc1.java:45:                return "YAMBAUTH token";
+research/artifacts/decompiled-dex2/sources/defpackage/uc1.java:47:                return "OAuthTeam token";
+research/artifacts/decompiled-dex2/sources/defpackage/xa1.java:34:        tc1 tc1Var = new tc1();
+research/artifacts/decompiled-dex2/sources/defpackage/be1.java:98:                wc1 wc1VarE = xc1.e(e1jVar.a, d1jVar.a.a);
+research/artifacts/decompiled-dex2/sources/defpackage/d1j.java:60:        this.f = ((kg5) ((ike) x71Var.d).get()).a(new be1(2, xc1.e(e1jVar.a, this.a.a), x71Var, this, e1jVar, z));
+research/artifacts/decompiled-dex2/sources/defpackage/s91.java:27:        this.j = new tc1();
+research/artifacts/decompiled-dex2/sources/defpackage/s91.java:39:            this.j = xc1.e(string, nb1Var.a);
+research/artifacts/decompiled-dex2/sources/defpackage/s91.java:58:        wc1 wc1VarE = xc1.e(str, nb1Var.a);
+research/artifacts/decompiled-dex2/sources/defpackage/s91.java:74:            this.j = new tc1();
+research/artifacts/decompiled-dex2/sources/defpackage/s91.java:98:        this.j = new tc1();
+research/artifacts/decompiled-dex2/sources/defpackage/xc1.java:6:        return g91Var == g91.e ? new uc1(str, 1) : new vc1(str);
+research/artifacts/decompiled-dex2/sources/defpackage/fuk.java:361:                        wa1Var = str == null ? new xa1(mwkVar, nb1Var) : new ya1(mwkVar, nb1Var, new po1(str, nb1Var, new tc1()));
+research/artifacts/decompiled-dex2/sources/defpackage/fuk.java:367:                    wa1Var = new va1(mwkVar, new po1(str, new uc1(str2, 0)));
+research/artifacts/decompiled-dex2/sources/defpackage/ise.java:27:        vc1 vc1Var = string != null ? new vc1(string) : null;
+research/artifacts/decompiled-dex2/sources/defpackage/ise.java:41:        vc1 vc1Var = string != null ? new vc1(string) : null;
