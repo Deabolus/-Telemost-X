@@ -1,0 +1,377 @@
+]633;E;echo "===== HISTORY REQUESTS =====";5fbee356-0123-495e-b37b-dc4eda18f69b]633;C===== HISTORY REQUESTS =====
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java:3:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java:7:    public final HistoryRequest a;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java:10:    public c9g(HistoryRequest historyRequest, long j, int i) {
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java:29:        HistoryRequest historyRequest = this.a;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:5:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:47:    public HistoryRequest v(int i, int i2) throws mnh {
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:48:        HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java:4:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java:6:import com.yandex.messaging.core.net.entities.proto.OnlyTimestampsHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java:18:    public final void P(OnlyTimestampsHistoryResponse onlyTimestampsHistoryResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java:26:        HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java:40:        historyRequest.minTimestamp = Math.max(0L, jLongValue - HistoryRequest.a);
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java:6:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java:24:    public final HistoryRequest v(int i, int i2) {
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:7:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:23:                HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:32:                HistoryRequest historyRequest2 = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:43:                HistoryRequest historyRequest3 = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:7:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:517:                HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:544:        HistoryRequest historyRequest2 = c9gVar.a;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java:4:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java:30:    public HistoryRequest a(long j) {
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java:31:        HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java:35:            historyRequest.minTimestamp = Math.max(0L, jF - HistoryRequest.a);
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java:4:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java:9:    public final /* synthetic */ HistoryRequest k;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java:13:    public hoc(HistoryRequest historyRequest, gw3 gw3Var, boolean z) {
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java:31:        HistoryRequest historyRequest = this.k;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java:4:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java:5:import com.yandex.messaging.core.net.entities.proto.ReducedHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java:10:    public final HistoryRequest l;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java:13:    public puk(HistoryRequest historyRequest, gw3 gw3Var) {
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java:18:    public final void A(ReducedHistoryResponse reducedHistoryResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java:27:    public final int J(ReducedHistoryResponse reducedHistoryResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java:40:        HistoryRequest historyRequest = this.l;
+research/artifacts/decompiled-dex2/sources/defpackage/gpm.java:7:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/gpm.java:189:        HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/co.java:6:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/co.java:135:                return new co((mgn) this.h, (HistoryRequest) this.i, this.g, (le6) this.j, ic6Var, 9);
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:6:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:8:import com.yandex.messaging.core.net.entities.proto.ReducedHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:20:    public final /* synthetic */ HistoryRequest l;
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:23:    public h9g(HistoryRequest historyRequest, k9g k9gVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:28:    public final void A(ReducedHistoryResponse reducedHistoryResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:176:        HistoryRequest historyRequest = this.l;
+research/artifacts/decompiled-dex2/sources/defpackage/k5i.java:5:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/k5i.java:19:        HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/rc7.java:4:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/rc7.java:7:import com.yandex.messaging.core.net.entities.proto.OnlyTimestampsHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/rc7.java:20:    public final void P(OnlyTimestampsHistoryResponse onlyTimestampsHistoryResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/rc7.java:63:        HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/doc.java:5:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/doc.java:12:    public final /* synthetic */ HistoryRequest m;
+research/artifacts/decompiled-dex2/sources/defpackage/doc.java:15:    public doc(eoc eocVar, HistoryRequest historyRequest, sc9 sc9Var) {
+research/artifacts/decompiled-dex2/sources/defpackage/doc.java:35:        HistoryRequest historyRequest = this.m;
+research/artifacts/decompiled-dex2/sources/defpackage/wep.java:4:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/wep.java:22:    public final HistoryRequest a(long j) {
+research/artifacts/decompiled-dex2/sources/defpackage/wep.java:23:        HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/t49.java:4:import com.yandex.messaging.core.net.entities.proto.EditHistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/t49.java:21:        EditHistoryRequest editHistoryRequest = new EditHistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/t49.java:23:        editHistoryRequest.chatId = gkpVar.a.b;
+research/artifacts/decompiled-dex2/sources/defpackage/t49.java:24:        editHistoryRequest.inviteHash = gkpVar.d();
+research/artifacts/decompiled-dex2/sources/defpackage/t49.java:25:        editHistoryRequest.minTimestamp = this.p + 1;
+research/artifacts/decompiled-dex2/sources/defpackage/t49.java:26:        editHistoryRequest.limit = 100L;
+research/artifacts/decompiled-dex2/sources/defpackage/t49.java:27:        editHistoryRequest.commonFields = new CommonRequestFields(i2 > 0, i);
+research/artifacts/decompiled-dex2/sources/defpackage/t49.java:28:        return editHistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:3:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:6:import com.yandex.messaging.core.net.entities.proto.ReducedHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:54:            HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:77:        ReducedChatHistoryResponse[] reducedChatHistoryResponseArr = ((ReducedHistoryResponse) objQ).chats;
+===== HISTORY API METHODS =====
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:200:            String strC = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:308:                String strC2 = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:397:            String strC3 = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default3, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+===== MESSAGE DISPATCH =====
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-3-import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-4-import com.yandex.messaging.core.net.entities.proto.message.ChatApproval;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-5-import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:6:import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-7-
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-8-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-9-public final class t84 extends vx6 {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-24-                chatApproval.chatId = ((u84) this.f).a.b;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-25-                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, chatApproval, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268419071, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-26-            case 1:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:27:                return new ClientMessage(null, null, null, (PlainMessage) this.f, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-28-            case 2:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:29:                return new ClientMessage(null, null, null, (PlainMessage) this.f, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-30-            default:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-31-                return (ClientMessage) ((eq2) this.f).invoke();
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-32-        }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-11-import android.widget.TextView;
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-12-import androidx.appcompat.widget.AppCompatTextView;
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-13-import androidx.recyclerview.widget.RecyclerView;
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java:14:import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-15-import com.yandex.messaging.internal.ServerMessageRef;
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-16-import com.yandex.messaging.internal.entities.GalleryMessageData;
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-17-import com.yandex.messaging.internal.view.timeline.galleryview.GalleryView;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-247-                t9gVar2.a.setTextColor(this.Z1);
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-248-            }
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-249-        }
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java:250:        PlainMessage.Item[] itemArr = galleryMessageData.items;
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-251-        mqd.y(itemArr, "items");
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-252-        if (itemArr.length > 10) {
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-253-            Object[] objArrCopyOf = Arrays.copyOf(itemArr, 10);
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-254-            mqd.y(objArrCopyOf, "copyOf(...)");
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java:255:            itemArr = (PlainMessage.Item[]) objArrCopyOf;
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-256-        }
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-257-        this.d2.B0(itemArr, this.V0);
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-258-        mw1 mw1Var = new mw1(this, galleryMessageData);
+--
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-319-        ?? r0 = this.d2;
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-320-        akb akbVar = r0.galleryAdapter;
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-321-        if (akbVar != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java:322:            akbVar.j = new PlainMessage.Item[0];
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-323-            akbVar.k = -1;
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-324-            akbVar.g();
+research/artifacts/decompiled-dex2/sources/defpackage/nw1.java-325-        }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-21-import com.yandex.messaging.core.net.entities.proto.HistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-22-import com.yandex.messaging.core.net.entities.proto.PinnedMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-23-import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:24:import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-25-import com.yandex.messaging.core.net.entities.proto.message.ReducedUserInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-26-import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-27-import com.yandex.messaging.core.net.entities.proto.message.ServerMessageInfo;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-632-        ChatHistoryResponse.OutMessage outMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-633-        ServerMessage serverMessage2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-634-        ClientMessage clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:635:        PlainMessage plainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-636-        ServerMessageInfo serverMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-637-        ReducedUserInfo reducedUserInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-638-        xb4 xb4Var;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-3-import com.yandex.messaging.core.net.entities.proto.message.ForwardAccessPoint;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-4-import com.yandex.messaging.core.net.entities.proto.message.ForwardedMessageStyle;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-5-import com.yandex.messaging.core.net.entities.proto.message.MessageRef;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java:6:import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-7-import com.yandex.messaging.internal.entities.EmptyMessageData;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-8-import com.yandex.messaging.internal.entities.ForwardMessageRef;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-9-import com.yandex.messaging.internal.entities.MediaMessageData;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-24-    }
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-25-
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-26-    /* JADX WARN: Code duplicated, block: B:17:0x0061  */
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java:27:    public final PlainMessage a(String str, ygi ygiVar) {
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-28-        MessageRef[] messageRefArr;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-29-        ForwardedMessageStyle[] forwardedMessageStyleArr;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-30-        ForwardedMessageStyle[] forwardedMessageStyleArr2;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java:31:        PlainMessage plainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-32-        int length;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-33-        ForwardAccessPoint forwardAccessPoint;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-34-        mqd.z(str, "chatId");
+--
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-87-            }
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-88-            forwardedMessageStyleArr2 = null;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-89-            int[] iArrCopyOf = null;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java:90:            plainMessage = new PlainMessage(null, null, null, null, null, null, null, null, str, 0L, messageRefArr, ygiVar.c, ygiVar.f, str2, mqd.s(messageData.urlPreviewDisabled, Boolean.TRUE), null, ygiVar.i, null, null, forwardedMessageStyleArr2, 426239, null);
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-91-            if (!(messageData instanceof RemovedMessageData) || (messageData instanceof EmptyMessageData)) {
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-92-                return plainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-93-            }
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-94-            if (messageData instanceof TextMessageData) {
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-95-                String str5 = messageData.text;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-96-                if (str5 != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java:97:                    return PlainMessage.copy$default(plainMessage, new PlainMessage.Text(str5, null, 2, null), null, null, null, null, null, null, null, null, 0L, null, null, null, null, false, null, false, null, null, null, 1048574, null);
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-98-                }
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-99-                throw new IllegalArgumentException("Required value was null.");
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-100-            }
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-101-            if (messageData instanceof MediaMessageData) {
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java:102:                return (PlainMessage) ((MediaMessageData) messageData).a(new ajj(plainMessage, this));
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-103-            }
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-104-            if (!(messageData instanceof PollMessageData)) {
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-105-                throw new IllegalStateException("Not a message!");
+--
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-132-                iArrCopyOf = Arrays.copyOf(iArr, iArr.length);
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-133-                mqd.y(iArrCopyOf, "copyOf(...)");
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-134-            }
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java:135:            return PlainMessage.copy$default(plainMessage, null, null, null, null, null, null, null, new PlainMessage.Poll(str6, strArr2, z, i3, null, iArrCopyOf, 16, null), null, 0L, null, null, null, null, false, null, false, null, null, null, 1048447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-136-        }
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-137-        forwardedMessageStyleArr = new ForwardedMessageStyle[]{new ForwardedMessageStyle(str4)};
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-138-        forwardedMessageStyleArr2 = forwardedMessageStyleArr;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-139-        int[] iArrCopyOf2 = null;
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java:140:        plainMessage = new PlainMessage(null, null, null, null, null, null, null, null, str, 0L, messageRefArr, ygiVar.c, ygiVar.f, str2, mqd.s(messageData.urlPreviewDisabled, Boolean.TRUE), null, ygiVar.i, null, null, forwardedMessageStyleArr2, 426239, null);
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-141-        if (messageData instanceof RemovedMessageData) {
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-142-        }
+research/artifacts/decompiled-dex2/sources/defpackage/bjj.java-143-        return plainMessage;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-23-import com.yandex.messaging.core.net.entities.proto.message.MeetingEndedMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-24-import com.yandex.messaging.core.net.entities.proto.message.MeetingStartedMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-25-import com.yandex.messaging.core.net.entities.proto.message.ParticipantsChange;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:26:import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-27-import com.yandex.messaging.core.net.entities.proto.message.ReducedUserInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-28-import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-29-import com.yandex.messaging.core.net.entities.proto.message.ServerMessageInfo;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-111-        mqd.z(serverMessage, "serverMessage");
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-112-        ClientMessage clientMessage = serverMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-113-        mqd.y(clientMessage, "clientMessage");
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:114:        PlainMessage plainMessage = clientMessage.plain;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:115:        PlainMessage plainMessage2 = plainMessage == null ? clientMessage.ephemeral : plainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-116-        SystemMessage systemMessage = clientMessage.systemMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-117-        if (plainMessage2 != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-118-            return c(serverMessage, plainMessage2, plainMessage == null);
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-127-
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-128-    /* JADX WARN: Code duplicated, block: B:72:0x0162  */
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-129-    /* JADX WARN: Code duplicated, block: B:7:0x001e  */
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:130:    public final Message c(ServerMessage serverMessage, PlainMessage plainMessage, boolean z) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-131-        List listX0;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-132-        jc9 arrayList;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-133-        jc9 arrayList2;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-198-                ForwardedMessageInfo forwardedMessageInfo = (ForwardedMessageInfo) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-199-                ServerMessageInfo serverMessageInfo2 = forwardedMessageInfo.serverMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-200-                mqd.y(serverMessageInfo2, "serverMessageInfo");
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:201:                PlainMessage plainMessage2 = forwardedMessageInfo.plain;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-202-                mqd.y(plainMessage2, "plain");
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-203-                ClientMessage clientMessage2 = serverMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-204-                Message messageD2 = d(serverMessageInfo2, plainMessage2, false, clientMessage2.isSilent, clientMessage2.notificationBehaviour, serverMessage.notificationMeta, false, false);
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-287-    /* JADX WARN: Code duplicated, block: B:65:0x0177  */
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-288-    /* JADX WARN: Code duplicated, block: B:67:0x018c  */
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-289-    /* JADX WARN: Instruction removed from duplicated block: B:159:0x03bd, please report this as an issue */
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:290:    public final Message d(ServerMessageInfo serverMessageInfo, PlainMessage plainMessage, boolean z, boolean z2, int i, NotificationMeta notificationMeta, boolean z3, boolean z4) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-291-        GalleryMessageData galleryMessageData;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-292-        FileMessageData fileMessageData;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-293-        String str;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-322-        ArrayList arrayList5;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-323-        AiBotAction[] aiBotActions;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-324-        ArrayList arrayList6;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:325:        PlainMessage.Text text2 = plainMessage.getText();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-326-        int i3 = 0;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-327-        if (serverMessageInfo.moderationAction == 2) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-328-            emptyMessageData = new ModeratedOutMessageData();
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-331-                String str4 = "";
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-332-                if (plainMessage.getCard() == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-333-                    if (plainMessage.getPoll() != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:334:                        PlainMessage.Poll poll = plainMessage.getPoll();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-335-                        String[] strArr = poll.answers;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-336-                        int length = strArr.length;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-337-                        String[] strArr2 = new String[length];
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-338-                        System.arraycopy(strArr, 0, strArr2, 0, length);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-339-                        PollMessageData.VoteResult voteResult = new PollMessageData.VoteResult();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:340:                        PlainMessage.PollResult pollResult = poll.pollResults;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-341-                        if (pollResult != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-342-                            voteResult.version = pollResult.version;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-343-                            voteResult.voteCount = pollResult.voteCount;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-373-                    } else if (plainMessage.getImage() != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-374-                        emptyMessageData = ImageMessageData.b(plainMessage.getImage());
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-375-                    } else if (plainMessage.getFile() != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:376:                        PlainMessage.File file = plainMessage.getFile();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-377-                        mqd.u(file);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-378-                        y9a y9aVar = this.a;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-379-                        mqd.z(y9aVar, "<this>");
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-380-                        i82 i82Var = tcg.r0;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-381-                        mqd.y(i82Var, "MOCK_PREVIEW_HINT");
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:382:                        PlainMessage.File.PreviewHint previewHint = y9aVar.a(i82Var) ? new PlainMessage.File.PreviewHint(new PlainMessage.File.VideoPreview(0, 0, 0L, null, 15, null)) : file.getPreviewHint();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:383:                        PlainMessage.File.VideoPreview videoPreview = previewHint != null ? previewHint.getVideoPreview() : null;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-384-                        if (videoPreview != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-385-                            int i4 = videoPreview.width;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-386-                            int i5 = videoPreview.height;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-417-                            emptyMessageData = fileMessageData;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-418-                        }
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-419-                    } else if (plainMessage.getSticker() != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:420:                        PlainMessage.Sticker sticker = plainMessage.getSticker();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-421-                        mqd.u(sticker);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-422-                        String id = sticker.getId();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:423:                        PlainMessage.Sticker sticker2 = plainMessage.getSticker();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-424-                        mqd.u(sticker2);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-425-                        emptyMessageData = new StickerMessageData(id, sticker2.getSetId());
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-426-                    } else if (plainMessage.getVoice() != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:427:                        PlainMessage.Voice voice = plainMessage.getVoice();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-428-                        mqd.u(voice);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:429:                        PlainMessage.FileInfo fileInfo = voice.fileInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-430-                        String str7 = fileInfo.name;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-431-                        voiceMessageData = new VoiceMessageData(str7 == null ? "" : str7, fileInfo.id2, voice.duration, voice.text, voice.wasRecognized, voice.waveform, voice.disableRecognition);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-432-                    } else if (text2 != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-433-                        if (text2.getCard() != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-434-                            String text3 = text2.getText();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-435-                            DivMessageData divMessageData = new DivMessageData(7, text3 != null ? text3 : "");
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:436:                            PlainMessage.Card card = text2.getCard();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-437-                            mqd.u(card);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-438-                            divMessageData.card = card.card;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-439-                            textMessageData = divMessageData;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-443-                        }
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-444-                    } else if (plainMessage.getGallery() != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-445-                        galleryMessageData = new GalleryMessageData();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:446:                        PlainMessage.Gallery gallery = plainMessage.getGallery();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-447-                        mqd.u(gallery);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:448:                        PlainMessage.Item[] items = gallery.getItems();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-449-                        galleryMessageData.items = items;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:450:                        PlainMessage.Gallery gallery2 = plainMessage.getGallery();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-451-                        mqd.u(gallery2);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-452-                        galleryMessageData.text = gallery2.getText();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-453-                        if (items.length != 0) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:454:                            PlainMessage.FileInfo fileInfo2 = galleryMessageData.items[0].image.fileInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-455-                            String str8 = fileInfo2.id2;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-456-                            galleryMessageData.previewId = str8;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-457-                            if (str8 == null) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-663-                    str4 = text;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-664-                }
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-665-                DivMessageData divMessageData2 = new DivMessageData(7, str4);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:666:                PlainMessage.Card card2 = plainMessage.getCard();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-667-                mqd.u(card2);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-668-                divMessageData2.card = card2.card;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-669-                textMessageData = divMessageData2;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java-4-import androidx.emoji2.widget.EmojiTextView;
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java-5-import com.google.protobuf.DescriptorProtos;
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java-6-import com.yandex.messaging.core.net.entities.chatcreate.CreatePrivateChatParam;
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java:7:import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java-8-import com.yandex.messaging.internal.ServerMessageRef;
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java-9-import com.yandex.messaging.internal.entities.BusinessItem;
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java-10-import com.yandex.telemost.core.cloudapi.ConferenceParams;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java-1218-                if (((Boolean) w2fVarD.a(new fbi(11))).booleanValue()) {
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java-1219-                    cw3VarF = null;
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java-1220-                } else {
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java:1221:                    PlainMessage plainMessage = new PlainMessage(null, null, null, null, null, null, null, null, w59Var.a.a.b, serverMessageRef.getTimestamp(), null, null, null, (String) w2fVarD.b(new axh()), false, null, false, null, null, null, 1039615, null);
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java-1222-                    mgn mgnVar = w59Var.c;
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java-1223-                    vx6 t84Var = new t84(1, plainMessage, pq7Var);
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java-1224-                    mgnVar.getClass();
+--
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-5-import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-6-import com.yandex.messaging.core.net.entities.proto.HistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-7-import com.yandex.messaging.core.net.entities.proto.message.HistoryTranslationDataFilter;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:8:import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-9-
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-10-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-11-public abstract class kbg extends k8k {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-117-                ChatHistoryResponse.OutMessage[] outMessageArr = chatHistoryResponse2.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-118-                if (outMessageArr != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-119-                    for (ChatHistoryResponse.OutMessage outMessage : outMessageArr) {
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:120:                        PlainMessage plainMessage = outMessage.serverMessage.clientMessage.plain;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-121-                        if (plainMessage != null && (chatId = plainMessage.getChatId()) != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-122-                            String str3 = chatHistoryResponse2.chatId;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-123-                            if (!atl.u()) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-3-import android.text.TextUtils;
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-4-import com.yandex.messaging.core.net.entities.proto.message.CustomPayload;
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java:5:import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-6-import com.yandex.messaging.internal.entities.FileMessageData;
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-7-import com.yandex.messaging.internal.entities.ForwardMessageRef;
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-8-import com.yandex.messaging.internal.entities.GalleryMessageData;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-167-                    ArrayList arrayList8 = new ArrayList(ac5.Y(list2, i));
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-168-                    for (Iterator it = list2.iterator(); it.hasNext(); it = it) {
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-169-                        AttachInfo attachInfo2 = (AttachInfo) it.next();
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java:170:                        arrayList8.add(new PlainMessage.Item(new PlainMessage.Image(new PlainMessage.FileInfo(0L, attachInfo2.getFileName(), 0L, null, null, 29, null), attachInfo2.getWidth(), attachInfo2.getHeight(), false, 8, null)));
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-171-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java:172:                    PlainMessage.Item[] itemArr = (PlainMessage.Item[]) arrayList8.toArray(new PlainMessage.Item[0]);
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-173-                    chi chiVar3 = chiVar2;
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-174-                    ArrayList arrayList9 = new ArrayList(ac5.Y(list2, 10));
+research/artifacts/decompiled-dex2/sources/defpackage/bop.java-175-                    Iterator it2 = list2.iterator();
+--
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java:3:import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-4-import com.yandex.messaging.core.net.entities.scheduled.ScheduledMessageDto;
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-5-import com.yandex.messaging.core.net.entities.scheduled.ScheduledMessageStatus;
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-6-import com.yandex.messaging.core.net.entities.scheduled.ScheduledMessagesApiException;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-79-        }
