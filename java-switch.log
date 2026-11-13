@@ -1,0 +1,21 @@
+]633;E;echo "===== SDK CURRENT =====";bc126f02-661a-43ab-8248-12dbbd713303]633;C===== SDK CURRENT =====
+25.0.5.0+2-ms
+===== SDK LIST INSTALLED =====
+                |     | 17.0.21.0+10       | 17.0.21.0+10-amzn
+                |     | 17.0.21.0-crac+12  | 17.0.21.0-crac+12-librca
+                |     | 17.0.21.0+2        | 17.0.21.0+2-ms
+                |     | 17.0.21.0+3        | 17.0.21.0+3-sapmchn
+                |     | 17.0.21.0+9        | 17.0.21.0+9-tem
+                |     | 17.0.21.0+3.1      | 17.0.21.0+3.1-kona
+                |     | 17.0.21.0+9        | 17.0.21.0+9-zulu
+                |     | 17.0.21.0-crac+3.1 | 17.0.21.0-crac+3.1-zulu
+                |     | 17.0.21.0-fx+3.1   | 17.0.21.0-fx+3.1-zulu
+ > in use   * installed   + local only
+===== JAVA PATH =====
+/home/codespace/java/current/bin/java
+===== JAVA VERSION =====
+openjdk version "25.0.5.0.2" 2026-10-22 LTS
+OpenJDK Runtime Environment Microsoft-15804669 (build 25.0.5.0.2+1-LTS)
+OpenJDK 64-Bit Server VM Microsoft-15804669 (build 25.0.5.0.2+1-LTS, mixed mode, sharing)
+===== JAVA HOME =====
+/usr/local/sdkman/candidates/java/current
