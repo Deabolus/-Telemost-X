@@ -1,0 +1,1253 @@
+===== HISTORY TRANSPORT IMPLEMENTATIONS =====
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java:3:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-4-
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-5-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-6-public final class c9g {
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java:7:    public final HistoryRequest a;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-8-    public final long b;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-9-
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java:10:    public c9g(HistoryRequest historyRequest, long j, int i) {
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-11-        historyRequest = (i & 1) != 0 ? null : historyRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-12-        j = (i & 2) != 0 ? Long.MAX_VALUE : j;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-13-        this.a = historyRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-14-        this.b = j;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-15-    }
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-16-
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-17-    public final boolean equals(Object obj) {
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-18-        if (this == obj) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-21-        if (!(obj instanceof c9g)) {
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-22-            return false;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-23-        }
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-24-        c9g c9gVar = (c9g) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-25-        return mqd.s(this.a, c9gVar.a) && this.b == c9gVar.b;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-26-    }
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-27-
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-28-    public final int hashCode() {
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java:29:        HistoryRequest historyRequest = this.a;
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-30-        return Long.hashCode(this.b) + ((historyRequest == null ? 0 : historyRequest.hashCode()) * 31);
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-31-    }
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-32-
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-33-    public final String toString() {
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-34-        return "Schedule(request=" + this.a + ", nextRequestIn=" + this.b + ")";
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-35-    }
+research/artifacts/decompiled-dex2/sources/defpackage/c9g.java-36-}
+--
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-3-import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-4-import com.yandex.messaging.core.net.entities.proto.CommonRequestFields;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:5:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-6-import com.yandex.messaging.core.net.entities.proto.HistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-7-import com.yandex.messaging.core.net.entities.proto.message.HistoryTranslationDataFilter;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-8-import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-9-
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-10-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-11-public abstract class kbg extends k8k {
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-12-    public final String k;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-13-    public final tbg l;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-39-            }
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-40-        }
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-41-        return null;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-42-    }
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-43-
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-44-    /* JADX INFO: Thrown type has an unknown type hierarchy: mnh */
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-45-    @Override // 
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-46-    /* JADX INFO: renamed from: S */
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:47:    public HistoryRequest v(int i, int i2) throws mnh {
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:48:        HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-49-        historyRequest.chatId = this.k;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-50-        tbg tbgVar = this.l;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-51-        sbg sbgVar = tbgVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-52-        long j = tbgVar.a;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-53-        long j2 = tbgVar.b;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-54-        int iOrdinal = sbgVar.ordinal();
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-55-        long j3 = this.o;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java-56-        if (iOrdinal == 0) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-3-import com.yandex.messaging.core.net.entities.proto.CommonRequestFields;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java:4:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-5-import com.yandex.messaging.core.net.entities.proto.MessageDataFilter;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-6-import com.yandex.messaging.core.net.entities.proto.OnlyTimestampsHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-7-
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-8-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-9-public final class pbg extends mqd {
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-10-    public final /* synthetic */ rbg m;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-11-    public final /* synthetic */ qbg n;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-12-
+--
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-18-    public final void P(OnlyTimestampsHistoryResponse onlyTimestampsHistoryResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-19-        mqd.z(onlyTimestampsHistoryResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-20-        qbg qbgVar = this.n;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-21-        qbgVar.c.postDelayed(new rtf(6, qbgVar, onlyTimestampsHistoryResponse), rbg.l);
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-22-        qbgVar.b.B(qbgVar, qbg.e[0], (cw3) null);
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-23-    }
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-24-
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-25-    public final Object v(int i, int i2) {
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java:26:        HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-27-        rbg rbgVar = this.m;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-28-        xqj xqjVar = rbgVar.g;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-29-        ueg uegVar = rbgVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-30-        boolean z = this.n.a;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-31-        xqjVar.a(z ? yqj.MessagesThreads : yqj.MessagesChats, i2);
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-32-        long jLongValue = z ? ((Number) h6i.M(uegVar.b.T().a, true, false, new lxk(22))).longValue() : uegVar.f();
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-33-        historyRequest.maxTimestamp = Long.MAX_VALUE;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-34-        historyRequest.limit = 1L;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-35-        historyRequest.threads = z;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-36-        MessageDataFilter messageDataFilter = new MessageDataFilter();
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-37-        messageDataFilter.onlyTimestamps = true;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-38-        messageDataFilter.dropPayload = true;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-39-        historyRequest.messageDataFilter = messageDataFilter;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java:40:        historyRequest.minTimestamp = Math.max(0L, jLongValue - HistoryRequest.a);
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-41-        historyRequest.commonFields = new CommonRequestFields(i2 > 0, i);
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-42-        return historyRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-43-    }
+research/artifacts/decompiled-dex2/sources/defpackage/pbg.java-44-}
+--
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-3-import android.os.Looper;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-4-import android.os.SystemClock;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-5-import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java:6:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-7-import com.yandex.messaging.core.net.entities.proto.HistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-8-
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-9-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-10-public final class tt4 extends kbg {
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-11-    public long q;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-12-    public final /* synthetic */ tbg r;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-13-    public final /* synthetic */ vt4 s;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-14-
+--
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-16-    public tt4(vt4 vt4Var, String str, tbg tbgVar, String str2, String str3, long j, x20 x20Var, tbg tbgVar2) {
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-17-        super(str, tbgVar, str2, str3, j, x20Var);
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-18-        this.s = vt4Var;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-19-        this.r = tbgVar2;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-20-    }
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-21-
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-22-    @Override // defpackage.kbg
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-23-    /* JADX INFO: renamed from: S, reason: merged with bridge method [inline-methods] */
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java:24:    public final HistoryRequest v(int i, int i2) {
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-25-        ((r7j) this.s.f.get()).getClass();
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-26-        this.q = SystemClock.elapsedRealtime();
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-27-        return super.v(i, i2);
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-28-    }
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-29-
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-30-    /* JADX INFO: Thrown type has an unknown type hierarchy: mnh */
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-31-    /* JADX INFO: Thrown type has an unknown type hierarchy: voh */
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java-32-    @Override // defpackage.kbg
+--
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-3-import com.yandex.messaging.core.net.entities.proto.ChatDataFilter;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-4-import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-5-import com.yandex.messaging.core.net.entities.proto.ChatInfoFromTransport;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-6-import com.yandex.messaging.core.net.entities.proto.CommonRequestFields;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:7:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-8-import com.yandex.messaging.core.net.entities.proto.HistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-9-
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-10-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-11-public final class vl4 extends k8k {
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-12-    public final /* synthetic */ int k;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-13-    public final /* synthetic */ Object l;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-14-
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-15-    public /* synthetic */ vl4(Object obj, int i) {
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-16-        this.k = i;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-17-        this.l = obj;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-18-    }
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-19-
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-20-    public final Object v(int i, int i2) {
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-21-        switch (this.k) {
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-22-            case 0:
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:23:                HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-24-                gkp gkpVar = ((wl4) this.l).a;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-25-                historyRequest.chatId = gkpVar.a.b;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-26-                historyRequest.maxTimestamp = Long.MAX_VALUE;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-27-                historyRequest.limit = 1L;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-28-                historyRequest.inviteHash = gkpVar.d();
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-29-                historyRequest.commonFields = new CommonRequestFields(i2 > 0, i);
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-30-                return historyRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-31-            case 1:
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:32:                HistoryRequest historyRequest2 = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-33-                tbe tbeVar = (tbe) this.l;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-34-                historyRequest2.maxTimestamp = Long.MAX_VALUE;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-35-                historyRequest2.limit = 1L;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-36-                gkp gkpVar2 = tbeVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-37-                historyRequest2.chatId = gkpVar2.a.b;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-38-                historyRequest2.inviteHash = gkpVar2.d();
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-39-                historyRequest2.filter = new ChatDataFilter();
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-40-                historyRequest2.commonFields = new CommonRequestFields(i2 > 0, i);
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-41-                return historyRequest2;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-42-            default:
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:43:                HistoryRequest historyRequest3 = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-44-                historyRequest3.inviteHash = ((l5i) this.l).b.d();
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-45-                historyRequest3.maxTimestamp = Long.MAX_VALUE;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-46-                historyRequest3.filter = new ChatDataFilter();
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-47-                historyRequest3.limit = 1L;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-48-                historyRequest3.commonFields = new CommonRequestFields(i2 > 0, i);
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-49-                return historyRequest3;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-50-        }
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java-51-    }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-3-import android.os.Handler;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-4-import android.os.Looper;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-5-import android.os.SystemClock;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-6-import com.yandex.messaging.core.net.entities.DegradationConfig;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:7:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-8-import com.yandex.messaging.core.net.entities.proto.MessageDataFilter;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-9-import com.yandex.messaging.core.net.entities.proto.ReducedChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-10-import com.yandex.messaging.core.net.entities.proto.ReducedServerMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-11-import com.yandex.messaging.core.net.entities.proto.TimestampRange;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-12-import com.yandex.messaging.core.net.entities.proto.message.HistoryTranslationDataFilter;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-13-import com.yandex.messaging.core.net.entities.proto.message.ReducedUserInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-14-import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-15-import com.yandex.messaging.core.net.entities.proto.message.ThreadState;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-509-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-510-                }
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-511-            }
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-512-            bt0Var.close();
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-513-            atl.t(null, j7 >= j6);
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-514-            if (j7 == 0) {
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-515-                c9gVar = new c9g(null, TimeUnit.MICROSECONDS.toMillis(jMin2), 1);
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-516-            } else {
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:517:                HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-518-                gkp gkpVar = this.a;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-519-                historyRequest.chatId = gkpVar.a.b;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-520-                historyRequest.inviteHash = gkpVar.d();
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-521-                MessageDataFilter messageDataFilter = new MessageDataFilter();
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-522-                messageDataFilter.dropPayload = true;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-523-                historyRequest.messageDataFilter = messageDataFilter;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-524-                historyRequest.limit = 50L;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-525-                historyRequest.minTimestamp = j6;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-536-            }
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-537-            jMin = Math.min(j4, c9gVar.b);
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-538-            k45Var = k45Var2;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-539-            ryhVar2 = ryhVar;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-540-            jElapsedRealtime = j;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-541-            str = null;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-542-        }
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-543-        this.h.j(Long.valueOf(SystemClock.elapsedRealtime() - j), "tech reactions build request", "time_diff");
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:544:        HistoryRequest historyRequest2 = c9gVar.a;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-545-        if (historyRequest2 == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-546-            long j8 = c9gVar.b;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-547-            if (j8 != j2) {
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-548-                o8f.t0(handler, new g9g(this, 1), obj, j8);
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-549-                return;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-550-            }
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-551-            return;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java-552-        }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-3-import com.yandex.messaging.core.net.entities.proto.ChatDataFilter;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java:4:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-5-
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-6-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-7-public class eoc {
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-8-    public static final /* synthetic */ y5e[] g = {new o8h(0, eoc.class, "currentRequest", "getCurrentRequest()Lcom/yandex/messaging/Cancelable;")};
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-9-    public final ueg a;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-10-    public final ike b;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-11-    public final ike c;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-12-    public final v97 d;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-22-        this.a = uegVar;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-23-        this.b = ikeVar;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-24-        this.c = ikeVar2;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-25-        this.d = v97Var;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-26-        this.e = ikeVar3;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-27-        this.f = new rym(7);
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-28-    }
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-29-
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java:30:    public HistoryRequest a(long j) {
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java:31:        HistoryRequest historyRequest = new HistoryRequest();
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-32-        long jF = this.a.f();
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-33-        historyRequest.limit = 1L;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-34-        if (jF != 0) {
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java:35:            historyRequest.minTimestamp = Math.max(0L, jF - HistoryRequest.a);
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-36-            ChatDataFilter chatDataFilter = new ChatDataFilter();
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-37-            chatDataFilter.setMinVersion(Long.valueOf(Math.max(1L, j)));
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-38-            historyRequest.filter = chatDataFilter;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-39-        }
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-40-        return historyRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-41-    }
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-42-
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-43-    public String b() {
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java:44:        return "time2history";
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-45-    }
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-46-
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-47-    public final void c(cw3 cw3Var) {
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-48-        this.f.B(this, g[0], cw3Var);
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-49-    }
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java-50-}
+--
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-3-import com.yandex.messaging.core.net.entities.proto.CommonRequestFields;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java:4:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-5-import com.yandex.messaging.core.net.entities.proto.HistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-6-
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-7-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-8-public final class hoc extends k8k {
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java:9:    public final /* synthetic */ HistoryRequest k;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-10-    public final /* synthetic */ gw3 l;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-11-    public final /* synthetic */ boolean m;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-12-
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java:13:    public hoc(HistoryRequest historyRequest, gw3 gw3Var, boolean z) {
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-14-        this.k = historyRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-15-        this.l = gw3Var;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-16-        this.m = z;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-17-    }
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-18-
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-19-    /* JADX INFO: renamed from: I, reason: merged with bridge method [inline-methods] */
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-20-    public final int J(HistoryResponse historyResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-21-        mqd.z(historyResponse, "response");
+--
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-23-            return super.I(historyResponse);
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-24-        }
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-25-        x(historyResponse);
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-26-        return 0;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-27-    }
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-28-
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-29-    public final Object v(int i, int i2) {
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-30-        CommonRequestFields commonRequestFields = new CommonRequestFields(i2 > 0, i);
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java:31:        HistoryRequest historyRequest = this.k;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-32-        historyRequest.commonFields = commonRequestFields;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-33-        return historyRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-34-    }
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-35-
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-36-    public final void x(HistoryResponse historyResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-37-        mqd.z(historyResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-38-        gw3 gw3Var = this.l;
+research/artifacts/decompiled-dex2/sources/defpackage/hoc.java-39-        if (gw3Var.y()) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-3-import com.yandex.messaging.core.net.entities.proto.CommonRequestFields;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java:4:import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-5-import com.yandex.messaging.core.net.entities.proto.ReducedHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-6-import java.util.concurrent.CancellationException;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-7-
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-8-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-9-public final class puk extends rcd {
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java:10:    public final HistoryRequest l;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-11-    public final gw3 m;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-12-
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java:13:    public puk(HistoryRequest historyRequest, gw3 gw3Var) {
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-14-        this.l = historyRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-15-        this.m = gw3Var;
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-16-    }
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-17-
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-18-    public final void A(ReducedHistoryResponse reducedHistoryResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-19-        mqd.z(reducedHistoryResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/puk.java-20-        gw3 gw3Var = this.m;
+
+===== POST MESSAGE API REFERENCES =====
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:3:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-4-import com.yandex.messaging.core.net.entities.proto.message.ChatApproval;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-5-import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-6-import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-7-
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-8-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-9-public final class t84 extends vx6 {
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-10-    public final /* synthetic */ int e;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-11-    public final /* synthetic */ Object f;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-27-                return new ClientMessage(null, null, null, (PlainMessage) this.f, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-28-            case 2:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-29-                return new ClientMessage(null, null, null, (PlainMessage) this.f, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-30-            default:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-31-                return (ClientMessage) ((eq2) this.f).invoke();
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-32-        }
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-33-    }
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-34-
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:35:    public boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-36-        switch (this.e) {
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-37-            case 1:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-38-                mqd.z(postMessageResponse, "errorResponse");
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-39-                ((pq7) this.g).p();
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-40-                return true;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-41-            case 2:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-42-                mqd.z(postMessageResponse, "errorResponse");
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-43-                ((pb5) this.g).p();
+--
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-50-                }
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-51-                gw3Var.f(nzn.E(new qsj(postMessageResponse)));
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-52-                return true;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-53-            default:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-54-                return super.R(postMessageResponse);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-55-        }
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-56-    }
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-57-
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:58:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-59-        switch (this.e) {
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-60-            case 0:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-61-                mqd.z(postMessageResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-62-                ((mu3) this.g).run();
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-63-                u84 u84Var = (u84) this.f;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-64-                u84Var.a();
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-65-                u84Var.e = null;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-66-                break;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-3-import android.os.Looper;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-4-import android.os.SystemClock;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:5:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-6-import com.yandex.messaging.core.net.entities.proto.RateLimit;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-7-import com.yandex.messaging.core.net.entities.proto.ShortMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-8-import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-9-import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-10-import com.yandex.messaging.internal.ServerMessageRef;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-11-import com.yandex.messaging.internal.entities.AddresseeType;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-12-import com.yandex.messaging.internal.entities.GalleryMessageData;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-13-import com.yandex.messaging.internal.entities.ImageMessageData;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-43-    }
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-44-
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-45-    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-46-        ((r7j) this.i.f.get()).getClass();
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-47-        this.e = SystemClock.elapsedRealtime();
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-48-        return new ClientMessage(null, null, null, this.j, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, this.k.j ? 3 : 0, false, 201326583, null);
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-49-    }
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-50-
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:51:    public final boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-52-        boolean z;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-53-        hl4 hl4Var = this.h;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-54-        long j = hl4Var.b;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-55-        jl4 jl4Var = hl4Var.a;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-56-        slh slhVar = this.i;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-57-        it4 it4Var = slhVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-58-        x20 x20Var = slhVar.g;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-59-        gkp gkpVar = slhVar.a;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-117-        }
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-118-        if (z) {
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-119-            qlhVar.a();
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-120-            jl4.a(jl4Var, j, o8g.FAILURE);
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-121-        }
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-122-        return z;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-123-    }
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-124-
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:125:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-126-        boolean z;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-127-        hl4 hl4Var;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-128-        rt4 rt4Var;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-129-        mqd.z(postMessageResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-130-        slh slhVar = this.i;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-131-        ((r7j) slhVar.f.get()).a(this.e, "time2ack_plain");
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-132-        slhVar.g.i("msg time 2 ack", "time_diff", Long.valueOf(SystemClock.elapsedRealtime() - this.e), "response_diff", Long.valueOf(this.f - this.e), "parse_diff", Long.valueOf(this.g - this.e));
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-133-        RateLimit rateLimit = postMessageResponse.rateLimit;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java:3:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-4-import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-5-
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-6-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-7-public final class kpm {
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-8-    public final aco a;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-9-    public final c2k b;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-10-
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-11-    public kpm(aco acoVar, c2k c2kVar) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-68-                try {
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-69-                    throw th;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-70-                } catch (Throwable th4) {
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-71-                    vd1.v(f18Var, th);
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-72-                    throw th4;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-73-                }
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-74-            }
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-75-        }
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java:76:        PostMessageResponse postMessageResponse = (PostMessageResponse) objQ;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-77-        vd1.v(f18Var, null);
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java:78:        return postMessageResponse == null ? (PostMessageResponse) zukVarK.a : postMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-79-    }
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-80-}
+--
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:3:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-4-import com.yandex.messaging.core.net.entities.proto.ShortMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-5-import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-6-import com.yandex.messaging.core.net.entities.proto.message.UnseenMarker;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-7-
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-8-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-9-public final class hw4 extends vx6 {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-10-    public final /* synthetic */ iw4 e;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-11-    public final /* synthetic */ long f;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-20-        this.h = j3;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-21-        this.i = pycVar;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-22-    }
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-23-
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-24-    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-25-        return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new UnseenMarker(this.e.b.b, this.f, this.g, this.h), null, null, null, false, 0, false, 266338303, null);
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-26-    }
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-27-
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:28:    public final boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-29-        mqd.z(postMessageResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-30-        if (vx6.V(postMessageResponse.status)) {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-31-            return false;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-32-        }
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-33-        jel jelVarE = nzn.E(new phf());
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-34-        ohf ohfVar = (ohf) this.i.b;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-35-        lib libVar = (lib) ohfVar.g.get();
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-36-        if (libVar != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-37-            libVar.invoke(Boolean.valueOf(mel.a(jelVarE) instanceof kmh));
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-38-        }
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-39-        ohfVar.g();
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-40-        return true;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-41-    }
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-42-
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:43:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-44-        mqd.z(postMessageResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-45-        iw4 iw4Var = this.e;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-46-        q9j q9jVar = iw4Var.b;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-47-        if (iw4Var.h.c) {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-48-            ShortMessageInfo shortMessageInfo = postMessageResponse.messageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-49-            if (shortMessageInfo != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-50-                veg vegVarV = iw4Var.f.V();
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-51-                try {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:3:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-4-import com.yandex.messaging.core.net.entities.proto.ShortMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-5-import com.yandex.messaging.core.net.entities.proto.message.ClearUserHistory;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-6-import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-7-import com.yandex.messaging.core.net.entities.proto.message.Heartbeat;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-8-
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-9-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-10-public final class f25 extends vx6 {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-11-    public final /* synthetic */ int e;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-14-    public /* synthetic */ f25(Object obj, int i) {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-15-        this.e = i;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-16-        this.f = obj;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-17-    }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-18-
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-19-    public /* bridge */ /* synthetic */ int J(Object obj) {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-20-        switch (this.e) {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-21-            case 1:
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:22:                a0((PostMessageResponse) obj);
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-23-                return 0;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-24-            default:
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-25-                return super.J(obj);
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-26-        }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-27-    }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-28-
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-29-    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-30-        switch (this.e) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-35-                h6eVar.getClass();
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-36-                Heartbeat heartbeat = new Heartbeat();
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-37-                h6eVar.d.getClass();
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-38-                heartbeat.type = 2;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-39-                return new ClientMessage(null, heartbeat, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435453, null);
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-40-        }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-41-    }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-42-
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:43:    public void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-44-        switch (this.e) {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-45-            case 0:
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-46-                mqd.z(postMessageResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-47-                ShortMessageInfo shortMessageInfo = postMessageResponse.messageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-48-                if (!atl.u() && shortMessageInfo == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-49-                    atl.y("timestamp should be defined for correct clearing chat's messages");
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-50-                }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-51-                if (shortMessageInfo != null) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-72-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-73-                }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-74-                return;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-75-            default:
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-76-                return;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-77-        }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-78-    }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-79-
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:80:    public int a0(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-81-        switch (this.e) {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-82-            case 1:
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-83-                mqd.z(postMessageResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-84-                h6e h6eVar = (h6e) this.f;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-85-                w5i w5iVar = (w5i) h6eVar.g.get();
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-86-                int i = postMessageResponse.status;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-87-                w5iVar.g(i, i == 1);
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-88-                if (postMessageResponse.status != 1) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-192-            } else {
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-193-                i3 = 0;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-194-                pollCopy$default = r15;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-195-            }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-196-            PlainMessage plainMessageCopy$default = PlainMessage.copy$default(plainMessage, null, null, null, null, null, null, null, pollCopy$default, null, 0L, null, null, null, null, false, null, false, null, null, null, 1048447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-197-            if (ygiVar5.j) {
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-198-                i3 = 3;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-199-            }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:200:            String strC = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-201-            Pattern pattern = bvf.e;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-202-            return new kel(pze.h(strC, ko7.v("application/json")));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-203-        }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-204-        nzn.U(objQ2);
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-205-        if (!this.c.c) {
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-206-            return new iel(azl.a);
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-207-        }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-208-        if (j2 < 0) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-300-                } else {
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-301-                    i3 = 0;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-302-                    pollCopy$default = r15;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-303-                }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-304-                PlainMessage plainMessageCopy$default2 = PlainMessage.copy$default(plainMessage2, null, null, null, null, null, null, null, pollCopy$default, null, 0L, null, null, null, null, false, null, false, null, null, null, 1048447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-305-                if (ygiVar5.j) {
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-306-                    i3 = 3;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-307-                }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:308:                String strC2 = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-309-                Pattern pattern2 = bvf.e;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-310-                return new kel(pze.h(strC2, ko7.v("application/json")));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-311-            }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-312-        }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-313-        return xe6Var;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-314-        yx0 yx0Var = (yx0) objQ2;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-315-        if (!(yx0Var instanceof wx0)) {
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-316-            if (yx0Var == null) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-389-            } else {
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-390-                i3 = 0;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-391-                pollCopy$default = r15;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-392-            }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-393-            PlainMessage plainMessageCopy$default3 = PlainMessage.copy$default(plainMessage3, null, null, null, null, null, null, null, pollCopy$default, null, 0L, null, null, null, null, false, null, false, null, null, null, 1048447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-394-            if (ygiVar5.j) {
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-395-                i3 = 3;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-396-            }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:397:            String strC3 = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default3, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-398-            Pattern pattern3 = bvf.e;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-399-            return new kel(pze.h(strC3, ko7.v("application/json")));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-400-        }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-401-        return xe6Var;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-402-    }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-403-}
+--
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-3-import android.os.Looper;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:4:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-5-import com.yandex.messaging.core.net.entities.proto.ShortMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-6-import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-7-import com.yandex.messaging.core.net.entities.proto.message.Reaction;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-8-import com.yandex.messaging.internal.ServerMessageRef;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-9-import com.yandex.messaging.internal.entities.MessageData;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-10-import java.io.IOException;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-11-
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-12-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+--
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-22-        this.g = i;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-23-        this.h = i2;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-24-    }
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-25-
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-26-    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-27-        return new ClientMessage(null, null, null, null, null, null, null, null, null, new Reaction(this.e.c.a.b, this.f.getTimestamp(), this.g, this.h), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268434943, null);
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-28-    }
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-29-
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:30:    public final boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-31-        mqd.z(postMessageResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-32-        mnk mnkVar = this.e;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-33-        atl.s(mnkVar.g, Looper.myLooper(), null);
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-34-        if (vx6.V(postMessageResponse.status)) {
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-35-            return false;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-36-        }
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-37-        x9f x9fVar = mnkVar.h;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-38-        ServerMessageRef serverMessageRef = this.f;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-46-    	at jadx.core.dex.instructions.args.ArgType.getObject(ArgType.java:596)
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-47-    	at jadx.core.dex.attributes.nodes.ClassTypeVarsAttr.getTypeVarsMapFor(ClassTypeVarsAttr.java:35)
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-48-    	at jadx.core.dex.nodes.utils.TypeUtils.replaceClassGenerics(TypeUtils.java:177)
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-49-    	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.insertExplicitUseCast(FixTypesVisitor.java:397)
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-50-    	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.tryFieldTypeWithNewCasts(FixTypesVisitor.java:359)
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-51-    	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.applyFieldType(FixTypesVisitor.java:309)
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-52-    	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.visit(FixTypesVisitor.java:94)
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-53-     */
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:54:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-55-        MessageData messageData;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-56-        mqd.z(postMessageResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-57-        mnk mnkVar = this.e;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-58-        cw3 cw3VarF = null;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-59-        atl.s(mnkVar.g, Looper.myLooper(), null);
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-60-        ShortMessageInfo shortMessageInfo = postMessageResponse.messageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-61-        ServerMessageRef serverMessageRef = this.f;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-62-        if (shortMessageInfo != null) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-3-import android.os.Looper;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-4-import android.os.SystemClock;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-5-import android.util.LongSparseArray;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:6:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-7-import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-8-import com.yandex.messaging.core.net.entities.proto.message.ReadMarker;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-9-import com.yandex.messaging.core.net.entities.proto.message.Report;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-10-import com.yandex.messaging.core.net.entities.proto.message.SeenMarker;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-11-import com.yandex.messaging.internal.entities.SeenMarkerEntity;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-12-import java.util.HashMap;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-13-import java.util.Random;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-14-
+--
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-54-                }
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-55-                this.g = readMarker;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-56-                ((bok) this.i).c.getClass();
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-57-                this.f = SystemClock.elapsedRealtime();
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-58-                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, (ReadMarker) this.g, null, null, null, null, null, null, null, null, null, false, 0, false, 268402687, null);
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-59-        }
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-60-    }
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-61-
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:62:    public final void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-63-        switch (this.e) {
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-64-            case 0:
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-65-                mqd.z(postMessageResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-66-                ((r7j) ((pb5) this.g).d).c(this.f, "time2ack_report");
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-67-                ((xfg) this.i).run();
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-68-                return;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-69-            case 1:
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-70-                mqd.z(postMessageResponse, "response");
+--
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java:3:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-4-import com.yandex.messaging.core.net.entities.proto.RateLimit;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-5-import kotlin.Metadata;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-6-
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-7-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-8-@Metadata(d1 = {"\u0000\u000e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00060\u0001j\u0002`\u0002¨\u0006\u0003"}, d2 = {"Lqsj;", "Ljava/lang/RuntimeException;", "Lkotlin/RuntimeException;", "messaging-core-internal_release"}, k = 1, mv = {2, 3, 0}, xi = 48)
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-9-public final /* data */ class qsj extends RuntimeException {
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-10-    public final int a;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-11-    public final String b;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-12-    public final Long c;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-13-
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-14-    /* JADX WARN: Illegal instructions before constructor call */
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java:15:    public qsj(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-16-        mqd.z(postMessageResponse, "errorResponse");
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-17-        int i = postMessageResponse.status;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-18-        String str = postMessageResponse.details;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-19-        RateLimit rateLimit = postMessageResponse.rateLimit;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-20-        Long lValueOf = rateLimit != null ? Long.valueOf(rateLimit.waitFor) : null;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-21-        super(str);
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-22-        this.a = i;
+research/artifacts/decompiled-dex2/sources/defpackage/qsj.java-23-        this.b = str;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java:3:import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java-4-import com.yandex.messaging.core.net.entities.proto.message.BotRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java-5-import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java-6-import com.yandex.messaging.core.net.entities.proto.message.MessageContext;
+research/artifacts/decompiled-dex2/sources/defpackage/g92.java-7-
+
+===== MESSAGE SENDER IMPLEMENTATIONS =====
+===== f25.java =====
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+import com.yandex.messaging.core.net.entities.proto.ShortMessageInfo;
+import com.yandex.messaging.core.net.entities.proto.message.ClearUserHistory;
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+import com.yandex.messaging.core.net.entities.proto.message.Heartbeat;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class f25 extends vx6 {
+    public final /* synthetic */ int e;
+    public final /* synthetic */ Object f;
+
+    public /* synthetic */ f25(Object obj, int i) {
+        this.e = i;
+        this.f = obj;
+    }
+
+    public /* bridge */ /* synthetic */ int J(Object obj) {
+        switch (this.e) {
+            case 1:
+                a0((PostMessageResponse) obj);
+                return 0;
+            default:
+                return super.J(obj);
+        }
+    }
+
+    public final ClientMessage L() {
+        switch (this.e) {
+            case 0:
+                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new ClearUserHistory(((g25) this.f).a.b), null, null, null, null, null, null, null, false, 0, false, 268304383, null);
+            default:
+                h6e h6eVar = (h6e) this.f;
+                h6eVar.getClass();
+                Heartbeat heartbeat = new Heartbeat();
+                h6eVar.d.getClass();
+                heartbeat.type = 2;
+                return new ClientMessage(null, heartbeat, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435453, null);
+        }
+    }
+
+    public void S(PostMessageResponse postMessageResponse) {
+        switch (this.e) {
+            case 0:
+                mqd.z(postMessageResponse, "response");
+                ShortMessageInfo shortMessageInfo = postMessageResponse.messageInfo;
+                if (!atl.u() && shortMessageInfo == null) {
+                    atl.y("timestamp should be defined for correct clearing chat's messages");
+                }
+                if (shortMessageInfo != null) {
+                    g25 g25Var = (g25) this.f;
+                    long j = shortMessageInfo.timestamp;
+                    long j2 = shortMessageInfo.seqNo;
+                    q9j q9jVar = g25Var.a;
+                    long j3 = q9jVar.a;
+                    veg vegVarV = g25Var.c.V();
+                    try {
+                        mqd.z(vegVarV, "$this$doWithTransaction");
+                        vegVarV.a(q9jVar.a, j);
+                        vegVarV.E1(j3, j, j2);
+                        vegVarV.O();
+                        vegVarV.close();
+                        return;
+                    } catch (Throwable th) {
+                        try {
+                            throw th;
+                        } catch (Throwable th2) {
+                            vd1.v(vegVarV, th);
+                            throw th2;
+                        }
+                    }
+                }
+                return;
+            default:
+                return;
+        }
+    }
+
+    public int a0(PostMessageResponse postMessageResponse) {
+        switch (this.e) {
+            case 1:
+                mqd.z(postMessageResponse, "response");
+                h6e h6eVar = (h6e) this.f;
+                w5i w5iVar = (w5i) h6eVar.g.get();
+                int i = postMessageResponse.status;
+                w5iVar.g(i, i == 1);
+                if (postMessageResponse.status != 1) {
+                    ((amc) h6eVar.c.get()).j = false;
+                }
+                return 0;
+            default:
+                return super.a0(postMessageResponse);
+        }
+    }
+}
+===== e84.java =====
+package defpackage;
+
+import android.os.Looper;
+import android.os.SystemClock;
+import android.util.LongSparseArray;
+import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+import com.yandex.messaging.core.net.entities.proto.message.ReadMarker;
+import com.yandex.messaging.core.net.entities.proto.message.Report;
+import com.yandex.messaging.core.net.entities.proto.message.SeenMarker;
+import com.yandex.messaging.internal.entities.SeenMarkerEntity;
+import java.util.HashMap;
+import java.util.Random;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class e84 extends vx6 {
+    public final /* synthetic */ int e;
+    public long f;
+    public Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
+
+    public /* synthetic */ e84(Object obj, Object obj2, Object obj3, int i) {
+        this.e = i;
+        this.g = obj;
+        this.h = obj2;
+        this.i = obj3;
+    }
+
+    public final ClientMessage L() {
+        switch (this.e) {
+            case 0:
+                ((r7j) ((pb5) this.g).d).getClass();
+                this.f = SystemClock.elapsedRealtime();
+                return new ClientMessage(null, null, null, null, null, null, null, null, (Report) this.h, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435199, null);
+            case 1:
+                ((r7j) ((b7j) this.g).b.get()).getClass();
+                this.f = SystemClock.elapsedRealtime();
+                SeenMarkerEntity seenMarkerEntity = (SeenMarkerEntity) this.h;
+                String str = seenMarkerEntity.c;
+                mqd.y(str, "chatId");
+                return new ClientMessage(null, null, new SeenMarker(str, seenMarkerEntity.a, seenMarkerEntity.b, seenMarkerEntity.d), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435451, null);
+            default:
+                aok aokVar = (aok) this.h;
+                atl.s(aokVar.b.getLooper(), Looper.myLooper(), null);
+                atl.s(aokVar.b.getLooper(), Looper.myLooper(), null);
+                ReadMarker readMarker = new ReadMarker();
+                readMarker.chatId = aokVar.a;
+                LongSparseArray longSparseArray = aokVar.c;
+                readMarker.timestamps = new long[longSparseArray.size()];
+                int size = longSparseArray.size();
+                for (int i = 0; i < size; i++) {
+                    readMarker.timestamps[i] = longSparseArray.keyAt(i);
+                }
+                this.g = readMarker;
+                ((bok) this.i).c.getClass();
+                this.f = SystemClock.elapsedRealtime();
+                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, (ReadMarker) this.g, null, null, null, null, null, null, null, null, null, false, 0, false, 268402687, null);
+        }
+    }
+
+    public final void S(PostMessageResponse postMessageResponse) {
+        switch (this.e) {
+            case 0:
+                mqd.z(postMessageResponse, "response");
+                ((r7j) ((pb5) this.g).d).c(this.f, "time2ack_report");
+                ((xfg) this.i).run();
+                return;
+            case 1:
+                mqd.z(postMessageResponse, "response");
+                b7j b7jVar = (b7j) this.g;
+                atl.s(b7jVar.d, Looper.myLooper(), null);
+                ((r7j) b7jVar.b.get()).a(this.f, "time2ack_seen_marker");
+                HashMap map = b7jVar.e;
+                String str = (String) this.i;
+                map.remove(str);
+                b7jVar.f.F(str);
+                return;
+            default:
+                mqd.z(postMessageResponse, "response");
+                aok aokVar = (aok) this.h;
+                aokVar.e = null;
+                ReadMarker readMarker = (ReadMarker) this.g;
+                if (readMarker == null) {
+                    throw new IllegalArgumentException("Required value was null.");
+                }
+                long j = this.f;
+                LongSparseArray longSparseArray = aokVar.c;
+                long[] jArr = readMarker.timestamps;
+                mqd.y(jArr, "timestamps");
+                for (long j2 : jArr) {
+                    longSparseArray.remove(j2);
+                }
+                if (longSparseArray.size() == 0) {
+                    return;
+                }
+                aokVar.f.c.getClass();
+                long jElapsedRealtime = SystemClock.elapsedRealtime() - j;
+                Random random = new Random();
+                int i = bok.e;
+                int i2 = bok.d;
+                long jMax = (long) Math.max(0.0d, ((long) (random.nextInt(i - i2) + i2)) - jElapsedRealtime);
+                znk znkVar = new znk(aokVar, 1);
+                aokVar.d = znkVar;
+                aokVar.b.postDelayed(znkVar, jMax);
+                return;
+        }
+    }
+
+    public e84(aok aokVar, bok bokVar) {
+        this.e = 2;
+        this.h = aokVar;
+        this.i = bokVar;
+    }
+}
+===== trh.java =====
+package defpackage;
+
+import com.google.protobuf.DescriptorProtos;
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.concurrent.CancellationException;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final /* synthetic */ class trh implements pib {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ trh(Object obj, int i) {
+        this.a = i;
+        this.b = obj;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:103:0x0308 A[DONT_INVERT] */
+    /* JADX WARN: Code duplicated, block: B:104:0x030a A[Catch: all -> 0x02fd, LOOP:1: B:87:0x02c5->B:104:0x030a, LOOP_END, TryCatch #0 {all -> 0x02fd, blocks: (B:80:0x02a0, B:82:0x02b0, B:84:0x02b7, B:87:0x02c5, B:89:0x02d5, B:91:0x02e1, B:93:0x02ea, B:95:0x02f3, B:100:0x02ff, B:101:0x0302, B:104:0x030a, B:114:0x032f, B:105:0x030d, B:106:0x0313, B:108:0x0319, B:110:0x0321, B:113:0x032b), top: B:189:0x02a0 }] */
+    /* JADX WARN: Code duplicated, block: B:200:0x032f A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:57:0x0223  */
+    public final Object invoke(Object obj, Object obj2) {
+        fw3 fw3VarW;
+        switch (this.a) {
+            case 0:
+                final psh pshVar = (psh) this.b;
+                om5 om5Var = (fm5) obj;
+                int iIntValue = ((Integer) obj2).intValue();
+                om5 om5Var2 = om5Var;
+                if (om5Var2.S(iIntValue & 1, (iIntValue & 3) != 2)) {
+                    yz8 yz8Var = yz8.a;
+                    boolean zH = om5Var2.h(pshVar);
+                    Object objP = om5Var2.P();
+                    if (zH || objP == em5.a) {
+                        final int i = 1;
+                        objP = new kib() { // from class: qrh
+                            public final Object invoke() {
+                                switch (i) {
+                                    case 0:
+                                        pshVar.I(grh.a);
+                                        break;
+                                    default:
+                                        pshVar.I(zqh.a);
+                                        break;
+                                }
+                                return fcq.a;
+                            }
+                        };
+                        om5Var2.m0(objP);
+                    }
+                    nr0.h(yz8Var, null, null, 0L, (kib) objP, null, null, null, null, om5Var2, 54, 492);
+                } else {
+                    om5Var2.V();
+                }
+                return fcq.a;
+            case 1:
+                ((Integer) obj2).getClass();
+                as1.b((pui) this.b, (fm5) obj, hk3.P(1));
+                return fcq.a;
+            case 2:
+                ((Integer) obj2).getClass();
+                ((ffj) this.b).y(hk3.P(7), (fm5) obj);
+                return fcq.a;
+            case 3:
+                cqj cqjVar = (cqj) this.b;
+                Integer num = (Integer) obj;
+                int iIntValue2 = num.intValue();
+                boolean zBooleanValue = ((Boolean) obj2).booleanValue();
+                boolean z = cqjVar.i;
+                ArrayList arrayList = cqjVar.g;
+                if (!z && !cqjVar.j) {
+                    if (cqjVar.h) {
+                        ((xpj) arrayList.get(iIntValue2)).d = true;
+                        cqjVar.d.invoke(num);
+                    } else {
+                        ((xpj) arrayList.get(iIntValue2)).d = zBooleanValue;
+                        cqjVar.e.invoke();
+                    }
+                }
+                return fcq.a;
+            case 4:
+                azj azjVar = (azj) this.b;
+                om5 om5Var3 = (fm5) obj;
+                int iIntValue3 = ((Integer) obj2).intValue();
+                om5 om5Var4 = om5Var3;
+                if (!om5Var4.S(iIntValue3 & 1, (iIntValue3 & 3) != 2)) {
+                    om5Var4.V();
+                } else if (azjVar.d) {
+                    om5Var4.b0(40669737);
+                    f3r.g(0.0f, 0, 7, 0L, om5Var4, (fug) null);
+                    om5Var4.p(false);
+                } else {
+                    om5Var4.b0(40711060);
+                    om5Var4.p(false);
+                }
+                return fcq.a;
+            case 5:
+                czg czgVar = (czg) this.b;
+                om5 om5Var5 = (fm5) obj;
+                int iIntValue4 = ((Integer) obj2).intValue();
+                om5 om5Var6 = om5Var5;
+                if (om5Var6.S(iIntValue4 & 1, (iIntValue4 & 3) != 2)) {
+                    z39.d.d(48, om5Var6, i2r.d(czgVar.b, om5Var6));
+                } else {
+                    om5Var6.V();
+                }
+                return fcq.a;
+            case 6:
+                ifl iflVar = (ifl) this.b;
+                ((Integer) obj2).intValue();
+                om5 om5Var7 = (fm5) obj;
+                om5Var7.b0(-890630579);
+                xpi xpiVar = iflVar.a;
+                om5Var7.p(false);
+                return xpiVar;
+            case 7:
+                ClientMessage clientMessage = (ClientMessage) this.b;
+                mgn mgnVar = (mgn) obj;
+                mqd.z(mgnVar, "$this$withRealConnection");
+                mgnVar.l((c8q) obj2, clientMessage);
+                return fcq.a;
+            case 8:
+                tgn tgnVar = (tgn) this.b;
+                mgn mgnVar2 = (mgn) obj;
+                mqd.z(mgnVar2, "$this$withRealConnection");
+                mgnVar2.p(tgnVar);
+                return fcq.a;
+            case 9:
+                dbk dbkVar = (dbk) this.b;
+                float fFloatValue = ((Float) obj).floatValue();
+                ((Float) obj2).getClass();
+                dbkVar.e.l(fFloatValue);
+                return fcq.a;
+            case 10:
+                ((Integer) obj2).getClass();
+                ((bfk) this.b).y(hk3.P(7), (fm5) obj);
+                return fcq.a;
+            case 11:
+                vnk vnkVar = (vnk) this.b;
+                ra9 ra9Var = (ra9) obj;
+                mqd.z(ra9Var, "reaction");
+                lo7.z(ter.a(vnkVar), (ie6) null, ze6.d, new dqi(vnkVar, ra9Var, (f3f) obj2, null, 25), 1);
+                return fcq.a;
+            case 12:
+                qqk qqkVar = (qqk) this.b;
+                usl uslVar = (Set) obj;
+                synchronized (qqkVar.b) {
+                    try {
+                        if (((nqk) qqkVar.t.getValue()).compareTo(nqk.e) >= 0) {
+                            t8h t8hVar = qqkVar.g;
+                            if (uslVar instanceof usl) {
+                                t8h t8hVar2 = uslVar.a;
+                                Object[] objArr = t8hVar2.b;
+                                long[] jArr = t8hVar2.a;
+                                int length = jArr.length - 2;
+                                if (length >= 0) {
+                                    int i2 = 0;
+                                    while (true) {
+                                        long j = jArr[i2];
+                                        if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                                            int i3 = 8 - ((~(i2 - length)) >>> 31);
+                                            for (int i4 = 0; i4 < i3; i4++) {
+                                                if ((255 & j) < 128) {
+                                                    Object obj3 = objArr[(i2 << 3) + i4];
+                                                    if (!(obj3 instanceof hsn) || ((hsn) obj3).i(1)) {
+                                                        t8hVar.a(obj3);
+                                                    }
+                                                }
+                                                j >>= 8;
+                                            }
+                                            if (i3 == 8) {
+                                                if (i2 != length) {
+                                                    i2++;
+                                                }
+                                            }
+                                        } else if (i2 != length) {
+                                            i2++;
+                                        }
+                                    }
+                                }
+                            } else {
+                                for (Object obj4 : (Iterable) uslVar) {
+                                    if (!(obj4 instanceof hsn) || ((hsn) obj4).i(1)) {
+                                        t8hVar.a(obj4);
+                                    }
+                                }
+                            }
+                            fw3VarW = qqkVar.w();
+                        } else {
+                            fw3VarW = null;
+                        }
+                    } catch (Throwable th) {
+                        throw th;
+                    }
+                    break;
+                }
+                if (fw3VarW != null) {
+                    ((gw3) fw3VarW).f(fcq.a);
+                }
+                return fcq.a;
+            case 13:
+                ((Integer) obj2).getClass();
+                ((r9l) this.b).y(hk3.P(7), (fm5) obj);
+                return fcq.a;
+            case 14:
+                apl aplVar = (apl) this.b;
+                int iIntValue5 = ((Integer) obj).intValue();
+                lxd lxdVar = (ge6) obj2;
+                he6 key = lxdVar.getKey();
+                lxd lxdVarD1 = aplVar.e.d1(key);
+                if (key == vnd.b) {
+                    lxd lxdVar2 = lxdVarD1;
+                    lxd parent = lxdVar;
+                    while (true) {
+                        if (parent == null) {
+                            parent = null;
+                        } else if (parent != lxdVar2 && (parent instanceof vzl)) {
+                            ly4 ly4Var = (ly4) xxd.b.get((vzl) parent);
+                            parent = ly4Var != null ? ly4Var.getParent() : null;
+                        }
+                    }
+                    if (parent != lxdVar2) {
+                        throw new IllegalStateException(("Flow invariant is violated:\n\t\tEmission from another coroutine is detected.\n\t\tChild of " + parent + ", expected child of " + lxdVar2 + ".\n\t\tFlowCollector is not thread-safe and concurrent emissions are prohibited.\n\t\tTo mitigate this restriction please use 'channelFlow' builder instead of 'flow'").toString());
+                    }
+                    if (lxdVar2 != null) {
+                        iIntValue5++;
+                    }
+                } else if (lxdVar != lxdVarD1) {
+                    iIntValue5 = Integer.MIN_VALUE;
+                } else {
+                    iIntValue5++;
+                }
+                return Integer.valueOf(iIntValue5);
+            case 15:
+                ydo ydoVar = (ydo) this.b;
+                fm5 fm5Var = (fm5) obj;
+                int iIntValue6 = ((Integer) obj2).intValue();
+                fm5 fm5Var2 = (om5) fm5Var;
+                if (fm5Var2.S(iIntValue6 & 1, (iIntValue6 & 3) != 2)) {
+                    ((zdo) ydoVar).a(6, fm5Var2);
+                } else {
+                    fm5Var2.V();
+                }
+                return fcq.a;
+            case 16:
+                stl stlVar = (stl) this.b;
+                dtl dtlVar = (dtl) obj;
+                boolean zBooleanValue2 = ((Boolean) obj2).booleanValue();
+                mqd.z(dtlVar, "task");
+                ltl ltlVar = new ltl(dtlVar, zBooleanValue2);
+                lxd lxdVar3 = stlVar.k;
+                if (lxdVar3 != null) {
+                    lxdVar3.i((CancellationException) null);
+                }
+                stlVar.k = stlVar.E(new oqk(stlVar, ltlVar, (ic6) null, 7));
+                return fcq.a;
+            case 17:
+                hul hulVar = (hul) this.b;
+                dtl dtlVar2 = (dtl) obj;
+
+===== SOCKET MESSAGE METHODS =====
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public interface mgn {
+    void b(String str);
+
+    boolean c();
+
+    void close();
+
+    cw3 f(sgn sgnVar, taa taaVar);
+
+    boolean j();
+
+    String k();
+
+    void l(c8q c8qVar, ClientMessage clientMessage);
+
+    void p(tgn tgnVar);
+}
