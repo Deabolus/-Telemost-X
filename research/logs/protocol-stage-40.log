@@ -1,0 +1,311 @@
+===== DIRECT QUС CALLS =====
+research/artifacts/decompiled-dex2/sources/defpackage/e8f.java:30:        g5l g5lVarA = ((quc) zm7Var.b).a(new RequestUserParams(), "request_user");
+research/artifacts/decompiled-dex2/sources/defpackage/idl.java:106:                g5l g5lVarA = ((quc) y8qVar.c).a(requestUserParams, "request_user");
+research/artifacts/decompiled-dex2/sources/defpackage/be1.java:115:                g5l g5lVarA2 = xc1Var.a(((quc) ((ike) x71Var.e).get()).a(new RequestUserParams(), "request_user"));
+research/artifacts/decompiled-dex2/sources/defpackage/ye1.java:46:                return new qe1((ooq) this.b.get(), (quc) this.c.get(), (lt1) this.d.get(), (exc) this.e.get(), (nla) this.f.get(), (kna) this.g.get(), (hu7) this.h.get(), (ryj) this.i.get(), (m04) this.j.get(), (y9a) this.k.get(), n68.a(this.l), (n2d) this.m.get(), (j78) this.n.get(), n68.a(this.o), (k4e) this.p.get(), (r7j) this.q.get());
+research/artifacts/decompiled-dex2/sources/defpackage/le1.java:71:                g5l g5lVarA = qucVar.a(new SetPushTokenParams(this.j, this.k, pckVar.a, pckVar.b.a, this.m, this.n, this.o, this.p, this.q), "set_push_token");
+research/artifacts/decompiled-dex2/sources/defpackage/pe1.java:86:                g5l g5lVarA = xc1Var.a(((quc) ((ike) x71Var.e).get()).a(null, "get_experiments"));
+
+===== API RESPONSE HELPERS =====
+===== qe1.java =====
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.Bucket;
+import com.yandex.messaging.core.net.entities.ChangeChatMembersParams;
+import com.yandex.messaging.core.net.entities.GetStaffDataParam;
+import com.yandex.messaging.core.net.entities.GetUsersDataParam;
+import com.yandex.messaging.core.net.entities.RequestUserData;
+import com.yandex.messaging.core.net.entities.RequestUserParams;
+import com.yandex.messaging.core.net.entities.SearchParams;
+import java.util.ArrayList;
+import java.util.UUID;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class qe1 implements qck {
+    public final ooq a;
+    public final quc b;
+    public final exc c;
+    public final nla d;
+    public final kna e;
+    public final hu7 f;
+    public final ryj g;
+    public final m04 h;
+    public final y9a i;
+    public final ike j;
+    public final n2d k;
+    public final j78 l;
+    public final ike m;
+    public final k4e n;
+    public final r7j o;
+
+    public qe1(ooq ooqVar, quc qucVar, lt1 lt1Var, exc excVar, nla nlaVar, kna knaVar, hu7 hu7Var, ryj ryjVar, m04 m04Var, y9a y9aVar, ike ikeVar, n2d n2dVar, j78 j78Var, ike ikeVar2, k4e k4eVar, r7j r7jVar) {
+        mqd.z(ooqVar, "httpRetrierFactory");
+        mqd.z(qucVar, "apiCallFactory");
+        mqd.z(lt1Var, "balancerApiCallFactory");
+        mqd.z(excVar, "fileCallFactory");
+        mqd.z(nlaVar, "cacheManager");
+        mqd.z(knaVar, "fileProgressObservable");
+        mqd.z(hu7Var, "deviceInfoProvider");
+        mqd.z(ryjVar, "privacyApiRestrictionsObservable");
+        mqd.z(m04Var, "changeChatMemberErrorsObservable");
+        mqd.z(y9aVar, "experimentConfig");
+        mqd.z(ikeVar, "yadiskResumableUploadsFeatureToggle");
+        mqd.z(n2dVar, "identityProvider");
+        mqd.z(j78Var, "downloadFileReporter");
+        mqd.z(ikeVar2, "fastStartupSyncRetryFeatureToggle");
+        mqd.z(k4eVar, "jsonSerializer");
+        mqd.z(r7jVar, "performanceStatAccumulator");
+        this.a = ooqVar;
+        this.b = qucVar;
+        this.c = excVar;
+        this.d = nlaVar;
+        this.e = knaVar;
+        this.f = hu7Var;
+        this.g = ryjVar;
+        this.h = m04Var;
+        this.i = y9aVar;
+        this.j = ikeVar;
+        this.k = n2dVar;
+        this.l = j78Var;
+        this.m = ikeVar2;
+        this.n = k4eVar;
+        this.o = r7jVar;
+    }
+
+    public static af1 d(qe1 qe1Var, rd1 rd1Var, ChangeChatMembersParams changeChatMembersParams, lib libVar, int i) {
+        ld5 ld5Var = new ld5(1);
+        if ((i & 8) != 0) {
+            libVar = new bk0(18);
+        }
+        lib libVar2 = libVar;
+        qe1Var.getClass();
+        return qe1Var.a.a(new ud1(qe1Var, changeChatMembersParams, libVar2, rd1Var, (kib) ld5Var));
+    }
+
+    public static af1 e(qe1 qe1Var, String str, Object obj, Class cls, lib libVar, lib libVar2, boolean z, wf wfVar, taa taaVar, r2 r2Var, int i) {
+        wf wfVar2 = (i & 64) != 0 ? new wf(false) : wfVar;
+        taa taaVar2 = (i & 128) != 0 ? saa.c : taaVar;
+        r2 bk0Var = (i & 256) != 0 ? new bk0(17) : r2Var;
+        ooq ooqVar = qe1Var.a;
+        zd1 zd1Var = new zd1(wfVar2, bk0Var, qe1Var, str, obj, z, cls, libVar, libVar2);
+        ooqVar.getClass();
+        String string = UUID.randomUUID().toString();
+        mqd.y(string, "toString(...)");
+        return ooqVar.b(string, zd1Var, taaVar2);
+    }
+
+    @Override // defpackage.qck
+    public final cw3 a(tco tcoVar, String str, String str2, pck pckVar, String str3, boolean z, String str4, String str5, String str6) {
+        mqd.z(str2, "deviceModel");
+        mqd.z(pckVar, "pushToken");
+        mqd.z(str3, "deviceId");
+        return this.a.a(new le1(this, str, str2, pckVar.a, pckVar, str3, z, str4, str5, str6, tcoVar));
+    }
+
+    @Override // defpackage.qck
+    public final cw3 b(pe9 pe9Var, String str, boolean z) {
+        return this.a.a(new me1(this, str, z, pe9Var));
+    }
+
+    public final af1 c(rd1 rd1Var, go5 go5Var, String str) {
+        mqd.z(str, "chatId");
+        return this.a.a(new ud1(rd1Var, new wf(true), this, str, go5Var, 0));
+    }
+
+    public final af1 f(Class cls, lib libVar, Bucket.GetParams getParams, wf wfVar) {
+        return this.a.a(new ee1(wfVar, this, getParams, cls, libVar));
+    }
+
+    public final af1 g(pd1 pd1Var, String str, wf wfVar) {
+        mqd.z(str, "chatId");
+        String strG = wq1.g("toString(...)");
+        ud1 ud1Var = new ud1(pd1Var, wfVar, this, new String[]{str}, strG);
+        ooq ooqVar = this.a;
+        ooqVar.getClass();
+        return ooqVar.b(strG, ud1Var, null);
+    }
+
+    public final af1 h(rd1 rd1Var, String str, wf wfVar) {
+        mqd.z(str, "nickname");
+        GetStaffDataParam getStaffDataParam = new GetStaffDataParam();
+        getStaffDataParam.nickname = str;
+        return this.a.a(new hw(rd1Var, wfVar, this, getStaffDataParam, 8));
+    }
+
+    public final af1 i(qd1 qd1Var, String... strArr) {
+        mqd.z(strArr, "ids");
+        ArrayList arrayList = new ArrayList();
+        for (String str : strArr) {
+            arrayList.add(new qek("id", str));
+        }
+        return this.a.a(new je1(this, arrayList, qd1Var));
+    }
+
+    public final af1 j(rd1 rd1Var, String str) {
+        mqd.z(str, "userId");
+        wf wfVar = new wf(false);
+        GetUsersDataParam getUsersDataParam = new GetUsersDataParam();
+        getUsersDataParam.guids = new String[]{str};
+        return this.a.a(new hw(rd1Var, wfVar, this, getUsersDataParam, 10));
+    }
+
+    public final af1 k(rd1 rd1Var, SearchParams searchParams, t8n t8nVar) {
+        return this.a.a(new hw(t8nVar, this, searchParams, rd1Var, 14));
+    }
+
+    public final af1 l(Class cls, od1 od1Var, Bucket bucket) {
+        return this.a.a(new hw(this, bucket, cls, od1Var, 15));
+    }
+
+    public final af1 m(qd1 qd1Var, r2 r2Var, boolean z, Boolean bool, wf wfVar, boolean z2) {
+        RequestUserParams requestUserParams = new RequestUserParams();
+        requestUserParams.bindPhoneNumber = z;
+        requestUserParams.enablePersonalDiscovery = bool;
+        return e(this, "request_user", requestUserParams, RequestUserData.class, new nd1(qd1Var, 0), r2Var, z2, wfVar, null, new r2(1, this.f, hu7.class, "apply", "apply(Lokhttp3/Request$Builder;)Lokhttp3/Request$Builder;", 0, 26), 128);
+    }
+}
+===== gn4.java =====
+package defpackage;
+
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v27 gn4[], still in use, count: 1, list:
+  (r0v27 gn4[]) from 0x018f: INVOKE (r0v27 gn4[]) STATIC call: oyg.B(java.lang.Enum[]):lg9 A[WRAPPED]
+	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:164)
+	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:129)
+	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:101)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at jadx.core.utils.InsnRemover.unbindInsns(InsnRemover.java:100)
+	at jadx.core.utils.InsnRemover.removeAllAndUnbind(InsnRemover.java:257)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:187)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:102)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class gn4 implements wu1 {
+    Join("join"),
+    Leave("leave"),
+    Read("read"),
+    Write("write"),
+    Change("change"),
+    /* JADX INFO: Fake field, exist only in values array */
+    Invite("invite"),
+    AddUsers("add_users"),
+    ChangeRole("change_role"),
+    /* JADX INFO: Fake field, exist only in values array */
+    ListMembers("list_members"),
+    /* JADX INFO: Fake field, exist only in values array */
+    RemoveUsers("remove_users"),
+    MarkAsImportant("mark_as_important"),
+    PinMessage("pin_message"),
+    /* JADX INFO: Fake field, exist only in values array */
+    DeleteMessage("delete_message"),
+    ChangeRights("change_rights"),
+    EditMessage("edit_message"),
+    WriteThreads("write_to_thread"),
+    ManageMeetings("manage_meetings"),
+    Translate("translate"),
+    SendStickers("send_stickers"),
+    SendReactions("send_reactions"),
+    SendAttachments("send_attachments"),
+    DownloadFiles("download_files"),
+    MakeExtCall("make_ext_call"),
+    Share("share"),
+    GuestDownloadFilesToggle("guest_download_files_toggle"),
+    CreateInviteLink("create_invite_link"),
+    FederativeAccess("federative_access");
+
+    public static final /* synthetic */ lg9 A;
+    public final String a;
+    public final int b;
+
+    static {
+        A = oyg.B(gn4VarArr);
+    }
+
+    public gn4(String str) {
+        super(str, i);
+        this.a = str;
+        this.b = ordinal();
+    }
+
+    public static gn4 valueOf(String str) {
+        return (gn4) Enum.valueOf(gn4.class, str);
+    }
+
+    public static gn4[] values() {
+        return (gn4[]) z.clone();
+    }
+
+    @Override // defpackage.wu1
+    public final int b() {
+        return this.b;
+    }
+
+    public final Boolean c(fn4 fn4Var, y5e y5eVar) {
+        mqd.z(fn4Var, "thisRef");
+        mqd.z(y5eVar, "property");
+        return Boolean.valueOf((((vvd) fn4Var).b & (1 << ordinal())) > 0);
+    }
+}
+
+===== MESSAGE DIRECTIVE REGISTRY =====
+package com.yandex.messaging.core.net.entities.directives;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public class DirectiveFactory {
+    public static final HashMap c = new HashMap();
+    public static final HashMap d = new HashMap();
+    public final pib a;
+    public final lib b;
+
+    static {
+        a(OpenBotDirective.class, "open_bot");
+        a(OpenDialogDirective.class, "open_dialog");
+        a(OpenUriDirective.class, "open_uri");
+        a(TypeDirective.class, "type");
+        a(CallPhoneDirective.class, "call_phone");
+        a(OpenPaymentDirective.class, "open_payment");
+        a(SendMessageDirective.class, "send_message");
+        a(OpenIFrameDirective.class, "open_iframe");
+        a(SetElementsStateDirective.class, "set_elements_state");
+    }
+
+    public DirectiveFactory(pib pibVar, lib libVar) {
+        this.a = pibVar;
+        this.b = libVar;
+    }
+
+    public static void a(Class cls, String str) {
+        c.put(str, cls);
+        d.put(cls, str);
+    }
+
+    public final Directive b(Object obj, String str, String str2) {
+        str.getClass();
+        if (str.equals("client_action")) {
+            if ("send_bot_request".equals(str2)) {
+                SendBotRequestDirective sendBotRequestDirective = new SendBotRequestDirective();
+                sendBotRequestDirective.b = obj;
+                return sendBotRequestDirective;
+            }
+            Class cls = (Class) c.get(str2);
+            if (cls != null) {
+                return (Directive) this.a.invoke(cls, obj);
+            }
+            throw new IllegalArgumentException(wq1.h("Unknown client_action: ", str2));
+        }
+        if (!str.equals("server_action")) {
+            throw new IllegalArgumentException("Unknown directive type: ".concat(str));
+        }
+        if (obj instanceof Map) {
+            return new ServerDirective(str2, (String) this.b.invoke((Map) obj));
+        }
+        if ((obj instanceof String) || obj == null) {
+            return new ServerDirective(str2, (String) obj);
+        }
+        throw new IllegalArgumentException("Impossible to parse ServerDirective payload: " + obj + " (" + obj.getClass() + ")");
+    }
+}
