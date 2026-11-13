@@ -1,0 +1,1224 @@
+===== HISTORY LOADER =====
+===== eoc.java =====
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.proto.ChatDataFilter;
+import com.yandex.messaging.core.net.entities.proto.HistoryRequest;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public class eoc {
+    public static final /* synthetic */ y5e[] g = {new o8h(0, eoc.class, "currentRequest", "getCurrentRequest()Lcom/yandex/messaging/Cancelable;")};
+    public final ueg a;
+    public final ike b;
+    public final ike c;
+    public final v97 d;
+    public final ike e;
+    public final rym f;
+
+    public eoc(ueg uegVar, ike ikeVar, ike ikeVar2, v97 v97Var, ike ikeVar3) {
+        mqd.z(uegVar, "cacheStorage");
+        mqd.z(ikeVar, "socketConnection");
+        mqd.z(ikeVar2, "performanceStatAccumulator");
+        mqd.z(v97Var, "debugFeatures");
+        mqd.z(ikeVar3, "fastStartupSyncRetryFeatureToggle");
+        this.a = uegVar;
+        this.b = ikeVar;
+        this.c = ikeVar2;
+        this.d = v97Var;
+        this.e = ikeVar3;
+        this.f = new rym(7);
+    }
+
+    public HistoryRequest a(long j) {
+        HistoryRequest historyRequest = new HistoryRequest();
+        long jF = this.a.f();
+        historyRequest.limit = 1L;
+        if (jF != 0) {
+            historyRequest.minTimestamp = Math.max(0L, jF - HistoryRequest.a);
+            ChatDataFilter chatDataFilter = new ChatDataFilter();
+            chatDataFilter.setMinVersion(Long.valueOf(Math.max(1L, j)));
+            historyRequest.filter = chatDataFilter;
+        }
+        return historyRequest;
+    }
+
+    public String b() {
+        return "time2history";
+    }
+
+    public final void c(cw3 cw3Var) {
+        this.f.B(this, g[0], cw3Var);
+    }
+}
+
+===== HISTORY REQUEST USAGES =====
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-3-import android.os.Looper;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:4:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:5:import com.yandex.messaging.core.net.entities.proto.HistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-6-import java.util.Iterator;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-7-
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-8-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-9-public final class eze extends kbg {
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-10-    public final /* synthetic */ tbg q;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-20-        this.s = cu4Var;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-21-        this.t = l;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-22-    }
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-23-
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-24-    @Override // defpackage.kbg
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:25:    public final void x(HistoryResponse historyResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:26:        ChatHistoryResponse chatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:27:        ChatHistoryResponse.OutMessage[] outMessageArr;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-28-        mqd.z(historyResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-29-        fze fzeVar = this.r;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-30-        znc zncVar = fzeVar.h;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:31:        ChatHistoryResponse[] chatHistoryResponseArr = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:32:        Integer numValueOf = (chatHistoryResponseArr == null || (chatHistoryResponse = (ChatHistoryResponse) tt0.A0(chatHistoryResponseArr)) == null || (outMessageArr = chatHistoryResponse.messages) == null) ? null : Integer.valueOf(outMessageArr.length);
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-33-        cu4 cu4Var = this.s;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-34-        znc.B(zncVar, "loaded messages range, messages.size = " + numValueOf + ", listener = " + cu4Var.getClass().getSimpleName());
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-35-        atl.s(fzeVar.c, Looper.myLooper(), null);
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-36-        super.x(historyResponse);
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:37:        ChatHistoryResponse chatHistoryResponseR = R(historyResponse);
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:38:        if (chatHistoryResponseR == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-39-            cu4Var.c();
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-40-            return;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-41-        }
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:42:        cu4Var.a(chatHistoryResponseR);
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-43-        Long l = this.t;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-44-        if (l != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-45-            long jLongValue = l.longValue();
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-46-            tbg tbgVar = this.q;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-47-            long j = tbgVar.b;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-48-            if (jLongValue > tbgVar.a || j > jLongValue) {
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-49-                return;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-50-            }
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:51:            ChatHistoryResponse.OutMessage[] outMessageArr2 = chatHistoryResponseR.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-52-            Iterator it = (outMessageArr2 != null ? tt0.x0(outMessageArr2) : jc9.a).iterator();
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-53-            while (it.hasNext()) {
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:54:                if (((ChatHistoryResponse.OutMessage) it.next()).serverMessage.serverMessageInfo.timestamp == l.longValue()) {
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-55-                    return;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-56-                }
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-57-            }
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-58-            cu4Var.c();
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java-59-        }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-13-import com.yandex.messaging.core.net.entities.PreferencesBucket;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-14-import com.yandex.messaging.core.net.entities.PrivacyBucket;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-15-import com.yandex.messaging.core.net.entities.RestrictionsBucket;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-16-import com.yandex.messaging.core.net.entities.StickerPacksBucket;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-17-import com.yandex.messaging.core.net.entities.UserStatusPresetBucket;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:18:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-19-import com.yandex.messaging.core.net.entities.proto.ChatInfoFromTransport;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-20-import com.yandex.messaging.core.net.entities.proto.ChatRole;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:21:import com.yandex.messaging.core.net.entities.proto.HistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-22-import com.yandex.messaging.core.net.entities.proto.PinnedMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-23-import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-24-import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-25-import com.yandex.messaging.core.net.entities.proto.message.ReducedUserInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-26-import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-175-        Long lValueOf;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-176-        Long lValueOf2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-177-        Iterator it = list.iterator();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-178-        Long l = null;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-179-        if (it.hasNext()) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:180:            ChatHistoryResponse.OutMessage[] outMessageArr = ((ChatHistoryResponse) it.next()).messages;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-181-            if (outMessageArr == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-182-                jLongValue = 0;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-183-            } else {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-184-                if (outMessageArr.length != 0) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-185-                    lValueOf2 = Long.valueOf(outMessageArr[0].serverMessage.serverMessageInfo.timestamp);
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-206-                    jLongValue = 0;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-207-                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-208-            }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-209-            Long lValueOf4 = Long.valueOf(jLongValue);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-210-            while (it.hasNext()) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:211:                ChatHistoryResponse.OutMessage[] outMessageArr2 = ((ChatHistoryResponse) it.next()).messages;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-212-                if (outMessageArr2 == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-213-                    jLongValue2 = 0;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-214-                } else {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-215-                    if (outMessageArr2.length != 0) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-216-                        lValueOf = Long.valueOf(outMessageArr2[0].serverMessage.serverMessageInfo.timestamp);
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-252-
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-253-    public static final long b(woc wocVar, List list) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-254-        Long l;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-255-        Iterator it = list.iterator();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-256-        if (it.hasNext()) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:257:            ChatRole chatRole = ((ChatHistoryResponse) it.next()).myRole;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-258-            Long lValueOf = Long.valueOf(chatRole != null ? chatRole.version : 0L);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-259-            while (it.hasNext()) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:260:                ChatRole chatRole2 = ((ChatHistoryResponse) it.next()).myRole;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-261-                Long lValueOf2 = Long.valueOf(chatRole2 != null ? chatRole2.version : 0L);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-262-                if (lValueOf.compareTo(lValueOf2) < 0) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-263-                    lValueOf = lValueOf2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-264-                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-265-            }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-280-    /* JADX WARN: Code duplicated, block: B:138:? A[RETURN, SYNTHETIC] */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-281-    /* JADX WARN: Code duplicated, block: B:72:0x0174  */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-282-    /* JADX WARN: Code duplicated, block: B:8:0x001e  */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-283-    /* JADX WARN: Multi-variable type inference failed */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-284-    /* JADX WARN: Type inference failed for: r14v1 */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:285:    /* JADX WARN: Type inference failed for: r14v2, types: [com.yandex.messaging.core.net.entities.BucketsData, com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse[], com.yandex.messaging.core.net.entities.proto.HistoryResponse, java.util.ArrayList] */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-286-    /* JADX WARN: Type inference failed for: r14v4 */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:287:    public static final Object d(woc wocVar, long j, HistoryResponse historyResponse, BucketsData bucketsData, ArrayList arrayList, kc6 kc6Var) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-288-        moc mocVar;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-289-        ArrayList arrayList2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:290:        HistoryResponse historyResponse2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-291-        List list;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-292-        boolean z;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-293-        ArrayList arrayList3;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:294:        ChatHistoryResponse[] chatHistoryResponseArr;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-295-        BucketsData bucketsData2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-296-        long j2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-297-        Iterator it;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-298-        LinkedHashMap linkedHashMap;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-299-        PinnedMessageInfo pinnedMessageInfo;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-306-        boolean z4;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-307-        Serializable serializable;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-308-        yuk yukVar;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-309-        ChatData[] chatDataArr;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-310-        long j3;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:311:        HistoryResponse historyResponse3;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-312-        String str;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-313-        anh anhVar;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-314-        int i;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-315-        boolean z5;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-316-        koc kocVar = wocVar.v;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-333-            if (i3 == 1) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-334-                long j4 = mocVar2.d;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-335-                list = mocVar2.j;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-336-                ArrayList arrayList4 = mocVar2.i;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-337-                arrayList2 = mocVar2.h;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:338:                ChatHistoryResponse[] chatHistoryResponseArr2 = mocVar2.g;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-339-                BucketsData bucketsData3 = mocVar2.f;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:340:                HistoryResponse historyResponse4 = mocVar2.e;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-341-                nzn.U(obj);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-342-                arrayList3 = arrayList4;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:343:                chatHistoryResponseArr = chatHistoryResponseArr2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-344-                bucketsData2 = bucketsData3;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-345-                j2 = j4;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-346-                historyResponse2 = historyResponse4;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-347-                z = true;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-348-            } else if (i3 == 2) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-405-            }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-406-            return new loc(yukVar.a, chatDataArr.length, list2.size());
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-407-        }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-408-        nzn.U(obj);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-409-        atl.s(wocVar.m, Looper.myLooper(), null);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:410:        ChatHistoryResponse[] chatHistoryResponseArr3 = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:411:        if (chatHistoryResponseArr3 == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:412:            chatHistoryResponseArr3 = new ChatHistoryResponse[0];
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-413-        }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:414:        ChatHistoryResponse[] chatHistoryResponseArr4 = chatHistoryResponseArr3;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-415-        arrayList2 = new ArrayList();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:416:        for (ChatHistoryResponse chatHistoryResponse : chatHistoryResponseArr4) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:417:            ChatRole chatRole2 = chatHistoryResponse.myRole;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-418-            if (chatRole2 != null && chatRole2.role == 3) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:419:                arrayList2.add(chatHistoryResponse);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-420-            }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-421-        }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-422-        ArrayList arrayList5 = new ArrayList();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:423:        for (ChatHistoryResponse chatHistoryResponse2 : chatHistoryResponseArr4) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:424:            ChatRole chatRole3 = chatHistoryResponse2.myRole;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-425-            if (chatRole3 == null || chatRole3.role != 3) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:426:                arrayList5.add(chatHistoryResponse2);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-427-            }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-428-        }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-429-        int iE0 = ygf.e0(ac5.Y(arrayList, 10));
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-430-        if (iE0 < 16) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-431-            iE0 = 16;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-436-        }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-437-        ArrayList arrayList6 = new ArrayList();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-438-        Iterator it2 = arrayList5.iterator();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-439-        while (it2.hasNext()) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-440-            Object next = it2.next();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:441:            ChatHistoryResponse chatHistoryResponse3 = (ChatHistoryResponse) next;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:442:            xb4 xb4Var = (xb4) linkedHashMap2.get(chatHistoryResponse3.chatId);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-443-            if (xb4Var != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-444-                it = it2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:445:                if (mqd.s(chatHistoryResponse3.chatId, xb4Var.a)) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:446:                    ChatHistoryResponse.OutMessage[] outMessageArr = chatHistoryResponse3.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-447-                    if (outMessageArr == null || outMessageArr.length == 0) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:448:                        ChatInfoFromTransport chatInfoFromTransport = chatHistoryResponse3.chatInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-449-                        linkedHashMap = linkedHashMap2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-450-                        if (chatInfoFromTransport == null || Long.valueOf(chatInfoFromTransport.participantsCount).equals(xb4Var.i)) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:451:                            if (chatHistoryResponse3.partnerInfo != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-452-                                ChatNamespaces chatNamespaces = ChatNamespaces.a;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:453:                                String str2 = chatHistoryResponse3.chatId;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-454-                                mqd.y(str2, "chatId");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-455-                                chatNamespaces.getClass();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-456-                                if (!ChatNamespaces.b(str2)) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:457:                                    pinnedMessageInfo = chatHistoryResponse3.pinnedMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:458:                                    if ((pinnedMessageInfo != null || Long.valueOf(pinnedMessageInfo.timestamp).equals(xb4Var.k)) && (((chatRole = chatHistoryResponse3.myRole) == null || Long.valueOf(chatRole.version).equals(xb4Var.l)) && xb4Var.j == chatHistoryResponse3.approvedByMe && xb4Var.h == chatHistoryResponse3.lastEditTimestamp && xb4Var.d == chatHistoryResponse3.otherSeenMarker && xb4Var.c == chatHistoryResponse3.ownerLastSeenSequenceNumber && xb4Var.b == chatHistoryResponse3.ownerSeenMarker)) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-459-                                        l = xb4Var.g;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:460:                                        long j5 = chatHistoryResponse3.minMessageTimestamp;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-461-                                        if (l == null && l.longValue() == j5) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-462-                                        }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-463-                                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-464-                                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-465-                            } else {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:466:                                pinnedMessageInfo = chatHistoryResponse3.pinnedMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-467-                                if (pinnedMessageInfo != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-468-                                    l = xb4Var.g;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:469:                                    long j6 = chatHistoryResponse3.minMessageTimestamp;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-470-                                    if (l == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-471-                                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-472-                                } else {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-473-                                    l = xb4Var.g;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:474:                                    long j7 = chatHistoryResponse3.minMessageTimestamp;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-475-                                    if (l == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-476-                                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-477-                                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-478-                            }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-479-                        }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-495-            linkedHashMap2 = linkedHashMap;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-496-        }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-497-        kocVar.a("chats_calculated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-498-        mocVar2.e = historyResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-499-        mocVar2.f = bucketsData;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:500:        mocVar2.g = chatHistoryResponseArr4;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-501-        mocVar2.h = arrayList2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-502-        mocVar2.i = arrayList5;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-503-        mocVar2.j = arrayList6;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-504-        mocVar2.d = j;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-505-        mocVar2.p = 1;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-510-        historyResponse2 = historyResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-511-        list = arrayList6;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-512-        z = true;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-513-        arrayList3 = arrayList5;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-514-        obj = serializableJ;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:515:        chatHistoryResponseArr = chatHistoryResponseArr4;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-516-        bucketsData2 = bucketsData;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-517-        j2 = j;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-518-        ChatData[] chatDataArr3 = (ChatData[]) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-519-        kocVar.a("chats_missed_loaded");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-520-        ie6 ie6Var = ((kc6) mocVar2).b;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-521-        mqd.u(ie6Var);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-522-        as1.v(ie6Var);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-523-        kocVar.a("chats_coroutine_check");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:524:        ChatHistoryResponse[] chatHistoryResponseArr5 = chatHistoryResponseArr;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-525-        yuk yukVar3 = new yuk();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-526-        yukVar3.a = j2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-527-        boolean zA = wocVar.G.a();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-528-        kocVar.a("chats_db_started");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-529-        ueg uegVar = wocVar.c;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-530-        list2 = list;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-531-        z2 = zA;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-532-        r14 = 0;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-533-        z3 = true;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-534-        z4 = false;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:535:        noc nocVar = new noc(wocVar, yukVar3, chatHistoryResponseArr5, list2, arrayList2, chatDataArr3, j2, z2, bucketsData2, historyResponse2, arrayList3, null);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-536-        mocVar2.e = historyResponse2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-537-        mocVar2.f = null;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-538-        mocVar2.g = null;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-539-        mocVar2.h = null;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-540-        mocVar2.i = null;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-600-    /* JADX WARN: Code duplicated, block: B:7:0x001b  */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-601-    /* JADX WARN: Code duplicated, block: B:81:0x01ba A[Catch: all -> 0x0107, TryCatch #1 {all -> 0x0107, blocks: (B:32:0x00dc, B:35:0x00ed, B:38:0x00f2, B:40:0x00fd, B:43:0x010b, B:44:0x011a, B:46:0x0120, B:48:0x012d, B:49:0x0131, B:50:0x0135, B:52:0x013b, B:54:0x0147, B:56:0x0151, B:57:0x0154, B:58:0x0158, B:60:0x0166, B:62:0x0172, B:65:0x017a, B:66:0x017d, B:67:0x0180, B:68:0x018c, B:70:0x0192, B:72:0x01a3, B:74:0x01a7, B:76:0x01ab, B:79:0x01b1, B:81:0x01ba, B:84:0x01c2, B:85:0x01c5, B:87:0x01c9, B:89:0x01d1, B:91:0x01d5, B:93:0x01d9, B:95:0x01dd, B:96:0x01e6, B:98:0x01ef, B:99:0x01f2, B:102:0x01fe, B:103:0x0204, B:105:0x020a, B:107:0x0216, B:109:0x0220, B:110:0x0224), top: B:119:0x00dc }] */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-602-    /* JADX WARN: Code duplicated, block: B:82:0x01bf  */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-603-    /* JADX WARN: Code duplicated, block: B:84:0x01c2 A[Catch: all -> 0x0107, TryCatch #1 {all -> 0x0107, blocks: (B:32:0x00dc, B:35:0x00ed, B:38:0x00f2, B:40:0x00fd, B:43:0x010b, B:44:0x011a, B:46:0x0120, B:48:0x012d, B:49:0x0131, B:50:0x0135, B:52:0x013b, B:54:0x0147, B:56:0x0151, B:57:0x0154, B:58:0x0158, B:60:0x0166, B:62:0x0172, B:65:0x017a, B:66:0x017d, B:67:0x0180, B:68:0x018c, B:70:0x0192, B:72:0x01a3, B:74:0x01a7, B:76:0x01ab, B:79:0x01b1, B:81:0x01ba, B:84:0x01c2, B:85:0x01c5, B:87:0x01c9, B:89:0x01d1, B:91:0x01d5, B:93:0x01d9, B:95:0x01dd, B:96:0x01e6, B:98:0x01ef, B:99:0x01f2, B:102:0x01fe, B:103:0x0204, B:105:0x020a, B:107:0x0216, B:109:0x0220, B:110:0x0224), top: B:119:0x00dc }] */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-604-    /* JADX WARN: Code duplicated, block: B:98:0x01ef A[Catch: all -> 0x0107, TryCatch #1 {all -> 0x0107, blocks: (B:32:0x00dc, B:35:0x00ed, B:38:0x00f2, B:40:0x00fd, B:43:0x010b, B:44:0x011a, B:46:0x0120, B:48:0x012d, B:49:0x0131, B:50:0x0135, B:52:0x013b, B:54:0x0147, B:56:0x0151, B:57:0x0154, B:58:0x0158, B:60:0x0166, B:62:0x0172, B:65:0x017a, B:66:0x017d, B:67:0x0180, B:68:0x018c, B:70:0x0192, B:72:0x01a3, B:74:0x01a7, B:76:0x01ab, B:79:0x01b1, B:81:0x01ba, B:84:0x01c2, B:85:0x01c5, B:87:0x01c9, B:89:0x01d1, B:91:0x01d5, B:93:0x01d9, B:95:0x01dd, B:96:0x01e6, B:98:0x01ef, B:99:0x01f2, B:102:0x01fe, B:103:0x0204, B:105:0x020a, B:107:0x0216, B:109:0x0220, B:110:0x0224), top: B:119:0x00dc }] */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:605:    public static final Object e(woc wocVar, ChatHistoryResponse[] chatHistoryResponseArr, ArrayList arrayList, HistoryResponse historyResponse, kc6 kc6Var) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-606-        ooc oocVar;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:607:        ChatHistoryResponse[] chatHistoryResponseArr2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-608-        Map map;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:609:        HistoryResponse historyResponse2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-610-        Set set;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:611:        ChatHistoryResponse[] chatHistoryResponseArr3;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:612:        HistoryResponse historyResponse3;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-613-        Map map2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-614-        boolean zA;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-615-        veg vegVarV;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-616-        fcq fcqVar;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-617-        Iterator it;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-619-        idj idjVar;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-620-        ArrayList arrayList2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-621-        int i;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-622-        Set setQ1;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-623-        ArrayList<String> arrayList3;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:624:        ArrayList<ChatHistoryResponse> arrayList4;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-625-        int i2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-626-        long jMax;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-627-        ServerMessage serverMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-628-        String str;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-629-        xr6 xr6VarG2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-630-        it4 it4VarG;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:631:        ChatHistoryResponse.OutMessage[] outMessageArr;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:632:        ChatHistoryResponse.OutMessage outMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-633-        ServerMessage serverMessage2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-634-        ClientMessage clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-635-        PlainMessage plainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-636-        ServerMessageInfo serverMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-637-        ReducedUserInfo reducedUserInfo;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-664-            LinkedHashMap linkedHashMap = new LinkedHashMap(iE0);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-665-            for (Object obj : arrayList) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-666-                linkedHashMap.put(((xb4) obj).a, obj);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-667-            }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-668-            bfp bfpVarP = wocVar.i.P();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:669:            chatHistoryResponseArr2 = chatHistoryResponseArr;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:670:            oocVar.d = chatHistoryResponseArr2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-671-            oocVar.e = historyResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-672-            oocVar.f = linkedHashMap;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-673-            oocVar.j = 1;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-674-            objN = h6i.N(bfpVarP.a, true, new p6p(12), oocVar);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-675-            if (objN != xe6Var) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-679-            return xe6Var;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-680-        }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-681-        if (i4 == 1) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-682-            Map map3 = oocVar.f;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-683-            historyResponse2 = oocVar.e;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:684:            ChatHistoryResponse[] chatHistoryResponseArr4 = oocVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-685-            nzn.U(objN);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-686-            map = map3;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:687:            chatHistoryResponseArr2 = chatHistoryResponseArr4;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-688-        } else {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-689-            if (i4 != 2) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-690-                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-691-            }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-692-            set = oocVar.g;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-693-            map2 = oocVar.f;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-694-            historyResponse3 = oocVar.e;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:695:            chatHistoryResponseArr3 = oocVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-696-            nzn.U(objN);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-697-        }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-698-        zA = wocVar.G.a();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-699-        vegVarV = wocVar.c.V();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-700-        try {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-701-            vegVarV.f0();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:702:            l(vegVarV, historyResponse3.users, chatHistoryResponseArr3);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-703-            fcqVar = fcq.a;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:704:            if (chatHistoryResponseArr3 != null && chatHistoryResponseArr3.length != 0) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:705:                arrayList2 = new ArrayList(chatHistoryResponseArr3.length);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:706:                for (ChatHistoryResponse chatHistoryResponse : chatHistoryResponseArr3) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:707:                    arrayList2.add(chatHistoryResponse.chatId);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-708-                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-709-                setQ1 = zb5.q1(arrayList2);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-710-                arrayList3 = new ArrayList();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-711-                for (Object obj2 : set) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-712-                    if (!setQ1.contains((String) obj2)) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-720-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-721-                    vegVarV.v(str2, false);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-722-                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-723-                kocVar.a("threads_deleted");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-724-                arrayList4 = new ArrayList();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:725:                for (ChatHistoryResponse chatHistoryResponse2 : chatHistoryResponseArr3) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:726:                    xb4Var = (xb4) map2.get(chatHistoryResponse2.chatId);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-727-                    if (xb4Var != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:728:                        zC = m51.C(chatHistoryResponse2, xb4Var);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-729-                    } else {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-730-                        zC = true;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-731-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-732-                    if (zC) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:733:                        arrayList4.add(chatHistoryResponse2);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-734-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-735-                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-736-                kocVar.a("threads_calculated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-737-                jMax = 0;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:738:                for (ChatHistoryResponse chatHistoryResponse3 : arrayList4) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:739:                    String str3 = chatHistoryResponse3.chatId;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-740-                    mqd.y(str3, "chatId");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:741:                    serverMessage = chatHistoryResponse3.threadParentMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-742-                    if (serverMessage != null || (serverMessageInfo = serverMessage.serverMessageInfo) == null || (reducedUserInfo = serverMessageInfo.from) == null || (str = reducedUserInfo.displayName) == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-743-                        str = "";
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-744-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-745-                    vegVarV.R(str3, str);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-746-                    xr6VarG2 = do4Var.g(str3);
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-748-                        it4VarG = xr6VarG2.g();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-749-                    } else {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-750-                        it4VarG = null;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-751-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-752-                    if (it4VarG != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:753:                        it4VarG.j(vegVarV, chatHistoryResponse3, zA);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-754-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:755:                    outMessageArr = chatHistoryResponse3.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:756:                    if (outMessageArr == null && (outMessage = (ChatHistoryResponse.OutMessage) tt0.E0(0, outMessageArr)) != null && (serverMessage2 = outMessage.serverMessage) != null && (clientMessage = serverMessage2.clientMessage) != null && (plainMessage = clientMessage.plain) != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-757-                        jMax = Math.max(jMax, plainMessage.getTimestamp());
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-758-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-759-                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-760-                kocVar.a("threads_updated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-761-                if (jMax > 0) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-784-                vd1.v(vegVarV, th);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-785-                throw th2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-786-            }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-787-        }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-788-        Set setQ2 = zb5.q1((Iterable) objN);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:789:        oocVar.d = chatHistoryResponseArr2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-790-        oocVar.e = historyResponse2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-791-        oocVar.f = map;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-792-        oocVar.g = setQ2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-793-        oocVar.j = 2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-794-        if (f3n.h(oocVar) != xe6Var) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-795-            set = setQ2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:796:            chatHistoryResponseArr3 = chatHistoryResponseArr2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-797-            historyResponse3 = historyResponse2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-798-            map2 = map;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-799-            zA = wocVar.G.a();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-800-            vegVarV = wocVar.c.V();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-801-            vegVarV.f0();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:802:            l(vegVarV, historyResponse3.users, chatHistoryResponseArr3);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-803-            fcqVar = fcq.a;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:804:            if (chatHistoryResponseArr3 != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:805:                arrayList2 = new ArrayList(chatHistoryResponseArr3.length);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-806-                while (i < r12) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:807:                    arrayList2.add(chatHistoryResponse.chatId);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-808-                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-809-                setQ1 = zb5.q1(arrayList2);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-810-                arrayList3 = new ArrayList();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-811-                while (r5.hasNext()) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-812-                    if (!setQ1.contains((String) obj2)) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-820-                    vegVarV.v(str2, false);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-821-                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-822-                kocVar.a("threads_deleted");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-823-                arrayList4 = new ArrayList();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-824-                while (i2 < r7) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:825:                    xb4Var = (xb4) map2.get(chatHistoryResponse2.chatId);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-826-                    if (xb4Var != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:827:                        zC = m51.C(chatHistoryResponse2, xb4Var);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-828-                    } else {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-829-                        zC = true;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-830-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-831-                    if (zC) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:832:                        arrayList4.add(chatHistoryResponse2);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-833-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-834-                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-835-                kocVar.a("threads_calculated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-836-                jMax = 0;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-837-                while (r4.hasNext()) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:838:                    String str4 = chatHistoryResponse3.chatId;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-839-                    mqd.y(str4, "chatId");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:840:                    serverMessage = chatHistoryResponse3.threadParentMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-841-                    if (serverMessage != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-842-                        str = "";
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-843-                    } else {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-844-                        str = "";
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-845-                    }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-849-                        it4VarG = xr6VarG2.g();
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-850-                    } else {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-851-                        it4VarG = null;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-852-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-853-                    if (it4VarG != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:854:                        it4VarG.j(vegVarV, chatHistoryResponse3, zA);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-855-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:856:                    outMessageArr = chatHistoryResponse3.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-857-                    if (outMessageArr == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-858-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-859-                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-860-                kocVar.a("threads_updated");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-861-                if (jMax > 0) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-952-        }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-953-    }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-954-
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-955-    /* JADX WARN: Code duplicated, block: B:51:0x0106  */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-956-    /* JADX WARN: Code duplicated, block: B:7:0x0017  */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:957:    public static final Object h(woc wocVar, HistoryResponse historyResponse, kc6 kc6Var) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-958-        uoc uocVar;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-959-        veg vegVarV;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-960-        veg vegVar;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-961-        veg vegVar2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:962:        HistoryResponse historyResponse2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-963-        veg vegVar3;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-964-        Throwable th;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-965-        veg vegVar4;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-966-        List list;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-967-        veg vegVar5;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-1028-                }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-1029-            }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-1030-        }
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-1031-        try {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-1032-            List list2 = (List) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1033:            ChatHistoryResponse[] chatHistoryResponseArr = historyResponse2.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1034:            if (chatHistoryResponseArr != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-1035-                try {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1036:                    int length2 = chatHistoryResponseArr.length;
+
+===== HISTORY API OPERATIONS =====
+research/artifacts/decompiled-dex2/sources/defpackage/ueg.java:894:        ujl ujlVarV = aer.v(1, "SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text FROM messages_view WHERE chat_internal_id = ? ORDER BY message_history_id DESC");
+research/artifacts/decompiled-dex2/sources/defpackage/ueg.java:907:        ujl ujlVarV = aer.v(2, "SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text FROM messages_view WHERE chat_internal_id = ? AND message_history_id > ? ORDER BY message_history_id DESC");
+research/artifacts/decompiled-dex2/sources/defpackage/ueg.java:921:        ujl ujlVarV = aer.v(4, "SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text FROM messages_view WHERE chat_internal_id = ?\n           AND message_history_id >= ? AND message_history_id <= ?\n           ORDER BY message_history_id DESC LIMIT ?");
+research/artifacts/decompiled-dex2/sources/defpackage/ueg.java:937:        ujl ujlVarV = aer.v(4, "SELECT * FROM (\n                SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text FROM messages_view WHERE chat_internal_id = ?\n                AND message_history_id >= ? AND message_history_id < ?\n                ORDER BY message_history_id ASC LIMIT ?\n           ) ORDER BY message_history_id DESC");
+research/artifacts/decompiled-dex2/sources/defpackage/ueg.java:953:        ujl ujlVarV = aer.v(2, "SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text FROM messages_view WHERE chat_internal_id = ? ORDER BY message_history_id DESC LIMIT ?");
+research/artifacts/decompiled-dex2/sources/defpackage/ueg.java:960:        mqd.z(list, "historyIds");
+research/artifacts/decompiled-dex2/sources/defpackage/ueg.java:968:        StringBuilder sbP = dy3.p("SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text FROM messages_view\n            WHERE chat_internal_id = ?\n            AND (message_history_id IN (");
+research/artifacts/decompiled-dex2/sources/defpackage/ueg.java:971:        sbP.append(") OR host_message_history_id IN (");
+research/artifacts/decompiled-dex2/sources/defpackage/ueg.java:977:        dy3.v(sbP, "\n", "            CASE WHEN ", "?", " = 1 THEN message_history_id END DESC,");
+research/artifacts/decompiled-dex2/sources/defpackage/ueg.java:978:        dy3.v(sbP, "\n", "            CASE WHEN ", "?", " = 0 THEN message_history_id END ASC");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:89:        mqd.z(eocVar, "historyLoader");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:487:                    atl.y("Trying to compare chat history with different ids");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1299:                mqd.z(historyResponse, "historyResponse");
+research/artifacts/decompiled-dex2/sources/defpackage/h8.java:148:                    if (str != null && (fugVarA = a.a(fugVar, "call_history_group_call_avatar_letters:".concat(str))) != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/qr.java:690:                return "INSERT OR ABORT INTO `cache_chat_edit_history_timestamps` (`chat_internal_id`,`edit_history_server_max_timestamp`,`edit_history_client_max_timestamp`) VALUES (?,?,?)";
+research/artifacts/decompiled-dex2/sources/defpackage/qr.java:728:                return "INSERT OR ABORT INTO `message_translations` (`row_id`,`chat_internal_id`,`message_history_id`,`version`,`original_lang`,`translated_lang`,`translated_text`,`translated_suggests`) VALUES (?,?,?,?,?,?,?,?)";
+research/artifacts/decompiled-dex2/sources/defpackage/qr.java:730:                return "INSERT OR ABORT INTO `messages` (`row_id`,`chat_internal_id`,`message_history_id`,`message_sequence_number`,`message_prev_history_id`,`msg_internal_id`,`flags`,`message_id`,`time`,`author`,`data`,`custom_payload`,`reply_data`,`edit_time`,`views_count`,`forwards_count`,`notification_meta`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+research/artifacts/decompiled-dex2/sources/defpackage/qr.java:732:                return "INSERT OR ABORT INTO `messages_view` (`row_id`,`chat_internal_id`,`chat_id`,`message_history_id`,`message_sequence_number`,`message_previous_history_id`,`msg_internal_id`,`message_version`,`flags`,`message_id`,`time`,`author`,`data`,`data_type`,`custom_payload`,`reply_data`,`forwarded_author_id`,`host_message_history_id`,`views_count`,`original_message_chat_id`,`original_message_history_id`,`fake_guid`,`forwards_count`,`notification_meta`,`original_lang`,`translated_lang`,`translated_text`,`original_reply_lang`,`translated_reply_text`,`translated_suggests`,`forced_translated_text`,`forced_translated_reply_text`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:104:        jmo jmoVar4 = new jmo("revisions", linkedHashMap4, dcp.m(linkedHashMap4, "max_history_version", new gmo(0, 1, "max_history_version", "INTEGER", (String) null, true)), new LinkedHashSet());
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:128:        linkedHashMap6.put("message_history_id", new gmo(0, 1, "message_history_id", "INTEGER", (String) null, true));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:130:        linkedHashMap6.put("message_prev_history_id", new gmo(0, 1, "message_prev_history_id", "INTEGER", (String) null, true));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:144:        linkedHashSet5.add(new imo("chat_internal_id_message_id_message_history_id_unique", true, f3r.J(new String[]{"chat_internal_id", "message_id", "message_history_id"}), f3r.J(new String[]{"ASC", "ASC", "ASC"})));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:145:        linkedHashSet5.add(new imo("index_messages_chat_internal_id_message_history_id", true, f3r.J(new String[]{"chat_internal_id", "message_history_id"}), f3r.J(new String[]{"ASC", "DESC"})));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:155:        linkedHashMap7.put("message_history_id", new gmo(0, 1, "message_history_id", "INTEGER", (String) null, true));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:157:        linkedHashMap7.put("message_previous_history_id", new gmo(0, 1, "message_previous_history_id", "INTEGER", (String) null, true));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:169:        linkedHashMap7.put("host_message_history_id", new gmo(0, 1, "host_message_history_id", "INTEGER", (String) null, false));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:172:        linkedHashMap7.put("original_message_history_id", new gmo(0, 1, "original_message_history_id", "INTEGER", (String) null, false));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:185:        linkedHashSet6.add(new imo("index_messages_view_chat_internal_id_message_history_id", true, f3r.J(new String[]{"chat_internal_id", "message_history_id"}), f3r.J(new String[]{"ASC", "DESC"})));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:597:        linkedHashMap41.put("edit_history_server_max_timestamp", new gmo(0, 1, "edit_history_server_max_timestamp", "INTEGER", (String) null, true));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:598:        jmo jmoVar41 = new jmo("cache_chat_edit_history_timestamps", linkedHashMap41, dcp.m(linkedHashMap41, "edit_history_client_max_timestamp", new gmo(0, 1, "edit_history_client_max_timestamp", "INTEGER", (String) null, true)), new LinkedHashSet());
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:599:        jmo jmoVarJ41 = yrm.j(amlVar, "cache_chat_edit_history_timestamps");
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:601:            return new yhf(false, dcp.i("cache_chat_edit_history_timestamps(com.yandex.messaging.core.db.chats.ChatEditHistoryTimestampsEntity).\n Expected:\n", jmoVar41, "\n Found:\n", jmoVarJ41), 1);
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:734:        linkedHashMap53.put("messages_view_history_id", new gmo(0, 1, "messages_view_history_id", "INTEGER", (String) null, true));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:746:        linkedHashMap54.put("message_history_id", new gmo(0, 1, "message_history_id", "INTEGER", (String) null, true));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:753:        linkedHashSet25.add(new imo("index_message_translations_chat_internal_id_message_history_id_version", false, f3r.J(new String[]{"chat_internal_id", "message_history_id", "version"}), f3r.J(new String[]{"ASC", "ASC", "ASC"})));
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:926:                kq0.u(amlVar, "CREATE TABLE IF NOT EXISTS `revisions` (`row_id` INTEGER, `cache_owner` TEXT, `contacts_last_version` INTEGER NOT NULL, `last_message_timestamp` INTEGER NOT NULL, `last_thread_message_timestamp` INTEGER NOT NULL, `max_role_version` INTEGER NOT NULL, `workspace_version` INTEGER, `max_history_version` INTEGER NOT NULL, PRIMARY KEY(`row_id`))");
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:930:                kq0.u(amlVar, "CREATE TABLE IF NOT EXISTS `messages` (`row_id` INTEGER, `chat_internal_id` INTEGER NOT NULL, `message_history_id` INTEGER NOT NULL, `message_sequence_number` INTEGER NOT NULL, `message_prev_history_id` INTEGER NOT NULL, `msg_internal_id` INTEGER NOT NULL, `flags` INTEGER NOT NULL, `message_id` TEXT, `time` REAL NOT NULL, `author` TEXT NOT NULL, `data` TEXT, `custom_payload` TEXT, `reply_data` TEXT, `edit_time` INTEGER NOT NULL, `views_count` INTEGER NOT NULL, `forwards_count` INTEGER NOT NULL, `notification_meta` TEXT, PRIMARY KEY(`row_id`))");
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:931:                kq0.u(amlVar, "CREATE UNIQUE INDEX IF NOT EXISTS `chat_internal_id_message_id_message_history_id_unique` ON `messages` (`chat_internal_id`, `message_id`, `message_history_id`)");
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:932:                kq0.u(amlVar, "CREATE UNIQUE INDEX IF NOT EXISTS `index_messages_chat_internal_id_message_history_id` ON `messages` (`chat_internal_id` ASC, `message_history_id` DESC)");
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:933:                kq0.u(amlVar, "CREATE TABLE IF NOT EXISTS `messages_view` (`row_id` INTEGER, `chat_internal_id` INTEGER NOT NULL, `chat_id` TEXT NOT NULL, `message_history_id` INTEGER NOT NULL, `message_sequence_number` INTEGER NOT NULL, `message_previous_history_id` INTEGER NOT NULL, `msg_internal_id` INTEGER NOT NULL, `message_version` INTEGER NOT NULL, `flags` INTEGER NOT NULL, `message_id` TEXT, `time` REAL NOT NULL, `author` TEXT NOT NULL, `data` TEXT, `data_type` INTEGER, `custom_payload` TEXT, `reply_data` TEXT, `forwarded_author_id` TEXT, `host_message_history_id` INTEGER, `views_count` INTEGER NOT NULL, `original_message_chat_id` TEXT, `original_message_history_id` INTEGER, `fake_guid` TEXT, `forwards_count` INTEGER NOT NULL, `notification_meta` TEXT, `original_lang` TEXT, `translated_lang` TEXT, `translated_text` TEXT, `original_reply_lang` TEXT, `translated_reply_text` TEXT, `translated_suggests` TEXT, `forced_translated_text` TEXT, `forced_translated_reply_text` TEXT, PRIMARY KEY(`row_id`))");
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:934:                kq0.u(amlVar, "CREATE UNIQUE INDEX IF NOT EXISTS `index_messages_view_chat_internal_id_message_history_id` ON `messages_view` (`chat_internal_id` ASC, `message_history_id` DESC)");
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:988:                kq0.u(amlVar, "CREATE TABLE IF NOT EXISTS `cache_chat_edit_history_timestamps` (`chat_internal_id` INTEGER NOT NULL, `edit_history_server_max_timestamp` INTEGER NOT NULL, `edit_history_client_max_timestamp` INTEGER NOT NULL, PRIMARY KEY(`chat_internal_id`))");
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:1010:                kq0.u(amlVar, "CREATE TABLE IF NOT EXISTS `threads_messages_view` (`rowid` INTEGER, `messages_view_history_id` INTEGER NOT NULL, `thread_internal_id` INTEGER NOT NULL, PRIMARY KEY(`rowid`))");
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:1012:                kq0.u(amlVar, "CREATE TABLE IF NOT EXISTS `message_translations` (`row_id` INTEGER, `chat_internal_id` INTEGER NOT NULL, `message_history_id` INTEGER NOT NULL, `version` INTEGER NOT NULL, `original_lang` TEXT NOT NULL, `translated_lang` TEXT NOT NULL, `translated_text` TEXT NOT NULL, `translated_suggests` TEXT, PRIMARY KEY(`row_id`))");
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:1013:                kq0.u(amlVar, "CREATE INDEX IF NOT EXISTS `index_message_translations_chat_internal_id_message_history_id_version` ON `message_translations` (`chat_internal_id`, `message_history_id`, `version`)");
+research/artifacts/decompiled-dex2/sources/defpackage/dq0.java:1124:                kq0.u(amlVar, "DROP TABLE IF EXISTS `cache_chat_edit_history_timestamps`");
+research/artifacts/decompiled-dex2/sources/defpackage/bbg.java:26:                gml gmlVarR1 = amlVar.r1("UPDATE messages SET data = ? WHERE chat_internal_id = ? AND message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/bbg.java:42:                gml gmlVarR2 = amlVar2.r1("SELECT msg_internal_id, flags FROM messages WHERE message_id = ? AND chat_internal_id = ? AND message_history_id >= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/y7h.java:82:        sb.append(", historyId=");
+research/artifacts/decompiled-dex2/sources/defpackage/ax4.java:160:                                    str9 = "chat_clear_history";
+research/artifacts/decompiled-dex2/sources/defpackage/caa.java:30:    k("ImprovedHistorySyncDisable", "android_improved_history_sync_disable"),
+research/artifacts/decompiled-dex2/sources/defpackage/caa.java:32:    m("SkipGetMeetingsInfoInHistorySync", "android_skip_get_meetings_info_in_history_sync"),
+research/artifacts/decompiled-dex2/sources/defpackage/caa.java:34:    EF14("SkipUnchangedHistorySnapshotMessages", "android_skip_unchanged_history_snapshot_messages"),
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:94:            atl.y("queried messages for single chat " + str + ", but loaded history for " + length + " chats");
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:100:            x20Var.reportEvent("tech_9225_multiple_chats_in_history", xgf.k0(new ypi[]{new ypi("chatsCount", Integer.valueOf(length)), new ypi("chats", chatHistoryResponseArr2 != null ? tt0.K0(chatHistoryResponseArr2, (String) null, new r1g(12), 31) : null), new ypi("queriedChat", str)}));
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:2126:                                                        gml gmlVarR1 = amlVar.r1("UPDATE messages SET message_history_id = ?, message_prev_history_id = ?, message_sequence_number = ?, flags = ?,data = ?, custom_payload = ?, time = ?, reply_data = ?, author = ?, edit_time = ?, views_count = ?, forwards_count = ?, notification_meta = ? WHERE msg_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:2209:                                                                gml gmlVarR1 = amlVar.r1("UPDATE messages_view SET\n           message_history_id = ?,\n           message_sequence_number = ?,\n           message_previous_history_id = ?,\n           message_version = ?,\n           flags = ?,\n           data = ?,\n           data_type = ?,\n           custom_payload = ?,\n           time = ?,\n           reply_data = ?,\n           author = ?,\n           views_count = ?,\n           forwards_count = ?,\n           notification_meta = ?\n           WHERE msg_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:2288:                                                    ujlVarV = aer.v(4, "SELECT\n            chat_internal_id,\n            msg_internal_id,\n            message_history_id,\n            message_id,\n            message_sequence_number,\n            flags,\n            author,\n            (edit_time > 0) as edited,\n            message_history_id > ? as ougoing\n        FROM messages WHERE (msg_internal_id = ?\n            OR message_history_id = ?\n            OR message_id = ?\n        )\n    ");
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:2347:                                                ujlVarV = aer.v(4, "SELECT\n            chat_internal_id,\n            msg_internal_id,\n            message_history_id,\n            message_id,\n            message_sequence_number,\n            flags,\n            author,\n            (edit_time > 0) as edited,\n            message_history_id > ? as ougoing\n        FROM messages WHERE (msg_internal_id = ?\n            OR message_history_id = ?\n            OR message_id = ?\n        )\n    ");
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:2685:                                            gml gmlVarR1 = amlVar.r1("UPDATE messages SET message_history_id = ?, message_prev_history_id = ?, message_sequence_number = ?, flags = ?,data = ?, custom_payload = ?, time = ?, reply_data = ?, author = ?, edit_time = ?, views_count = ?, forwards_count = ?, notification_meta = ? WHERE msg_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:2767:                                                gml gmlVarR1 = amlVar.r1("UPDATE messages_view SET\n           message_history_id = ?,\n           message_sequence_number = ?,\n           message_previous_history_id = ?,\n           message_version = ?,\n           flags = ?,\n           data = ?,\n           data_type = ?,\n           custom_payload = ?,\n           time = ?,\n           reply_data = ?,\n           author = ?,\n           views_count = ?,\n           forwards_count = ?,\n           notification_meta = ?\n           WHERE msg_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:3226:                                        gml gmlVarR1 = amlVar.r1("UPDATE messages SET message_history_id = ?, message_prev_history_id = ?, message_sequence_number = ?, flags = ?,data = ?, custom_payload = ?, time = ?, reply_data = ?, author = ?, edit_time = ?, views_count = ?, forwards_count = ?, notification_meta = ? WHERE msg_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:3308:                                            gml gmlVarR1 = amlVar.r1("UPDATE messages_view SET\n           message_history_id = ?,\n           message_sequence_number = ?,\n           message_previous_history_id = ?,\n           message_version = ?,\n           flags = ?,\n           data = ?,\n           data_type = ?,\n           custom_payload = ?,\n           time = ?,\n           reply_data = ?,\n           author = ?,\n           views_count = ?,\n           forwards_count = ?,\n           notification_meta = ?\n           WHERE msg_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:3783:                                        gml gmlVarR1 = amlVar.r1("UPDATE messages SET message_history_id = ?, message_prev_history_id = ?, message_sequence_number = ?, flags = ?,data = ?, custom_payload = ?, time = ?, reply_data = ?, author = ?, edit_time = ?, views_count = ?, forwards_count = ?, notification_meta = ? WHERE msg_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:3865:                                            gml gmlVarR1 = amlVar.r1("UPDATE messages_view SET\n           message_history_id = ?,\n           message_sequence_number = ?,\n           message_previous_history_id = ?,\n           message_version = ?,\n           flags = ?,\n           data = ?,\n           data_type = ?,\n           custom_payload = ?,\n           time = ?,\n           reply_data = ?,\n           author = ?,\n           views_count = ?,\n           forwards_count = ?,\n           notification_meta = ?\n           WHERE msg_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:4324:                                    gml gmlVarR1 = amlVar.r1("UPDATE messages SET message_history_id = ?, message_prev_history_id = ?, message_sequence_number = ?, flags = ?,data = ?, custom_payload = ?, time = ?, reply_data = ?, author = ?, edit_time = ?, views_count = ?, forwards_count = ?, notification_meta = ? WHERE msg_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/vop.java:4406:                                        gml gmlVarR1 = amlVar.r1("UPDATE messages_view SET\n           message_history_id = ?,\n           message_sequence_number = ?,\n           message_previous_history_id = ?,\n           message_version = ?,\n           flags = ?,\n           data = ?,\n           data_type = ?,\n           custom_payload = ?,\n           time = ?,\n           reply_data = ?,\n           author = ?,\n           views_count = ?,\n           forwards_count = ?,\n           notification_meta = ?\n           WHERE msg_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/kej.java:636:                return "INSERT OR ABORT INTO `threads_messages_view` (`rowid`,`messages_view_history_id`,`thread_internal_id`) VALUES (?,?,?)";
+research/artifacts/decompiled-dex2/sources/defpackage/yp0.java:25:        u7oVar.y("\n                INSERT OR IGNORE INTO revisions(row_id,\n                    last_message_timestamp, last_thread_message_timestamp, max_role_version,\n                    workspace_version, contacts_last_version, max_history_version\n                ) values(1, 0, 0, 0, null, 0, 0);\n                ");
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java:39:        ((r7j) vt4Var.f.get()).a(this.q, "time2chat_history");
+research/artifacts/decompiled-dex2/sources/defpackage/mh2.java:218:                gml gmlVarR11 = amlVar11.r1(" SELECT\n            msg_internal_id, message_id, message_sequence_number, message_prev_history_id, message_history_id, time\n            FROM messages WHERE chat_internal_id = ? AND message_id = ?\n        ");
+research/artifacts/decompiled-dex2/sources/defpackage/mh2.java:244:                gml gmlVarR13 = amlVar13.r1("SELECT message_history_id FROM messages  WHERE chat_internal_id = ? AND message_id = ?  AND message_history_id >= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/mh2.java:263:                gml gmlVarR14 = amlVar14.r1("SELECT message_history_id FROM messages  WHERE chat_internal_id = ? AND message_id = ?  AND message_history_id < ?");
+research/artifacts/decompiled-dex2/sources/defpackage/mh2.java:295:                gml gmlVarR16 = amlVar16.r1("SELECT edit_time FROM messages WHERE message_id = ? AND chat_internal_id = ? AND message_history_id >= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/mh2.java:368:                gml gmlVarR20 = amlVar20.r1("SELECT data FROM messages_view\n        WHERE original_message_chat_id = ?\n        AND original_message_history_id = ?\n    ");
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:89:                x20Var.d("history hole response", "chat_type", gkpVar.b(), "chat_id", gkpVar.a.b);
+research/artifacts/decompiled-dex2/sources/defpackage/yw4.java:71:        gml gmlVarR1 = amlVar.r1("SELECT\n                chats.chat_internal_id AS chatInternalId,\n                chats.chat_id AS chatId,\n                chats.create_time AS createTime,\n                chats.addressee_id AS addresseeId,\n                chats.name AS name,\n                chats.avatar_id AS avatarId,\n                IFNULL(chats.seen_marker, -1) AS seenMarker,\n                chats.owner_last_seen_sequence_number AS ownerLastSeenSequenceNumber,\n                chats.owner_seen_marker_version AS ownerSeenMarkerVersion,\n                chats.flags AS flags,\n                chats.other_seen_marker AS otherSeenMarker,\n                chats.version AS version,\n                chats.invite_hash AS inviteHash,\n                chats.current_profile_id AS currentProfileId,\n                chats.is_transient AS isTransient,\n                coalesce(chats.last_seq_no, 0) AS lastSeqNo,\n                chats.parent_internal_id AS parentInternalId,\n                chats.parent_message_timestamp AS parentMessageTimestamp,\n                chats.min_message_timestamp AS minMessageTimestamp,\n                users.shown_name AS addresseeShownName,\n                users.avatar_url AS addresseeAvatarUrl,\n                users.website AS addresseeWebsite,\n                users.average_response_time AS addresseeResponseTime,\n                users.robot AS chatWithBot,\n                users.is_support_bot AS chatWithSupportBot,\n                MAX(IFNULL(messages_view.message_history_id, -1), IFNULL(chats.last_timestamp, -1)) AS lastMessageTime,\n                messages_view.author AS lastMessageAuthor,\n                MAX(IFNULL(messages_view.message_sequence_number, 0), IFNULL(chats.last_seq_no, 0)) AS lastMessageSeqNo,\n                chat_muting.mute AS mute,\n                chat_muting.mute_mentions AS muteMentions,\n                chat_muting.version AS muteVersion,\n                chats.has_guests AS hasGuests\n           FROM chats\n           LEFT JOIN users ON chats.addressee_id=users.user_id\n           LEFT JOIN chat_muting ON chats.chat_id=chat_muting.chat_id\n           LEFT JOIN messages_view ON chats.chat_internal_id=messages_view.chat_internal_id\n                AND messages_view.message_history_id >= chats.min_message_timestamp\n           WHERE chats.chat_internal_id = ?\n           ORDER BY messages_view.message_history_id DESC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:698:                            gml gmlVarR1 = amlVar.r1("UPDATE OR IGNORE messages\n            SET message_history_id = ?,\n                message_prev_history_id = ?,\n                message_sequence_number = ?\n            WHERE chat_internal_id = ? AND message_id = ?\n            AND message_history_id >= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:720:                            gml gmlVarR2 = amlVar2.r1("UPDATE OR IGNORE messages_view SET\n           message_history_id = ?,\n           message_previous_history_id = ?,\n           message_sequence_number = ?\n           WHERE chat_internal_id = ? AND message_id = ?\n           AND message_history_id >= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:753:                                gml gmlVarR1 = amlVar.r1("UPDATE OR IGNORE messages\n            SET message_history_id = ?,\n                message_prev_history_id = ?,\n                message_sequence_number = ?\n            WHERE chat_internal_id = ? AND message_id = ?\n            AND message_history_id >= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:775:                                gml gmlVarR2 = amlVar2.r1("UPDATE OR IGNORE messages_view SET\n           message_history_id = ?,\n           message_previous_history_id = ?,\n           message_sequence_number = ?\n           WHERE chat_internal_id = ? AND message_id = ?\n           AND message_history_id >= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:1751:                ujl ujlVarV = aer.v(2, "\n        SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text FROM messages_view\n        WHERE original_message_chat_id = ? AND original_message_history_id = ?\n    ");
+research/artifacts/decompiled-dex2/sources/defpackage/zod.java:83:                gml gmlVarR5 = amlVar5.r1("SELECT message_history_id FROM messages WHERE chat_internal_id = ? ORDER BY message_history_id ASC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/zod.java:111:                gml gmlVarR7 = amlVar7.r1("SELECT message_sequence_number FROM messages_view WHERE chat_internal_id = ?\n           AND message_sequence_number > 0 ORDER BY message_history_id DESC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/zod.java:139:                gml gmlVarR9 = amlVar9.r1("SELECT message_history_id FROM messages_view WHERE host_message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/zod.java:171:                gml gmlVarR11 = amlVar11.r1("SELECT message_history_id FROM messages_view WHERE chat_internal_id = ?\n           AND message_sequence_number > 0 ORDER BY message_history_id DESC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/zod.java:187:                gml gmlVarR12 = amlVar12.r1("SELECT message_history_id FROM messages_view WHERE chat_internal_id = ? ORDER BY message_history_id ASC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/zod.java:203:                gml gmlVarR13 = amlVar13.r1("SELECT message_previous_history_id FROM messages_view WHERE chat_internal_id = ?\n           AND message_sequence_number > 0 ORDER BY message_history_id DESC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/zod.java:219:                gml gmlVarR14 = amlVar14.r1("SELECT IFNULL(host_message_history_id, message_history_id)\n           FROM messages_view\n           WHERE message_history_id < ? AND chat_internal_id = ?\n           ORDER BY message_history_id DESC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/zod.java:299:                gml gmlVarR19 = amlVar19.r1("UPDATE revisions SET max_history_version = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/zod.java:385:                gml gmlVarR26 = amlVar26.r1("SELECT messages_view_history_id FROM threads_messages_view WHERE thread_internal_id=?");
+research/artifacts/decompiled-dex2/sources/defpackage/eoc.java:44:        return "time2history";
+research/artifacts/decompiled-dex2/sources/defpackage/zbg.java:33:        gml gmlVarR1 = amlVar.r1("UPDATE messages_view SET\n           original_lang = ?,\n           translated_lang = ?,\n           translated_text = ?,\n           original_reply_lang = ?,\n           translated_reply_text = ?,\n           translated_suggests = ?\n           WHERE chat_internal_id = ?\n                AND message_history_id = ?\n                AND message_version = ?\n           ");
+research/artifacts/decompiled-dex2/sources/defpackage/pnp.java:128:        ujl ujlVarV = aer.v(3, "SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text FROM messages_view WHERE chat_internal_id = ? AND message_history_id >= ?\n           ORDER BY message_history_id ASC LIMIT ?");
+research/artifacts/decompiled-dex2/sources/defpackage/pnp.java:231:        ujl ujlVarV = aer.v(2, "SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text FROM messages_view WHERE chat_internal_id = ?\n           AND message_history_id >= ? ORDER BY message_history_id ASC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/loc.java:31:        return fde.o(this.c, ")", wq1.l(this.a, this.b, "HandleResponseResult(historyMissedChatsCount=", ", historyChangedChatsCount=", ", newMaxChatInfoVersion="));
+research/artifacts/decompiled-dex2/sources/defpackage/tbe.java:64:        this.f.reportEvent("history hole detected", xgf.n0(new ypi[]{new ypi("chat_id", q9jVar2.b), new ypi("local", Long.valueOf(jN)), new ypi("server", Long.valueOf(j))}));
+research/artifacts/decompiled-dex2/sources/defpackage/koc.java:49:            Map mapK0 = xgf.k0(new ypi[]{new ypi("syncTime", Long.valueOf(j3)), new ypi("requestTime", Long.valueOf(jLongValue - j2)), new ypi("responseHandleTime", Long.valueOf(jElapsedRealtime - jLongValue)), new ypi("chatsCount", Integer.valueOf(num != null ? num.intValue() : 0)), new ypi("threadsCount", Integer.valueOf(num2 != null ? num2.intValue() : 0)), new ypi("usersCount", Integer.valueOf(i)), new ypi("historySize", Integer.valueOf(num != null ? num.intValue() : 0)), new ypi("messagesCount", Integer.valueOf(num3 != null ? num3.intValue() : 0)), new ypi("historyMissedChatsCount", Integer.valueOf(i2)), new ypi("historyChangedChatsCount", Integer.valueOf(i3)), new ypi("historyVersion", Long.valueOf(j)), new ypi("historyVersionChanged", Boolean.valueOf(z2)), new ypi("coldSync", Boolean.valueOf(z)), new ypi("historySync", Boolean.TRUE)});
+research/artifacts/decompiled-dex2/sources/defpackage/r1g.java:138:                gml gmlVarR5 = amlVar5.r1("SELECT chat_internal_id FROM messages_view ORDER BY message_history_id DESC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/lxk.java:209:                gml gmlVarR11 = amlVar11.r1("SELECT max_history_version FROM revisions");
+research/artifacts/decompiled-dex2/sources/defpackage/m57.java:159:                gml gmlVarR2 = amlVar2.r1("DELETE FROM cache_chat_edit_history_timestamps WHERE chat_internal_id\n         NOT IN ( SELECT chat_internal_id FROM chats )\n    ");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:30:                gml gmlVarR1 = amlVar.r1("SELECT count(*) FROM messages_view\n            WHERE message_history_id = ? AND chat_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:45:                gml gmlVarR2 = amlVar2.r1("SELECT data, data_type, message_history_id, message_previous_history_id, message_sequence_number, time\n           FROM messages_view\n           WHERE message_history_id <= ? AND chat_internal_id = ?\n           ORDER BY message_history_id DESC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:60:                gml gmlVarR3 = amlVar3.r1("SELECT data, data_type, message_history_id, message_previous_history_id, message_sequence_number, time\n           FROM messages_view\n           WHERE message_history_id > ? AND chat_internal_id = ?\n           ORDER BY message_history_id ASC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:75:                gml gmlVarR4 = amlVar4.r1("SELECT forced_translated_text FROM messages_view WHERE chat_internal_id = ? AND message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:91:                gml gmlVarR5 = amlVar5.r1("SELECT msg_internal_id, flags FROM messages_view\n           WHERE message_history_id = ?\n           AND chat_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:120:                gml gmlVarR7 = amlVar7.r1("DELETE FROM messages_view WHERE chat_internal_id = ? AND message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:132:                gml gmlVarR8 = amlVar8.r1("SELECT data FROM messages_view WHERE chat_internal_id = ? AND message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:148:                gml gmlVarR9 = amlVar9.r1("SELECT data, data_type, message_history_id, message_previous_history_id, message_sequence_number, time\n           FROM messages_view\n           WHERE message_history_id < ? AND chat_internal_id = ?\n           ORDER BY message_history_id DESC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:163:                gml gmlVarR10 = amlVar10.r1("SELECT msg_internal_id, flags FROM messages_view\n           WHERE (message_history_id = ? OR host_message_history_id = ?)\n           AND chat_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:181:                gml gmlVarR11 = amlVar11.r1("SELECT data, data_type, message_history_id, message_previous_history_id, message_sequence_number, time\n           FROM messages_view WHERE chat_internal_id = ? AND message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:196:                gml gmlVarR12 = amlVar12.r1("SELECT message_version, translated_lang FROM messages_view\n           WHERE chat_internal_id = ? AND message_history_id = ?\n           ");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:216:                gml gmlVarR13 = amlVar13.r1("SELECT msg_internal_id from messages_view WHERE chat_internal_id = ? AND message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:232:                gml gmlVarR14 = amlVar14.r1("SELECT COUNT(*) FROM messages_view\n           WHERE chat_internal_id = ? AND message_history_id >\n           (SELECT message_history_id FROM messages_view\n           WHERE msg_internal_id = ?)");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:243:                gml gmlVarR15 = amlVar15.r1("SELECT author FROM messages_view WHERE chat_internal_id = ? AND message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:259:                gml gmlVarR16 = amlVar16.r1("SELECT count(*) FROM messages_view\n            WHERE message_history_id = ? AND chat_internal_id = ?\n            AND (flags & 16) = 0");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:274:                gml gmlVarR17 = amlVar17.r1("SELECT MIN(message_history_id) FROM messages_view\n        WHERE chat_internal_id = ? AND message_history_id >= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:290:                gml gmlVarR18 = amlVar18.r1("\n            SELECT message_history_id FROM messages_view WHERE chat_internal_id = ?\n            AND message_history_id >= ?-999 AND message_history_id <= ?\n            AND (message_history_id = ? OR host_message_history_id = ?)\n            ORDER BY message_history_id DESC\n           ");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:310:                gml gmlVarR19 = amlVar19.r1("DELETE FROM messages_view WHERE chat_internal_id = ? AND message_history_id <= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:322:                gml gmlVarR20 = amlVar20.r1("\n        SELECT COUNT(*) FROM messages_view WHERE chat_internal_id = ?\n        AND message_history_id >= ? - 999\n        AND message_history_id < ?\n        AND host_message_history_id = ?\n        ");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:335:                gml gmlVarR21 = amlVar21.r1("\n        SELECT COUNT(*) FROM messages_view WHERE chat_internal_id = ?\n        AND message_history_id >= ? - 999\n        AND message_history_id < ?\n        AND host_message_history_id = ?\n        AND reply_data IS NOT NULL\n        ");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:360:                gml gmlVarR23 = amlVar23.r1("SELECT original_message_chat_id, original_message_history_id\n           FROM messages_view\n           WHERE chat_internal_id = ? AND host_message_history_id = ?\n           ORDER BY message_history_id DESC");
+research/artifacts/decompiled-dex2/sources/defpackage/acg.java:377:                gml gmlVarR24 = amlVar24.r1("SELECT COUNT(*) FROM messages_view WHERE chat_internal_id = ? AND message_history_id > ?");
+research/artifacts/decompiled-dex2/sources/defpackage/zw4.java:57:                gml gmlVarR3 = amlVar3.r1("DELETE FROM messages WHERE chat_internal_id = ?\n           AND message_prev_history_id = ?\n           AND message_history_id >= ?\n           ");
+research/artifacts/decompiled-dex2/sources/defpackage/zw4.java:73:                gml gmlVarR4 = amlVar4.r1("UPDATE messages SET message_prev_history_id = 0 WHERE chat_internal_id = ? AND message_history_id = ? AND message_prev_history_id <= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/zw4.java:105:                gml gmlVarR6 = amlVar6.r1("\n        DELETE FROM messages_view WHERE chat_internal_id = ?\n        AND message_history_id >= ?\n        AND message_previous_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/zw4.java:121:                gml gmlVarR7 = amlVar7.r1("\n        DELETE FROM messages_view WHERE chat_internal_id = ?\n        AND host_message_history_id = ?\n        AND message_history_id < ?\n        ");
+research/artifacts/decompiled-dex2/sources/defpackage/zw4.java:137:                gml gmlVarR8 = amlVar8.r1("UPDATE messages_view SET message_previous_history_id = 0 WHERE chat_internal_id = ? AND message_history_id = ? AND message_previous_history_id <= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/zw4.java:153:                gml gmlVarR9 = amlVar9.r1("SELECT COUNT(*) FROM messages_view\n           WHERE chat_internal_id = ?\n           AND message_history_id > ?\n           AND message_history_id <= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/q1c.java:37:            Cursor cursorT0 = bfpVarP.a.T0(aer.v(0, "\n        SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text\n        FROM threads_view\n            LEFT JOIN threads_messages_view ON threads_messages_view.thread_internal_id=threads_view.thread_internal_id\n            LEFT JOIN messages_view ON messages_view.chat_internal_id=threads_view.parent_internal_id\n                AND messages_view.message_history_id=threads_messages_view.messages_view_history_id\n            WHERE threads_view.is_hidden=0 AND threads_view.unseen > 0\n       ORDER BY threads_view.sort_time DESC, message_history_id ASC\n        "));
+research/artifacts/decompiled-dex2/sources/defpackage/q1c.java:47:            Cursor cursorT1 = bfpVarP2.a.T0(aer.v(0, "\n        SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text\n        FROM threads_view\n            LEFT JOIN threads_messages_view ON threads_messages_view.thread_internal_id=threads_view.thread_internal_id\n            LEFT JOIN messages_view ON messages_view.chat_internal_id=threads_view.parent_internal_id\n                AND messages_view.message_history_id=threads_messages_view.messages_view_history_id\n            LEFT JOIN chat_organization_cross_ref ON threads_view.parent_internal_id=chat_organization_cross_ref.chat_internal_id\n            LEFT JOIN organizations ON organizations.organization_id = chat_organization_cross_ref.organization_id\n        WHERE (coalesce(chat_organization_cross_ref.organization_id, 0) = 0 OR organizations.is_public = 1)\n                AND threads_view.is_hidden = 0 AND threads_view.unseen > 0\n        GROUP BY messages_view.row_id\n        ORDER BY threads_view.sort_time DESC, message_history_id ASC"));
+research/artifacts/decompiled-dex2/sources/defpackage/q1c.java:58:            ujl ujlVarV = aer.v(1, "\n        SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text\n        FROM threads_view\n            LEFT JOIN threads_messages_view ON threads_messages_view.thread_internal_id=threads_view.thread_internal_id\n            LEFT JOIN messages_view ON messages_view.chat_internal_id=threads_view.parent_internal_id\n                AND messages_view.message_history_id=threads_messages_view.messages_view_history_id\n            LEFT JOIN chat_organization_cross_ref ON threads_view.parent_internal_id=chat_organization_cross_ref.chat_internal_id\n        WHERE threads_view.is_hidden=0 AND threads_view.unseen > 0 AND coalesce(chat_organization_cross_ref.organization_id, 0)=?\n        ORDER BY threads_view.sort_time DESC, message_history_id ASC");
+research/artifacts/decompiled-dex2/sources/defpackage/q1c.java:70:            Cursor cursorT3 = bfpVarP4.a.T0(aer.v(0, "\n        SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text\n        FROM threads_view\n            LEFT JOIN threads_messages_view ON threads_messages_view.thread_internal_id=threads_view.thread_internal_id\n            LEFT JOIN messages_view ON messages_view.chat_internal_id=threads_view.parent_internal_id\n                AND messages_view.message_history_id=threads_messages_view.messages_view_history_id\n            WHERE threads_view.is_hidden=0\n       ORDER BY threads_view.sort_time DESC, message_history_id ASC\n        "));
+research/artifacts/decompiled-dex2/sources/defpackage/q1c.java:80:            Cursor cursorT4 = bfpVarP5.a.T0(aer.v(0, "\n        SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text\n        FROM threads_view\n            LEFT JOIN threads_messages_view ON threads_messages_view.thread_internal_id=threads_view.thread_internal_id\n            LEFT JOIN messages_view ON messages_view.chat_internal_id=threads_view.parent_internal_id\n                AND messages_view.message_history_id=threads_messages_view.messages_view_history_id\n            LEFT JOIN chat_organization_cross_ref ON threads_view.parent_internal_id=chat_organization_cross_ref.chat_internal_id\n            LEFT JOIN organizations ON organizations.organization_id = chat_organization_cross_ref.organization_id\n        WHERE (coalesce(chat_organization_cross_ref.organization_id, 0) = 0 OR organizations.is_public = 1)\n                AND threads_view.is_hidden = 0\n        GROUP BY messages_view.row_id\n        ORDER BY threads_view.sort_time DESC, message_history_id ASC"));
+research/artifacts/decompiled-dex2/sources/defpackage/q1c.java:90:        ujl ujlVarV2 = aer.v(1, "\n        SELECT messages_view.message_history_id, messages_view.msg_internal_id, messages_view.flags, messages_view.time, messages_view.author, messages_view.data, messages_view.custom_payload, messages_view.message_id, messages_view.reply_data, messages_view.forwarded_author_id, messages_view.host_message_history_id, messages_view.message_sequence_number, messages_view.message_previous_history_id, messages_view.views_count, messages_view.original_message_chat_id, messages_view.original_message_history_id, messages_view.fake_guid, messages_view.forwards_count, messages_view.data_type, messages_view.notification_meta, messages_view.chat_internal_id, messages_view.chat_id, messages_view.translated_lang, messages_view.original_lang, messages_view.translated_text,messages_view.original_reply_lang, messages_view.translated_reply_text,messages_view.translated_suggests,messages_view.forced_translated_text,messages_view.forced_translated_reply_text\n        FROM threads_view\n            LEFT JOIN threads_messages_view ON threads_messages_view.thread_internal_id=threads_view.thread_internal_id\n            LEFT JOIN messages_view ON messages_view.chat_internal_id=threads_view.parent_internal_id\n                AND messages_view.message_history_id=threads_messages_view.messages_view_history_id\n            LEFT JOIN chat_organization_cross_ref ON threads_view.parent_internal_id=chat_organization_cross_ref.chat_internal_id\n        WHERE threads_view.is_hidden=0 AND coalesce(chat_organization_cross_ref.organization_id, 0)=?\n        ORDER BY threads_view.sort_time DESC, message_history_id ASC");
+research/artifacts/decompiled-dex2/sources/defpackage/doc.java:25:            String str = "history request failed with status " + historyResponse.status;
+research/artifacts/decompiled-dex2/sources/defpackage/wep.java:18:        this.h = "time2history4threads";
+research/artifacts/decompiled-dex2/sources/defpackage/lag.java:27:                gml gmlVarR1 = amlVar.r1("\n        SELECT * FROM message_translations\n        WHERE chat_internal_id=?\n            AND message_history_id=?\n            AND version=?\n            AND translated_lang=?\n        ");
+research/artifacts/decompiled-dex2/sources/defpackage/lag.java:35:                    int iN3 = qq0.N(gmlVarR1, "message_history_id");
+research/artifacts/decompiled-dex2/sources/defpackage/pr.java:102:                gml gmlVarR4 = amlVar4.r1("SELECT * FROM cache_chat_edit_history_timestamps where chat_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/pr.java:106:                    int iN2 = qq0.N(gmlVarR4, "edit_history_server_max_timestamp");
+research/artifacts/decompiled-dex2/sources/defpackage/pr.java:107:                    int iN3 = qq0.N(gmlVarR4, "edit_history_client_max_timestamp");
+research/artifacts/decompiled-dex2/sources/defpackage/pr.java:122:                gml gmlVarR5 = amlVar5.r1("SELECT edit_history_server_max_timestamp FROM cache_chat_edit_history_timestamps where chat_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/pr.java:138:                gml gmlVarR6 = amlVar6.r1("SELECT edit_history_client_max_timestamp FROM cache_chat_edit_history_timestamps where chat_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/ikp.java:232:            mqd.y(z1nVar2, "historyArgs");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:46:                gml gmlVarR1 = amlVar.r1("UPDATE cache_chat_edit_history_timestamps SET edit_history_server_max_timestamp = ? WHERE chat_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:60:                gml gmlVarR2 = amlVar2.r1("UPDATE cache_chat_edit_history_timestamps SET edit_history_client_max_timestamp = ? WHERE chat_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:126:                gml gmlVarR5 = amlVar5.r1("\n        DELETE FROM message_translations\n        WHERE chat_internal_id=?\n            AND message_history_id<=? AND message_history_id>=?-999\n        ");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:141:                gml gmlVarR6 = amlVar6.r1("\n        DELETE FROM message_translations\n        WHERE chat_internal_id=? AND message_history_id<=?\n        ");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:155:                gml gmlVarR7 = amlVar7.r1("SELECT msg_internal_id, flags FROM messages WHERE message_history_id = ? AND chat_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:174:                gml gmlVarR8 = amlVar8.r1("SELECT message_sequence_number FROM messages WHERE chat_internal_id = ? AND message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:192:                gml gmlVarR9 = amlVar9.r1("SELECT message_prev_history_id FROM messages WHERE chat_internal_id = ? AND message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:210:                gml gmlVarR10 = amlVar10.r1("SELECT edit_time FROM messages WHERE message_history_id = ? AND chat_internal_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:228:                gml gmlVarR11 = amlVar11.r1("SELECT message_history_id FROM messages WHERE chat_internal_id = ? AND message_history_id > ? AND data IS NOT NULL ORDER BY message_history_id ASC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:246:                gml gmlVarR12 = amlVar12.r1(" SELECT\n            msg_internal_id, flags, data\n            FROM messages WHERE chat_internal_id = ? AND message_history_id = ?\n        ");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:263:                gml gmlVarR13 = amlVar13.r1("SELECT EXISTS (SELECT 1 FROM messages WHERE chat_internal_id = ? AND message_history_id = ?)");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:280:                gml gmlVarR14 = amlVar14.r1(" SELECT\n            msg_internal_id, message_id, message_sequence_number, message_prev_history_id, message_history_id, time\n            FROM messages WHERE chat_internal_id = ? AND message_history_id = ?\n        ");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:297:                gml gmlVarR15 = amlVar15.r1("SELECT message_prev_history_id FROM messages WHERE chat_internal_id = ? AND message_history_id > ?  ORDER BY message_history_id ASC LIMIT 1");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:315:                gml gmlVarR16 = amlVar16.r1("DELETE FROM messages WHERE chat_internal_id = ? AND message_history_id <= ?");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:329:                gml gmlVarR17 = amlVar17.r1("DELETE FROM messages WHERE chat_internal_id = ? AND message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:357:                gml gmlVarR19 = amlVar19.r1("SELECT * FROM messages WHERE chat_internal_id = ? AND message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:363:                    int iN3 = qq0.N(gmlVarR19, "message_history_id");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:365:                    int iN5 = qq0.N(gmlVarR19, "message_prev_history_id");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:405:                gml gmlVarR21 = amlVar21.r1("SELECT data FROM messages WHERE chat_internal_id = ? AND message_history_id = ?");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:423:                gml gmlVarR22 = amlVar22.r1("UPDATE messages_view SET\n           original_lang = NULL,\n           translated_lang = NULL,\n           translated_text = NULL,\n           original_reply_lang = NULL,\n           translated_reply_text = NULL,\n           translated_suggests = NULL\n           WHERE chat_internal_id = ?\n                AND message_history_id = ?\n                AND translated_lang IS NOT NULL\n           ");
+research/artifacts/decompiled-dex2/sources/defpackage/uk1.java:437:                gml gmlVarR23 = amlVar23.r1("SELECT COUNT(*) FROM messages_view WHERE chat_internal_id = ? AND message_history_id >= ?");
+
+===== CLIENT MESSAGE SOCKET SEND =====
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-3-import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-4-import com.yandex.messaging.core.net.entities.proto.message.ChatApproval;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:5:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-6-import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-7-
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-8-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-9-public final class t84 extends vx6 {
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-10-    public final /* synthetic */ int e;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-15-        this.e = i;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-16-        this.f = obj;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-17-        this.g = obj2;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-18-    }
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-19-
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:20:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-21-        switch (this.e) {
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-22-            case 0:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-23-                ChatApproval chatApproval = new ChatApproval();
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-24-                chatApproval.chatId = ((u84) this.f).a.b;
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:25:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, chatApproval, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268419071, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-26-            case 1:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:27:                return new ClientMessage(null, null, null, (PlainMessage) this.f, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-28-            case 2:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:29:                return new ClientMessage(null, null, null, (PlainMessage) this.f, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-30-            default:
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java:31:                return (ClientMessage) ((eq2) this.f).invoke();
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-32-        }
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-33-    }
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-34-
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-35-    public boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/t84.java-36-        switch (this.e) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java:3:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-4-
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-5-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-6-public interface mgn {
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-7-    void b(String str);
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-8-
+--
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-14-
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-15-    boolean j();
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-16-
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-17-    String k();
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-18-
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java:19:    void l(c8q c8qVar, ClientMessage clientMessage);
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-20-
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-21-    void p(tgn tgnVar);
+research/artifacts/decompiled-dex2/sources/defpackage/mgn.java-22-}
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-18-import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-19-import com.yandex.messaging.core.net.entities.proto.ChatInfoFromTransport;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-20-import com.yandex.messaging.core.net.entities.proto.ChatRole;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-21-import com.yandex.messaging.core.net.entities.proto.HistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-22-import com.yandex.messaging.core.net.entities.proto.PinnedMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:23:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-24-import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-25-import com.yandex.messaging.core.net.entities.proto.message.ReducedUserInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-26-import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-27-import com.yandex.messaging.core.net.entities.proto.message.ServerMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-28-import com.yandex.messaging.internal.entities.ChatFlags;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-629-        xr6 xr6VarG2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-630-        it4 it4VarG;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-631-        ChatHistoryResponse.OutMessage[] outMessageArr;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-632-        ChatHistoryResponse.OutMessage outMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-633-        ServerMessage serverMessage2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:634:        ClientMessage clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-635-        PlainMessage plainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-636-        ServerMessageInfo serverMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-637-        ReducedUserInfo reducedUserInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-638-        xb4 xb4Var;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java-639-        boolean zC;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-11-import com.yandex.messaging.core.net.entities.proto.message.AiBotAction;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-12-import com.yandex.messaging.core.net.entities.proto.message.AiBotActions;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-13-import com.yandex.messaging.core.net.entities.proto.message.AiBotDirective;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-14-import com.yandex.messaging.core.net.entities.proto.message.BotRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-15-import com.yandex.messaging.core.net.entities.proto.message.ChatCreatedInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:16:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-17-import com.yandex.messaging.core.net.entities.proto.message.CustomPayload;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-18-import com.yandex.messaging.core.net.entities.proto.message.DepartmentInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-19-import com.yandex.messaging.core.net.entities.proto.message.ForwardedMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-20-import com.yandex.messaging.core.net.entities.proto.message.ForwardedMessageStyle;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-21-import com.yandex.messaging.core.net.entities.proto.message.GroupInfo;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-107-        return directiveE;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-108-    }
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-109-
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-110-    public final Message b(ServerMessage serverMessage) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-111-        mqd.z(serverMessage, "serverMessage");
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:112:        ClientMessage clientMessage = serverMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:113:        mqd.y(clientMessage, "clientMessage");
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:114:        PlainMessage plainMessage = clientMessage.plain;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:115:        PlainMessage plainMessage2 = plainMessage == null ? clientMessage.ephemeral : plainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:116:        SystemMessage systemMessage = clientMessage.systemMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-117-        if (plainMessage2 != null) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-148-            listX0 = null;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-149-        }
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-150-        ServerMessageInfo serverMessageInfo = serverMessage.serverMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-151-        mqd.y(serverMessageInfo, "serverMessageInfo");
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-152-        boolean z2 = listX0 == null || listX0.isEmpty();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:153:        ClientMessage clientMessage = serverMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:154:        Message messageD = d(serverMessageInfo, plainMessage, !z2, clientMessage.isSilent, clientMessage.notificationBehaviour, serverMessage.notificationMeta, z, clientMessage.withPersistentInlineButtons);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-155-        MessageData messageData = messageD.h;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-156-        messageData.reactionsVersion = serverMessage.reactionsVersion;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-157-        messageData.reactions = MessageReactions.a(serverMessage.reactions, serverMessage.recentUserReactions);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-158-        messageData.readsVersion = serverMessage.readsVersion;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-198-                ForwardedMessageInfo forwardedMessageInfo = (ForwardedMessageInfo) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-199-                ServerMessageInfo serverMessageInfo2 = forwardedMessageInfo.serverMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-200-                mqd.y(serverMessageInfo2, "serverMessageInfo");
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-201-                PlainMessage plainMessage2 = forwardedMessageInfo.plain;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-202-                mqd.y(plainMessage2, "plain");
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:203:                ClientMessage clientMessage2 = serverMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:204:                Message messageD2 = d(serverMessageInfo2, plainMessage2, false, clientMessage2.isSilent, clientMessage2.notificationBehaviour, serverMessage.notificationMeta, false, false);
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-205-                ForwardedMessageStyle[] forwardedMessageStyles = plainMessage.getForwardedMessageStyles();
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-206-                if (forwardedMessageStyles == null || (forwardedMessageStyle2 = (ForwardedMessageStyle) tt0.E0(i, forwardedMessageStyles)) == null || (quote = forwardedMessageStyle2.getQuote()) == null || quote.length() <= 0) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-207-                    quote = null;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java-208-                }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-77-                arrayList3.add(obj2);
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-78-            }
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-79-        }
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-80-        ArrayList arrayList4 = new ArrayList(ac5.Y(arrayList3, 10));
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-81-        for (ScheduledMessageDto scheduledMessageDto : arrayList3) {
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java:82:            PlainMessage plainMessage = scheduledMessageDto.getMessagePayload().getClientMessage().plain;
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-83-            if (plainMessage == null || (id = plainMessage.getPayloadId()) == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-84-                id = scheduledMessageDto.getId();
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-85-            }
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-86-            arrayList4.add(id);
+research/artifacts/decompiled-dex2/sources/defpackage/syl.java-87-        }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-3-import android.os.Looper;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-4-import android.os.SystemClock;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-5-import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-6-import com.yandex.messaging.core.net.entities.proto.RateLimit;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-7-import com.yandex.messaging.core.net.entities.proto.ShortMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:8:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-9-import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-10-import com.yandex.messaging.internal.ServerMessageRef;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-11-import com.yandex.messaging.internal.entities.AddresseeType;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-12-import com.yandex.messaging.internal.entities.GalleryMessageData;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-13-import com.yandex.messaging.internal.entities.ImageMessageData;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-40-        this.l = str;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-41-        this.m = qlhVar;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-42-        this.n = wfVar;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-43-    }
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-44-
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:45:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-46-        ((r7j) this.i.f.get()).getClass();
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-47-        this.e = SystemClock.elapsedRealtime();
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java:48:        return new ClientMessage(null, null, null, this.j, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, this.k.j ? 3 : 0, false, 201326583, null);
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-49-    }
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-50-
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-51-    public final boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-52-        boolean z;
+research/artifacts/decompiled-dex2/sources/defpackage/rlh.java-53-        hl4 hl4Var = this.h;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-5-import android.os.Looper;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-6-import android.util.Log;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-7-import com.yandex.messaging.core.net.entities.DegradationConfig;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-8-import com.yandex.messaging.core.net.entities.proto.calls.CallingMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-9-import com.yandex.messaging.core.net.entities.proto.calls.IncomingCall;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java:10:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-11-import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-12-import com.yandex.messaging.core.net.entities.proto.message.SeenMarker;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-13-import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-14-import com.yandex.messaging.internal.ServerMessageRef;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-15-import com.yandex.messaging.internal.entities.ChatId;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-93-        String str;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-94-        blk blkVar3;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-95-        aek aekVar4;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-96-        ServerMessage serverMessage2;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-97-        String str2;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java:98:        ClientMessage clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-99-        PlainMessage plainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-100-        SeenMarker seenMarker;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-101-        String chatId;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-102-        CallingMessage callingMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-103-        IncomingCall incomingCall;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/c85.java-629-                            }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-3-import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java:4:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-5-
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-6-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-7-public final class kpm {
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-8-    public final aco a;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-9-    public final c2k b;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-15-        this.b = c2kVar;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-16-    }
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-17-
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-18-    /* JADX INFO: Thrown type has an unknown type hierarchy: mnh */
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-19-    /* JADX WARN: Code duplicated, block: B:8:0x0014  */
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java:20:    public final Object a(ClientMessage clientMessage, xdo xdoVar, long j, kc6 kc6Var) throws mnh {
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-21-        jpm jpmVar;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-22-        zuk zukVarK;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-23-        Throwable th;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-24-        f18 f18Var;
+research/artifacts/decompiled-dex2/sources/defpackage/kpm.java-25-        if (kc6Var instanceof jpm) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/pt5.java-18-        mqd.z(ck4Var, "chatOpenArguments");
+research/artifacts/decompiled-dex2/sources/defpackage/pt5.java-19-        mqd.z(sn4Var, "chatScopeBridge");
+research/artifacts/decompiled-dex2/sources/defpackage/pt5.java-20-        mqd.z(hrbVar, "getConnectionStatusUseCase");
+research/artifacts/decompiled-dex2/sources/defpackage/pt5.java-21-        mqd.z(fk4Var, "chatOpenBotRequestUseCase");
+research/artifacts/decompiled-dex2/sources/defpackage/pt5.java-22-        mqd.z(mpbVar, "getChatInfoUseCase");
+research/artifacts/decompiled-dex2/sources/defpackage/pt5.java:23:        mqd.z(hk4Var, "chatOpenClientMessageUseCase");
+research/artifacts/decompiled-dex2/sources/defpackage/pt5.java-24-        mqd.z(ne6Var, "dispatchers");
+research/artifacts/decompiled-dex2/sources/defpackage/pt5.java-25-        this.a = ck4Var;
+research/artifacts/decompiled-dex2/sources/defpackage/pt5.java-26-        this.b = sn4Var;
+research/artifacts/decompiled-dex2/sources/defpackage/pt5.java-27-        this.c = hrbVar;
+research/artifacts/decompiled-dex2/sources/defpackage/pt5.java-28-        this.d = fk4Var;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-3-import android.content.SharedPreferences;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-4-import android.os.Looper;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-5-import android.os.SystemClock;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:6:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-7-import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-8-import com.yandex.messaging.internal.entities.SeenMarkerEntity;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-9-import java.io.Closeable;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-10-import java.io.IOException;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-11-import java.util.concurrent.CancellationException;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-214-    public final String k() {
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-215-        return this.b.k();
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-216-    }
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-217-
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-218-    @Override // defpackage.mgn
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:219:    public final void l(c8q c8qVar, ClientMessage clientMessage) {
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-220-        Looper looper = this.h.f.a;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-221-        Looper looperMyLooper = Looper.myLooper();
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-222-        if (!atl.u()) {
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-223-            atl.s(looper, looperMyLooper, "Message posted on wrong thread");
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-224-        }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-226-            atl.y("Unexpected uid in single-user connection");
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-227-        }
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-228-        if (this.c) {
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-229-            return;
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-230-        }
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java:231:        this.b.l(null, clientMessage);
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-232-    }
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-233-
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-234-    @Override // defpackage.qgn
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-235-    public final void m(String str) {
+research/artifacts/decompiled-dex2/sources/defpackage/qhg.java-236-        rhg rhgVar = this.h;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-3-import com.yandex.messaging.core.net.entities.proto.CommonRequestFields;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-4-import com.yandex.messaging.core.net.entities.proto.SubscriptionRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-5-import com.yandex.messaging.core.net.entities.proto.SubscriptionResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java:6:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-7-import com.yandex.messaging.core.net.entities.proto.message.PinMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-8-import com.yandex.messaging.core.net.entities.proto.message.ServerMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-9-import com.yandex.messaging.core.net.entities.proto.message.ServerMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-10-import java.util.concurrent.TimeUnit;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-11-
+--
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-19-        this.c = obj;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-20-    }
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-21-
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-22-    public void T(SubscriptionResponse subscriptionResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-23-        ServerMessageInfo serverMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java:24:        ClientMessage clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-25-        PinMessage pinMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-26-        switch (this.b) {
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-27-            case 1:
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-28-                mqd.z(subscriptionResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/i9g.java-29-                ServerMessage serverMessage = subscriptionResponse.lastMessage;
+--
+--
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-3-import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-4-import com.yandex.messaging.core.net.entities.proto.ShortMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:5:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-6-import com.yandex.messaging.core.net.entities.proto.message.UnseenMarker;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-7-
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-8-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-9-public final class hw4 extends vx6 {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-10-    public final /* synthetic */ iw4 e;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-19-        this.g = j2;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-20-        this.h = j3;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-21-        this.i = pycVar;
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-22-    }
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-23-
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:24:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java:25:        return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new UnseenMarker(this.e.b.b, this.f, this.g, this.h), null, null, null, false, 0, false, 266338303, null);
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-26-    }
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-27-
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-28-    public final boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-29-        mqd.z(postMessageResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/hw4.java-30-        if (vx6.V(postMessageResponse.status)) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-3-import android.os.Looper;
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-4-import com.yandex.messaging.core.net.entities.DegradationConfig;
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java:5:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-6-import com.yandex.messaging.core.net.entities.proto.message.Typing;
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-7-
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-8-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-9-public final class x6l extends dv1 {
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-10-    public final /* synthetic */ int g;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-40-                        }
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-41-                        long jLongValue = lValueOf != null ? lValueOf.longValue() : 2000L;
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-42-                        Long l = cjiVar.e;
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-43-                        if (l == null || jCurrentTimeMillis - l.longValue() >= jLongValue) {
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-44-                            cjiVar.e = Long.valueOf(jCurrentTimeMillis);
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java:45:                            ((mgn) g2eVar.a).l(null, new ClientMessage(new Typing(cjiVar.c.b, 0, null, null, 14, null), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435454, null));
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-46-                        }
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-47-                    }
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-48-                    g();
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-49-                }
+research/artifacts/decompiled-dex2/sources/defpackage/x6l.java-50-                break;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-3-import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-4-import com.yandex.messaging.core.net.entities.proto.ShortMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-5-import com.yandex.messaging.core.net.entities.proto.message.ClearUserHistory;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:6:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-7-import com.yandex.messaging.core.net.entities.proto.message.Heartbeat;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-8-
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-9-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-10-public final class f25 extends vx6 {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-11-    public final /* synthetic */ int e;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-24-            default:
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-25-                return super.J(obj);
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-26-        }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-27-    }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-28-
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:29:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-30-        switch (this.e) {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-31-            case 0:
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:32:                return new ClientMessage(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new ClearUserHistory(((g25) this.f).a.b), null, null, null, null, null, null, null, false, 0, false, 268304383, null);
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-33-            default:
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-34-                h6e h6eVar = (h6e) this.f;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-35-                h6eVar.getClass();
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-36-                Heartbeat heartbeat = new Heartbeat();
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-37-                h6eVar.d.getClass();
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-38-                heartbeat.type = 2;
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java:39:                return new ClientMessage(null, heartbeat, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435453, null);
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-40-        }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-41-    }
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-42-
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-43-    public void S(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/f25.java-44-        switch (this.e) {
+--
+--
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-3-import com.yandex.messaging.core.net.ApiRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-4-import com.yandex.messaging.core.net.entities.proto.PostMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:5:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-6-import com.yandex.messaging.core.net.entities.proto.message.PlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-7-import com.yandex.messaging.core.net.entities.scheduled.ScheduledCreateRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-8-import com.yandex.messaging.internal.entities.EmptyMessageData;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-9-import com.yandex.messaging.internal.entities.FileMessageData;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-10-import com.yandex.messaging.internal.entities.ForwardMessageRef;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-195-            }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-196-            PlainMessage plainMessageCopy$default = PlainMessage.copy$default(plainMessage, null, null, null, null, null, null, null, pollCopy$default, null, 0L, null, null, null, null, false, null, false, null, null, null, 1048447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-197-            if (ygiVar5.j) {
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-198-                i3 = 3;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-199-            }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:200:            String strC = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-201-            Pattern pattern = bvf.e;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-202-            return new kel(pze.h(strC, ko7.v("application/json")));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-203-        }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-204-        nzn.U(objQ2);
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-205-        if (!this.c.c) {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-303-                }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-304-                PlainMessage plainMessageCopy$default2 = PlainMessage.copy$default(plainMessage2, null, null, null, null, null, null, null, pollCopy$default, null, 0L, null, null, null, null, false, null, false, null, null, null, 1048447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-305-                if (ygiVar5.j) {
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-306-                    i3 = 3;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-307-                }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:308:                String strC2 = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-309-                Pattern pattern2 = bvf.e;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-310-                return new kel(pze.h(strC2, ko7.v("application/json")));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-311-            }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-312-        }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-313-        return xe6Var;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-392-            }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-393-            PlainMessage plainMessageCopy$default3 = PlainMessage.copy$default(plainMessage3, null, null, null, null, null, null, null, pollCopy$default, null, 0L, null, null, null, null, false, null, false, null, null, null, 1048447, null);
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-394-            if (ygiVar5.j) {
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-395-                i3 = 3;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-396-            }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java:397:            String strC3 = this.h.c(new ApiRequest("create_scheduled_message", new ScheduledCreateRequest(j2, new PostMessage(new ClientMessage(null, null, null, plainMessageCopy$default3, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, i3, false, 201326583, null), this.a.b))));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-398-            Pattern pattern3 = bvf.e;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-399-            return new kel(pze.h(strC3, ko7.v("application/json")));
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-400-        }
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-401-        return xe6Var;
+research/artifacts/decompiled-dex2/sources/defpackage/zyl.java-402-    }
+--
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-3-import android.os.Looper;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-4-import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-5-import com.yandex.messaging.core.net.entities.proto.ShortMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:6:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-7-import com.yandex.messaging.core.net.entities.proto.message.Reaction;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-8-import com.yandex.messaging.internal.ServerMessageRef;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-9-import com.yandex.messaging.internal.entities.MessageData;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-10-import java.io.IOException;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-11-
+--
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-21-        this.f = serverMessageRef;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-22-        this.g = i;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-23-        this.h = i2;
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-24-    }
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-25-
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:26:    public final ClientMessage L() {
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java:27:        return new ClientMessage(null, null, null, null, null, null, null, null, null, new Reaction(this.e.c.a.b, this.f.getTimestamp(), this.g, this.h), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268434943, null);
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-28-    }
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-29-
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-30-    public final boolean R(PostMessageResponse postMessageResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-31-        mqd.z(postMessageResponse, "response");
+research/artifacts/decompiled-dex2/sources/defpackage/lnk.java-32-        mnk mnkVar = this.e;
+--
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-3-import com.yandex.messaging.core.net.entities.proto.message.BotRequest;
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java:4:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-5-import com.yandex.messaging.core.net.entities.proto.message.MessageContext;
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-6-import com.yandex.messaging.json.JsonAdapter;
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-7-
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-8-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-9-public final class h92 {
+--
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-24-        this.c = x20Var;
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-25-        this.e = qp0Var.V();
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-26-        this.d = k4eVar.a(Object.class);
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-27-    }
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-28-
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java:29:    public final ClientMessage a(Object obj, String str) {
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-30-        MessageContext messageContext;
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-31-        q9j q9jVar = this.a;
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-32-        String str2 = q9jVar.b;
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-33-        if (str != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-34-            Long lD = this.e.d(q9jVar.a, str);
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-35-            messageContext = new MessageContext(str, lD != null ? lD.longValue() : 0L, null, null, 12, null);
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-36-        } else {
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-37-            messageContext = null;
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-38-        }
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java:39:        return new ClientMessage(null, null, null, null, null, null, new BotRequest(str2, obj, null, messageContext, null, null, null, 116, null), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, 0, false, 268435391, null);
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-40-    }
+research/artifacts/decompiled-dex2/sources/defpackage/h92.java-41-}
+--
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-1-package defpackage;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-3-import com.google.protobuf.DescriptorProtos;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java:4:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-5-import java.util.ArrayList;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-6-import java.util.Set;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-7-import java.util.concurrent.CancellationException;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-8-
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-9-/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+--
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-113-                om5Var7.b0(-890630579);
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-114-                xpi xpiVar = iflVar.a;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-115-                om5Var7.p(false);
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-116-                return xpiVar;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-117-            case 7:
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java:118:                ClientMessage clientMessage = (ClientMessage) this.b;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-119-                mgn mgnVar = (mgn) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-120-                mqd.z(mgnVar, "$this$withRealConnection");
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java:121:                mgnVar.l((c8q) obj2, clientMessage);
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-122-                return fcq.a;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-123-            case 8:
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-124-                tgn tgnVar = (tgn) this.b;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-125-                mgn mgnVar2 = (mgn) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/trh.java-126-                mqd.z(mgnVar2, "$this$withRealConnection");
+--
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-2-
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-3-import android.os.Looper;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-4-import android.os.SystemClock;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-5-import android.util.LongSparseArray;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-6-import com.yandex.messaging.core.net.entities.proto.PostMessageResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java:7:import com.yandex.messaging.core.net.entities.proto.message.ClientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/e84.java-8-import com.yandex.messaging.core.net.entities.proto.message.ReadMarker;
