@@ -1,0 +1,579 @@
+
+========== jhg ==========
+--- classes ---
+INFO  - loading ...
+INFO  - Saving class 'defpackage.jhg' to file '/tmp/stage38-jhg-classes/sources/defpackage/jhg.java'
+INFO  - done
+package defpackage;
+
+import android.content.Context;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes.dex */
+public final class jhg {
+    public final Context a;
+    public final pnn b;
+    public final ukn c;
+    public final y9a d;
+    public final rnn e;
+    public final qgg f;
+    public final ufg g;
+    public final om7 h;
+    public final qfa i;
+    public final ocg j;
+    public final ij4 k;
+    public final hhg l;
+    public final k0j m;
+    public final ihg n;
+
+    public jhg(Context r6, pnn r7, skn r8, mnn r9, rnn r10, ufg r11, om7 r12, qfa r13, ocg r14) {
+        hj4 r0 = hj4.b;
+        hhg r1 = new hhg();
+        k0j r2 = new k0j(r6);
+        ihg r3 = new ihg();
+        mqd.z(r9, "experimentConfig");
+        this.a = r6;
+        this.b = r7;
+        this.c = r8;
+        this.d = r9;
+        this.e = r10;
+        this.f = qgg.a;
+        this.g = r11;
+        this.h = r12;
+        this.i = r13;
+        this.j = r14;
+        this.k = r0;
+        this.l = r1;
+        this.m = r2;
+        this.n = r3;
+    }
+}
+--- classes2 ---
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: jhg
+CLASS NOT RECOVERED
+--- classes3 ---
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: jhg
+CLASS NOT RECOVERED
+--- classes4 ---
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: jhg
+CLASS NOT RECOVERED
+
+========== poq ==========
+--- classes ---
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: poq
+CLASS NOT RECOVERED
+--- classes2 ---
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: poq
+CLASS NOT RECOVERED
+--- classes3 ---
+INFO  - loading ...
+INFO  - Saving class 'defpackage.poq' to file '/tmp/stage38-poq-classes3/sources/defpackage/poq.java'
+INFO  - done
+package defpackage;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Handler;
+import android.os.Looper;
+import android.preference.PreferenceManager;
+import android.view.GestureDetector;
+import android.view.ViewGroup;
+import androidx.compose.ui.node.LayoutNode;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.yandex.messaging.internal.entities.BusinessItem;
+import com.yandex.messaging.internal.net.ai.AiTextEditData;
+import com.yandex.messaging.internal.net.ai.StartAiTextEditParams;
+import java.nio.ByteBuffer;
+import java.security.GeneralSecurityException;
+import java.security.Provider;
+import java.security.Security;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Set;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes3.dex */
+public final class poq implements gfg, upa, xpf, rja, uy6, uoq, fb6, j61, h4o, te9, lca, ehc {
+    public static final Object c = null;
+    public final /* synthetic */ int a;
+    public Object b;
+
+    static {
+        c = new Object();
+    }
+
+    public /* synthetic */ poq(Object r1, int r2) {
+        this.a = r2;
+        this.b = r1;
+    }
+
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:102:0x015c -> B:103:0x015d). Please report as a decompilation issue!!! */
+    public static final Object m(poq r11, mx r12, kc6 r13) {
+        fx r0 = (fx) r11.b;
+        if ((r13 instanceof lx) == false) goto L7;
+        lx r1 = (lx) r13;
+        int r2 = r1.h;
+        if ((r2 & Integer.MIN_VALUE) == 0) goto L7;
+        r1.h = r2 - Integer.MIN_VALUE;
+    L8:
+        Object r14 = r1.f;
+        xe6 r15 = xe6.a;
+        int r3 = r1.h;
+        String r6 = null;
+        if (r3 == 0) goto L18;
+        if (r3 == 1) goto L17;
+        if (r3 == 2) goto L16;
+        if (r3 != 3) goto L15;
+        String r16 = r1.d;
+        nzn.U(r14);
+    L103:
+        lel r17 = (lel) r14;
+    L23:
+        if ((r17 instanceof iel) == false) goto L37;
+        int r18 = ((nl0) ((iel) r17).a).a;
+        if (r18 > 0) goto L28;
+        hx r19 = hx.h;
+    L35:
+        return new rx(r19);
+    L28:
+        if (r18 != 403) goto L31;
+        r19 = hx.a;
+        goto L35
+    L31:
+        if (r18 != 429) goto L33;
+        r19 = hx.f;
+        goto L35
+    L33:
+        r19 = hx.b;
+        goto L35
+    L37:
+        if ((r17 instanceof kel) == false) goto L116;
+        AiTextEditData r110 = (AiTextEditData) ((kel) r17).a;
+        int r4 = r110.getStatusCode();
+        if (r4 == 0) goto L104;
+        if (r4 == 1) goto L77;
+        if (r4 != 2) goto L43;
+        Integer r111 = r110.getErrorCode();
+        if (r111 != null) goto L48;
+    L50:
+        if (r111 != null) goto L53;
+    L54:
+        if (r111 != null) goto L57;
+    L58:
+        if (r111 != null) goto L61;
+    L63:
+        if (r111 != null) goto L66;
+    L68:
+        if (r111 != null) goto L71;
+    L73:
+        hx r112 = hx.b;
+    L76:
+        return new rx(r112);
+    L71:
+        if (r111.intValue() != 7) goto L73;
+        r112 = hx.f;
+        goto L76
+    L66:
+        if (r111.intValue() != 4) goto L68;
+        r112 = hx.d;
+        goto L76
+    L61:
+        if (r111.intValue() != 9) goto L63;
+    L74:
+        r112 = hx.e;
+        goto L76
+    L57:
+        if (r111.intValue() == 8) goto L74;
+    L53:
+        if (r111.intValue() == 3) goto L74;
+    L48:
+        if (r111.intValue() != 1) goto L50;
+        r112 = hx.c;
+        goto L76
+    L43:
+        return new rx(hx.b);
+    L77:
+        String r5 = r110.getSessionId();
+        if (r5 != null) goto L80;
+    L86:
+        if (r16 == null) goto L88;
+        Long r113 = r110.getPollIntervalMs();
+        if (r113 == null) goto L94;
+        long r7 = r113.longValue();
+        if (r7 >= 100) goto L95;
+        r7 = 100;
+    L95:
+        r1.d = r16;
+        r1.e = r16;
+        r1.h = 2;
+        if (x44.o(r7, r1) == r15) goto L101;
+        String r8 = r16;
+    L99:
+        r1.d = r8;
+        r1.e = null;
+        r1.h = 3;
+        r14 = lo7.Q(r0.b, new k3(r0, r16, null, 11), r1);
+        if (r14 == r15) goto L101;
+        r16 = r8;
+    L101:
+        return r15;
+    L94:
+        r7 = 500;
+        goto L95
+    L88:
+        return new rx(hx.b);
+    L80:
+        if (r5.length() > 0) goto L83;
+        r5 = null;
+    L83:
+        if (r5 == null) goto L86;
+        r16 = r5;
+        goto L86
+    L104:
+        String r114 = r110.getText();
+        if (r114 == null) goto L114;
+        if (r114.length() <= 0) goto L109;
+        r6 = r114;
+    L109:
+        if (r6 == null) goto L114;
+        return new sx(r6);
+    L114:
+        return new rx(hx.b);
+    L116:
+        throw new mnh();
+    L15:
+        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+    L16:
+        r16 = r1.e;
+        r8 = r1.d;
+        nzn.U(r14);
+        goto L99
+    L17:
+        nzn.U(r14);
+    L21:
+        r17 = (lel) r14;
+        r16 = null;
+        goto L23
+    L18:
+        nzn.U(r14);
+        StartAiTextEditParams r115 = new StartAiTextEditParams(r12.a, r12.b.a, "ru");
+        r1.h = 1;
+        r14 = lo7.Q(r0.b, new k3(r0, r115, null, 12), r1);
+        if (r14 != r15) goto L21;
+    L7:
+        r1 = new lx(r11, r13);
+        goto L8
+    }
+
+    public /* bridge */ /* synthetic */ Object C() {
+        return "api.messenger.alpha.yandex.net";
+    }
+
+    public Object I() {
+        ((ihg) this.b).getClass();
+        return "api.messenger.yandex.net";
+    }
+
+    public /* bridge */ /* synthetic */ Object K() {
+        return "api.messenger.yandex.net";
+    }
+
+    public /* bridge */ /* synthetic */ Object L() {
+        return "api.messenger.test.yandex.net";
+    }
+
+    public /* bridge */ /* synthetic */ Object V() {
+        return "api.messenger.alpha.yandex.net";
+    }
+
+    public void a() {
+    }
+
+    public void b(ppa r2) {
+        ((gw3) this.b).f(r2.a);
+    }
+
+    public void c(npa r1) {
+    }
+
+    public Object d(ic6 r3) {
+        switch(this.a) {
+            case 7: goto L10;
+            default: goto L4;
+        };
+    L4:
+        Drawable r4 = (Drawable) this.b;
+        if ((r4 instanceof BitmapDrawable) == false) goto L8;
+        Bitmap r5 = ((BitmapDrawable) r4).getBitmap();
+        mqd.y(r5, "getBitmap(...)");
+        return new cja(r5);
+    L8:
+        return new dja(new h3d(r4));
+    L10:
+        return new cja((Bitmap) this.b);
+    }
+
+    public String e(Object r1) {
+        return ((fgc) r1).b;
+    }
+
+    public Object f() {
+        ByteBuffer r0 = (ByteBuffer) this.b;
+        r0.position(0);
+        return r0;
+    }
+
+    @Override // defpackage.uoq
+    public void g(BusinessItem r2) {
+        mqd.z(r2, "item");
+        ((k94) this.b).t.i0(r2);
+    }
+
+    public int getHeight() {
+        return ((ExtendedFloatingActionButton) this.b).getCollapsedSize();
+    }
+
+    public int getPaddingEnd() {
+        return ((ExtendedFloatingActionButton) this.b).getCollapsedPadding();
+    }
+
+    public int getPaddingStart() {
+        return ((ExtendedFloatingActionButton) this.b).getCollapsedPadding();
+    }
+
+    public int getWidth() {
+        return ((ExtendedFloatingActionButton) this.b).getCollapsedSize();
+    }
+
+    public void h() {
+        v8a r0 = ((nj7) this.b).W0;
+        if (r0 == null) goto L6;
+        r0.a();
+        return;
+    }
+
+    @Override // defpackage.uoq
+    public void i(BusinessItem r2) {
+        mqd.z(r2, "item");
+    }
+
+    public Iterator j() {
+        return ((Iterable) this.b).iterator();
+    }
+
+    public boolean k(db6 r2) {
+        mqd.z(r2, "contentType");
+        return r2.N((db6) this.b);
+    }
+
+    public void l() {
+        v8a r0 = ((nj7) this.b).W0;
+        if (r0 == null) goto L6;
+        r0.a();
+        return;
+    }
+
+    public void n(LayoutNode r2) {
+        if (r2.J() == true) goto L5;
+        ggd.b("DepthSortedSet.add called on an unattached node");
+    L5:
+        ((ohn) this.b).add(r2);
+    }
+
+    public Object o(mx r6, kc6 r7) {
+        if ((r7 instanceof kx) == false) goto L7;
+        kx r0 = (kx) r7;
+        int r1 = r0.f;
+        if ((r1 & Integer.MIN_VALUE) == 0) goto L7;
+        r0.f = r1 - Integer.MIN_VALUE;
+    L8:
+--- classes4 ---
+INFO  - loading ...
+ERROR - Incorrect arguments: Input class not found: poq
+CLASS NOT RECOVERED
+
+========== KS6 CONSTRUCTOR CONTINUATION ==========
+        this.Z = r36;
+        this.a0 = n68.b(new g0k(r36, this.k, 19));
+        this.b0 = new ku7(this.d, 12);
+        this.c0 = n68.b(mqd.g);
+        this.d0 = n68.b(lqd.j);
+        y8k r37 = n68.b(mmd.g);
+        y8k r38 = n68.b(new vyj(this.c0, this.d0, r37, 12));
+        this.e0 = r38;
+        this.f0 = n68.b(new v7l(r38, 13));
+        ku7 r39 = new ku7(this.e, 1);
+        this.g0 = r39;
+        this.h0 = n68.b(new ffk(r39, 4));
+        y8k r40 = n68.b(pa7.a);
+        this.i0 = r40;
+        q4c r115 = new q4c(r40, 8);
+        this.j0 = r115;
+        this.k0 = n68.b(new tr1(n68.b(new md1(this.Y, this.a0, this.b0, this.f0, this.e0, this.h0, this.g, this.s, this.V, r115, 7)), this.e, this.g, this.e0, this.i, this.E, this.i0, this.s, this.V, 0));
+        n68.b(new fj(this.r, 23));
+        n68.b(new skm(this.r, this.k, 8));
+        y8k r41 = n68.b(bsm.c);
+        this.l0 = r41;
+        n68.b(new rpf(r41, 13));
+        this.m0 = n68.b(new v7l(this.e, 9));
+        jaa r42 = new jaa(this.e, 22);
+        this.n0 = r42;
+        this.o0 = n68.b(new qxc(this.g, this.c, r42, 10, false));
+        this.p0 = new vl(this.g, this.o, this.j, this.k, 18);
+        y8k r43 = n68.b(new w1k(this.e, 16));
+        this.q0 = r43;
+        this.r0 = n68.b(new w1k(r43, 15));
+        y8k r44 = n68.b(oyg.a);
+        this.s0 = r44;
+        this.t0 = n68.b(new pp(this.p0, this.r0, this.l, this.r, this.I, this.C, this.e0, r44, 8));
+        this.u0 = n68.b(new abg(this.C, this.l, 4));
+        this.v0 = n68.b(zhp.b);
+        y8k r45 = n68.b(e6q.c);
+        this.w0 = r45;
+        this.x0 = n68.b(new yh4(this.v0, r45, 21));
+        this.y0 = n68.b(new skm(this.e, this.s, 20));
+        this.z0 = n68.b(new bf(this.d, this.s, 10));
+        this.A0 = n68.b(new w85(this.e, 22));
+        y8k r46 = n68.b(new jaa(this.s, 1));
+        this.B0 = r46;
+        y8k r47 = n68.b(new yh4(this.g, r46, 20));
+        this.C0 = n68.b(new vl(this.A0, r47, this.B0, this.l, 21));
+        this.D0 = n68.b(y2r.d);
+        this.E0 = n68.b(new w85(this.C0, 23));
+        this.F0 = n68.b(new h25(this.e, this.r, this.l, 24));
+        y8k r48 = n68.b(new jaa(this.e, 12));
+        this.G0 = r48;
+        this.H0 = n68.b(new vrm(this.e, r48, this.X, this.r, this.o, this.l, 2));
+        this.I0 = n68.b(new v7l(this.r, 12));
+        y8k r49 = this.P;
+        y8k r50 = this.w;
+        skm r51 = new skm(r49, r50, 16);
+        rpf r52 = new rpf(r50, 15);
+        this.J0 = n68.b(new qxc(r15, this.j, r51, r52));
+        this.K0 = n68.b(new v7l(this.G0, 28));
+        this.L0 = n68.b(new eqg(lld.a(r16), 10));
+        js6 r53 = new js6(this, 2);
+        y8k r54 = n68.b(new qxc(this.y, this.C, r53, 3, false));
+        this.M0 = r54;
+        this.N0 = n68.b(new k6h(r54, 0));
+        this.O0 = n68.b(new wdj(this.e, this.s, this.l, this.d, 13));
+        this.P0 = new khg(r14, 4);
+        y8k r116 = n68.b(new jaa(this.e, 14));
+        this.Q0 = r116;
+        this.R0 = n68.b(new tqh(this.e, this.P0, this.v, this.g, this.u0, this.l, r116, 18));
+        this.S0 = n68.b(new gf(this.e, this.P0, this.v, this.g, this.u0, this.l, this.Q0, 16));
+        this.T0 = new zep(this.i, 1);
+        vyj r55 = new vyj(this.s, this.h, this.q, 13);
+        this.U0 = r55;
+        nhg r56 = new nhg(this.e, r55, 0);
+        this.V0 = r56;
+        this.W0 = n68.b(new uh(r56, this.L, 18));
+        this.X0 = n68.b(new abg(this.e, this.g, 17));
+        this.Y0 = n68.b(new v7l(this.E, 18));
+        this.Z0 = n68.b(new v7l(this.j, 6));
+        this.a1 = n68.b(iym.e);
+        this.b1 = n68.b(yoe.a);
+        this.c1 = n68.b(new g0k(this.V, this.C, 9));
+        this.d1 = n68.b(new yh4(this.j, this.C0, 19));
+        this.e1 = n68.b(new ffk(new khg(r14, 9), 3));
+        khg r57 = this.e;
+        this.f1 = new vlg(r57, 24);
+        this.g1 = n68.b(new v7l(r57, 15));
+        this.h1 = n68.b(new vrm(this.e, this.T0, this.l, this.L, this.g, this.j, 7));
+        this.i1 = n68.b(new w85(this.e, 26));
+        this.j1 = new zep(this.T0, 0);
+        this.k1 = n68.b(new bf(this.C, this.k, 5));
+        this.l1 = n68.b(new h25(this.o, this.l, this.k, 23));
+        this.m1 = n68.b(new yh4(this.j, this.C0, 18));
+        this.n1 = n68.b(hu0.a);
+        this.o1 = n68.b(new g0k(this.j, this.g, 26));
+        this.p1 = new khg(r14, 5);
+        this.q1 = n68.b(aer.c);
+        this.r1 = new khg(r14, 3);
+        this.s1 = n68.b(new yh4(this.e, this.E, 11));
+        this.t1 = n68.b(new v7l(this.s, 8));
+        this.u1 = n68.b(new w1k(this.g, 14));
+        this.v1 = n68.b(xo7.d);
+        this.w1 = n68.b(new w85(this.k, 17));
+        this.x1 = n68.b(lo7.q);
+        this.y1 = n68.b(aer.b);
+        this.z1 = new khg(r14, 13);
+        this.A1 = new khg(r14, 12);
+        this.B1 = n68.b(qq0.d);
+        this.C1 = n68.b(new s34(this.P, 23));
+        this.D1 = n68.b(new ffk(new js6(this, 3), 20));
+        this.E1 = n68.b(new bf(this.a1, this.j, 21));
+        this.F1 = n68.b(new we(this.e, this.P, this.g, 5));
+        this.G1 = n68.b(new zep(this.r, 19));
+    }
+
+    public final pdg a() {
+        return (pdg) this.u0.get();
+    }
+
+    public final x20 b() {
+        return (x20) this.g.get();
+    }
+
+    public final we6 c() {
+        return (we6) this.l.get();
+    }
+
+    public final y9a d() {
+        y9a r0 = this.a.d;
+        rld.q(r0);
+        return r0;
+    }
+
+    public final e4k e() {
+        return (e4k) this.r.get();
+    }
+
+    public final bsp f() {
+        ocg r0 = this.a.j;
+        rld.q(r0);
+        return vyj.a(r0, this.h, this.q);
+    }
+
+    public final fsc g() {
+        lfg r1 = (lfg) this.d.get();
+        jhg r3 = this.a;
+        ihg r4 = r3.n;
+        rld.q(r4);
+        poq r2 = new poq(r4);
+        rld.q(r4);
+        t8n r5 = new t8n(r4);
+        rld.q(r4);
+        ro6 r6 = new ro6(r4);
+        ihg r7 = r3.n;
+        rld.q(r7);
+        g2e r8 = new g2e(r7);
+        rld.q(r4);
+        return new fsc(r1, r2, r5, r6, r8, new tin(r4), new qsa(20), new pze(9));
+    }
+
+    public final hmg h() {
+        Context r1 = this.a.a;
+        rld.q(r1);
+        return new hmg(r1, 0);
+    }
+
+    public final Handler i() {
+        Looper r0 = (Looper) this.i.get();
+        mqd.z(r0, "looper");
+        return new Handler(r0);
+    }
+
+    public final g1j j() {
+        jhg r1 = this.a;
+        Context r2 = r1.a;
+        rld.q(r2);
+        return new g1j(r2, r1.m, (x20) this.g.get());
+    }
+}
