@@ -1,0 +1,1022 @@
+
+========== ud1.java ==========
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.ChangeChatMembersParams;
+import com.yandex.messaging.core.net.entities.ChatData;
+import com.yandex.messaging.core.net.entities.GetChatInfoData;
+import com.yandex.messaging.core.net.entities.GetChatInfoParam;
+import com.yandex.messaging.core.net.entities.chatcreate.AddRemoveUserError;
+import com.yandex.messaging.core.net.entities.chatcreate.GroupChatData;
+import com.yandex.messaging.json.JsonAdapter;
+import com.yandex.messaging.mediaviewer.docs.net.DocViewerErrorData;
+import com.yandex.messaging.mediaviewer.docs.net.DocViewerResponse$Error;
+import com.yandex.messaging.mediaviewer.docs.net.DocViewerResponse$Success;
+import com.yandex.messaging.mediaviewer.video.ErrorData;
+import com.yandex.messaging.mediaviewer.video.StreamInfoResponse$Error;
+import com.yandex.messaging.mediaviewer.video.StreamInfoResponse$Success;
+import java.util.Arrays;
+import java.util.HashMap;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class ud1 extends bff {
+    public final /* synthetic */ int i;
+    public final /* synthetic */ Object j;
+    public final /* synthetic */ Object k;
+    public final /* synthetic */ Object l;
+    public final /* synthetic */ Object m;
+    public final /* synthetic */ Object n;
+
+    public /* synthetic */ ud1(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, int i) {
+        this.i = i;
+        this.k = obj;
+        this.l = obj2;
+        this.j = obj3;
+        this.m = obj4;
+        this.n = obj5;
+    }
+
+    public final boolean C(f7f f7fVar) {
+        switch (this.i) {
+            case 0:
+                mqd.z(f7fVar, "error");
+                return ((rd1) this.k).l(f7fVar.a);
+            case 1:
+                mqd.z(f7fVar, "error");
+                return ((rd1) this.k).l(f7fVar.a);
+            case 2:
+                mqd.z(f7fVar, "error");
+                ((pd1) this.k).j(new rh9(f7fVar.a, f7fVar.b, (String) this.m));
+                return false;
+            case 3:
+                mqd.z(f7fVar, "error");
+                gw3 gw3Var = (gw3) this.n;
+                String str = f7fVar.b;
+                if (str == null) {
+                    str = "unknown";
+                }
+                String str2 = f7fVar.c;
+                if (str2 == null) {
+                    str2 = "";
+                }
+                gw3Var.f(new DocViewerResponse$Error("error", new DocViewerErrorData(str, str2, "network")));
+                return true;
+            default:
+                mqd.z(f7fVar, "error");
+                gw3 gw3Var2 = (gw3) this.n;
+                String str3 = f7fVar.b;
+                if (str3 == null) {
+                    str3 = "unknown";
+                }
+                String str4 = f7fVar.c;
+                if (str4 == null) {
+                    str4 = "";
+                }
+                gw3Var2.f(new StreamInfoResponse$Error("error", new ErrorData(str3, str4, "network")));
+                return true;
+        }
+    }
+
+    public final void E(Object obj) {
+        switch (this.i) {
+            case 0:
+                ChatData chatData = (ChatData) obj;
+                mqd.z(chatData, "response");
+                ((rd1) this.k).c0(chatData);
+                break;
+            case 1:
+                GroupChatData groupChatData = (GroupChatData) obj;
+                qe1 qe1Var = (qe1) this.j;
+                mqd.z(groupChatData, "response");
+                AddRemoveUserError[] errors = groupChatData.getErrors();
+                if (errors == null || errors.length == 0) {
+                    ((rd1) this.k).c0(groupChatData);
+                } else {
+                    qe1Var.g.a(errors);
+                    m04 m04Var = qe1Var.h;
+                    m04Var.getClass();
+                    m04Var.e.c(tt0.g1(errors));
+                    ((lib) this.m).invoke(groupChatData);
+                }
+                break;
+            case 2:
+                GetChatInfoData getChatInfoData = (GetChatInfoData) obj;
+                pd1 pd1Var = (pd1) this.k;
+                mqd.z(getChatInfoData, "response");
+                ChatData[] chatDataArr = getChatInfoData.chats;
+                if (chatDataArr.length != 0) {
+                    ChatData chatData2 = chatDataArr[0];
+                    mqd.u(chatData2);
+                    pd1Var.s(chatData2, null);
+                } else {
+                    pd1Var.j(new oh9((String) this.m));
+                }
+                break;
+            case 3:
+                f58 f58Var = (f58) obj;
+                mqd.z(f58Var, "response");
+                ((gw3) this.n).f(f58Var);
+                break;
+            default:
+                iyn iynVar = (iyn) obj;
+                mqd.z(iynVar, "response");
+                ((gw3) this.n).f(iynVar);
+                break;
+        }
+    }
+
+    public void F() {
+        switch (this.i) {
+            case 1:
+                ((kib) this.n).invoke();
+                break;
+            case 2:
+                ((pd1) this.k).j(new vh9((String) this.m));
+                break;
+            case 3:
+                ((gw3) this.n).f(new DocViewerResponse$Error("error", new DocViewerErrorData("timeout", "timeout", "network")));
+                break;
+            case 4:
+                ((gw3) this.n).f(new StreamInfoResponse$Error("error", new ErrorData("timeout", "timeout", "network")));
+                break;
+        }
+    }
+
+    public final g5l I() {
+        switch (this.i) {
+            case 0:
+                exc excVar = ((qe1) this.j).c;
+                String str = String.format("change_chat_avatar/%s", Arrays.copyOf(new Object[]{(String) this.m}, 1));
+                go5 go5Var = (go5) this.n;
+                excVar.getClass();
+                g5l g5lVarC = excVar.c(str, new HashMap());
+                g5lVarC.g(nxp.class, nxp.FileUpload);
+                g5lVarC.f(go5Var);
+                return g5lVarC;
+            case 1:
+                return ((qe1) this.j).b.a((ChangeChatMembersParams) this.l, "change_chat_members");
+            case 2:
+                return ((qe1) this.j).b.a(new GetChatInfoParam((String[]) this.n), "get_chats_info");
+            case 3:
+                e58 e58Var = (e58) this.k;
+                g5l g5lVarA = ((x48) this.l).c.a(wq1.h("docviewer_link/", e58Var.a), f3r.I(new qek("tld", e58Var.b)));
+                String str2 = e58Var.c;
+                if (str2 != null) {
+                    if (str2.length() <= 0) {
+                        str2 = null;
+                    }
+                    if (str2 != null) {
+                        g5lVarA.a("X-Invite-Hash", str2);
+                    }
+                }
+                g5lVarA.g(b7b.class, new b7b(x48.e));
+                return g5lVarA;
+            default:
+                bqc bqcVar = (bqc) this.k;
+                g5l g5lVarA2 = ((vbr) this.l).c.a(wq1.h("video_streams/", bqcVar.a), jc9.a);
+                String str3 = bqcVar.b;
+                if (str3 != null) {
+                    if (str3.length() <= 0) {
+                        str3 = null;
+                    }
+                    if (str3 != null) {
+                        g5lVarA2.a("X-Invite-Hash", str3);
+                    }
+                }
+                g5lVarA2.g(b7b.class, new b7b(vbr.e));
+                return g5lVarA2;
+        }
+    }
+
+    public boolean i() {
+        switch (this.i) {
+            case 3:
+                return false;
+            case 4:
+                return false;
+            default:
+                return super.i();
+        }
+    }
+
+    public final znc s(ocl oclVar) {
+        DocViewerResponse$Success docViewerResponse$SuccessE;
+        DocViewerResponse$Error docViewerResponse$ErrorE;
+        StreamInfoResponse$Success streamInfoResponse$SuccessE;
+        StreamInfoResponse$Error streamInfoResponse$ErrorE;
+        switch (this.i) {
+            case 0:
+                znc zncVarJ = fde.j(((qe1) this.j).b, "change_chat_avatar/%s", ChatData.class, oclVar);
+                return zncVarJ instanceof ldi ? new ldi(((ldi) zncVarJ).i) : new ndi(zncVarJ.w(), 1);
+            case 1:
+                return fde.j(((qe1) this.j).b, "change_chat_members", GroupChatData.class, oclVar);
+            case 2:
+                return fde.j(((qe1) this.j).b, "get_chats_info", GetChatInfoData.class, oclVar);
+            case 3:
+                String str = oclVar.c;
+                int i = oclVar.d;
+                tcl tclVar = oclVar.g;
+                if (tclVar == null) {
+                    return znc.p(i, str);
+                }
+                String strW = tclVar.w();
+                try {
+                    docViewerResponse$SuccessE = (DocViewerResponse$Success) ((JsonAdapter) this.j).b(strW);
+                    break;
+                } catch (Throwable th) {
+                    docViewerResponse$SuccessE = nzn.E(th);
+                }
+                if (docViewerResponse$SuccessE instanceof jel) {
+                    docViewerResponse$SuccessE = null;
+                }
+                DocViewerResponse$Success docViewerResponse$Success = docViewerResponse$SuccessE;
+                if (docViewerResponse$Success != null && mqd.s(docViewerResponse$Success.getStatus(), "ok")) {
+                    return new ldi(docViewerResponse$Success);
+                }
+                try {
+                    docViewerResponse$ErrorE = (DocViewerResponse$Error) ((JsonAdapter) this.m).b(strW);
+                    break;
+                } catch (Throwable th2) {
+                    docViewerResponse$ErrorE = nzn.E(th2);
+                }
+                DocViewerResponse$Error docViewerResponse$Error = docViewerResponse$ErrorE instanceof jel ? null : docViewerResponse$ErrorE;
+                return (docViewerResponse$Error == null || !mqd.s(docViewerResponse$Error.getStatus(), "error")) ? znc.p(i, str) : new ldi(docViewerResponse$Error);
+            default:
+                String str2 = oclVar.c;
+                int i2 = oclVar.d;
+                tcl tclVar2 = oclVar.g;
+                if (tclVar2 == null) {
+                    return znc.p(i2, str2);
+                }
+                String strW2 = tclVar2.w();
+                try {
+                    streamInfoResponse$SuccessE = (StreamInfoResponse$Success) ((JsonAdapter) this.j).b(strW2);
+                    break;
+                } catch (Throwable th3) {
+                    streamInfoResponse$SuccessE = nzn.E(th3);
+                }
+                if (streamInfoResponse$SuccessE instanceof jel) {
+                    streamInfoResponse$SuccessE = null;
+                }
+                StreamInfoResponse$Success streamInfoResponse$Success = streamInfoResponse$SuccessE;
+                if (streamInfoResponse$Success != null && mqd.s(streamInfoResponse$Success.getStatus(), "ok")) {
+                    return new ldi(streamInfoResponse$Success);
+                }
+                try {
+                    streamInfoResponse$ErrorE = (StreamInfoResponse$Error) ((JsonAdapter) this.m).b(strW2);
+                    break;
+                } catch (Throwable th4) {
+                    streamInfoResponse$ErrorE = nzn.E(th4);
+                }
+                StreamInfoResponse$Error streamInfoResponse$Error = streamInfoResponse$ErrorE instanceof jel ? null : streamInfoResponse$ErrorE;
+                return (streamInfoResponse$Error == null || !mqd.s(streamInfoResponse$Error.getStatus(), "error")) ? znc.p(i2, str2) : new ldi(streamInfoResponse$Error);
+        }
+    }
+
+    public final wf z() {
+        switch (this.i) {
+            case 0:
+                wf wfVarA = ((rd1) this.k).a();
+                return wfVarA == null ? (wf) this.l : wfVarA;
+            case 1:
+                return new wf(true);
+            case 2:
+                wf wfVarA2 = ((pd1) this.k).a();
+                return wfVarA2 == null ? (wf) this.l : wfVarA2;
+            case 3:
+                return new wf(true);
+            default:
+                return new wf(true);
+        }
+    }
+
+    public ud1(pd1 pd1Var, wf wfVar, qe1 qe1Var, String[] strArr, String str) {
+        this.i = 2;
+        this.k = pd1Var;
+        this.l = wfVar;
+        this.j = qe1Var;
+        this.n = strArr;
+        this.m = str;
+    }
+
+    public ud1(qe1 qe1Var, ChangeChatMembersParams changeChatMembersParams, lib libVar, rd1 rd1Var, kib kibVar) {
+
+========== hw.java ==========
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.ActivateChatRequestParams;
+import com.yandex.messaging.core.net.entities.AddFilesParams;
+import com.yandex.messaging.core.net.entities.AddFilesResponse;
+import com.yandex.messaging.core.net.entities.Bucket;
+import com.yandex.messaging.core.net.entities.BucketsData;
+import com.yandex.messaging.core.net.entities.ChatData;
+import com.yandex.messaging.core.net.entities.ChatParticipantsData;
+import com.yandex.messaging.core.net.entities.ChatParticipantsParams;
+import com.yandex.messaging.core.net.entities.ChatSettingsParams;
+import com.yandex.messaging.core.net.entities.EmptyResponse;
+import com.yandex.messaging.core.net.entities.GetChatInfoByAlias;
+import com.yandex.messaging.core.net.entities.GetChatInfoData;
+import com.yandex.messaging.core.net.entities.GetChatSettingsParams;
+import com.yandex.messaging.core.net.entities.GetMediaMessagesParams;
+import com.yandex.messaging.core.net.entities.GetOrganizationsParams;
+import com.yandex.messaging.core.net.entities.GetOrganizationsResponse;
+import com.yandex.messaging.core.net.entities.GetStaffDataParam;
+import com.yandex.messaging.core.net.entities.GetSuggestData;
+import com.yandex.messaging.core.net.entities.GetSuggestParam;
+import com.yandex.messaging.core.net.entities.GetUserGapsParam;
+import com.yandex.messaging.core.net.entities.GetUsersDataParam;
+import com.yandex.messaging.core.net.entities.JoinParams;
+import com.yandex.messaging.core.net.entities.MediaMessageListData;
+import com.yandex.messaging.core.net.entities.ResolveYaDiskParams;
+import com.yandex.messaging.core.net.entities.ResolveYaDiskResponse;
+import com.yandex.messaging.core.net.entities.SearchData;
+import com.yandex.messaging.core.net.entities.SearchParams;
+import com.yandex.messaging.core.net.entities.ShareFileParams;
+import com.yandex.messaging.core.net.entities.ShareFileResponse;
+import com.yandex.messaging.core.net.entities.StaffUserDataData;
+import com.yandex.messaging.core.net.entities.UserData;
+import com.yandex.messaging.core.net.entities.UserGap;
+import com.yandex.messaging.core.net.entities.UserGaps;
+import com.yandex.messaging.core.net.entities.UsersData;
+import com.yandex.messaging.core.net.entities.YaDiskErrorInfo;
+import com.yandex.messaging.internal.net.ai.AiTextEditData;
+import com.yandex.messaging.techprofile.logout.HttpLogoutApiCalls;
+import io.appmetrica.analytics.AppMetricaYandex;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class hw extends bff {
+    public final /* synthetic */ int i;
+    public final /* synthetic */ Object j;
+    public final /* synthetic */ Object k;
+    public final /* synthetic */ Object l;
+    public final /* synthetic */ Object m;
+
+    public /* synthetic */ hw(qe1 qe1Var, Object obj, String str, de7 de7Var, int i) {
+        this.i = i;
+        this.k = qe1Var;
+        this.m = obj;
+        this.l = str;
+        this.j = de7Var;
+    }
+
+    public boolean C(f7f f7fVar) {
+        switch (this.i) {
+            case 0:
+                mqd.z(f7fVar, "error");
+                ((de7) this.j).l(f7fVar.a);
+                return true;
+            case 1:
+                mqd.z(f7fVar, "error");
+                ((de7) this.j).l(f7fVar.a);
+                return true;
+            case 2:
+            case 4:
+            case 5:
+            case 11:
+            case 16:
+            default:
+                return super.C(f7fVar);
+            case 3:
+                mqd.z(f7fVar, "error");
+                if (f7fVar.a != 404) {
+                    return false;
+                }
+                ((pd1) this.k).j(nh9.c);
+                return true;
+            case 6:
+                mqd.z(f7fVar, "error");
+                ((rd1) this.j).l(f7fVar.a);
+                return false;
+            case 7:
+                mqd.z(f7fVar, "error");
+                ((de7) this.j).l(f7fVar.a);
+                return true;
+            case 8:
+                mqd.z(f7fVar, "error");
+                return ((rd1) this.k).l(f7fVar.a);
+            case 9:
+                mqd.z(f7fVar, "error");
+                ((de7) this.j).l(f7fVar.a);
+                return true;
+            case 10:
+                mqd.z(f7fVar, "error");
+                return ((rd1) this.k).l(f7fVar.a);
+            case 12:
+                mqd.z(f7fVar, "error");
+                ((nm5) this.j).invoke(Integer.valueOf(f7fVar.a), f7fVar.b);
+                return true;
+            case 13:
+                mqd.z(f7fVar, "error");
+                ((ppr) this.j).d(new YaDiskErrorInfo(f7fVar.a, f7fVar.b));
+                return true;
+            case 14:
+                mqd.z(f7fVar, "error");
+                ((rd1) this.j).l(f7fVar.a);
+                return false;
+            case 15:
+                od1 od1Var = (od1) this.j;
+                mqd.z(f7fVar, "error");
+                if (f7fVar.a == 409 || mqd.s(f7fVar.b, "object_version_is_mismatch")) {
+                    od1Var.z();
+                    return false;
+                }
+                od1Var.p();
+                return true;
+            case 17:
+                mqd.z(f7fVar, "error");
+                ((pxc) this.k).d.post(new oxc((xmh) this.j, 0));
+                return true;
+        }
+    }
+
+    public final void E(Object obj) {
+        switch (this.i) {
+            case 0:
+                AiTextEditData aiTextEditData = (AiTextEditData) obj;
+                mqd.z(aiTextEditData, "response");
+                ((de7) this.j).c0(aiTextEditData);
+                break;
+            case 1:
+                EmptyResponse emptyResponse = (EmptyResponse) obj;
+                mqd.z(emptyResponse, "response");
+                ((de7) this.j).c0(emptyResponse);
+                break;
+            case 2:
+                AddFilesResponse addFilesResponse = (AddFilesResponse) obj;
+                mqd.z(addFilesResponse, "response");
+                ((de7) this.j).c0(addFilesResponse);
+                break;
+            case 3:
+                GetChatInfoData getChatInfoData = (GetChatInfoData) obj;
+                pd1 pd1Var = (pd1) this.k;
+                mqd.z(getChatInfoData, "response");
+                ChatData[] chatDataArr = getChatInfoData.chats;
+                mqd.y(chatDataArr, "chats");
+                if (chatDataArr.length != 0) {
+                    ChatData chatData = getChatInfoData.chats[0];
+                    mqd.u(chatData);
+                    pd1Var.s(chatData, null);
+                } else {
+                    pd1Var.j(nh9.c);
+                }
+                break;
+            case 4:
+                ChatParticipantsData chatParticipantsData = (ChatParticipantsData) obj;
+                mqd.z(chatParticipantsData, "response");
+                ((de7) this.j).c0(chatParticipantsData);
+                break;
+            case 5:
+                ChatSettingsParams chatSettingsParams = (ChatSettingsParams) obj;
+                mqd.z(chatSettingsParams, "response");
+                ((de7) this.j).c0(chatSettingsParams);
+                break;
+            case 6:
+                MediaMessageListData mediaMessageListData = (MediaMessageListData) obj;
+                mqd.z(mediaMessageListData, "response");
+                ((rd1) this.j).c0(mediaMessageListData);
+                break;
+            case 7:
+                GetOrganizationsResponse getOrganizationsResponse = (GetOrganizationsResponse) obj;
+                mqd.z(getOrganizationsResponse, "response");
+                ((de7) this.j).c0(getOrganizationsResponse);
+                break;
+            case 8:
+                StaffUserDataData staffUserDataData = (StaffUserDataData) obj;
+                mqd.z(staffUserDataData, "response");
+                ((rd1) this.k).c0(staffUserDataData.getUser());
+                break;
+            case 9:
+                GetSuggestData getSuggestData = (GetSuggestData) obj;
+                mqd.z(getSuggestData, "response");
+                ((de7) this.j).c0(getSuggestData);
+                break;
+            case 10:
+                UserData userData = (UserData) obj;
+                mqd.z(userData, "response");
+                ((rd1) this.k).c0(userData);
+                break;
+            case 11:
+                List list = (List) obj;
+                mqd.z(list, "response");
+                ((de7) this.j).c0(list);
+                break;
+            case 12:
+                ChatData chatData2 = (ChatData) obj;
+                mqd.z(chatData2, "response");
+                ((yr2) this.m).invoke(chatData2);
+                break;
+            case 13:
+                ResolveYaDiskResponse resolveYaDiskResponse = (ResolveYaDiskResponse) obj;
+                mqd.z(resolveYaDiskResponse, "response");
+                gw3 gw3Var = (gw3) ((ppr) this.j).a;
+                if (as1.L(gw3Var.e)) {
+                    gw3Var.f(new kel(resolveYaDiskResponse));
+                }
+                break;
+            case 14:
+                SearchData searchData = (SearchData) obj;
+                mqd.z(searchData, "response");
+                ((rd1) this.j).c0(searchData);
+                break;
+            case 15:
+                ((od1) this.j).v((Bucket) obj);
+                break;
+            case 16:
+                ShareFileResponse shareFileResponse = (ShareFileResponse) obj;
+                mqd.z(shareFileResponse, "response");
+                ((de7) this.j).c0(shareFileResponse);
+                break;
+            default:
+                mqd.z((fcq) obj, "response");
+                ((pxc) this.k).d.post(new oxc((xmh) this.j, 1));
+                break;
+        }
+    }
+
+    public void F() {
+        switch (this.i) {
+            case 0:
+                ((de7) this.j).l(-1);
+                break;
+            case 13:
+                if (!((b6s) ((qe1) this.l).j.get()).c) {
+                    ((ppr) this.j).d(new YaDiskErrorInfo(-1, null));
+                }
+                break;
+        }
+    }
+
+    public final g5l I() {
+        switch (this.i) {
+            case 0:
+                g5l g5lVarA = ((iw) this.k).a.a(this.m, (String) this.l);
+                g5lVarA.g(Object.class, tyc.c);
+                return g5lVarA;
+            case 1:
+                return ((qe1) this.l).b.a((ActivateChatRequestParams) this.m, "activate_chat");
+            case 2:
+                return ((qe1) this.l).b.a((AddFilesParams) this.m, "add_files");
+            case 3:
+                return ((qe1) this.m).b.a((GetChatInfoByAlias) this.j, "get_chats_info");
+            case 4:
+                return ((qe1) this.l).b.a((ChatParticipantsParams) this.m, "get_chat_members");
+            case 5:
+                return ((qe1) this.l).b.a((GetChatSettingsParams) this.m, "get_chat_settings");
+            case 6:
+                return ((qe1) this.l).b.a((GetMediaMessagesParams) this.m, "get_media_messages");
+            case 7:
+                return ((qe1) this.k).b.a(new GetOrganizationsParams((List) this.m, (String) this.l), "get_organizations");
+            case 8:
+                return ((qe1) this.m).b.a((GetStaffDataParam) this.j, "get_user_by_nickname");
+            case 9:
+                return ((qe1) this.l).b.a((GetSuggestParam) this.m, "get_suggest");
+            case 10:
+                return ((qe1) this.m).b.a((GetUsersDataParam) this.j, "get_users_data");
+            case 11:
+                return ((qe1) this.k).b.a((GetUserGapsParam) this.m, "staff_proxy");
+            case 12:
+                return ((qe1) this.k).b.a((JoinParams) this.l, "invite");
+            case 13:
+                qe1 qe1Var = (qe1) this.l;
+                g5l g5lVarA2 = qe1Var.b.a((ResolveYaDiskParams) this.m, "upload_to_disk");
+                String deviceId = AppMetricaYandex.getDeviceId(((a7s) qe1Var.k).a);
+                if (deviceId != null) {
+                    g5lVarA2.a("X-Device-Id", deviceId);
+                }
+                return g5lVarA2;
+            case 14:
+                t8n t8nVar = (t8n) this.k;
+                if (t8nVar != null) {
+                    t8nVar.O(2);
+                }
+                return ((qe1) this.l).b.a((SearchParams) this.m, "search");
+            case 15:
+                return ((qe1) this.k).b.a((Bucket) this.l, "set_bucket");
+            case 16:
+                return ((qe1) this.l).b.a((ShareFileParams) this.m, "share_file");
+            default:
+                g5l g5lVar = new g5l();
+
+========== ee1.java ==========
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.Bucket;
+import com.yandex.messaging.core.net.entities.BucketsData;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class ee1 extends bff {
+    public final /* synthetic */ wf i;
+    public final /* synthetic */ qe1 j;
+    public final /* synthetic */ Bucket.GetParams k;
+    public final /* synthetic */ Class l;
+    public final /* synthetic */ lib m;
+
+    public ee1(wf wfVar, qe1 qe1Var, Bucket.GetParams getParams, Class cls, lib libVar) {
+        this.i = wfVar;
+        this.j = qe1Var;
+        this.k = getParams;
+        this.l = cls;
+        this.m = libVar;
+    }
+
+    public final void E(Object obj) {
+        this.m.invoke((Bucket) obj);
+    }
+
+    public final g5l I() {
+        return this.j.b.a(this.k, "get_bucket");
+    }
+
+    public final znc s(ocl oclVar) {
+        znc zncVarJ = fde.j(this.j.b, "get_bucket", BucketsData.class, oclVar);
+        if (zncVarJ instanceof ldi) {
+            Object obj = ((ldi) zncVarJ).i;
+            mqd.y(obj, "getResponse(...)");
+            Bucket bucketA = ((BucketsData) obj).a(this.l);
+            if (bucketA != null) {
+                return new ldi(bucketA);
+            }
+        }
+        return new znc(17);
+    }
+
+    public final wf z() {
+        return this.i;
+    }
+}
+
+========== je1.java ==========
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.StickerPacksData;
+import java.util.ArrayList;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class je1 extends bff {
+    public final /* synthetic */ qe1 i;
+    public final /* synthetic */ ArrayList j;
+    public final /* synthetic */ qd1 k;
+
+    public je1(qe1 qe1Var, ArrayList arrayList, qd1 qd1Var) {
+        this.i = qe1Var;
+        this.j = arrayList;
+        this.k = qd1Var;
+    }
+
+    public final void E(Object obj) {
+        StickerPacksData.PackData[] packDataArr = (StickerPacksData.PackData[]) obj;
+        mqd.z(packDataArr, "response");
+        this.k.c0(packDataArr);
+    }
+
+    public final g5l I() {
+        return this.i.c.a("stickers/packs", this.j);
+    }
+
+    public final znc s(ocl oclVar) {
+        return fde.j(this.i.b, "stickers/packs", StickerPacksData.PackData[].class, oclVar);
+    }
+}
+
+========== me1.java ==========
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.TogglePushTokenData;
+import com.yandex.messaging.core.net.entities.TogglePushTokenParams;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class me1 extends bff {
+    public final /* synthetic */ qe1 i;
+    public final /* synthetic */ String j;
+    public final /* synthetic */ boolean k;
+    public final /* synthetic */ pe9 l;
+
+    public me1(qe1 qe1Var, String str, boolean z, pe9 pe9Var) {
+        this.i = qe1Var;
+        this.j = str;
+        this.k = z;
+        this.l = pe9Var;
+    }
+
+    public final boolean C(f7f f7fVar) {
+        mqd.z(f7fVar, "error");
+        return false;
+    }
+
+    public final void E(Object obj) {
+        TogglePushTokenData togglePushTokenData = (TogglePushTokenData) obj;
+        mqd.z(togglePushTokenData, "response");
+        this.l.c0(togglePushTokenData);
+    }
+
+    public final g5l I() {
+        return this.i.b.a(new TogglePushTokenParams(this.j, this.k), "toggle_push_token");
+    }
+
+    public final znc s(ocl oclVar) {
+        return fde.j(this.i.b, "toggle_push_token", TogglePushTokenData.class, oclVar);
+    }
+}
+
+========== le1.java ==========
+package defpackage;
+
+import com.yandex.messaging.core.net.entities.SetPushTokenData;
+import com.yandex.messaging.core.net.entities.SetPushTokenParams;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes2.dex */
+public final class le1 extends bff {
+    public final /* synthetic */ int i = 1;
+    public final /* synthetic */ String j;
+    public final /* synthetic */ String k;
+    public final /* synthetic */ pck l;
+    public final /* synthetic */ String m;
+    public final /* synthetic */ boolean n;
+    public final /* synthetic */ String o;
+    public final /* synthetic */ String p;
+    public final /* synthetic */ String q;
+    public final /* synthetic */ tco r;
+    public final /* synthetic */ qck s;
+    public final /* synthetic */ Object t;
+
+    public le1(qe1 qe1Var, String str, String str2, String str3, pck pckVar, String str4, boolean z, String str5, String str6, String str7, tco tcoVar) {
+        this.s = qe1Var;
+        this.j = str;
+        this.k = str2;
+        this.m = str3;
+        this.l = pckVar;
+        this.o = str4;
+        this.n = z;
+        this.p = str5;
+        this.q = str6;
+        this.t = str7;
+        this.r = tcoVar;
+    }
+
+    public final boolean C(f7f f7fVar) {
+        switch (this.i) {
+            case 0:
+                mqd.z(f7fVar, "error");
+                this.r.l(f7fVar.a);
+                break;
+            default:
+                mqd.z(f7fVar, "error");
+                this.r.l(f7fVar.a);
+                break;
+        }
+        return false;
+    }
+
+    public final void E(Object obj) {
+        switch (this.i) {
+            case 0:
+                SetPushTokenData setPushTokenData = (SetPushTokenData) obj;
+                mqd.z(setPushTokenData, "response");
+                this.r.c0(setPushTokenData);
+                break;
+            default:
+                SetPushTokenData setPushTokenData2 = (SetPushTokenData) obj;
+                mqd.z(setPushTokenData2, "response");
+                this.r.c0(setPushTokenData2);
+                break;
+        }
+    }
+
+    public final g5l I() {
+        switch (this.i) {
+            case 0:
+                return ((qe1) this.s).b.a(new SetPushTokenParams(this.j, this.k, this.m, this.l.b.a, this.o, this.n, this.p, this.q, (String) this.t), "set_push_token");
+            default:
+                quc qucVar = ((ise) this.s).b;
+                pck pckVar = this.l;
+                g5l g5lVarA = qucVar.a(new SetPushTokenParams(this.j, this.k, pckVar.a, pckVar.b.a, this.m, this.n, this.o, this.p, this.q), "set_push_token");
+                ((vc1) this.t).a(g5lVarA);
+                return g5lVarA;
+        }
+    }
+
+    public final znc s(ocl oclVar) {
+        switch (this.i) {
+            case 0:
+                return fde.j(((qe1) this.s).b, "set_push_token", SetPushTokenData.class, oclVar);
+            default:
+                return fde.j(((ise) this.s).b, "set_push_token", SetPushTokenData.class, oclVar);
+        }
+    }
+
+    public le1(ise iseVar, String str, String str2, pck pckVar, String str3, boolean z, String str4, String str5, String str6, vc1 vc1Var, tco tcoVar) {
+        this.s = iseVar;
+        this.j = str;
+        this.k = str2;
+        this.l = pckVar;
+        this.m = str3;
+        this.n = z;
+        this.o = str4;
+        this.p = str5;
+        this.q = str6;
+        this.t = vc1Var;
+        this.r = tcoVar;
+    }
+}
+
+========== CHAT HISTORY REFERENCES ==========
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/MediaMessageListDataJsonAdapter.java:10:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/MediaMessageListDataJsonAdapter.java:15:@kotlin.Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u000f\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006R\u0014\u0010\b\u001a\u00020\u00078\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\b\u0010\tR\u001a\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\n0\u00018\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u000b\u0010\fR \u0010\u000f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\r0\u00018\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u000f\u0010\fR\"\u0010\u0011\u001a\u0010\u0012\f\u0012\n\u0012\u0004\u0012\u00020\u0010\u0018\u00010\r0\u00018\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u0011\u0010\f¨\u0006\u0012"}, d2 = {"Lcom/yandex/messaging/core/net/entities/MediaMessageListDataJsonAdapter;", "Lcom/squareup/moshi/JsonAdapter;", "Lcom/yandex/messaging/core/net/entities/MediaMessageListData;", "Lcom/squareup/moshi/Moshi;", "moshi", "<init>", "(Lcom/squareup/moshi/Moshi;)V", "Lcom/squareup/moshi/JsonReader$Options;", "options", "Lcom/squareup/moshi/JsonReader$Options;", "Lcom/yandex/messaging/core/net/entities/MediaMessageListData$Info;", "infoAdapter", "Lcom/squareup/moshi/JsonAdapter;", "", "Lcom/yandex/messaging/core/net/entities/proto/ChatHistoryResponse$OutMessage;", "listOfOutMessageAdapter", "Lcom/yandex/messaging/core/net/entities/MediaMessageListData$Metadata;", "nullableListOfMetadataAdapter", "messaging-core-net_release"}, k = 1, mv = {2, 3, 0}, xi = 48)
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/MediaMessageListDataJsonAdapter.java:18:    private final JsonAdapter<List<ChatHistoryResponse.OutMessage>> listOfOutMessageAdapter;
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/MediaMessageListDataJsonAdapter.java:31:        JsonAdapter<List<ChatHistoryResponse.OutMessage>> jsonAdapterAdapter2 = moshi.adapter(Types.newParameterizedType(List.class, ChatHistoryResponse.OutMessage.class), qc9Var, "messages");
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/MediaMessageListDataJsonAdapter.java:44:        List<ChatHistoryResponse.OutMessage> listFromJson = null;
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/EditHistoryResponse.java:10:    public ChatHistoryResponse.OutMessage[] messages;
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/ChatHistoryResponse.java:10:public class ChatHistoryResponse {
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/HistoryResponse.java:11:    public ChatHistoryResponse[] chats;
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/ReducedChatHistoryResponse.java:9:public class ReducedChatHistoryResponse {
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/OnlyTimestampsHistoryResponse.java:10:    public OnlyTimestampsChatHistoryResponse[] chats;
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/ReducedHistoryResponse.java:10:    public ReducedChatHistoryResponse[] chats;
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/OnlyTimestampsChatHistoryResponse.java:7:public class OnlyTimestampsChatHistoryResponse {
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/ReducedServerMessage.java:14:    public ReducedChatHistoryResponse.ReducedClientMessage clientMessage;
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/ReducedServerMessage.java:18:    public ReducedChatHistoryResponse.ReducedForwardedMessageInfo[] forwardedMessages;
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/proto/ReducedServerMessage.java:51:    public ReducedChatHistoryResponse.ReducedServerMessageInfo serverMessageInfo;
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/MediaMessageListData.java:5:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/MediaMessageListData.java:10:@kotlin.Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\b\u0007\u0018\u00002\u00020\u0001:\u0003\u0010\u0011\u0012B-\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u000e\u0010\u0007\u001a\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0005¢\u0006\u0004\b\t\u0010\nR\u0016\u0010\u0002\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u001c\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00058\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u001e\u0010\u0007\u001a\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u00058\u0006X\u0087\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000e¨\u0006\u0013"}, d2 = {"Lcom/yandex/messaging/core/net/entities/MediaMessageListData;", "", "info", "Lcom/yandex/messaging/core/net/entities/MediaMessageListData$Info;", "messages", "", "Lcom/yandex/messaging/core/net/entities/proto/ChatHistoryResponse$OutMessage;", "metadata", "Lcom/yandex/messaging/core/net/entities/MediaMessageListData$Metadata;", "<init>", "(Lcom/yandex/messaging/core/net/entities/MediaMessageListData$Info;Ljava/util/List;Ljava/util/List;)V", "getInfo", "()Lcom/yandex/messaging/core/net/entities/MediaMessageListData$Info;", "getMessages", "()Ljava/util/List;", "getMetadata", "Info", "Metadata", "BrowserLinkPreview", "messaging-core-net_release"}, k = 1, mv = {2, 3, 0}, xi = 48)
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/MediaMessageListData.java:17:    private final List<ChatHistoryResponse.OutMessage> messages;
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/MediaMessageListData.java:264:    public MediaMessageListData(Info info, List<? extends ChatHistoryResponse.OutMessage> list, List<Metadata> list2) {
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/MediaMessageListData.java:276:    public final List<ChatHistoryResponse.OutMessage> getMessages() {
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:4:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:26:        ChatHistoryResponse chatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:27:        ChatHistoryResponse.OutMessage[] outMessageArr;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:31:        ChatHistoryResponse[] chatHistoryResponseArr = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:32:        Integer numValueOf = (chatHistoryResponseArr == null || (chatHistoryResponse = (ChatHistoryResponse) tt0.A0(chatHistoryResponseArr)) == null || (outMessageArr = chatHistoryResponse.messages) == null) ? null : Integer.valueOf(outMessageArr.length);
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:37:        ChatHistoryResponse chatHistoryResponseR = R(historyResponse);
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:51:            ChatHistoryResponse.OutMessage[] outMessageArr2 = chatHistoryResponseR.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/eze.java:54:                if (((ChatHistoryResponse.OutMessage) it.next()).serverMessage.serverMessageInfo.timestamp == l.longValue()) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:18:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:180:            ChatHistoryResponse.OutMessage[] outMessageArr = ((ChatHistoryResponse) it.next()).messages;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:211:                ChatHistoryResponse.OutMessage[] outMessageArr2 = ((ChatHistoryResponse) it.next()).messages;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:257:            ChatRole chatRole = ((ChatHistoryResponse) it.next()).myRole;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:260:                ChatRole chatRole2 = ((ChatHistoryResponse) it.next()).myRole;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:285:    /* JADX WARN: Type inference failed for: r14v2, types: [com.yandex.messaging.core.net.entities.BucketsData, com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse[], com.yandex.messaging.core.net.entities.proto.HistoryResponse, java.util.ArrayList] */
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:294:        ChatHistoryResponse[] chatHistoryResponseArr;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:338:                ChatHistoryResponse[] chatHistoryResponseArr2 = mocVar2.g;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:410:        ChatHistoryResponse[] chatHistoryResponseArr3 = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:412:            chatHistoryResponseArr3 = new ChatHistoryResponse[0];
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:414:        ChatHistoryResponse[] chatHistoryResponseArr4 = chatHistoryResponseArr3;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:416:        for (ChatHistoryResponse chatHistoryResponse : chatHistoryResponseArr4) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:423:        for (ChatHistoryResponse chatHistoryResponse2 : chatHistoryResponseArr4) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:441:            ChatHistoryResponse chatHistoryResponse3 = (ChatHistoryResponse) next;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:446:                    ChatHistoryResponse.OutMessage[] outMessageArr = chatHistoryResponse3.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:524:        ChatHistoryResponse[] chatHistoryResponseArr5 = chatHistoryResponseArr;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:605:    public static final Object e(woc wocVar, ChatHistoryResponse[] chatHistoryResponseArr, ArrayList arrayList, HistoryResponse historyResponse, kc6 kc6Var) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:607:        ChatHistoryResponse[] chatHistoryResponseArr2;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:611:        ChatHistoryResponse[] chatHistoryResponseArr3;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:624:        ArrayList<ChatHistoryResponse> arrayList4;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:631:        ChatHistoryResponse.OutMessage[] outMessageArr;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:632:        ChatHistoryResponse.OutMessage outMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:684:            ChatHistoryResponse[] chatHistoryResponseArr4 = oocVar.d;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:706:                for (ChatHistoryResponse chatHistoryResponse : chatHistoryResponseArr3) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:725:                for (ChatHistoryResponse chatHistoryResponse2 : chatHistoryResponseArr3) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:738:                for (ChatHistoryResponse chatHistoryResponse3 : arrayList4) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:756:                    if (outMessageArr == null && (outMessage = (ChatHistoryResponse.OutMessage) tt0.E0(0, outMessageArr)) != null && (serverMessage2 = outMessage.serverMessage) != null && (clientMessage = serverMessage2.clientMessage) != null && (plainMessage = clientMessage.plain) != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1033:            ChatHistoryResponse[] chatHistoryResponseArr = historyResponse2.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1039:                        ChatHistoryResponse chatHistoryResponse = chatHistoryResponseArr[i4];
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1164:    public static final java.lang.Object i(defpackage.woc r21, com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse[] r22, java.util.List r23, java.util.List r24, com.yandex.messaging.core.net.entities.ChatData[] r25, long r26, boolean r28, boolean r29, kc6 r30) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1169:        throw new UnsupportedOperationException("Method not decompiled: defpackage.woc.i(woc, com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse[], java.util.List, java.util.List, com.yandex.messaging.core.net.entities.ChatData[], long, boolean, boolean, kc6):java.lang.Object");
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1172:    public static void l(veg vegVar, ReducedUserInfo[] reducedUserInfoArr, ChatHistoryResponse[] chatHistoryResponseArr) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1190:            for (ChatHistoryResponse chatHistoryResponse : chatHistoryResponseArr) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1228:                ChatHistoryResponse chatHistoryResponse = (ChatHistoryResponse) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1236:                arrayList3.add(((ChatHistoryResponse) it.next()).chatId);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1308:                ChatHistoryResponse[] chatHistoryResponseArr = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1310:                    for (ChatHistoryResponse chatHistoryResponse : chatHistoryResponseArr) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1312:                        ChatHistoryResponse.OutMessage[] outMessageArr = chatHistoryResponse.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1314:                            for (ChatHistoryResponse.OutMessage outMessage : outMessageArr) {
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1332:            ChatHistoryResponse[] chatHistoryResponseArr2 = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1334:                chatHistoryResponseArr2 = new ChatHistoryResponse[0];
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1336:            List<ChatHistoryResponse> listX0 = tt0.x0(chatHistoryResponseArr2);
+research/artifacts/decompiled-dex2/sources/defpackage/woc.java:1338:            for (ChatHistoryResponse chatHistoryResponse2 : listX0) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:8:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:3132:    public final Message[] f(ChatHistoryResponse.OutMessage[] outMessageArr) {
+research/artifacts/decompiled-dex2/sources/defpackage/q4g.java:3140:            ServerMessage serverMessage = ((ChatHistoryResponse.OutMessage) it.next()).serverMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/l5i.java:4:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/l5i.java:22:        ChatHistoryResponse chatHistoryResponse = null;
+research/artifacts/decompiled-dex2/sources/defpackage/l5i.java:26:        ChatHistoryResponse[] chatHistoryResponseArr = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/l5i.java:30:        for (ChatHistoryResponse chatHistoryResponse2 : chatHistoryResponseArr) {
+research/artifacts/decompiled-dex2/sources/defpackage/ht4.java:3:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/ht4.java:33:    public final void a(ChatHistoryResponse chatHistoryResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:3:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:31:    public final ChatHistoryResponse R(HistoryResponse historyResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:33:        ChatHistoryResponse[] chatHistoryResponseArr = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:35:            for (ChatHistoryResponse chatHistoryResponse : chatHistoryResponseArr) {
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:86:        ChatHistoryResponse chatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:88:        ChatHistoryResponse[] chatHistoryResponseArr = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:99:            ChatHistoryResponse[] chatHistoryResponseArr2 = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:103:            ChatHistoryResponse[] chatHistoryResponseArr3 = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:104:            if (chatHistoryResponseArr3 != null && (chatHistoryResponse = (ChatHistoryResponse) tt0.z0(chatHistoryResponseArr3)) != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:114:        ChatHistoryResponse[] chatHistoryResponseArr4 = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:116:            for (ChatHistoryResponse chatHistoryResponse2 : chatHistoryResponseArr4) {
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:117:                ChatHistoryResponse.OutMessage[] outMessageArr = chatHistoryResponse2.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/kbg.java:119:                    for (ChatHistoryResponse.OutMessage outMessage : outMessageArr) {
+research/artifacts/decompiled-dex2/sources/defpackage/dze.java:3:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/dze.java:7:    void a(ChatHistoryResponse chatHistoryResponse);
+research/artifacts/decompiled-dex2/sources/defpackage/noc.java:5:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/noc.java:15:    public final /* synthetic */ ChatHistoryResponse[] i;
+research/artifacts/decompiled-dex2/sources/defpackage/noc.java:26:    public noc(woc wocVar, yuk yukVar, ChatHistoryResponse[] chatHistoryResponseArr, List list, List list2, ChatData[] chatDataArr, long j, boolean z, BucketsData bucketsData, HistoryResponse historyResponse, List list3, ic6 ic6Var) {
+research/artifacts/decompiled-dex2/sources/defpackage/cu4.java:4:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/cu4.java:20:    public final void a(ChatHistoryResponse chatHistoryResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/cu4.java:22:        ChatHistoryResponse.OutMessage[] outMessageArr = chatHistoryResponse.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:6:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:65:                ChatHistoryResponse.OutMessage outMessage = (ChatHistoryResponse.OutMessage) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:69:                ChatHistoryResponse.OutMessage outMessage2 = (ChatHistoryResponse.OutMessage) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/w46.java:73:                ChatHistoryResponse.OutMessage outMessage3 = (ChatHistoryResponse.OutMessage) obj;
+research/artifacts/decompiled-dex2/sources/defpackage/s0q.java:3:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/s0q.java:24:        ChatHistoryResponse chatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/s0q.java:25:        ChatHistoryResponse.OutMessage[] outMessageArr;
+research/artifacts/decompiled-dex2/sources/defpackage/s0q.java:32:        ChatHistoryResponse[] chatHistoryResponseArr = this.a.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/s0q.java:49:                for (ChatHistoryResponse.OutMessage outMessage : outMessageArr) {
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java:5:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java:34:        ChatHistoryResponse.OutMessage[] outMessageArr;
+research/artifacts/decompiled-dex2/sources/defpackage/tt4.java:40:        ChatHistoryResponse chatHistoryResponseR = R(historyResponse);
+research/artifacts/decompiled-dex2/sources/defpackage/f8g.java:8:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/f8g.java:108:            List<ChatHistoryResponse.OutMessage> messages = mediaMessageListData.getMessages();
+research/artifacts/decompiled-dex2/sources/defpackage/f8g.java:118:                ServerMessage serverMessage = ((ChatHistoryResponse.OutMessage) obj3).serverMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/kl4.java:4:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/kl4.java:41:                Message[] messageArrF = q4gVar.f((ChatHistoryResponse.OutMessage[]) mediaMessageListData.getMessages().toArray(new ChatHistoryResponse.OutMessage[0]));
+research/artifacts/decompiled-dex2/sources/defpackage/kl4.java:78:                Message[] messageArrF2 = q4gVar2.f((ChatHistoryResponse.OutMessage[]) mediaMessageListData.getMessages().toArray(new ChatHistoryResponse.OutMessage[0]));
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:4:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:55:        ChatHistoryResponse chatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:61:                ChatHistoryResponse[] chatHistoryResponseArr = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:62:                ChatHistoryResponse chatHistoryResponse2 = chatHistoryResponseArr != null ? (ChatHistoryResponse) tt0.A0(chatHistoryResponseArr) : null;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:63:                ChatHistoryResponse[] chatHistoryResponseArr2 = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:91:                ChatHistoryResponse[] chatHistoryResponseArr3 = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/vl4.java:92:                if (chatHistoryResponseArr3 == null || (chatHistoryResponse = (ChatHistoryResponse) tt0.A0(chatHistoryResponseArr3)) == null || !mqd.s(chatHistoryResponse.chatId, gkpVar.a.b)) {
+research/artifacts/decompiled-dex2/sources/defpackage/moc.java:5:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/moc.java:15:    public ChatHistoryResponse[] g;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:9:import com.yandex.messaging.core.net.entities.proto.ReducedChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:105:        ReducedChatHistoryResponse.ReducedPlainMessage reducedPlainMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:107:        ReducedChatHistoryResponse.ReducedForwardedMessageInfo reducedForwardedMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:108:        ReducedChatHistoryResponse.ReducedServerMessageInfo reducedServerMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:138:                ReducedChatHistoryResponse.ReducedServerMessageInfo reducedServerMessageInfo2 = reducedServerMessage.serverMessageInfo;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:140:                ReducedChatHistoryResponse.ReducedForwardedMessageInfo[] reducedForwardedMessageInfoArr = reducedServerMessage.forwardedMessages;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:176:                        for (ReducedChatHistoryResponse.ReducedForwardedMessageInfo reducedForwardedMessageInfo2 : reducedForwardedMessageInfoArr) {
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:189:                            ReducedChatHistoryResponse.ReducedForwardedMessageInfo reducedForwardedMessageInfo3 = (ReducedChatHistoryResponse.ReducedForwardedMessageInfo) ypiVar2.a;
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:202:                } else if (reducedForwardedMessageInfoArr != null && (reducedForwardedMessageInfo = (ReducedChatHistoryResponse.ReducedForwardedMessageInfo) tt0.E0(0, reducedForwardedMessageInfoArr)) != null && (reducedServerMessageInfo = reducedForwardedMessageInfo.serverMessageInfo) != null && (translation = reducedServerMessageInfo.translation) != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/k9g.java:250:                            ReducedChatHistoryResponse.ReducedForwardedMessageInfo reducedForwardedMessageInfo4 = (ReducedChatHistoryResponse.ReducedForwardedMessageInfo) ypiVar2.a;
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:23:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/veg.java:1952:    public final void i0(ChatHistoryResponse chatHistoryResponse, boolean z) {
+research/artifacts/decompiled-dex2/sources/defpackage/gt4.java:3:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/gt4.java:49:    public final void a(ChatHistoryResponse chatHistoryResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/gpm.java:4:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/gpm.java:233:        ChatHistoryResponse chatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/gpm.java:235:        ChatHistoryResponse.OutMessage outMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/gpm.java:237:        ChatHistoryResponse[] chatHistoryResponseArr = historyResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/gpm.java:238:        if (chatHistoryResponseArr == null || (chatHistoryResponse = (ChatHistoryResponse) tt0.A0(chatHistoryResponseArr)) == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/gpm.java:268:            ChatHistoryResponse.OutMessage[] outMessageArr = chatHistoryResponse.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/gpm.java:269:            if (outMessageArr == null || (outMessage = (ChatHistoryResponse.OutMessage) tt0.A0(outMessageArr)) == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/it4.java:4:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/it4.java:265:    public final void g(ChatHistoryResponse chatHistoryResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/it4.java:268:        ChatHistoryResponse.OutMessage[] outMessageArr = chatHistoryResponse.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/it4.java:271:            for (ChatHistoryResponse.OutMessage outMessage : outMessageArr) {
+research/artifacts/decompiled-dex2/sources/defpackage/it4.java:311:    public final void h(ChatHistoryResponse chatHistoryResponse) {
+research/artifacts/decompiled-dex2/sources/defpackage/it4.java:328:    public final void j(veg vegVar, ChatHistoryResponse chatHistoryResponse, boolean z) {
+research/artifacts/decompiled-dex2/sources/defpackage/it4.java:332:        ChatHistoryResponse.OutMessage[] outMessageArr = chatHistoryResponse.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/r1g.java:11:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/r1g.java:122:                String str = ((ChatHistoryResponse) obj).chatId;
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:7:import com.yandex.messaging.core.net.entities.proto.ReducedChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:32:        ReducedChatHistoryResponse.ReducedOutMessage[] reducedOutMessageArr;
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:48:        ReducedChatHistoryResponse[] reducedChatHistoryResponseArr = reducedHistoryResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:49:        ReducedChatHistoryResponse reducedChatHistoryResponse = reducedChatHistoryResponseArr != null ? (ReducedChatHistoryResponse) tt0.E0(0, reducedChatHistoryResponseArr) : null;
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:50:        if (reducedChatHistoryResponse == null || !mqd.s(reducedChatHistoryResponse.chatId, k9gVar.a.a.b)) {
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:57:                ReducedChatHistoryResponse.ReducedOutMessage[] reducedOutMessageArr2 = reducedChatHistoryResponse.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:59:                    reducedOutMessageArr2 = new ReducedChatHistoryResponse.ReducedOutMessage[0];
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:61:                ReducedChatHistoryResponse.ReducedOutMessage[] reducedOutMessageArr3 = reducedOutMessageArr2;
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:66:                    ReducedChatHistoryResponse.ReducedOutMessage reducedOutMessage = reducedOutMessageArr3[i];
+research/artifacts/decompiled-dex2/sources/defpackage/h9g.java:154:                u49Var.c(reducedChatHistoryResponse.lastEditTimestamp, false);
+research/artifacts/decompiled-dex2/sources/defpackage/ooc.java:3:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/ooc.java:10:    public ChatHistoryResponse[] d;
+research/artifacts/decompiled-dex2/sources/defpackage/mw4.java:5:import com.yandex.messaging.core.net.entities.proto.ChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/mw4.java:101:    public final long b(ChatHistoryResponse chatHistoryResponse, long j) {
+research/artifacts/decompiled-dex2/sources/defpackage/rc7.java:6:import com.yandex.messaging.core.net.entities.proto.OnlyTimestampsChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/rc7.java:23:        OnlyTimestampsChatHistoryResponse[] onlyTimestampsChatHistoryResponseArr = onlyTimestampsHistoryResponse.chats;
+research/artifacts/decompiled-dex2/sources/defpackage/rc7.java:25:        if (onlyTimestampsChatHistoryResponseArr != null) {
+research/artifacts/decompiled-dex2/sources/defpackage/rc7.java:26:            for (OnlyTimestampsChatHistoryResponse onlyTimestampsChatHistoryResponse : tt0.x0(onlyTimestampsChatHistoryResponseArr)) {
+research/artifacts/decompiled-dex2/sources/defpackage/rc7.java:28:                String str = onlyTimestampsChatHistoryResponse.chatId;
+research/artifacts/decompiled-dex2/sources/defpackage/rc7.java:33:                    tbeVar.a(onlyTimestampsChatHistoryResponse.lastMessageTimestamp, onlyTimestampsChatHistoryResponse.minMessageTimestamp, null);
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:5:import com.yandex.messaging.core.net.entities.proto.ReducedChatHistoryResponse;
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:77:        ReducedChatHistoryResponse[] reducedChatHistoryResponseArr = ((ReducedHistoryResponse) objQ).chats;
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:79:        if (reducedChatHistoryResponseArr == null) {
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:80:            reducedChatHistoryResponseArr = new ReducedChatHistoryResponse[0];
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:82:        List<ReducedChatHistoryResponse> listX0 = tt0.x0(reducedChatHistoryResponseArr);
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:84:        for (ReducedChatHistoryResponse reducedChatHistoryResponse : listX0) {
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:86:            ReducedChatHistoryResponse.ReducedOutMessage[] reducedOutMessageArr = reducedChatHistoryResponse.messages;
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:94:                    ReducedChatHistoryResponse.ReducedClientMessage reducedClientMessage = reducedServerMessage.clientMessage;
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:96:                    ReducedChatHistoryResponse.ReducedPlainMessage reducedPlainMessage = reducedClientMessage.plain;
+research/artifacts/decompiled-dex2/sources/defpackage/juk.java:99:                        ReducedChatHistoryResponse.ReducedServerMessageInfo reducedServerMessageInfo = reducedServerMessage.serverMessageInfo;
+
+========== API METHOD STRING CANDIDATES ==========
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/directives/DirectiveFactory.java:20:        a(SendMessageDirective.class, "send_message");
+research/artifacts/decompiled-dex2/sources/com/yandex/messaging/core/net/entities/directives/SendMessageDirective.java:16:        super("send_message");
+research/artifacts/decompiled-dex2/sources/defpackage/gn4.java:34:    DeleteMessage("delete_message"),
+research/artifacts/decompiled-dex2/sources/defpackage/gn4.java:36:    EditMessage("edit_message"),
