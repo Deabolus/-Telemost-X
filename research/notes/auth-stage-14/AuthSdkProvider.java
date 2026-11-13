@@ -1,0 +1,142 @@
+package com.yandex.passport.internal.authsdk;
+
+import android.content.ContentProvider;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Binder;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Base64;
+import com.yandex.passport.R;
+import com.yandex.passport.api.exception.e0;
+import com.yandex.passport.api.x;
+import com.yandex.passport.data.network.core.s;
+import com.yandex.passport.internal.entities.g;
+import com.yandex.passport.internal.entities.h;
+import com.yandex.passport.internal.entities.p;
+import com.yandex.passport.internal.filter.l;
+import defpackage.kuq;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/* JADX INFO: loaded from: /workspaces/-Telemost-X/research/artifacts/dex/classes3.dex */
+public class AuthSdkProvider extends ContentProvider {
+    public AuthSdkProvider() {
+    }
+
+    @Override // android.content.ContentProvider
+    public final Bundle call(String r11, String r12, Bundle r13) {
+        a r14 = a.valueOf(r11);     // Catch: IllegalArgumentException -> L31
+        Context r15 = getContext();
+        r15.getClass();
+        String r16 = r15.getPackageManager().getNameForUid(Binder.getCallingUid());
+        b r17 = com.yandex.passport.internal.di.a.a().getLoginSdkProviderHelper();
+        if (r16 == null) goto L30;
+        Context r0 = getContext();
+        r17.getClass();
+        mqd.z(r0, "context");
+        String[] r1 = r0.getResources().getStringArray(R.array.passport_trusted_application_fingerprints);
+        mqd.y(r1, "getStringArray(...)");
+        int r2 = r1.length;
+        int r3 = 0;
+        int r4 = 0;
+    L6:
+        if (r4 >= r2) goto L16;
+        String r5 = r1[r4];
+        mqd.u(r5);
+        List r6 = p0o.q0(r5, new String[]{StringUtils.PROCESS_POSTFIX_DELIMITER}, 0, 6);
+        if (TextUtils.equals((CharSequence) r6.get(0), r16) == false) goto L15;
+        PackageManager r7 = r0.getPackageManager();
+        mqd.y(r7, "getPackageManager(...)");
+        boolean r8 = true;
+        String r9 = (String) r6.get(1);
+        byte[] r10 = p.c;     // Catch: Throwable -> L12
+        p r18 = s.d(r7, r16);     // Catch: Throwable -> L12
+        mqd.z(r9, "sha256Fingerprint");     // Catch: Throwable -> L12
+        byte[] r19 = Base64.decode(r9, 0);     // Catch: Throwable -> L12
+        mqd.u(r19);     // Catch: Throwable -> L12
+        boolean r20 = Arrays.equals(r18.a(), r19);     // Catch: Throwable -> L12
+    L13:
+        if (r20 == false) goto L15;
+    L17:
+        if (r8 == false) goto L30;
+        if (r14.ordinal() != 0) goto L28;
+        l r21 = r17.b;
+        ArrayList r22 = r17.a.a().g();
+        com.yandex.passport.api.impl.b r110 = com.yandex.passport.api.impl.b.c;
+        g r111 = new g(0);
+        r111.k(r110);
+        r111.h(new x[]{x.i});
+        h r23 = r111.f();
+        r21.getClass();
+        List r112 = (List) lo7.K(fc9.a, new kuq(r21, r22, r23, null, 20));
+        Bundle r113 = new Bundle();
+        r113.putInt("com.yandex.auth.ACCOUNTS_COUNT", r112.size());
+        int r114 = r112.size();
+    L21:
+        if (r3 >= r114) goto L26;
+        com.yandex.passport.common.core.g r24 = (com.yandex.passport.common.core.g) r112.get(r3);
+        r113.putLong(wq1.f(r3, "account-", "-com.yandex.auth.UID_VALUE"), r24.c.b);
+        r113.putString(k87.l(new StringBuilder("account-"), r3, "-com.yandex.auth.PRIMARY_DISPLAY_NAME"), r24.b);
+        r113.putString("account-" + r3 + "-com.yandex.auth.SECONDARY_DISPLAY_NAME", s.k(r24));
+        r113.putBoolean("account-" + r3 + "-com.yandex.auth.IS_AVATAR_EMPTY", r24.n);
+        String r25 = "account-" + r3 + "-com.yandex.auth.AVATAR_URL";
+        String r26 = r24.l;
+        if (r26 != null) goto L25;
+        r26 = null;
+    L25:
+        r113.putString(r25, r26);
+        r3 = r3 + 1;
+        goto L21
+    L26:
+        return r113;
+    L28:
+        throw new IllegalStateException("Unknown method");
+    L12:
+        r20 = false;
+    L15:
+        r4 = r4 + 1;
+        goto L6
+    L16:
+        r8 = false;
+    L30:
+        throw new SecurityException("Untrusted application");
+    L32:
+        return s.i(new e0(una.c("Unknown provider method '", r11, "'")));
+    }
+
+    @Override // android.content.ContentProvider
+    public final int delete(Uri r1, String r2, String[] r3) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // android.content.ContentProvider
+    public final String getType(Uri r1) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // android.content.ContentProvider
+    public final Uri insert(Uri r1, ContentValues r2) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // android.content.ContentProvider
+    public final boolean onCreate() {
+        return true;
+    }
+
+    @Override // android.content.ContentProvider
+    public final Cursor query(Uri r1, String[] r2, String r3, String[] r4, String r5) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // android.content.ContentProvider
+    public final int update(Uri r1, ContentValues r2, String r3, String[] r4) {
+        throw new UnsupportedOperationException();
+    }
+}
