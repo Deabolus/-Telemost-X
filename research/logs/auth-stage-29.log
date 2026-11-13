@@ -1,0 +1,101 @@
+===== POQ DECLARATION =====
+
+===== POQ FILES =====
+
+===== FSC CONSTRUCTION =====
+
+===== API HOST STRINGS =====
+research/artifacts/decompiled-dex2/sources/defpackage/iv4.java:10:import com.yandex.telemost.core.cloudapi.ConferenceParams;
+research/artifacts/decompiled-dex2/sources/defpackage/ut2.java:35:                    str = "https://id.yandex.%s";
+research/artifacts/decompiled-dex2/sources/defpackage/ut2.java:37:                    str = "https://passport.yandex-team.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ut2.java:39:                    str = "https://id-test.yandex.%s";
+research/artifacts/decompiled-dex2/sources/defpackage/ut2.java:41:                    str = "https://passport-test.yandex-team.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ut2.java:46:                    str = "https://id-rc.yandex.%s";
+research/artifacts/decompiled-dex2/sources/defpackage/sdi.java:279:                    l5kVar.F(new x5k("https://disk.yandex.ru/client/memory-management?filter=disk"));
+research/artifacts/decompiled-dex2/sources/defpackage/hfg.java:27:        return "https://pay.yandex.ru/transaction/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/m10.java:112:                tum.s(t8qVar, tum.c("https://push.yandex.ru/v2/subscribe/app"));
+research/artifacts/decompiled-dex2/sources/defpackage/ifg.java:16:        return "https://passport.yandex-team.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ifg.java:32:        return "https://pay.yandex.ru/transaction/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/k5d.java:32:import com.yandex.telemost.core.cloudapi.AccessLevel;
+research/artifacts/decompiled-dex2/sources/defpackage/ml0.java:16:                str = "https://mobapi.calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ml0.java:21:                str = "https://mobapi-test.calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ml0.java:40:            return "https://testing.calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ml0.java:46:            return "https://calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ml0.java:49:            return "https://testing.calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/moq.java:43:                                    intent.setData(Uri.parse("https://yandex.ru/support/messenger/rules.html"));
+research/artifacts/decompiled-dex2/sources/defpackage/moq.java:67:                                    intent.setData(Uri.parse("https://yandex.ru/support/messenger/rules.html"));
+research/artifacts/decompiled-dex2/sources/defpackage/efg.java:27:        return "https://pay-test.mail.yandex.ru/transaction/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/p3p.java:14:        return "TestingMobApiHost(url=https://mobapi-test.calendar.yandex.ru)";
+research/artifacts/decompiled-dex2/sources/defpackage/nr0.java:17:import com.yandex.telemost.core.cloudapi.AccessLevel;
+research/artifacts/decompiled-dex2/sources/defpackage/nr0.java:18:import com.yandex.telemost.core.cloudapi.CloudRecordingStatus;
+research/artifacts/decompiled-dex2/sources/defpackage/nr0.java:19:import com.yandex.telemost.core.cloudapi.SummarizationStatus;
+research/artifacts/decompiled-dex2/sources/defpackage/mv2.java:67:        b6m b6mVar = new b6m("https://mobapi.calendar.yandex.ru", "https://calendar.yandex.ru", false, false, new lbk());
+research/artifacts/decompiled-dex2/sources/defpackage/z1c.java:4:import com.yandex.telemost.core.cloudapi.ConferenceParams;
+research/artifacts/decompiled-dex2/sources/defpackage/i0p.java:5:    public static final cwk a = new cwk("https://telemost\\.yandex\\.ru/\\S*");
+research/artifacts/decompiled-dex2/sources/defpackage/pej.java:21:import com.yandex.telemost.core.cloudapi.AccessLevel;
+research/artifacts/decompiled-dex2/sources/defpackage/dgn.java:188:                            String strC = una.c("https://center.yandex-team.ru/api/v1/user/", p0o.A0(str3, "@"), "/avatar/80.jpg");
+research/artifacts/decompiled-dex2/sources/defpackage/dgn.java:299:                                String strC2 = una.c("https://center.yandex-team.ru/api/v1/user/", p0o.A0(str3, "@"), "/avatar/80.jpg");
+research/artifacts/decompiled-dex2/sources/defpackage/fv9.java:4:import com.yandex.telemost.core.cloudapi.ClientConfig;
+research/artifacts/decompiled-dex2/sources/defpackage/fv9.java:5:import com.yandex.telemost.core.cloudapi.ConferenceParams;
+research/artifacts/decompiled-dex2/sources/defpackage/he1.java:9:import com.yandex.telemost.core.cloudapi.ConferenceParams;
+research/artifacts/decompiled-dex2/sources/defpackage/tkm.java:185:        g5lVar2.i("https://forms-ext-api.yandex.ru/v3/surveys/9481/form/");
+research/artifacts/decompiled-dex2/sources/defpackage/c58.java:193:                e eVar = new e(bVarA, (String) null, (String) null, "https://yandex.ru/", cookie);
+research/artifacts/decompiled-dex2/sources/defpackage/mv4.java:5:import com.yandex.telemost.core.cloudapi.ConferenceState;
+research/artifacts/decompiled-dex2/sources/defpackage/pkc.java:7:import com.yandex.telemost.core.cloudapi.ConferenceParams;
+research/artifacts/decompiled-dex2/sources/defpackage/djk.java:5:    public static volatile cjk a = new cjk("https://yandex.ru/clck/click", new hyh(14));
+research/artifacts/decompiled-dex2/sources/defpackage/dwh.java:3:import com.yandex.telemost.core.cloudapi.Reaction;
+research/artifacts/decompiled-dex2/sources/defpackage/dwh.java:4:import com.yandex.telemost.core.cloudapi.ReactionType;
+research/artifacts/decompiled-dex2/sources/defpackage/b6m.java:7:    public final String c = "https://cloud-api.yandex.ru/v1/disk/attach/resources/upload?path=attach:/";
+research/artifacts/decompiled-dex2/sources/defpackage/b6m.java:26:            return "https://calendar.yandex-team.ru/mobile/models";
+research/artifacts/decompiled-dex2/sources/defpackage/b6m.java:38:            return "https://calendar.yandex-team.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/n78.java:10:import com.yandex.telemost.core.cloudapi.ConferenceState;
+research/artifacts/decompiled-dex2/sources/defpackage/n78.java:11:import com.yandex.telemost.core.cloudapi.Peer;
+research/artifacts/decompiled-dex2/sources/defpackage/n78.java:12:import com.yandex.telemost.core.cloudapi.PeerState;
+research/artifacts/decompiled-dex2/sources/defpackage/n78.java:13:import com.yandex.telemost.core.cloudapi.UserData;
+research/artifacts/decompiled-dex2/sources/defpackage/g5m.java:37:        this.g = str3.equals("ru") ? "https://yandex.ru/support/yandex-360/customers/calendar/app" : "https://yandex.com/support/yandex-360/customers/calendar/app/en/";
+research/artifacts/decompiled-dex2/sources/defpackage/g5m.java:38:        this.h = str3.equals("ru") ? "https://yandex.ru/legal/calendar_mobile_agreement/ru/" : "https://yandex.ru/legal/calendar_mobile_agreement/en/";
+research/artifacts/decompiled-dex2/sources/defpackage/g5m.java:39:        this.i = "https://calendar.yandex.ru/todo";
+research/artifacts/decompiled-dex2/sources/defpackage/g5m.java:40:        this.j = "https://calendar.yandex-team.ru/todo";
+research/artifacts/decompiled-dex2/sources/defpackage/kfg.java:16:        return "https://passport-test.yandex-team.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/kfg.java:32:        return "https://pay-test.mail.yandex.ru/transaction/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/po1.java:148:        return "https://cloud-api.yandex.net";
+research/artifacts/decompiled-dex2/sources/defpackage/rob.java:8:import com.yandex.telemost.core.cloudapi.ConferenceParams;
+research/artifacts/decompiled-dex2/sources/defpackage/co.java:7:import com.yandex.telemost.core.cloudapi.ConferenceParams;
+research/artifacts/decompiled-dex2/sources/defpackage/iv7.java:11:import com.yandex.telemost.core.cloudapi.BroadcastInfoState;
+research/artifacts/decompiled-dex2/sources/defpackage/iv7.java:12:import com.yandex.telemost.core.cloudapi.CloudRecordingStatus;
+research/artifacts/decompiled-dex2/sources/defpackage/iv7.java:13:import com.yandex.telemost.core.cloudapi.PeerType;
+research/artifacts/decompiled-dex2/sources/defpackage/iv7.java:14:import com.yandex.telemost.core.cloudapi.ReactionType;
+research/artifacts/decompiled-dex2/sources/defpackage/iv7.java:15:import com.yandex.telemost.core.cloudapi.SummarizationMailRecipient;
+research/artifacts/decompiled-dex2/sources/defpackage/iv7.java:16:import com.yandex.telemost.core.cloudapi.SummarizationStatus;
+research/artifacts/decompiled-dex2/sources/defpackage/wpq.java:5:import com.yandex.telemost.core.cloudapi.AccessLevel;
+research/artifacts/decompiled-dex2/sources/defpackage/wpq.java:6:import com.yandex.telemost.core.cloudapi.ClientConfig;
+research/artifacts/decompiled-dex2/sources/defpackage/wpq.java:7:import com.yandex.telemost.core.cloudapi.ConferenceParams;
+research/artifacts/decompiled-dex2/sources/defpackage/wpq.java:8:import com.yandex.telemost.core.cloudapi.ConferenceState;
+research/artifacts/decompiled-dex2/sources/defpackage/cwn.java:20:import com.yandex.telemost.core.cloudapi.ConferenceParams;
+research/artifacts/decompiled-dex2/sources/defpackage/lfg.java:44:        return "https://passport.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/bve.java:18:        c = new cwk(una.c("https://(?:telemost\\.yandex\\.", strI0, "|telemost\\.(?:dsp|dst)\\.yandex\\.ru)/j/\\d+(?:[/?].*)?"));
+research/artifacts/decompiled-dex2/sources/defpackage/bve.java:19:        d = new cwk(una.c("https://(?:telemost\\.360\\.yandex\\.", strI0, "|telemost\\.(?:dsp|dst)\\.360\\.yandex\\.ru)/j/\\d+(?:[/?].*)?"));
+research/artifacts/decompiled-dex2/sources/defpackage/bve.java:48:        boolean zG = w0o.G(str, "https://telemost.yandex-team.ru/j/", false);
+research/artifacts/decompiled-dex2/sources/defpackage/ca7.java:16:        this.e = hk3.s(f55VarA, new y97(jc9Var, null, jc9Var, null, jc9Var, null, "https://mobapi-test.calendar.yandex.ru"), (pib) null, 6);
+research/artifacts/decompiled-dex2/sources/defpackage/e5h.java:4:import com.yandex.telemost.core.cloudapi.ConferenceParams;
+research/artifacts/decompiled-dex2/sources/defpackage/e5h.java:5:import com.yandex.telemost.core.cloudapi.Reaction;
+research/artifacts/decompiled-dex2/sources/defpackage/ffg.java:16:        return "https://passport.yandex-team.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/ffg.java:32:        return "https://pay-test.mail.yandex.ru/transaction/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/zv.java:23:import com.yandex.telemost.core.cloudapi.ParticipantPermission;
+research/artifacts/decompiled-dex2/sources/defpackage/jfg.java:16:        return "https://passport-test.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/jfg.java:32:        return "https://pay-test.mail.yandex.ru/transaction/%s";
+research/artifacts/decompiled-dex2/sources/defpackage/ivf.java:9:import com.yandex.telemost.core.cloudapi.ErrorDetails;
+research/artifacts/decompiled-dex2/sources/defpackage/l2m.java:118:                                str = "https://mobapi.calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/l2m.java:123:                                str = "https://mobapi-test.calendar.yandex.ru";
+research/artifacts/decompiled-dex2/sources/defpackage/w7m.java:4:import com.yandex.telemost.core.cloudapi.ConferenceState;
+research/artifacts/decompiled-dex2/sources/defpackage/w7m.java:5:import com.yandex.telemost.core.cloudapi.SummarizationMailRecipient;
+research/artifacts/decompiled-dex2/sources/defpackage/w7m.java:6:import com.yandex.telemost.core.cloudapi.SummarizationStatus;
+research/artifacts/decompiled-dex2/sources/defpackage/j0a.java:108:        String strConcat2 = "https://maps.yandex.ru/?uri=".concat(strEncode2);
+research/artifacts/decompiled-dex2/sources/defpackage/eq2.java:12:import com.yandex.telemost.core.cloudapi.AccessLevel;
+research/artifacts/decompiled-dex2/sources/defpackage/gb3.java:5:import com.yandex.telemost.core.cloudapi.BroadcastInfoState;
+research/artifacts/decompiled-dex2/sources/defpackage/gb3.java:6:import com.yandex.telemost.core.cloudapi.CloudRecordingStatus;
+research/artifacts/decompiled-dex2/sources/defpackage/gb3.java:7:import com.yandex.telemost.core.cloudapi.SummarizationStatus;
+research/artifacts/decompiled-dex2/sources/defpackage/qgd.java:14:import com.yandex.telemost.core.cloudapi.ConferenceState;
+research/artifacts/decompiled-dex2/sources/defpackage/j43.java:5:import com.yandex.telemost.core.cloudapi.Placeholder;
+
+===== ENVIRONMENT CLASSES =====
