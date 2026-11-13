@@ -6,3 +6,7 @@
 2026-11-13  BLOCKED  Reviewed Yandex ID docs describe Yandex ID/profile permissions and direct developers to service-specific API scopes; no Telemost chat/Xiva scope or supported API was established.
 2026-11-13  NOT RUN  No Telemost/Xiva connection or message request was sent because supported authorization and API details are unconfirmed.
 2026-11-13  NOT APPLICABLE  No server response exists; no mock response was used.
+2026-11-13  PASS  Found official Telemost REST API documentation and confirmed its listed conference/organization scopes.
+2026-11-13  PASS  Found official preview MCP documentation with chat-read tools and explicit read-only limits for chats/messages.
+2026-11-13  CLARIFIED  Earlier "no Telemost API found" statement is superseded; direct standalone chat sending and Xiva remain undocumented.
+2026-11-13  NOT RUN  No OAuth token was obtained and no REST, MCP, or Xiva endpoint was called.
